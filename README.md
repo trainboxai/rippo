@@ -1,1 +1,1 @@
-# rippo
+# Rippo: Insight and Streamlined Code

@@ -1,0 +1,13 @@
+/node_modules
+
+/local-scripts
+
+/tests
+
+/dev
+
+AgentPrompts.txt
+
+commit-push.sh
+
+/venv
