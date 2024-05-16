@@ -11,3 +11,5 @@ AgentPrompts.txt
 commit-push.sh
 
 /venv
+
+/ouputs
