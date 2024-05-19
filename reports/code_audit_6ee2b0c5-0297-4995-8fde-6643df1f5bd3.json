@@ -1,0 +1,38 @@
+{
+  "High": [],
+  "Medium": [
+    {
+      "finding": "Unused variable: The `logoHovered` state variable and the `setLogoHovered` function are defined in the RootLayoutContext, but never used.",
+      "files": [
+        "src/components/RootLayout.tsx"
+      ],
+      "impact": "Unnecessary state management and potential confusion for developers."
+    },
+    {
+      "finding": "Code duplication: The  XIcon, MenuIcon, FacebookIcon, InstagramIcon, and GitHubIcon components are duplicated across multiple files. This can lead to inconsistencies and maintenance overhead.",
+      "files": [
+        "src/components/RootLayout.tsx",
+        "src/components/Footer.tsx",
+        "src/components/SocialMedia.tsx"
+      ],
+      "impact": "Increased maintenance effort and potential for inconsistencies when modifying the icons."
+    }
+  ],
+  "Low": [
+    {
+      "finding": "Hardcoded values: In Logo.tsx, the width and height are hardcoded to 150. Consider defining them as constants for better readability and maintainability.",
+      "files": [
+        "src/components/Logo.tsx"
+      ],
+      "impact": "Reduced code readability and potential difficulty in adjusting logo dimensions."
+    },
+    {
+      "finding": "Hardcoded social media links: The social media links in the Footer.tsx and SocialMedia.tsx components are hardcoded as '#' placeholders. This limits functionality and requires code changes to update the links.",
+      "files": [
+        "src/components/Footer.tsx",
+        "src/components/SocialMedia.tsx"
+      ],
+      "impact": "Non-functional social media links and increased effort to update them in the future."
+    }
+  ]
+}

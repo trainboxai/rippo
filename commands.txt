@@ -1,2 +1,17 @@
 ## start server will external access (no certs)
 uvicorn main:app --host 0.0.0.0 --port 2891
+
+
+# WITH certs
+uvicorn main:app --host 0.0.0.0 --port 443 --ssl-keyfile /home/trainboxai/backend/rippo/certs/privkey.pem --ssl-certfile /home/trainboxai/backend/rippo/certs/fullchain.pem
+
+uvicorn main:app --host 0.0.0.0 --ssl-keyfile /home/trainboxai/backend/rippo/certs/privkey.pem --ssl-certfile /home/trainboxai/backend/rippo/certs/fullchain.pem
+
+
+
+## certs
+Successfully received certificate.
+Certificate is saved at: /etc/letsencrypt/live/api.rippo.trainbox.ai/fullchain.pem
+Key is saved at:         /etc/letsencrypt/live/api.rippo.trainbox.ai/privkey.pem
+This certificate expires on 2024-08-16.
+These files will be updated when the certificate renews.

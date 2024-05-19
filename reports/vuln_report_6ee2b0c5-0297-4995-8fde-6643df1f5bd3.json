@@ -1,0 +1,64 @@
+{
+  "vulnerability_report": [
+    {
+      "dependency": "next",
+      "version": "^14.0.4",
+      "description": "Affected versions are vulnerable to Server-Side Request Forgery (SSRF) through the `next/image` component.",
+      "source": "https://security.snyk.io/package/npm/next/14.0.4"
+    },
+    {
+      "dependency": "next",
+      "version": "8.0.3",
+      "description": "Affected versions are vulnerable to Resource Exhaustion via the `next/router` component, Open Redirect through specially encoded paths, and Path Traversal allowing access to files in the `.next` directory.",
+      "source": "https://security.snyk.io/package/npm/next/8.0.3"
+    },
+    {
+      "dependency": "next",
+      "version": "12.0.4",
+      "description": "Affected versions are vulnerable to Resource Exhaustion via the `next/router` component, UI Misrepresentation due to improper CSP, DoS when a static asset is requested with a locale prefix, and DoS due to mishandling of invalid URLs.",
+      "source": "https://security.snyk.io/package/npm/next/12.0.4"
+    },
+    {
+      "dependency": "react",
+      "version": "0.14.0-beta3",
+      "description": "Affected versions are vulnerable to Cross-site Scripting (XSS) due to the `dangerouslySetInnerHTML` and `innerHTML` attributes.",
+      "source": "https://security.snyk.io/package/npm/react/0.14.0-beta3"
+    },
+    {
+      "dependency": "react-dom",
+      "version": "16.4.0",
+      "description": "Affected versions are vulnerable to Cross-site Scripting (XSS) when rendering user-provided content with `dangerouslySetInnerHTML` and when using URLs in the `href` attribute of anchor elements.",
+      "source": "https://security.snyk.io/package/npm/react-dom/16.4.0"
+    },
+    {
+      "dependency": "react-dom",
+      "version": "^18.2.0",
+      "description": "Affected versions are vulnerable to Cross-site Scripting (XSS) when rendering user-provided content with `dangerouslySetInnerHTML`.",
+      "source": "https://security.snyk.io/package/npm/react-dom/0.5.0"
+    },
+    {
+      "dependency": "react",
+      "version": "0.5.0",
+      "description": "Affected versions are vulnerable to Cross-site Scripting (XSS) due to the `dangerouslySetInnerHTML` attribute and unescaped text inserted into the DOM.",
+      "source": "https://security.snyk.io/package/npm/react/0.5.0"
+    },
+    {
+      "dependency": "eslint",
+      "version": "3.15.0",
+      "description": "Affected versions are vulnerable to Regular Expression Denial of Service (ReDoS). This can cause an impact of about 10 seconds matching time for data 100k characters long.",
+      "source": "https://security.snyk.io/package/npm/eslint/3.15.0"
+    },
+    {
+      "dependency": "escape-string-regexp",
+      "version": "^5.0.0",
+      "description": "Affected versions are vulnerable to Regular Expression Denial of Service (ReDoS) due to the sub-patterns `[^]` and `[\\s\\S]`.",
+      "source": "https://security.snyk.io/vuln/SNYK-JS-ANSIREGEX-1583908"
+    },
+    {
+      "dependency": "@mdx-js/react",
+      "version": "^3.0.0",
+      "description": "Affected versions are vulnerable to Deserialization of Untrusted Data when passing input through the package due to its default configurations that are missing input sanitization.",
+      "source": "https://www.cvedetails.com/vulnerability-list/cvssscoremin-9/cvssscoremax-10/vulnerabilities.html?page=332&cvssscoremin=9&cvssscoremax=10&order=1&trc=41081&sha=2958b3df7d96412274fc8cc8f59e685eb6debe4e"
+    }
+  ]
+}
