@@ -157,9 +157,3 @@ async def master(repo_url: RepoUrl):
 #TODO - create route to deal with file cleanup, could be initiated by the frontend
 
 
-@app.post("/master_test")
-async def master_test(repo_url_test: RepoUrltest):
-    print(repo_url_test)
-    
-    return {"test_result": repo_url_test }
-
