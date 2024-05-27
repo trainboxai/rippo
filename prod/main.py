@@ -93,7 +93,8 @@ async def verify_token(request: Request):
 
 
 @app.post("/initialize")
-# given a URL do stuff
+# given a URL 
+# extract the name of the repo
 
 
 
