@@ -81,7 +81,7 @@ async def verify_token(request: Request):
             "photoUrl": photoUrl
         }
         
-        print("USER DATA:",user_data)
+        
         if user_doc.exists:
             user_ref.update(user_data)
         else:
