@@ -61,20 +61,43 @@ async def root():
 async def verify_token(request: Request):
     body = await request.json()
     token = body.get('token')
+    email = body.get('email')
+    displayName = body.get('displayName')
+    photoUrl = body.get('photoUrl')
+    
     if not token:
         raise HTTPException(status_code=400, detail="Token missing")
+    
     try:
         decoded_token = auth.verify_id_token(token)
         uid = decoded_token['uid']
         user_ref = db.collection('users').document(uid)
         user_doc = user_ref.get()
+        
+        user_data = {
+            "token": token,
+            "email": email,
+            "displayName": displayName,
+            "photoUrl": photoUrl
+        }
+        
+        print("USER DATA:",user_data)
         if user_doc.exists:
-            user_ref.update({"token": token})
+            user_ref.update(user_data)
         else:
-            user_ref.set({"token": token})
+            user_ref.set(user_data)
+        
         return JSONResponse(content={"uid": uid})
     except Exception as e:
         raise HTTPException(status_code=400, detail="Invalid token")
+
+
+@app.post("/initialize")
+# given a URL do stuff
+
+
+
+
 
 @app.post("/master")
 async def master(repo_url: RepoUrl):
