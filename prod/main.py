@@ -1,12 +1,14 @@
-from fastapi import FastAPI, HTTPException, Request
+from fastapi import FastAPI, HTTPException, Request, APIRouter, Depends, status
 from fastapi.responses import RedirectResponse,JSONResponse
 from starlette.middleware.sessions import SessionMiddleware
 from pydantic import BaseModel
 import uuid
 import requests
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.security import OAuth2PasswordBearer
 import os
 import json
+from google.cloud import firestore, storage
 import firebase_admin
 from firebase_admin import credentials, auth, firestore
 from dotenv import load_dotenv
@@ -14,6 +16,7 @@ from pathlib import Path
 from flattener import extract_and_write_to_markdown
 from analyser import get_dependancy_list
 from search import search_vulnerabilities
+from list_repos import list_repositories
 from reporter import code_audit_report_with_backoff,vulnerability_report_with_backoff, quality_report_with_backoff
 from recomender import generate_refactor_plan_with_backoff
 from colorama import Fore, Style
@@ -45,12 +48,35 @@ cred = credentials.Certificate('rippo-777-firebase-adminsdk.json')
 firebase_admin.initialize_app(cred)
 db = firestore.client()
 
+# Storage client using the credentials object
+storage_client = storage.Client.from_service_account_json('rippo-777-firebase-adminsdk.json')
+bucket = storage_client.get_bucket("rippo-777.appspot.com")
+
+
 # Define a Pydantic model for the request body
 class RepoUrl(BaseModel):
     repo_url: str
 
-class RepoUrltest(BaseModel):
-    repo_url_test: str
+class ProjectId(BaseModel):
+    project_id: str
+
+oauth2_scheme = OAuth2PasswordBearer(tokenUrl="token") 
+
+async def get_current_user(token: str = Depends(oauth2_scheme)):
+    """
+    Dependency function to get the current user from the Firebase ID token.
+    """
+    try:
+        decoded_token = auth.verify_id_token(token)
+        uid = decoded_token['uid']
+        return uid 
+    except Exception as e:
+        raise HTTPException(
+            status_code=status.HTTP_401_UNAUTHORIZED,
+            detail="Invalid or expired token",
+            headers={"WWW-Authenticate": "Bearer"},
+        ) 
+
 
 @app.get("/")
 async def root():
@@ -61,6 +87,7 @@ async def root():
 async def verify_token(request: Request):
     body = await request.json()
     token = body.get('token')
+    oauthToken = body.get('oauthToken')
     email = body.get('email')
     displayName = body.get('displayName')
     photoUrl = body.get('photoUrl')
@@ -78,7 +105,8 @@ async def verify_token(request: Request):
             "token": token,
             "email": email,
             "displayName": displayName,
-            "photoUrl": photoUrl
+            "photoUrl": photoUrl,
+            "oauthAccessToken": oauthToken
         }
         
         
@@ -93,28 +121,68 @@ async def verify_token(request: Request):
 
 
 @app.post("/initialize")
-# given a URL 
-# extract the name of the repo
+async def initialize_project(user_id: str = Depends(get_current_user)):
+    #print("User ID:", user_id) 
+    #print(bucket)
+    
+    project_id = str(uuid.uuid4())
+  
+    # Fetch OAuth token from Firestore
+    user_doc = db.collection("users").document(user_id).get()
+    oauth_token = user_doc.get("oauthAccessToken")
+    if not oauth_token:
+        raise HTTPException(status_code=400, detail="OAuth token not found for user")
+
+    # Fetch list of repositories
+    repositories = list_repositories(oauth_token)
+
+    return {"ProjectID": project_id, "Repositories": repositories}
 
 
 
+@app.post("/github_events_webhook")
+async def webhook_event(request: Request):
+    body = await request.json()
+    print("EVENT RECIEVED:",body)
+    return {"message": "event recieved"}
 
 
 @app.post("/master")
-async def master(repo_url: RepoUrl):
+async def master(repo_url: RepoUrl, project_id: ProjectId, user_id: str = Depends(get_current_user)):
+    print("Received Project ID:", project_id.project_id)
+    print("Received Repo URL:", repo_url.repo_url)
     # # # MASTER PUPPETIER # # #
-   
-    #' Initialising directory paths'
+
+    # ' Initialising directory paths'
     print(Fore.LIGHTYELLOW_EX + "Initialising directory paths . " + Style.RESET_ALL)
-    script_dir = os.path.dirname(os.path.abspath(__file__))
-    output_dir = os.path.join(script_dir, '..', 'outputs')
-    reports_dir = os.path.join(script_dir, '..', 'reports')
+    project_path = f"projects/{user_id}/{project_id}"
 
-    # generate unique id
-    uniqueId = uuid.uuid4()
+    # Create Firebase Storage folder structure
+    for folder in ["code_audit.json", "quality_report.json", "vulnerability_report.json", "refactor_guide.md"]:
+        blob = bucket.blob(f"{project_path}/{folder}")
+        blob.upload_from_string("")
+
+    #script_dir = os.path.dirname(os.path.abspath(__file__))
+    #output_dir = os.path.join(script_dir, '..', 'outputs')
+    #reports_dir = os.path.join(script_dir, '..', 'reports')
+
+    # get unique id from project_id
+    uniqueId = project_id
+
+    return uniqueId
 
 
-    # - - - - STEPPING THROUGH WORK - - - - TODO - backoff and jitter for all LLM calls
+
+
+@app.post("/master_continuesd")
+async def master_continued(repo_url: RepoUrl):
+
+
+ # get unique id from project_id
+    uniqueId = 123
+    output_dir = "dummy"
+    reports_dir = "dummy"
+    # - - - - STEPPING THROUGH WORK - - - - 
     # 1. Get flattened file and extract contents
     print(Fore.GREEN + "Get flattened file and extract contents . . ." + Style.RESET_ALL)
     # Validate repo url
