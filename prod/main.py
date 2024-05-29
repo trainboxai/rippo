@@ -162,6 +162,10 @@ async def master(repo_url: RepoUrl, project_id: ProjectId, user_id: str = Depend
         blob = bucket.blob(f"{project_path}/{folder}")
         blob.upload_from_string("")
 
+        # Check if upload was successful
+        if not blob.exists():
+            raise HTTPException(status_code=500, detail=f"Failed to create folder: {folder}")
+
     #script_dir = os.path.dirname(os.path.abspath(__file__))
     #output_dir = os.path.join(script_dir, '..', 'outputs')
     #reports_dir = os.path.join(script_dir, '..', 'reports')
