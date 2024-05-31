@@ -3,7 +3,9 @@ from fastapi.responses import RedirectResponse,JSONResponse
 from starlette.middleware.sessions import SessionMiddleware
 from pydantic import BaseModel
 import uuid
+import base64
 import requests
+import datetime
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.security import OAuth2PasswordBearer
 import os
@@ -57,8 +59,16 @@ bucket = storage_client.get_bucket("rippo-777.appspot.com")
 class RepoUrl(BaseModel):
     repo_url: str
 
-class ProjectId(BaseModel):
-    project_id: str
+class RepoName(BaseModel):
+    repo_name: str
+
+class ReportId(BaseModel):
+    report_id: str
+
+class ProjectName(BaseModel):
+    project_name: str
+
+
 
 oauth2_scheme = OAuth2PasswordBearer(tokenUrl="token") 
 
@@ -125,7 +135,7 @@ async def initialize_project(user_id: str = Depends(get_current_user)):
     #print("User ID:", user_id) 
     #print(bucket)
     
-    project_id = str(uuid.uuid4())
+    report_id = base64.urlsafe_b64encode(uuid.uuid4().bytes).rstrip(b'=').decode('ascii')[:6]
   
     # Fetch OAuth token from Firestore
     user_doc = db.collection("users").document(user_id).get()
@@ -136,26 +146,76 @@ async def initialize_project(user_id: str = Depends(get_current_user)):
     # Fetch list of repositories
     repositories = list_repositories(oauth_token)
 
-    return {"ProjectID": project_id, "Repositories": repositories}
+    return {"ReportId": report_id, "Repositories": repositories}
+
+
+@app.post("/fetch_projects")
+async def fetch_projects(user_id: str = Depends(get_current_user)):
+    """Fetches the list of projects (repo names) for the authenticated user."""
+
+    print("Received USER ID:", user_id)
+
+    # Query Firestore for projects
+    project_docs = db.collection('users').document(user_id).collection('projects').stream()
+    
+    # Prepare a list of dictionaries with project name and last updated time
+    projects = [{
+        'name': doc.id,
+        'last_updated': doc.to_dict().get('last_updated').isoformat() if doc.to_dict().get('last_updated') else None
+    } for doc in project_docs]
+
+    print("PROJECT DATA:", projects)
+
+    return {"projects": projects}
 
 
 
-@app.post("/github_events_webhook")
-async def webhook_event(request: Request):
-    body = await request.json()
-    print("EVENT RECIEVED:",body)
-    return {"message": "event recieved"}
+@app.post("/fetch_reports")
+async def fetch_reports(project_name: ProjectName, user_id: str = Depends(get_current_user)):
+    """Fetches the list of reports for the authenticated user and given project name."""
+
+    print("Received USER ID:", user_id)
+    print("Received PROJECT_NAME:", project_name.project_name)
+
+    # Query Firestore for the specified project
+    project_ref = db.collection('users').document(user_id).collection('projects').document(project_name.project_name)
+    project_doc = project_ref.get()
+
+    if not project_doc.exists:
+        return {"error": "Project not found"}, 404
+
+    project_data = project_doc.to_dict()
+    reports = project_data.get('project_paths', [])
+
+    # Prepare the reports list
+    reports_list = [{
+        'created_at': report['created_at'].isoformat(),
+        'path': report['path'],
+        'report_id': report['report_id'],
+        'created_by': report['created_by'],
+        'status': report['status']
+    } for report in reports] if reports else []
+
+    print("REPORTS:", reports_list)
+
+    return {"reports": reports_list}
+
 
 
 @app.post("/master")
-async def master(repo_url: RepoUrl, project_id: ProjectId, user_id: str = Depends(get_current_user)):
-    print("Received Project ID:", project_id.project_id)
+async def master(repo_url: RepoUrl, repo_name: RepoName,report_id: ReportId,  user_id: str = Depends(get_current_user)):
+    print("Received Project ID:", report_id.report_id)
     print("Received Repo URL:", repo_url.repo_url)
+    print("Received Repo NAME:", repo_name.repo_name)
+
     # # # MASTER PUPPETIER # # #
 
     # ' Initialising directory paths'
+    report_id = report_id.report_id
+    repo_name = repo_name.repo_name.replace('/', ':') if '/' in repo_name.repo_name else repo_name.repo_name
+
     print(Fore.LIGHTYELLOW_EX + "Initialising directory paths . " + Style.RESET_ALL)
-    project_path = f"projects/{user_id}/{project_id}"
+    project_path = f"projects/{user_id}/{repo_name}/{report_id}"
 
     # Create Firebase Storage folder structure
     for folder in ["code_audit.json", "quality_report.json", "vulnerability_report.json", "refactor_guide.md"]:
@@ -165,15 +225,38 @@ async def master(repo_url: RepoUrl, project_id: ProjectId, user_id: str = Depend
         # Check if upload was successful
         if not blob.exists():
             raise HTTPException(status_code=500, detail=f"Failed to create folder: {folder}")
+    
 
-    #script_dir = os.path.dirname(os.path.abspath(__file__))
-    #output_dir = os.path.join(script_dir, '..', 'outputs')
-    #reports_dir = os.path.join(script_dir, '..', 'reports')
+     # Get the display name of the user
+    user_doc = db.collection('users').document(user_id).get()
+    display_name = user_doc.to_dict().get('displayName', 'Unknown User')
 
-    # get unique id from project_id
-    uniqueId = project_id
+    # Firestore document reference
+    doc_ref = db.collection('users').document(user_id).collection('projects').document(repo_name)
+
+    # Append project path to an array in the Firestore document
+    doc_ref.set({
+        'last_updated':datetime.datetime.utcnow(),
+        'project_paths': firestore.ArrayUnion([{
+            'report_id': report_id,
+            'path': project_path,
+            'created_at': datetime.datetime.utcnow(),
+            'created_by': display_name,
+            'status': 'In progress',
+        }])
+    }, merge=True)
+
+    # get unique id from report_id
+    uniqueId = report_id
 
     return uniqueId
+
+
+
+
+
+
+
 
 
 
@@ -182,7 +265,7 @@ async def master(repo_url: RepoUrl, project_id: ProjectId, user_id: str = Depend
 async def master_continued(repo_url: RepoUrl):
 
 
- # get unique id from project_id
+ # get unique id from report_id
     uniqueId = 123
     output_dir = "dummy"
     reports_dir = "dummy"
@@ -191,11 +274,8 @@ async def master_continued(repo_url: RepoUrl):
     print(Fore.GREEN + "Get flattened file and extract contents . . ." + Style.RESET_ALL)
     # Validate repo url
     print(Fore.MAGENTA + "Gathering search results . . ." + Style.RESET_ALL)
-    if "github.com" not in repo_url.repo_url:  #TODO: when we add support for other git repos, change this!!
-        raise HTTPException(status_code=400, detail="URL provided is not a GitHub repository.")
-    else:
-        valid_repo_url = repo_url.repo_url
 
+    valid_repo_url = repo_url.repo_url
     extract_and_write_to_markdown(valid_repo_url, uniqueId)
 
 
