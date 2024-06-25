@@ -18,9 +18,9 @@ def search_vulnerabilities(dependencies,unique_id=0):
     print(Fore.GREEN + "Starting searching for known Vulnerabilities . . . . ." + Style.RESET_ALL)
 
     results = []
-    for dependency in dependencies["dependencies"]:
-        name = dependency["name"]
-        version = dependency.get("version", "")
+    for dep in dependencies["dependencies"]:
+        name = dep.get("name", "")
+        version = dep.get("version", "")
         search_query = f"{name} {version}"
         url = f"https://www.googleapis.com/customsearch/v1?key={search_api_key}&cx={search_engine_id}&q={search_query}&num=10&start=1&fields=items(link,snippet,htmlFormattedUrl)" 
         

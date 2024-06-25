@@ -5,6 +5,7 @@ import random
 from dotenv import load_dotenv
 import google.generativeai as genai
 from pathlib import Path
+from google.api_core.exceptions import DeadlineExceeded
 
 load_dotenv()
 
@@ -19,7 +20,7 @@ def generate_refactor_plan_with_backoff(input_files, unique_id=0, max_retries=5)
     for attempt in range(max_retries):
         try:
             return generate_refactoring_plan(input_files, unique_id) 
-        except google.api_core.exceptions.DeadlineExceeded:
+        except DeadlineExceeded:
             sleep_duration = 2**attempt + random.uniform(0, 1)
             print(f"Request timed out. Retrying in {sleep_duration} seconds...")
             time.sleep(sleep_duration)

@@ -4,24 +4,19 @@ from starlette.middleware.sessions import SessionMiddleware
 from pydantic import BaseModel
 import uuid
 import base64
-import requests
 import datetime
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.security import OAuth2PasswordBearer
 import os
-import json
-from google.cloud import firestore, storage
+from shared_resources import db, bucket
 import firebase_admin
 from firebase_admin import credentials, auth, firestore
 from dotenv import load_dotenv
-from pathlib import Path
-from flattener import extract_and_write_to_markdown
-from analyser import get_dependancy_list
-from search import search_vulnerabilities
 from list_repos import list_repositories
-from reporter import code_audit_report_with_backoff,vulnerability_report_with_backoff, quality_report_with_backoff
-from recomender import generate_refactor_plan_with_backoff
+from event_logger import write_event_log
+from celery_app import celery_app, generate_report, create_test_file
 from colorama import Fore, Style
+
 
 app = FastAPI()
 load_dotenv()
@@ -46,13 +41,18 @@ app.add_middleware(SessionMiddleware, secret_key=middleware_secret)
 GITHUB_CLIENT_ID = os.getenv("GITHUB_CLIENT_ID")
 FIREBASE_AUTH_HANDLER_URL = 'https://rippo-777.firebaseapp.com/__/auth/handler' 
 # FIREBASE
-cred = credentials.Certificate('rippo-777-firebase-adminsdk.json')  
-firebase_admin.initialize_app(cred)
-db = firestore.client()
+# cred = credentials.Certificate('rippo-777-firebase-adminsdk.json')  
+# firebase_admin.initialize_app(cred)
 
 # Storage client using the credentials object
-storage_client = storage.Client.from_service_account_json('rippo-777-firebase-adminsdk.json')
-bucket = storage_client.get_bucket("rippo-777.appspot.com")
+# storage_client = storage.Client.from_service_account_json('rippo-777-firebase-adminsdk.json')
+# bucket = storage_client.get_bucket("rippo-777.appspot.com")
+
+
+# Initialize new log file for report
+script_dir = os.path.dirname(os.path.abspath(__file__))
+output_dir = os.path.join(script_dir, '..', 'outputs')
+reports_dir = os.path.join(script_dir, '..', 'reports')
 
 
 # Define a Pydantic model for the request body
@@ -71,6 +71,7 @@ class ProjectName(BaseModel):
 
 
 oauth2_scheme = OAuth2PasswordBearer(tokenUrl="token") 
+
 
 async def get_current_user(token: str = Depends(oauth2_scheme)):
     """
@@ -136,6 +137,11 @@ async def initialize_project(user_id: str = Depends(get_current_user)):
     #print(bucket)
     
     report_id = base64.urlsafe_b64encode(uuid.uuid4().bytes).rstrip(b'=').decode('ascii')[:6]
+
+    log_path = f"{output_dir}/RUN_LOG.log"
+    with open(log_path, 'w') as file: 
+        file.write('')
+
   
     # Fetch OAuth token from Firestore
     user_doc = db.collection("users").document(user_id).get()
@@ -145,7 +151,10 @@ async def initialize_project(user_id: str = Depends(get_current_user)):
 
     # Fetch list of repositories
     repositories = list_repositories(oauth_token)
+    num_of_repos = len(repositories) 
 
+    # LOG IT!
+    write_event_log(event_id=101, source='/initialize', details=f'Initialization completed for new report {report_id}. Repos found = {num_of_repos}', level='INFO', log_path=log_path )
     return {"ReportId": report_id, "Repositories": repositories}
 
 
@@ -204,13 +213,14 @@ async def fetch_reports(project_name: ProjectName, user_id: str = Depends(get_cu
 
 @app.post("/master")
 async def master(repo_url: RepoUrl, repo_name: RepoName,report_id: ReportId,  user_id: str = Depends(get_current_user)):
+  
+    # # # MASTER PUPPETIER # # #
     print("Received Project ID:", report_id.report_id)
     print("Received Repo URL:", repo_url.repo_url)
     print("Received Repo NAME:", repo_name.repo_name)
 
-    # # # MASTER PUPPETIER # # #
-
     # ' Initialising directory paths'
+    log_path = os.path.join(output_dir, "RUN_LOG.log")
     report_id = report_id.report_id
     repo_name = repo_name.repo_name.replace('/', ':') if '/' in repo_name.repo_name else repo_name.repo_name
 
@@ -218,13 +228,15 @@ async def master(repo_url: RepoUrl, repo_name: RepoName,report_id: ReportId,  us
     project_path = f"projects/{user_id}/{repo_name}/{report_id}"
 
     # Create Firebase Storage folder structure
-    for folder in ["code_audit.json", "quality_report.json", "vulnerability_report.json", "refactor_guide.md"]:
+    for folder in [f"code_audit_{report_id}.json", f"quality_report_{report_id}.json", f"vulnerability_report_{report_id}.json", f"refactor_guide_{report_id}.md"]:
         blob = bucket.blob(f"{project_path}/{folder}")
         blob.upload_from_string("")
 
         # Check if upload was successful
         if not blob.exists():
+            write_event_log(event_id=202, source='/master', details=f"Failed to create folder: {folder}", level='ERROR', log_path=log_path )
             raise HTTPException(status_code=500, detail=f"Failed to create folder: {folder}")
+
     
 
      # Get the display name of the user
@@ -248,88 +260,40 @@ async def master(repo_url: RepoUrl, repo_name: RepoName,report_id: ReportId,  us
 
     # get unique id from report_id
     uniqueId = report_id
-
-    return uniqueId
-
-
-
-
-
-
-
-
-
-
-
-@app.post("/master_continuesd")
-async def master_continued(repo_url: RepoUrl):
-
-
- # get unique id from report_id
-    uniqueId = 123
-    output_dir = "dummy"
-    reports_dir = "dummy"
-    # - - - - STEPPING THROUGH WORK - - - - 
-    # 1. Get flattened file and extract contents
-    print(Fore.GREEN + "Get flattened file and extract contents . . ." + Style.RESET_ALL)
-    # Validate repo url
-    print(Fore.MAGENTA + "Gathering search results . . ." + Style.RESET_ALL)
-
-    valid_repo_url = repo_url.repo_url
-    extract_and_write_to_markdown(valid_repo_url, uniqueId)
-
-
-    # 2. Analyse and extract list of dependancies
-        #codebase file
-    markdown_file_path = Path(os.path.join(output_dir, f"final_{uniqueId}.md"))
-    markdown_file = markdown_file_path.read_text()
-    print(Fore.GREEN + "Analyse and extract list of dependancies . . . ." + Style.RESET_ALL)
-    #get deps
-    deps_list = get_dependancy_list(markdown_file)
-    print(deps_list)
- 
-   
-    # 3. Search for know Vulnerabilities
-    deps_list = json.loads(deps_list) 
-    search_vulnerabilities(deps_list,uniqueId)
+    write_event_log(event_id=102, source='/master', details=f"New docs creted for user: {user_id} and project:{uniqueId} in master initialisation phase", level='INFO', log_path=log_path )
     
+    # Fetch OAuth token from Firestore
+    user_doc = db.collection("users").document(user_id).get()
+    oauth_token = user_doc.get("oauthAccessToken")
+    if not oauth_token:
+        raise HTTPException(status_code=400, detail="OAuth token not found for user")
 
-    # 4. Create reports for Audit, Quality and Vulns
-        # get code audit report
-    print(Fore.MAGENTA + "Getting code audit report . . . . . ." + Style.RESET_ALL) 
-    code_audit_report_with_backoff(markdown_file,uniqueId)
 
-        # get vuln report
-        # Vulnerability search results
-    vuln_results_path = Path(os.path.join(output_dir, f"vuln_search_results_{uniqueId}.json"))
-    vulnerability_search_results = vuln_results_path.read_text()    
-    print(Fore.MAGENTA + "Getting vulnerability report . . . . . . ." + Style.RESET_ALL)     
-    vulnerability_report_with_backoff(vulnerability_search_results,uniqueId)
-
-        # get quality report
-    code_audit_path = Path(os.path.join(reports_dir ,f'code_audit_{uniqueId}.json'))
-    code_audit = code_audit_path.read_text()
-    combined_input = f"""
-
-    # # # Codebase below in markdown # # # 
-    {markdown_file}
-
-    ==========================================
-    # # #  Code Audit report below # # # 
-    {code_audit}
-
+    # TRIGERR BACKEND JOB HERE
+    repo_url = repo_url.repo_url
+    #"""
+        # Add the task to the Celery queue 
+    generate_report.delay(
+        repo_url, 
+        repo_name,
+       report_id, 
+        user_id,
+        oauth_token
+    )  
     """
-    print(Fore.MAGENTA + "Getting quality report . . . . . . ." + Style.RESET_ALL)    
-    quality_report_with_backoff(combined_input,uniqueId)
+    print(repo_url)
+    print(repo_name)
+    print(report_id)
+    print(user_id)
+    print(oauth_token)
+    """
+
+    return {"message": "Report request received", "report_id": report_id}, 202
 
 
 
-    # 5. Recommender - generate code refactoring recomendation
-    generate_refactor_plan_with_backoff(combined_input,uniqueId)  
-
-
-
-
-#TODO - create route to deal with file cleanup, could be initiated by the frontend
-
-
+# # # TEST ROUTES HERE # # # 
+@app.post("/master_test")
+async def master_test():
+    create_test_file.delay()  # Enqueue the Celery task
+    return {"message": "Test task queued"}

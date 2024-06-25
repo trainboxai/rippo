@@ -57,6 +57,13 @@ def clean_json(json_string):
     #print(response.text)
     return response.text
 
+
+def load_json(json_string):
+    dependencies = json.loads(json_string)
+
+    print(type(dependencies))
+    return dependencies
+
 def get_dependancy_list(markdown_file_content):
     generation_config = {
     "temperature": 0.5,
@@ -99,7 +106,8 @@ def get_dependancy_list(markdown_file_content):
     response = chat_session.send_message(markdown_file_content)
 
     #print(response.text)
-    cleanJSON = clean_json(response.text)
+    cleanJSON = load_json(response.text)
+    print(cleanJSON)
     return cleanJSON 
 
    
@@ -109,7 +117,7 @@ def get_dependancy_list(markdown_file_content):
 """
 script_dir = os.path.dirname(os.path.abspath(__file__))
 output_dir = os.path.join(script_dir, '..', 'outputs')
-md_file_path = Path(os.path.join(output_dir, "final.md"))
+md_file_path = Path(os.path.join(output_dir, "final_xaDc_9.md"))
 md_content = md_file_path.read_text()
 #print(md_content)
 

@@ -1,0 +1,207 @@
+<!-- Bug Analysis (data from code_audit.json) -->
+<div class="border-t-2">
+    <div class="mt-8 px-4 sm:px-0">
+      <h3 class="text-xl font-semibold leading-7 text-gray-900">
+        Bug Analysis
+      </h3>
+      <p class="mt-1 max-w-2xl text-sm leading-6 text-gray-500">
+        Potential bugs and issues found in code.
+      </p>
+    </div>
+    <div class="mt-6 border-t border-gray-100">
+      <dl class="divide-y divide-gray-100">
+        <!-- High -->
+        <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+          <dt class="text-sm font-medium leading-6 text-gray-900">
+            High
+          </dt>
+          <dd
+            class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0"
+          >
+            {% if code_audit.get('High') %}
+              <ul>
+                {% for item in code_audit.get('High') %}
+                  <li>
+                    <p>{{ item.finding }}</p>
+                    <p class="mt-2">
+                      <strong>Impact:</strong> {{ item.impact }}
+                    </p>
+                    <div class="mt-1">
+                      <strong>Related files:</strong>
+                      <ul class="mb-8 list-disc list-inside">
+                        {% for file in item.files %}
+                         <li class="italic">{{ file }}</li>
+                        {% endfor %}
+                      </ul>
+                    </div>
+                  </li>
+                {% endfor %}
+              </ul>
+            {% else %}
+              No "high" profile bugs / alerts found.
+            {% endif %}
+          </dd>
+        </div>
+        <!-- Medium -->
+        <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+          <dt class="text-sm font-medium leading-6 text-gray-900">
+            Medium
+          </dt>
+          <dd
+            class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0"
+          >
+            {% if code_audit.get('Medium') %}
+              <ul>
+                {% for item in code_audit.get('Medium') %}
+                  <li>
+                    <p>{{ item.finding }}</p>
+                    <p class="mt-2">
+                      <strong>Impact:</strong> {{ item.impact }}
+                    </p>
+                    <div class="mt-1">
+                      <strong>Related files:</strong>
+                      <ul class="mb-8 list-disc list-inside">
+                        {% for file in item.files %}
+                         <li class="italic">{{ file }}</li>
+                        {% endfor %}
+                      </ul>
+                    </div>
+                  </li>
+                {% endfor %}
+              </ul>
+            {% else %}
+              No "Medium" profile bugs / alerts found.
+            {% endif %}
+          </dd>
+        </div>
+        <!-- Low -->
+        <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+          <dt class="text-sm font-medium leading-6 text-gray-900">
+            Low
+          </dt>
+          <dd
+            class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0"
+          >
+            {% if code_audit.get('Low') %}
+              <ul>
+                {% for item in code_audit.get('Low') %}
+                  <li>
+                    <p>{{ item.finding }}</p>
+                    <p class="mt-2">
+                      <strong>Impact:</strong> {{ item.impact }}
+                    </p>
+                    <div class="mt-1">
+                      <strong>Related files:</strong>
+                      <ul class="mb-8 list-disc list-inside">
+                        {% for file in item.files %}
+                         <li class="italic">{{ file }}</li>
+                        {% endfor %}
+                      </ul>
+                    </div>
+                  </li>
+                {% endfor %}
+              </ul>
+            {% else %}
+              No "Low" profile bugs / alerts found.
+            {% endif %}
+          </dd>
+        </div>
+      </dl>
+    </div>
+  </div>
+
+<!-- Vulnerabilities (data from vuln_report.json)  -->
+<div class="border-t-2">
+  <div class="mt-12 px-4 sm:px-0">
+    <h3 class="text-xl font-semibold leading-7 text-gray-900">
+      Vulnerabilities
+    </h3>
+    <p class="mt-1 max-w-2xl text-sm leading-6 text-gray-500">
+      Based on the dependancies used in your code, below are the known vulnerabilities.
+    </p>
+  </div>
+  <div class="mt-6 border-t border-gray-100">
+    <dl class="divide-y divide-gray-100">
+      <!-- Items -->
+      <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+        <dt class="text-sm font-medium leading-6 text-gray-900">
+          Items
+        </dt>
+        <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">
+          {% if vuln_report.get('vulnerability_report') %}
+            <ul>
+              {% for item in vuln_report.get('vulnerability_report') %}
+                <li>
+                  <p>{{ item.description }}</p>
+                  <p class="mt-1 mb-8 ">
+                    <strong>Source:</strong> <a href="{{ item.source }}" class=" cursor-pointer text-indigo-600 font-light ml-2">{{ item.source }}</a>
+                  </p>
+                </li>
+              {% endfor %}
+            </ul>
+          {% else %}
+            No "High" profile vulnerabilities found.
+          {% endif %}
+        </dd>
+      </div>
+
+    </dl>
+  </div>
+</div>
+  <!-- Code Quality (data from quality_report.json)   -->
+  <div class="border-t-2">
+    <div class="mt-12 px-4 sm:px-0">
+      <h3 class="text-xl font-semibold leading-7 text-gray-900">
+        Code Quality
+      </h3>
+      <p class="mt-1 max-w-2xl text-sm leading-6 text-gray-500">
+        Overall quality of code.
+      </p>
+    </div>
+    <div class="mt-6 border-t border-gray-100">
+      <dl class="divide-y divide-gray-100">
+        <!-- readability -->
+        <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+          <dt class="text-sm font-medium leading-6 text-gray-900">
+            Readability
+          </dt>
+          <dd
+            class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0"
+          >
+            <p><strong>Score:</strong> {{ quality_report.readability.score }}</p>
+            <p class="mt-2">
+              {{ quality_report.readability.summary }}
+            </p>
+          </dd>
+        </div>
+        <!-- efficiency -->
+        <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+          <dt class="text-sm font-medium leading-6 text-gray-900">
+            Efficiency
+          </dt>
+          <dd
+            class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0"
+          >
+            <p><strong>Score:</strong> {{ quality_report.efficiency.score }}</p>
+            <p class="mt-2">
+              {{ quality_report.efficiency.summary }}
+            </p>
+          </dd>
+        </div>
+        <!-- documentation -->
+        <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+          <dt class="text-sm font-medium leading-6 text-gray-900">
+            Documentation
+          </dt>
+          <dd
+            class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0"
+          >
+            <p><strong>Score:</strong> {{ quality_report.documentation.score }}</p>
+            <p class="mt-2">
+              {{ quality_report.documentation.summary }}
+            </p>
+          </dd>
+        </div>
+      </dl>
+    </div>
+  </div>

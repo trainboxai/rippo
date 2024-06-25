@@ -1,25 +1,26 @@
 import os
 import tempfile
-from git import Repo
+from git import Repo, Git
+from event_logger import write_event_log
 
 
 # # # # # F U N C T I O N S # # # # #
-def extract_and_write_to_markdown(repo_url,unique_id=0):
+def extract_and_write_to_markdown(repo_url,oauth_token ,unique_id=0 ):
     script_dir = os.path.dirname(os.path.abspath(__file__))
     output_dir = os.path.join(script_dir, '..', 'outputs')
     os.makedirs(output_dir, exist_ok=True)
     with tempfile.TemporaryDirectory() as temp_dir:
-        Repo.clone_from(repo_url, temp_dir)
+        auth_repo_url = repo_url.replace('https://', f'https://{oauth_token}@')
+        Repo.clone_from(auth_repo_url, temp_dir)
         with open(os.path.join(output_dir, f"final_{unique_id}.md"), "w") as md_file:
             for root, _, files in os.walk(temp_dir):
                 for file in files:
                     file_path = os.path.join(root, file)
-                    if file_path.endswith("package-lock.json") or file_path.endswith("yarn.lock") or "README.md" in file_path or  ".git" in file_path or "fonts" in file_path or os.path.basename(os.path.dirname(file_path)) == "fonts":
+                    if file_path.endswith("package-lock.json") or file_path.endswith("yarn.lock") or "README.md" in file_path or ".git" in file_path or "fonts" in file_path or os.path.basename(os.path.dirname(file_path)) == "fonts":
                         continue
                     _, ext = os.path.splitext(file_path)
-                    if ext.lower() in ['.jpg', '.jpeg','.ico',  '.png', '.gif', '.svg', '.bmp', '.ttf', '.otf', '.woff', '.woff2']:
+                    if ext.lower() in ['.jpg', '.jpeg', '.ico', '.png', '.gif', '.svg', '.bmp', '.ttf', '.otf', '.woff', '.woff2']:
                         continue
-                    #print("file found, processing . . :", file_path)
                     try:
                         with open(file_path, "r") as f:
                             file_content = f.read()
@@ -27,17 +28,20 @@ def extract_and_write_to_markdown(repo_url,unique_id=0):
                         md_file.write("```\n")
                         md_file.write(file_content)
                         md_file.write("\n```\n\n")
+
                     except UnicodeDecodeError:
                         print(f"Skipping file: {file_path} (not a valid UTF-8 text file)")
 
-
-
+        log_path = os.path.join(output_dir, "RUN_LOG.log")
+        write_event_log(event_id=103, source='flattener.py/extract_and_write_to_markdown', details=f'Markdown file created final_{unique_id}.md.', level='INFO', log_path=log_path )
 
 
 
 # # #  MAIN # # # 
-#repo_url = "git@github.com-trainbox:trainboxai/trainbox-company-site.git"
-
-
+"""
+valid_repo_url = "https://github.com/Digimonger/botmaster_v2.git"
+oauth_token = "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"
+uniqueId = "TLWO1x"
 #usage
-#extract_and_write_to_markdown(repo_url)
+extract_and_write_to_markdown(valid_repo_url,oauth_token, uniqueId )
+"""

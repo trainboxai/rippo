@@ -1,0 +1,9 @@
+100 - Test
+101 - Initialization
+102 - master route initialisation
+103 - flattener
+104 - analyser
+105 - searcher
+106 - reporter - code audit
+107 - reporter - vuln report
+107 - reporter - code quality report
