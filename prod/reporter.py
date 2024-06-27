@@ -58,10 +58,12 @@ def code_audit_report(md_file, unique_id=0):
 
     script_dir = os.path.dirname(os.path.abspath(__file__))
     reports_dir = os.path.join(script_dir, '..', 'reports')
+    cleaned_text = re.sub(r'```json', '', response.text)
+    cleaned_text = cleaned_text.replace('`', '')
 
     with open(os.path.join(reports_dir,f'code_audit_{unique_id}.json'), 'w') as file:
-        file.write(response.text)
-    print(response.text)
+        file.write(cleaned_text)
+    #print(cleaned_text)
     return response.text
 
 

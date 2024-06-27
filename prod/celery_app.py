@@ -55,6 +55,7 @@ def generate_report(repo_url, repo_name, report_id, user_id, oauth_token):
     print(Fore.GREEN + "Analyse and extract list of dependancies . . . ." + Style.RESET_ALL)
     #get deps
     deps_list = get_dependancy_list(markdown_file)
+    print(deps_list)
     write_event_log(event_id=104, source='analyser.py/get_dependancy_list', details='Analysed and extracted list of dependancies', level='INFO', log_path=log_path )
  
 
@@ -129,7 +130,15 @@ def generate_report(repo_url, repo_name, report_id, user_id, oauth_token):
      
 
     # 8. Cleanup local files
-    # clean_up_files(code_audit_path, vuln_report_path, quality_report_path)
+    final_md_path = f"/home/trainboxai/backend/rippo/outputs/final_{uniqueId}.md"
+    vuln_search_path = f"/home/trainboxai/backend/rippo/outputs/vuln_search_results_{uniqueId}.json"
+    refactor_html_path = f"/home/trainboxai/backend/rippo/reports/refactor_{uniqueId}.html"
+    report_html_path = f"/home/trainboxai/backend/rippo/reports/report_{uniqueId}.html"
+    refactor_md_path = f"/home/trainboxai/backend/rippo/reports/refactor_guide_{uniqueId}.md"
+    html_path = f"/home/trainboxai/backend/rippo/reports/{uniqueId}.html"
+
+    clean_up_files(code_audit_path, vuln_report_path, quality_report_path, final_md_path,vuln_search_path,refactor_html_path, report_html_path, refactor_md_path, html_path)
+  
 
 
 @celery_app.task

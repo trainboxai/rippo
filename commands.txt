@@ -6,15 +6,28 @@ uvicorn main:app --host 0.0.0.0 --port 2891
 authbind uvicorn main:app --host 0.0.0.0 --port 443 --ssl-keyfile /home/trainboxai/backend/rippo/certs/privkey.pem --ssl-certfile /home/trainboxai/backend/rippo/certs/fullchain.pem
 
 
+# WITH nohup certs
+nohup authbind uvicorn main:app --host 0.0.0.0 --port 443 --ssl-keyfile /home/trainboxai/backend/rippo/certs/privkey.pem --ssl-certfile /home/trainboxai/backend/rippo/certs/fullchain.pem &
+
+
 uvicorn main:app --host 0.0.0.0 --port 443 --ssl-keyfile /home/trainboxai/backend/rippo/certs/privkey.pem --ssl-certfile /home/trainboxai/backend/rippo/certs/fullchain.pem
 
 uvicorn main:app --host 0.0.0.0 --ssl-keyfile /home/trainboxai/backend/rippo/certs/privkey.pem --ssl-certfile /home/trainboxai/backend/rippo/certs/fullchain.pem
 
 CELERY:
-celery -A celery_app worker --loglevel=info
+celery -A celery_app worker --loglevel=debug --logfile=celery.log &
+celery -A celery_app status
 
-REDIS
+ps aux | grep 'celery -A celery_app worker'
+kill <PIDs>
 
+tail -f celery.log 
+
+WITH SCRIPT
+./manage_celery.sh start
+./manage_celery.sh stop
+./manage_celery.sh restart
+./manage_celery.sh status
 
 
 

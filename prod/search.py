@@ -4,6 +4,9 @@ import requests
 import json
 import time
 import random
+import csv
+import os
+import io
 from scrapper import get_elements_containing_text
 from colorama import Fore, Style
 
@@ -11,19 +14,25 @@ from colorama import Fore, Style
 
 load_dotenv()
 
-def search_vulnerabilities(dependencies,unique_id=0):
+def preprocess_csv_data(data):
+    return data.replace("{", "").replace("}", "").strip()
+
+def search_vulnerabilities(csv_data, unique_id=0):
     # setup
     search_api_key = os.getenv('CUSTOM_SEARCH_API_KEY')
     search_engine_id = "f2954b6edb52b40c7"
     print(Fore.GREEN + "Starting searching for known Vulnerabilities . . . . ." + Style.RESET_ALL)
 
     results = []
-    for dep in dependencies["dependencies"]:
-        name = dep.get("name", "")
-        version = dep.get("version", "")
+
+    csv_data = preprocess_csv_data(csv_data)
+    csv_reader = csv.DictReader(io.StringIO(csv_data))
+    for row in csv_reader:
+        name = row.get("dependancy", "")
+        version = row.get("version", "")
         search_query = f"{name} {version}"
         url = f"https://www.googleapis.com/customsearch/v1?key={search_api_key}&cx={search_engine_id}&q={search_query}&num=10&start=1&fields=items(link,snippet,htmlFormattedUrl)" 
-        
+
         retries = 0
         max_retries = 5
         while retries < max_retries:
@@ -75,11 +84,21 @@ def search_vulnerabilities(dependencies,unique_id=0):
 """ #/
 # Example usage
 """ # /
-#dependencies = """{"dependencies": [{"name": "@leafac/rehype-shiki", "version": "^2.2.1"}, {"name": "@mdx-js/loader", "version": "^3.0.0"}, {"name": "@mdx-js/react", "version": "^3.0.0"}, {"name": "@next/mdx", "version": "^14.0.4"}, {"name": "@types/mdx", "version": "^2.0.7"}, {"name": "framer-motion", "version": "^10.15.2"}, {"name": "next", "version": "^14.0.4"}, {"name": "react", "version": "^18.2.0"}, {"name": "react-dom", "version": "^18.2.0"}, {"name": "recma-import-images", "version": "0.0.3"}, {"name": "remark-gfm", "version": "^4.0.0"}, {"name": "remark-rehype-wrap", "version": "0.0.3"}, {"name": "remark-unwrap-images", "version": "^4.0.0"}, {"name": "shiki", "version": "^0.11.1"}, {"name": "tailwindcss", "version": "^3.4.1"}, {"name": "typescript", "version": "^5.3.3"}]}
+#dependencies = """
+"dependancy","version"
+"autoprefixer","^10.4.17",
+"@headlessui/vue","^1.7.19",
+"@heroicons/vue","^2.1.3",
+"@tailwindcss/forms","^0.5.7",
+"axios","^1.6.8",
+"nuxt","^3.9.3",
+"postcss","^8.4.33",
+"tailwindcss","^3.4.1",
+"tailwindcss-text-fill-stroke","^1.1.2",
+"vue","^3.4.14",
+"vue-router","^4.2.5"
+
 """
-
-
-dependencies = json.loads(dependencies)
 vulnerability_results = search_vulnerabilities(dependencies)
 print(vulnerability_results)
 

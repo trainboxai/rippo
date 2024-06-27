@@ -1,0 +1,1187 @@
+[2024-06-25 15:43:19,313: DEBUG/MainProcess] | Worker: Preparing bootsteps.
+[2024-06-25 15:43:19,315: DEBUG/MainProcess] | Worker: Building graph...
+[2024-06-25 15:43:19,315: DEBUG/MainProcess] | Worker: New boot order: {Beat, StateDB, Timer, Hub, Pool, Autoscaler, Consumer}
+[2024-06-25 15:43:19,319: DEBUG/MainProcess] | Consumer: Preparing bootsteps.
+[2024-06-25 15:43:19,320: DEBUG/MainProcess] | Consumer: Building graph...
+[2024-06-25 15:43:19,328: DEBUG/MainProcess] | Consumer: New boot order: {Connection, Events, Heart, Agent, Mingle, Gossip, Tasks, Control, event loop}
+[2024-06-25 15:43:19,337: DEBUG/MainProcess] | Worker: Starting Hub
+[2024-06-25 15:43:19,337: DEBUG/MainProcess] ^-- substep ok
+[2024-06-25 15:43:19,337: DEBUG/MainProcess] | Worker: Starting Pool
+[2024-06-25 15:43:19,695: DEBUG/MainProcess] ^-- substep ok
+[2024-06-25 15:43:19,696: DEBUG/MainProcess] | Worker: Starting Consumer
+[2024-06-25 15:43:19,696: DEBUG/MainProcess] | Consumer: Starting Connection
+[2024-06-25 15:43:19,699: WARNING/MainProcess] /home/trainboxai/backend/rippo/venv/lib/python3.10/site-packages/celery/worker/consumer/consumer.py:508: CPendingDeprecationWarning: The broker_connection_retry configuration setting will no longer determine
+whether broker connection retries are made during startup in Celery 6.0 and above.
+If you wish to retain the existing behavior for retrying connections on startup,
+you should set broker_connection_retry_on_startup to True.
+  warnings.warn(
+
+[2024-06-25 15:43:19,706: INFO/MainProcess] Connected to redis://localhost:6379/0
+[2024-06-25 15:43:19,706: DEBUG/MainProcess] ^-- substep ok
+[2024-06-25 15:43:19,706: DEBUG/MainProcess] | Consumer: Starting Events
+[2024-06-25 15:43:19,706: WARNING/MainProcess] /home/trainboxai/backend/rippo/venv/lib/python3.10/site-packages/celery/worker/consumer/consumer.py:508: CPendingDeprecationWarning: The broker_connection_retry configuration setting will no longer determine
+whether broker connection retries are made during startup in Celery 6.0 and above.
+If you wish to retain the existing behavior for retrying connections on startup,
+you should set broker_connection_retry_on_startup to True.
+  warnings.warn(
+
+[2024-06-25 15:43:19,708: DEBUG/MainProcess] ^-- substep ok
+[2024-06-25 15:43:19,709: DEBUG/MainProcess] | Consumer: Starting Heart
+[2024-06-25 15:43:19,711: DEBUG/MainProcess] ^-- substep ok
+[2024-06-25 15:43:19,711: DEBUG/MainProcess] | Consumer: Starting Mingle
+[2024-06-25 15:43:19,711: INFO/MainProcess] mingle: searching for neighbors
+[2024-06-25 15:43:20,720: INFO/MainProcess] mingle: all alone
+[2024-06-25 15:43:20,721: DEBUG/MainProcess] ^-- substep ok
+[2024-06-25 15:43:20,721: DEBUG/MainProcess] | Consumer: Starting Gossip
+[2024-06-25 15:43:20,725: DEBUG/MainProcess] ^-- substep ok
+[2024-06-25 15:43:20,725: DEBUG/MainProcess] | Consumer: Starting Tasks
+[2024-06-25 15:43:20,729: DEBUG/MainProcess] ^-- substep ok
+[2024-06-25 15:43:20,729: DEBUG/MainProcess] | Consumer: Starting Control
+[2024-06-25 15:43:20,732: DEBUG/MainProcess] ^-- substep ok
+[2024-06-25 15:43:20,732: DEBUG/MainProcess] | Consumer: Starting event loop
+[2024-06-25 15:43:20,732: DEBUG/MainProcess] | Worker: Hub.register Pool...
+[2024-06-25 15:43:20,733: INFO/MainProcess] celery@rippo-backend-vm ready.
+[2024-06-25 15:43:20,733: DEBUG/MainProcess] basic.qos: prefetch_count->16
+[2024-06-25 15:45:12,470: DEBUG/MainProcess] | Worker: Closing Hub...
+[2024-06-25 15:45:12,471: DEBUG/MainProcess] | Worker: Closing Pool...
+[2024-06-25 15:45:12,471: DEBUG/MainProcess] | Worker: Closing Consumer...
+[2024-06-25 15:45:12,471: DEBUG/MainProcess] | Worker: Stopping Consumer...
+[2024-06-25 15:45:12,471: DEBUG/MainProcess] | Consumer: Closing Connection...
+[2024-06-25 15:45:12,471: DEBUG/MainProcess] | Consumer: Closing Events...
+[2024-06-25 15:45:12,471: DEBUG/MainProcess] | Consumer: Closing Heart...
+[2024-06-25 15:45:12,471: DEBUG/MainProcess] | Consumer: Closing Mingle...
+[2024-06-25 15:45:12,472: DEBUG/MainProcess] | Consumer: Closing Gossip...
+[2024-06-25 15:45:12,472: DEBUG/MainProcess] | Consumer: Closing Tasks...
+[2024-06-25 15:45:12,472: DEBUG/MainProcess] | Consumer: Closing Control...
+[2024-06-25 15:45:12,472: DEBUG/MainProcess] | Consumer: Closing event loop...
+[2024-06-25 15:45:12,472: DEBUG/MainProcess] | Consumer: Stopping event loop...
+[2024-06-25 15:45:12,472: DEBUG/MainProcess] | Consumer: Stopping Control...
+[2024-06-25 15:45:12,475: DEBUG/MainProcess] | Consumer: Stopping Tasks...
+[2024-06-25 15:45:12,475: DEBUG/MainProcess] Canceling task consumer...
+[2024-06-25 15:45:12,475: DEBUG/MainProcess] | Consumer: Stopping Gossip...
+[2024-06-25 15:45:12,478: DEBUG/MainProcess] | Consumer: Stopping Mingle...
+[2024-06-25 15:45:12,478: DEBUG/MainProcess] | Consumer: Stopping Heart...
+[2024-06-25 15:45:12,479: DEBUG/MainProcess] | Consumer: Stopping Events...
+[2024-06-25 15:45:12,479: DEBUG/MainProcess] | Consumer: Stopping Connection...
+[2024-06-25 15:45:12,479: DEBUG/MainProcess] | Worker: Stopping Pool...
+[2024-06-25 15:45:13,479: DEBUG/MainProcess] | Worker: Stopping Hub...
+[2024-06-25 15:45:13,480: DEBUG/MainProcess] | Consumer: Shutdown Control...
+[2024-06-25 15:45:13,480: DEBUG/MainProcess] | Consumer: Shutdown Tasks...
+[2024-06-25 15:45:13,480: DEBUG/MainProcess] Canceling task consumer...
+[2024-06-25 15:45:13,480: DEBUG/MainProcess] Closing consumer channel...
+[2024-06-25 15:45:13,480: DEBUG/MainProcess] | Consumer: Shutdown Gossip...
+[2024-06-25 15:45:13,480: DEBUG/MainProcess] | Consumer: Shutdown Heart...
+[2024-06-25 15:45:13,480: DEBUG/MainProcess] | Consumer: Shutdown Events...
+[2024-06-25 15:45:13,481: DEBUG/MainProcess] | Consumer: Shutdown Connection...
+[2024-06-25 15:45:13,482: DEBUG/MainProcess] removing tasks from inqueue until task handler finished
+[2024-06-25 15:47:50,668: DEBUG/MainProcess] | Worker: Preparing bootsteps.
+[2024-06-25 15:47:50,669: DEBUG/MainProcess] | Worker: Building graph...
+[2024-06-25 15:47:50,670: DEBUG/MainProcess] | Worker: New boot order: {Beat, StateDB, Timer, Hub, Pool, Autoscaler, Consumer}
+[2024-06-25 15:47:50,674: DEBUG/MainProcess] | Consumer: Preparing bootsteps.
+[2024-06-25 15:47:50,675: DEBUG/MainProcess] | Consumer: Building graph...
+[2024-06-25 15:47:50,684: DEBUG/MainProcess] | Consumer: New boot order: {Connection, Events, Mingle, Gossip, Tasks, Control, Heart, Agent, event loop}
+[2024-06-25 15:47:50,696: DEBUG/MainProcess] | Worker: Starting Hub
+[2024-06-25 15:47:50,697: DEBUG/MainProcess] ^-- substep ok
+[2024-06-25 15:47:50,697: DEBUG/MainProcess] | Worker: Starting Pool
+[2024-06-25 15:47:51,069: DEBUG/MainProcess] ^-- substep ok
+[2024-06-25 15:47:51,070: DEBUG/MainProcess] | Worker: Starting Consumer
+[2024-06-25 15:47:51,070: DEBUG/MainProcess] | Consumer: Starting Connection
+[2024-06-25 15:47:51,073: WARNING/MainProcess] /home/trainboxai/backend/rippo/venv/lib/python3.10/site-packages/celery/worker/consumer/consumer.py:508: CPendingDeprecationWarning: The broker_connection_retry configuration setting will no longer determine
+whether broker connection retries are made during startup in Celery 6.0 and above.
+If you wish to retain the existing behavior for retrying connections on startup,
+you should set broker_connection_retry_on_startup to True.
+  warnings.warn(
+
+[2024-06-25 15:47:51,081: INFO/MainProcess] Connected to redis://localhost:6379/0
+[2024-06-25 15:47:51,081: DEBUG/MainProcess] ^-- substep ok
+[2024-06-25 15:47:51,081: DEBUG/MainProcess] | Consumer: Starting Events
+[2024-06-25 15:47:51,082: WARNING/MainProcess] /home/trainboxai/backend/rippo/venv/lib/python3.10/site-packages/celery/worker/consumer/consumer.py:508: CPendingDeprecationWarning: The broker_connection_retry configuration setting will no longer determine
+whether broker connection retries are made during startup in Celery 6.0 and above.
+If you wish to retain the existing behavior for retrying connections on startup,
+you should set broker_connection_retry_on_startup to True.
+  warnings.warn(
+
+[2024-06-25 15:47:51,084: DEBUG/MainProcess] ^-- substep ok
+[2024-06-25 15:47:51,084: DEBUG/MainProcess] | Consumer: Starting Mingle
+[2024-06-25 15:47:51,084: INFO/MainProcess] mingle: searching for neighbors
+[2024-06-25 15:47:52,095: INFO/MainProcess] mingle: all alone
+[2024-06-25 15:47:52,096: DEBUG/MainProcess] ^-- substep ok
+[2024-06-25 15:47:52,096: DEBUG/MainProcess] | Consumer: Starting Gossip
+[2024-06-25 15:47:52,100: DEBUG/MainProcess] ^-- substep ok
+[2024-06-25 15:47:52,100: DEBUG/MainProcess] | Consumer: Starting Tasks
+[2024-06-25 15:47:52,104: DEBUG/MainProcess] ^-- substep ok
+[2024-06-25 15:47:52,104: DEBUG/MainProcess] | Consumer: Starting Control
+[2024-06-25 15:47:52,108: DEBUG/MainProcess] ^-- substep ok
+[2024-06-25 15:47:52,108: DEBUG/MainProcess] | Consumer: Starting Heart
+[2024-06-25 15:47:52,110: DEBUG/MainProcess] ^-- substep ok
+[2024-06-25 15:47:52,110: DEBUG/MainProcess] | Consumer: Starting event loop
+[2024-06-25 15:47:52,110: DEBUG/MainProcess] | Worker: Hub.register Pool...
+[2024-06-25 15:47:52,111: INFO/MainProcess] celery@rippo-backend-vm ready.
+[2024-06-25 15:47:52,111: DEBUG/MainProcess] basic.qos: prefetch_count->16
+[2024-06-25 15:48:05,236: DEBUG/MainProcess] | Worker: Closing Hub...
+[2024-06-25 15:48:05,236: DEBUG/MainProcess] | Worker: Closing Pool...
+[2024-06-25 15:48:05,236: DEBUG/MainProcess] | Worker: Closing Consumer...
+[2024-06-25 15:48:05,236: DEBUG/MainProcess] | Worker: Stopping Consumer...
+[2024-06-25 15:48:05,237: DEBUG/MainProcess] | Consumer: Closing Connection...
+[2024-06-25 15:48:05,237: DEBUG/MainProcess] | Consumer: Closing Events...
+[2024-06-25 15:48:05,237: DEBUG/MainProcess] | Consumer: Closing Mingle...
+[2024-06-25 15:48:05,237: DEBUG/MainProcess] | Consumer: Closing Gossip...
+[2024-06-25 15:48:05,237: DEBUG/MainProcess] | Consumer: Closing Tasks...
+[2024-06-25 15:48:05,237: DEBUG/MainProcess] | Consumer: Closing Control...
+[2024-06-25 15:48:05,237: DEBUG/MainProcess] | Consumer: Closing Heart...
+[2024-06-25 15:48:05,237: DEBUG/MainProcess] | Consumer: Closing event loop...
+[2024-06-25 15:48:05,237: DEBUG/MainProcess] | Consumer: Stopping event loop...
+[2024-06-25 15:48:05,237: DEBUG/MainProcess] | Consumer: Stopping Heart...
+[2024-06-25 15:48:05,238: DEBUG/MainProcess] | Consumer: Stopping Control...
+[2024-06-25 15:48:05,240: DEBUG/MainProcess] | Consumer: Stopping Tasks...
+[2024-06-25 15:48:05,240: DEBUG/MainProcess] Canceling task consumer...
+[2024-06-25 15:48:05,240: DEBUG/MainProcess] | Consumer: Stopping Gossip...
+[2024-06-25 15:48:05,241: DEBUG/MainProcess] | Consumer: Stopping Mingle...
+[2024-06-25 15:48:05,241: DEBUG/MainProcess] | Consumer: Stopping Events...
+[2024-06-25 15:48:05,241: DEBUG/MainProcess] | Consumer: Stopping Connection...
+[2024-06-25 15:48:05,241: DEBUG/MainProcess] | Worker: Stopping Pool...
+[2024-06-25 15:48:06,253: DEBUG/MainProcess] | Worker: Stopping Hub...
+[2024-06-25 15:48:06,254: DEBUG/MainProcess] | Consumer: Shutdown Heart...
+[2024-06-25 15:48:06,254: DEBUG/MainProcess] | Consumer: Shutdown Control...
+[2024-06-25 15:48:06,254: DEBUG/MainProcess] | Consumer: Shutdown Tasks...
+[2024-06-25 15:48:06,254: DEBUG/MainProcess] Canceling task consumer...
+[2024-06-25 15:48:06,254: DEBUG/MainProcess] Closing consumer channel...
+[2024-06-25 15:48:06,254: DEBUG/MainProcess] | Consumer: Shutdown Gossip...
+[2024-06-25 15:48:06,255: DEBUG/MainProcess] | Consumer: Shutdown Events...
+[2024-06-25 15:48:06,255: DEBUG/MainProcess] | Consumer: Shutdown Connection...
+[2024-06-25 15:48:06,256: DEBUG/MainProcess] removing tasks from inqueue until task handler finished
+[2024-06-25 15:48:43,478: DEBUG/MainProcess] | Worker: Preparing bootsteps.
+[2024-06-25 15:48:43,479: DEBUG/MainProcess] | Worker: Building graph...
+[2024-06-25 15:48:43,480: DEBUG/MainProcess] | Worker: New boot order: {StateDB, Timer, Hub, Pool, Autoscaler, Beat, Consumer}
+[2024-06-25 15:48:43,485: DEBUG/MainProcess] | Consumer: Preparing bootsteps.
+[2024-06-25 15:48:43,485: DEBUG/MainProcess] | Consumer: Building graph...
+[2024-06-25 15:48:43,494: DEBUG/MainProcess] | Consumer: New boot order: {Connection, Events, Mingle, Gossip, Tasks, Control, Agent, Heart, event loop}
+[2024-06-25 15:48:43,507: DEBUG/MainProcess] | Worker: Starting Hub
+[2024-06-25 15:48:43,507: DEBUG/MainProcess] ^-- substep ok
+[2024-06-25 15:48:43,507: DEBUG/MainProcess] | Worker: Starting Pool
+[2024-06-25 15:48:43,872: DEBUG/MainProcess] ^-- substep ok
+[2024-06-25 15:48:43,873: DEBUG/MainProcess] | Worker: Starting Consumer
+[2024-06-25 15:48:43,874: DEBUG/MainProcess] | Consumer: Starting Connection
+[2024-06-25 15:48:43,876: WARNING/MainProcess] /home/trainboxai/backend/rippo/venv/lib/python3.10/site-packages/celery/worker/consumer/consumer.py:508: CPendingDeprecationWarning: The broker_connection_retry configuration setting will no longer determine
+whether broker connection retries are made during startup in Celery 6.0 and above.
+If you wish to retain the existing behavior for retrying connections on startup,
+you should set broker_connection_retry_on_startup to True.
+  warnings.warn(
+
+[2024-06-25 15:48:43,884: INFO/MainProcess] Connected to redis://localhost:6379/0
+[2024-06-25 15:48:43,884: DEBUG/MainProcess] ^-- substep ok
+[2024-06-25 15:48:43,884: DEBUG/MainProcess] | Consumer: Starting Events
+[2024-06-25 15:48:43,885: WARNING/MainProcess] /home/trainboxai/backend/rippo/venv/lib/python3.10/site-packages/celery/worker/consumer/consumer.py:508: CPendingDeprecationWarning: The broker_connection_retry configuration setting will no longer determine
+whether broker connection retries are made during startup in Celery 6.0 and above.
+If you wish to retain the existing behavior for retrying connections on startup,
+you should set broker_connection_retry_on_startup to True.
+  warnings.warn(
+
+[2024-06-25 15:48:43,887: DEBUG/MainProcess] ^-- substep ok
+[2024-06-25 15:48:43,887: DEBUG/MainProcess] | Consumer: Starting Mingle
+[2024-06-25 15:48:43,887: INFO/MainProcess] mingle: searching for neighbors
+[2024-06-25 15:48:44,898: INFO/MainProcess] mingle: all alone
+[2024-06-25 15:48:44,898: DEBUG/MainProcess] ^-- substep ok
+[2024-06-25 15:48:44,898: DEBUG/MainProcess] | Consumer: Starting Gossip
+[2024-06-25 15:48:44,902: DEBUG/MainProcess] ^-- substep ok
+[2024-06-25 15:48:44,902: DEBUG/MainProcess] | Consumer: Starting Tasks
+[2024-06-25 15:48:44,906: DEBUG/MainProcess] ^-- substep ok
+[2024-06-25 15:48:44,906: DEBUG/MainProcess] | Consumer: Starting Control
+[2024-06-25 15:48:44,910: DEBUG/MainProcess] ^-- substep ok
+[2024-06-25 15:48:44,910: DEBUG/MainProcess] | Consumer: Starting Heart
+[2024-06-25 15:48:44,911: DEBUG/MainProcess] ^-- substep ok
+[2024-06-25 15:48:44,911: DEBUG/MainProcess] | Consumer: Starting event loop
+[2024-06-25 15:48:44,912: DEBUG/MainProcess] | Worker: Hub.register Pool...
+[2024-06-25 15:48:44,912: INFO/MainProcess] celery@rippo-backend-vm ready.
+[2024-06-25 15:48:44,913: DEBUG/MainProcess] basic.qos: prefetch_count->16
+[2024-06-25 15:48:54,102: INFO/MainProcess] Task celery_app.generate_report[71eae792-e0a9-4798-9996-634f866e4678] received
+[2024-06-25 15:48:54,103: DEBUG/MainProcess] TaskPool: Apply <function fast_trace_task at 0x7874282bb010> (args:('celery_app.generate_report', '71eae792-e0a9-4798-9996-634f866e4678', {'lang': 'py', 'task': 'celery_app.generate_report', 'id': '71eae792-e0a9-4798-9996-634f866e4678', 'shadow': None, 'eta': None, 'expires': None, 'group': None, 'group_index': None, 'retries': 0, 'timelimit': [None, None], 'root_id': '71eae792-e0a9-4798-9996-634f866e4678', 'parent_id': None, 'argsrepr': "('https://github.com/jerrydav1s/shonglish.git', 'jerrydav1s:shonglish', '4aVEeL', 'qKtISirBQbftY20mLxK0hWXsD053', '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')", 'kwargsrepr': '{}', 'origin': 'gen316480@rippo-backend-vm', 'ignore_result': False, 'replaced_task_nesting': 0, 'stamped_headers': None, 'stamps': {}, 'properties': {'correlation_id': '71eae792-e0a9-4798-9996-634f866e4678', 'reply_to': '5ea6658b-e6ea-343e-8972-99eff61a4961', 'delivery_mode': 2, 'delivery_info': {'exchange': '', 'routing_key': 'celery'}, 'priority': 0, 'body_encoding': 'base64', 'delivery_tag': '83720f5c-df94-46b1-a7ac-d2aee25f8d11'}, 'reply_to':... kwargs:{})
+[2024-06-25 15:48:54,105: WARNING/ForkPoolWorker-3] [32mGet flattened file and extract contents . . .[0m
+[2024-06-25 15:48:54,105: WARNING/ForkPoolWorker-3] [35mGathering search results . . .[0m
+[2024-06-25 15:48:54,109: DEBUG/ForkPoolWorker-3] Popen(['git', 'clone', '-v', '--', 'https://*****@github.com/jerrydav1s/shonglish.git', '/tmp/tmpt3rthvyo'], cwd=/home/trainboxai/backend/rippo/prod, stdin=None, shell=False, universal_newlines=True)
+[2024-06-25 15:48:54,689: DEBUG/ForkPoolWorker-3] Cmd(['git', 'clone', '-v', '--', 'https://*****@github.com/jerrydav1s/shonglish.git', '/tmp/tmpt3rthvyo'])'s unused stdout: 
+[2024-06-25 15:48:54,699: WARNING/ForkPoolWorker-3] [32mAnalyse and extract list of dependancies . . . .[0m
+[2024-06-25 15:49:00,024: WARNING/ForkPoolWorker-3] <class 'dict'>
+[2024-06-25 15:49:00,025: WARNING/ForkPoolWorker-3] {'dependencies': [{'name': 'autoprefixer', 'version': '^10.4.17'}, {'name': 'nuxt', 'version': '^3.9.3'}, {'name': 'postcss', 'version': '^8.4.33'}, {'name': 'tailwindcss', 'version': '^3.4.1'}, {'name': 'vue', 'version': '^3.4.14'}, {'name': 'vue-router', 'version': '^4.2.5'}, {'name': '@headlessui/vue', 'version': '^1.7.19'}, {'name': '@heroicons/vue', 'version': '^2.1.3'}, {'name': '@tailwindcss/forms', 'version': '^0.5.7'}, {'name': 'axios', 'version': '^1.6.8'}, {'name': 'tailwindcss-text-fill-stroke', 'version': '^1.1.2'}]}
+[2024-06-25 15:49:00,025: WARNING/ForkPoolWorker-3] {'dependencies': [{'name': 'autoprefixer', 'version': '^10.4.17'}, {'name': 'nuxt', 'version': '^3.9.3'}, {'name': 'postcss', 'version': '^8.4.33'}, {'name': 'tailwindcss', 'version': '^3.4.1'}, {'name': 'vue', 'version': '^3.4.14'}, {'name': 'vue-router', 'version': '^4.2.5'}, {'name': '@headlessui/vue', 'version': '^1.7.19'}, {'name': '@heroicons/vue', 'version': '^2.1.3'}, {'name': '@tailwindcss/forms', 'version': '^0.5.7'}, {'name': 'axios', 'version': '^1.6.8'}, {'name': 'tailwindcss-text-fill-stroke', 'version': '^1.1.2'}]}
+[2024-06-25 15:49:00,026: WARNING/ForkPoolWorker-3] [32mStarting searching for known Vulnerabilities . . . . .[0m
+[2024-06-25 15:49:00,029: DEBUG/ForkPoolWorker-3] Starting new HTTPS connection (1): www.googleapis.com:443
+[2024-06-25 15:49:00,460: DEBUG/ForkPoolWorker-3] https://www.googleapis.com:443 "GET /customsearch/v1?key=AIzaSyAQjSPQoMFEWJGCGVjQsg1IMp328NNPy_c&cx=f2954b6edb52b40c7&q=autoprefixer%20%5E10.4.17&num=10&start=1&fields=items(link,snippet,htmlFormattedUrl) HTTP/1.1" 200 None
+[2024-06-25 15:49:00,461: DEBUG/ForkPoolWorker-3] Starting new HTTPS connection (1): security.snyk.io:443
+[2024-06-25 15:49:00,678: DEBUG/ForkPoolWorker-3] https://security.snyk.io:443 "GET /package/npm/autoprefixer/10.4.17 HTTP/1.1" 200 18114
+[2024-06-25 15:49:00,707: DEBUG/ForkPoolWorker-3] Starting new HTTPS connection (1): www.googleapis.com:443
+[2024-06-25 15:49:01,192: DEBUG/ForkPoolWorker-3] https://www.googleapis.com:443 "GET /customsearch/v1?key=AIzaSyAQjSPQoMFEWJGCGVjQsg1IMp328NNPy_c&cx=f2954b6edb52b40c7&q=nuxt%20%5E3.9.3&num=10&start=1&fields=items(link,snippet,htmlFormattedUrl) HTTP/1.1" 200 None
+[2024-06-25 15:49:01,196: DEBUG/ForkPoolWorker-3] Starting new HTTPS connection (1): security.snyk.io:443
+[2024-06-25 15:49:01,323: DEBUG/ForkPoolWorker-3] https://security.snyk.io:443 "GET /package/npm/nuxt/3.9.3 HTTP/1.1" 200 18132
+[2024-06-25 15:49:01,349: DEBUG/ForkPoolWorker-3] Starting new HTTPS connection (1): security.snyk.io:443
+[2024-06-25 15:49:01,450: DEBUG/ForkPoolWorker-3] https://security.snyk.io:443 "GET /package/npm/%40nuxt%2Fkit/3.9.3 HTTP/1.1" 200 17717
+[2024-06-25 15:49:01,477: DEBUG/ForkPoolWorker-3] Starting new HTTPS connection (1): security.snyk.io:443
+[2024-06-25 15:49:01,580: DEBUG/ForkPoolWorker-3] https://security.snyk.io:443 "GET /package/npm/nuxt HTTP/1.1" 200 24828
+[2024-06-25 15:49:01,766: DEBUG/ForkPoolWorker-3] Starting new HTTPS connection (1): www.googleapis.com:443
+[2024-06-25 15:49:02,061: DEBUG/ForkPoolWorker-3] https://www.googleapis.com:443 "GET /customsearch/v1?key=AIzaSyAQjSPQoMFEWJGCGVjQsg1IMp328NNPy_c&cx=f2954b6edb52b40c7&q=postcss%20%5E8.4.33&num=10&start=1&fields=items(link,snippet,htmlFormattedUrl) HTTP/1.1" 200 None
+[2024-06-25 15:49:02,064: DEBUG/ForkPoolWorker-3] Starting new HTTPS connection (1): security.snyk.io:443
+[2024-06-25 15:49:02,170: DEBUG/ForkPoolWorker-3] https://security.snyk.io:443 "GET /package/npm/postcss HTTP/1.1" 200 24788
+[2024-06-25 15:49:02,353: DEBUG/ForkPoolWorker-3] Starting new HTTPS connection (1): security.snyk.io:443
+[2024-06-25 15:49:02,455: DEBUG/ForkPoolWorker-3] https://security.snyk.io:443 "GET /package/npm/postcss/8.4.33 HTTP/1.1" 200 18006
+[2024-06-25 15:49:02,483: DEBUG/ForkPoolWorker-3] Starting new HTTPS connection (1): www.googleapis.com:443
+[2024-06-25 15:49:02,803: DEBUG/ForkPoolWorker-3] https://www.googleapis.com:443 "GET /customsearch/v1?key=AIzaSyAQjSPQoMFEWJGCGVjQsg1IMp328NNPy_c&cx=f2954b6edb52b40c7&q=tailwindcss%20%5E3.4.1&num=10&start=1&fields=items(link,snippet,htmlFormattedUrl) HTTP/1.1" 200 None
+[2024-06-25 15:49:02,806: DEBUG/ForkPoolWorker-3] Starting new HTTPS connection (1): security.snyk.io:443
+[2024-06-25 15:49:02,911: DEBUG/ForkPoolWorker-3] https://security.snyk.io:443 "GET /package/npm/tailwindcss/3.3.1 HTTP/1.1" 200 18066
+[2024-06-25 15:49:02,942: DEBUG/ForkPoolWorker-3] Starting new HTTPS connection (1): security.snyk.io:443
+[2024-06-25 15:49:03,057: DEBUG/ForkPoolWorker-3] https://security.snyk.io:443 "GET /package/npm/%40toptal%2Fdavinci-graphql-codegen HTTP/1.1" 200 26920
+[2024-06-25 15:49:03,337: DEBUG/ForkPoolWorker-3] Starting new HTTPS connection (1): www.googleapis.com:443
+[2024-06-25 15:49:03,878: DEBUG/ForkPoolWorker-3] https://www.googleapis.com:443 "GET /customsearch/v1?key=AIzaSyAQjSPQoMFEWJGCGVjQsg1IMp328NNPy_c&cx=f2954b6edb52b40c7&q=vue%20%5E3.4.14&num=10&start=1&fields=items(link,snippet,htmlFormattedUrl) HTTP/1.1" 200 None
+[2024-06-25 15:49:03,881: DEBUG/ForkPoolWorker-3] Starting new HTTPS connection (1): security.snyk.io:443
+[2024-06-25 15:49:04,007: DEBUG/ForkPoolWorker-3] https://security.snyk.io:443 "GET /package/npm/%40vue%2Fruntime-dom/3.4.14 HTTP/1.1" 200 18051
+[2024-06-25 15:49:04,033: DEBUG/ForkPoolWorker-3] Starting new HTTPS connection (1): security.snyk.io:443
+[2024-06-25 15:49:04,157: DEBUG/ForkPoolWorker-3] https://security.snyk.io:443 "GET /package/npm/vue HTTP/1.1" 200 24685
+[2024-06-25 15:49:04,334: DEBUG/ForkPoolWorker-3] Starting new HTTPS connection (1): www.googleapis.com:443
+[2024-06-25 15:49:04,611: DEBUG/ForkPoolWorker-3] https://www.googleapis.com:443 "GET /customsearch/v1?key=AIzaSyAQjSPQoMFEWJGCGVjQsg1IMp328NNPy_c&cx=f2954b6edb52b40c7&q=vue-router%20%5E4.2.5&num=10&start=1&fields=items(link,snippet,htmlFormattedUrl) HTTP/1.1" 200 None
+[2024-06-25 15:49:04,615: DEBUG/ForkPoolWorker-3] Starting new HTTPS connection (1): security.snyk.io:443
+[2024-06-25 15:49:04,717: DEBUG/ForkPoolWorker-3] https://security.snyk.io:443 "GET /package/npm/vue-router HTTP/1.1" 200 24183
+[2024-06-25 15:49:04,892: DEBUG/ForkPoolWorker-3] Starting new HTTPS connection (1): www.cvedetails.com:443
+[2024-06-25 15:49:05,045: DEBUG/ForkPoolWorker-3] https://www.cvedetails.com:443 "GET /vulnerability-list/published_since-2023-01-08/?page=596&cvssscoremin=5&order=3&trc=29796&sha=2e5c99055ac659c7b51a67a92b338598884eb8f5 HTTP/1.1" 403 None
+[2024-06-25 15:49:05,052: DEBUG/ForkPoolWorker-3] Starting new HTTPS connection (1): www.googleapis.com:443
+[2024-06-25 15:49:05,349: DEBUG/ForkPoolWorker-3] https://www.googleapis.com:443 "GET /customsearch/v1?key=AIzaSyAQjSPQoMFEWJGCGVjQsg1IMp328NNPy_c&cx=f2954b6edb52b40c7&q=@headlessui/vue%20%5E1.7.19&num=10&start=1&fields=items(link,snippet,htmlFormattedUrl) HTTP/1.1" 200 None
+[2024-06-25 15:49:05,353: DEBUG/ForkPoolWorker-3] Starting new HTTPS connection (1): security.snyk.io:443
+[2024-06-25 15:49:05,456: DEBUG/ForkPoolWorker-3] https://security.snyk.io:443 "GET /package/npm/%40headlessui%2Fvue/1.7.13 HTTP/1.1" 200 18343
+[2024-06-25 15:49:05,483: DEBUG/ForkPoolWorker-3] Starting new HTTPS connection (1): www.googleapis.com:443
+[2024-06-25 15:49:05,707: DEBUG/ForkPoolWorker-3] https://www.googleapis.com:443 "GET /customsearch/v1?key=AIzaSyAQjSPQoMFEWJGCGVjQsg1IMp328NNPy_c&cx=f2954b6edb52b40c7&q=@heroicons/vue%20%5E2.1.3&num=10&start=1&fields=items(link,snippet,htmlFormattedUrl) HTTP/1.1" 200 None
+[2024-06-25 15:49:05,710: DEBUG/ForkPoolWorker-3] Starting new HTTPS connection (1): security.snyk.io:443
+[2024-06-25 15:49:05,813: DEBUG/ForkPoolWorker-3] https://security.snyk.io:443 "GET /package/npm/%40heroicons%2Fvue/2.0.17 HTTP/1.1" 200 18305
+[2024-06-25 15:49:05,841: DEBUG/ForkPoolWorker-3] Starting new HTTPS connection (1): www.googleapis.com:443
+[2024-06-25 15:49:06,066: DEBUG/ForkPoolWorker-3] https://www.googleapis.com:443 "GET /customsearch/v1?key=AIzaSyAQjSPQoMFEWJGCGVjQsg1IMp328NNPy_c&cx=f2954b6edb52b40c7&q=@tailwindcss/forms%20%5E0.5.7&num=10&start=1&fields=items(link,snippet,htmlFormattedUrl) HTTP/1.1" 200 None
+[2024-06-25 15:49:06,069: DEBUG/ForkPoolWorker-3] Starting new HTTPS connection (1): security.snyk.io:443
+[2024-06-25 15:49:06,183: DEBUG/ForkPoolWorker-3] https://security.snyk.io:443 "GET /package/npm/%40tailwindcss%2Fforms/0.1.4 HTTP/1.1" 200 17658
+[2024-06-25 15:49:06,211: DEBUG/ForkPoolWorker-3] Starting new HTTPS connection (1): www.googleapis.com:443
+[2024-06-25 15:49:06,432: DEBUG/ForkPoolWorker-3] https://www.googleapis.com:443 "GET /customsearch/v1?key=AIzaSyAQjSPQoMFEWJGCGVjQsg1IMp328NNPy_c&cx=f2954b6edb52b40c7&q=axios%20%5E1.6.8&num=10&start=1&fields=items(link,snippet,htmlFormattedUrl) HTTP/1.1" 200 None
+[2024-06-25 15:49:06,435: DEBUG/ForkPoolWorker-3] Starting new HTTPS connection (1): security.snyk.io:443
+[2024-06-25 15:49:06,538: DEBUG/ForkPoolWorker-3] https://security.snyk.io:443 "GET /package/npm/axios HTTP/1.1" 200 25028
+[2024-06-25 15:49:06,722: DEBUG/ForkPoolWorker-3] Starting new HTTPS connection (1): security.snyk.io:443
+[2024-06-25 15:49:06,848: DEBUG/ForkPoolWorker-3] https://security.snyk.io:443 "GET /package/npm/axios/1.6.7 HTTP/1.1" 200 18057
+[2024-06-25 15:49:06,877: DEBUG/ForkPoolWorker-3] Starting new HTTPS connection (1): security.snyk.io:443
+[2024-06-25 15:49:06,982: DEBUG/ForkPoolWorker-3] https://security.snyk.io:443 "GET /package/npm/axios/0.16.1 HTTP/1.1" 200 23824
+[2024-06-25 15:49:07,020: DEBUG/ForkPoolWorker-3] Starting new HTTPS connection (1): security.snyk.io:443
+[2024-06-25 15:49:07,121: DEBUG/ForkPoolWorker-3] https://security.snyk.io:443 "GET /package/maven/org.webjars.npm%3Aaxios/1.6.2 HTTP/1.1" 200 22932
+[2024-06-25 15:49:07,156: DEBUG/ForkPoolWorker-3] Starting new HTTPS connection (1): security.snyk.io:443
+[2024-06-25 15:49:07,257: DEBUG/ForkPoolWorker-3] https://security.snyk.io:443 "GET /package/npm/snowflake-sdk HTTP/1.1" 200 22344
+[2024-06-25 15:49:07,474: DEBUG/ForkPoolWorker-3] Starting new HTTPS connection (1): www.googleapis.com:443
+[2024-06-25 15:49:07,741: DEBUG/ForkPoolWorker-3] https://www.googleapis.com:443 "GET /customsearch/v1?key=AIzaSyAQjSPQoMFEWJGCGVjQsg1IMp328NNPy_c&cx=f2954b6edb52b40c7&q=tailwindcss-text-fill-stroke%20%5E1.1.2&num=10&start=1&fields=items(link,snippet,htmlFormattedUrl) HTTP/1.1" 200 None
+[2024-06-25 15:49:07,745: DEBUG/ForkPoolWorker-3] Starting new HTTPS connection (1): security.snyk.io:443
+[2024-06-25 15:49:07,863: DEBUG/ForkPoolWorker-3] https://security.snyk.io:443 "GET /package/npm/tailwindcss-text-fill-stroke/2.0.0-beta.1 HTTP/1.1" 200 16583
+[2024-06-25 15:49:07,883: WARNING/ForkPoolWorker-3] [32mCompleted searching for known Vulnerabilities . . . . .[0m
+[2024-06-25 15:49:07,886: WARNING/ForkPoolWorker-3] [35mGetting code audit report . . . . . .[0m
+[2024-06-25 15:49:07,886: WARNING/ForkPoolWorker-3] [91mTrying code audit, attempt 1 [0m
+[2024-06-25 15:49:13,957: WARNING/ForkPoolWorker-3] [35mGetting vulnerability report . . . . . . .[0m
+[2024-06-25 15:49:13,957: WARNING/ForkPoolWorker-3] [91mTrying Vuln Report, attempt 1 [0m
+[2024-06-25 15:49:16,528: WARNING/ForkPoolWorker-3] {
+  "vulnerability_report": []
+}
+[2024-06-25 15:49:16,529: WARNING/ForkPoolWorker-3] [35mGetting quality report . . . . . . .[0m
+[2024-06-25 15:49:16,530: WARNING/ForkPoolWorker-3] [91mTrying Quality Report, attempt 1 [0m
+[2024-06-25 15:49:36,100: WARNING/ForkPoolWorker-3] ## Refactoring Plan
+
+**Finding:** Hardcoded API endpoint: The API endpoint URL is hardcoded in both the 'ai-writer.vue' and 'index.vue' components. This hinders flexibility in deploying to different environments and makes it difficult to switch between development and production APIs.
+**Issue:** Hardcoded URLs reduce flexibility and maintainability.
+**Refactoring Approach:** 
+1. Create a separate configuration file (e.g., `config.js`) to store environment-specific settings.
+2. Define the API endpoint URL as a variable in the configuration file.
+3. Import the configuration file into the components and use the variable to access the API endpoint. 
+
+**Example:**
+// config.js
+export default {
+  apiUrl: process.env.NODE_ENV === 'production' ? 'https://api.example.com' : 'http://localhost:8888'
+};
+
+// pages/ai-writer.vue (Before)
+const response = await $fetch('https://34.147.200.146:8888/generate_text', {
+
+// pages/ai-writer.vue (After)
+import config from '~/config.js'; // Adjust path as needed
+
+const response = await $fetch(`${config.apiUrl}/generate_text`, {
+
+// Similar changes for pages/index.vue
+
+**Relevant Files:** pages/ai-writer.vue, pages/index.vue, config.js (new file)
+
+**Finding:** Redundant code: The navigation and language data structures are duplicated in 'ai-writer.vue' and 'index.vue'. This increases the risk of inconsistencies if changes are made to the navigation or supported languages.
+**Issue:** Code duplication leads to increased maintenance effort and potential inconsistencies.
+**Refactoring Approach:** 
+1. Create a shared file (e.g., `data.js`) to store the navigation and language data.
+2. Export the data structures from this file.
+3. Import the data into the components where they are needed.
+
+**Example:**
+// data.js
+export const navigation = [
+  { name: "Translation", href: "/" },
+  { name: "AI Writer", href: "ai-writer" },
+  { name: "Chat", href: "#" },
+  { name: "Blog", href: "#" },
+];
+
+export const languages = [
+  // ... language data ...
+];
+
+// pages/ai-writer.vue (Before)
+const languages = [ /* ... */ ];
+const navigation = [ /* ... */ ];
+
+// pages/ai-writer.vue (After)
+import { languages, navigation } from '~/data.js'; // Adjust path as needed
+
+// Similar changes for pages/index.vue
+
+**Relevant Files:** pages/ai-writer.vue, pages/index.vue, data.js (new file)
+[2024-06-25 15:49:36,116: WARNING/ForkPoolWorker-3] <!-- Bug Analysis (data from code_audit.json) -->
+<div class="border-t-2">
+    <div class="mt-8 px-4 sm:px-0">
+      <h3 class="text-xl font-semibold leading-7 text-gray-900">
+        Bug Analysis
+      </h3>
+      <p class="mt-1 max-w-2xl text-sm leading-6 text-gray-500">
+        Potential bugs and issues found in code.
+      </p>
+    </div>
+    <div class="mt-6 border-t border-gray-100">
+      <dl class="divide-y divide-gray-100">
+        <!-- High -->
+        <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+          <dt class="text-sm font-medium leading-6 text-gray-900">
+            High
+          </dt>
+          <dd
+            class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0"
+          >
+            
+              No "high" profile bugs / alerts found.
+            
+          </dd>
+        </div>
+        <!-- Medium -->
+        <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+          <dt class="text-sm font-medium leading-6 text-gray-900">
+            Medium
+          </dt>
+          <dd
+            class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0"
+          >
+            
+              <ul>
+                
+                  <li>
+                    <p>Hardcoded API endpoint: The API endpoint URL is hardcoded in both the 'ai-writer.vue' and 'index.vue' components. This hinders flexibility in deploying to different environments and makes it difficult to switch between development and production APIs.</p>
+                    <p class="mt-2">
+                      <strong>Impact:</strong> Limited deployment flexibility and potential difficulties managing API environments.
+                    </p>
+                    <div class="mt-1">
+                      <strong>Related files:</strong>
+                      <ul class="mb-8 list-disc list-inside">
+                        
+                         <li class="italic">pages/ai-writer.vue</li>
+                        
+                         <li class="italic">pages/index.vue</li>
+                        
+                      </ul>
+                    </div>
+                  </li>
+                
+              </ul>
+            
+          </dd>
+        </div>
+        <!-- Low -->
+        <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+          <dt class="text-sm font-medium leading-6 text-gray-900">
+            Low
+          </dt>
+          <dd
+            class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0"
+          >
+            
+              <ul>
+                
+                  <li>
+                    <p>Redundant code: The navigation and language data structures are duplicated in 'ai-writer.vue' and 'index.vue'. This increases the risk of inconsistencies if changes are made to the navigation or supported languages.</p>
+                    <p class="mt-2">
+                      <strong>Impact:</strong> Increased maintenance effort and potential for inconsistencies in navigation and language options across pages.
+                    </p>
+                    <div class="mt-1">
+                      <strong>Related files:</strong>
+                      <ul class="mb-8 list-disc list-inside">
+                        
+                         <li class="italic">pages/ai-writer.vue</li>
+                        
+                         <li class="italic">pages/index.vue</li>
+                        
+                      </ul>
+                    </div>
+                  </li>
+                
+              </ul>
+            
+          </dd>
+        </div>
+      </dl>
+    </div>
+  </div>
+
+<!-- Vulnerabilities (data from vuln_report.json)  -->
+<div class="border-t-2">
+  <div class="mt-12 px-4 sm:px-0">
+    <h3 class="text-xl font-semibold leading-7 text-gray-900">
+      Vulnerabilities
+    </h3>
+    <p class="mt-1 max-w-2xl text-sm leading-6 text-gray-500">
+      Based on the dependancies used in your code, below are the known vulnerabilities.
+    </p>
+  </div>
+  <div class="mt-6 border-t border-gray-100">
+    <dl class="divide-y divide-gray-100">
+      <!-- Items -->
+      <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+        <dt class="text-sm font-medium leading-6 text-gray-900">
+          Items
+        </dt>
+        <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">
+          
+            No "High" profile vulnerabilities found.
+          
+        </dd>
+      </div>
+
+    </dl>
+  </div>
+</div>
+  <!-- Code Quality (data from quality_report.json)   -->
+  <div class="border-t-2">
+    <div class="mt-12 px-4 sm:px-0">
+      <h3 class="text-xl font-semibold leading-7 text-gray-900">
+        Code Quality
+      </h3>
+      <p class="mt-1 max-w-2xl text-sm leading-6 text-gray-500">
+        Overall quality of code.
+      </p>
+    </div>
+    <div class="mt-6 border-t border-gray-100">
+      <dl class="divide-y divide-gray-100">
+        <!-- readability -->
+        <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+          <dt class="text-sm font-medium leading-6 text-gray-900">
+            Readability
+          </dt>
+          <dd
+            class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0"
+          >
+            <p><strong>Score:</strong> 75</p>
+            <p class="mt-2">
+              The code generally exhibits good readability, employing clear naming conventions and consistent indentation. However, incorporating comments to clarify complex logic, particularly within the translation and text generation methods, would further enhance understanding.
+            </p>
+          </dd>
+        </div>
+        <!-- efficiency -->
+        <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+          <dt class="text-sm font-medium leading-6 text-gray-900">
+            Efficiency
+          </dt>
+          <dd
+            class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0"
+          >
+            <p><strong>Score:</strong> 65</p>
+            <p class="mt-2">
+              While the code demonstrates adequate efficiency, the audit highlights areas for improvement. Specifically, the duplicated navigation and language data structures in 'ai-writer.vue' and 'index.vue' introduce redundancy and potential for inconsistency, warranting refactoring for better maintainability.
+            </p>
+          </dd>
+        </div>
+        <!-- documentation -->
+        <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+          <dt class="text-sm font-medium leading-6 text-gray-900">
+            Documentation
+          </dt>
+          <dd
+            class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0"
+          >
+            <p><strong>Score:</strong> 45</p>
+            <p class="mt-2">
+              The code's documentation is minimal. Although basic comments are present, it lacks comprehensive docstrings explaining function purposes, parameters, and return values. Adding docstrings would significantly improve code comprehension and maintainability, especially for the data fetching and DOM manipulation logic.
+            </p>
+          </dd>
+        </div>
+      </dl>
+    </div>
+  </div>
+[2024-06-25 15:50:02,461: DEBUG/ForkPoolWorker-3] Making request: POST https://oauth2.googleapis.com/token
+[2024-06-25 15:50:02,463: DEBUG/ForkPoolWorker-3] Starting new HTTPS connection (1): oauth2.googleapis.com:443
+[2024-06-25 15:50:02,542: DEBUG/ForkPoolWorker-3] https://oauth2.googleapis.com:443 "POST /token HTTP/1.1" 200 None
+[2024-06-25 15:50:02,583: WARNING/ForkPoolWorker-3] Uploading HTML to:
+[2024-06-25 15:50:02,583: WARNING/ForkPoolWorker-3]  
+[2024-06-25 15:50:02,584: WARNING/ForkPoolWorker-3] projects/qKtISirBQbftY20mLxK0hWXsD053/jerrydav1s:shonglish/4aVEeL
+[2024-06-25 15:50:02,585: ERROR/ForkPoolWorker-3] Task celery_app.generate_report[71eae792-e0a9-4798-9996-634f866e4678] raised unexpected: FileNotFoundError(2, 'No such file or directory')
+Traceback (most recent call last):
+  File "/home/trainboxai/backend/rippo/venv/lib/python3.10/site-packages/celery/app/trace.py", line 453, in trace_task
+    R = retval = fun(*args, **kwargs)
+  File "/home/trainboxai/backend/rippo/venv/lib/python3.10/site-packages/celery/app/trace.py", line 736, in __protected_call__
+    return self.run(*args, **kwargs)
+  File "/home/trainboxai/backend/rippo/prod/celery_app.py", line 127, in generate_report
+    upload_html(user_id,report_id,repo_name)
+  File "/home/trainboxai/backend/rippo/prod/manage_storage.py", line 45, in upload_html
+    with open(report_file, 'r') as report, open(refactor_file, 'r') as refactor, open(combined_html, 'w') as combined:
+FileNotFoundError: [Errno 2] No such file or directory: '/home/trainboxai/backend/rippo/prod/../reports/refactor_guide_4aVEeL.html'
+[2024-06-25 15:54:14,995: DEBUG/MainProcess] | Worker: Closing Hub...
+[2024-06-25 15:54:14,995: DEBUG/MainProcess] | Worker: Closing Pool...
+[2024-06-25 15:54:14,995: DEBUG/MainProcess] | Worker: Closing Consumer...
+[2024-06-25 15:54:14,996: DEBUG/MainProcess] | Worker: Stopping Consumer...
+[2024-06-25 15:54:14,996: DEBUG/MainProcess] | Consumer: Closing Connection...
+[2024-06-25 15:54:14,996: DEBUG/MainProcess] | Consumer: Closing Events...
+[2024-06-25 15:54:14,996: DEBUG/MainProcess] | Consumer: Closing Mingle...
+[2024-06-25 15:54:14,996: DEBUG/MainProcess] | Consumer: Closing Gossip...
+[2024-06-25 15:54:14,996: DEBUG/MainProcess] | Consumer: Closing Tasks...
+[2024-06-25 15:54:14,996: DEBUG/MainProcess] | Consumer: Closing Control...
+[2024-06-25 15:54:14,996: DEBUG/MainProcess] | Consumer: Closing Heart...
+[2024-06-25 15:54:14,996: DEBUG/MainProcess] | Consumer: Closing event loop...
+[2024-06-25 15:54:14,996: DEBUG/MainProcess] | Consumer: Stopping event loop...
+[2024-06-25 15:54:14,997: DEBUG/MainProcess] | Consumer: Stopping Heart...
+[2024-06-25 15:54:14,998: DEBUG/MainProcess] | Consumer: Stopping Control...
+[2024-06-25 15:54:15,000: DEBUG/MainProcess] | Consumer: Stopping Tasks...
+[2024-06-25 15:54:15,000: DEBUG/MainProcess] Canceling task consumer...
+[2024-06-25 15:54:15,000: DEBUG/MainProcess] | Consumer: Stopping Gossip...
+[2024-06-25 15:54:15,002: DEBUG/MainProcess] | Consumer: Stopping Mingle...
+[2024-06-25 15:54:15,002: DEBUG/MainProcess] | Consumer: Stopping Events...
+[2024-06-25 15:54:15,002: DEBUG/MainProcess] | Consumer: Stopping Connection...
+[2024-06-25 15:54:15,002: DEBUG/MainProcess] | Worker: Stopping Pool...
+[2024-06-25 15:54:16,022: DEBUG/MainProcess] | Worker: Stopping Hub...
+[2024-06-25 15:54:16,022: DEBUG/MainProcess] | Consumer: Shutdown Heart...
+[2024-06-25 15:54:16,022: DEBUG/MainProcess] | Consumer: Shutdown Control...
+[2024-06-25 15:54:16,022: DEBUG/MainProcess] | Consumer: Shutdown Tasks...
+[2024-06-25 15:54:16,022: DEBUG/MainProcess] Canceling task consumer...
+[2024-06-25 15:54:16,022: DEBUG/MainProcess] Closing consumer channel...
+[2024-06-25 15:54:16,023: DEBUG/MainProcess] | Consumer: Shutdown Gossip...
+[2024-06-25 15:54:16,023: DEBUG/MainProcess] | Consumer: Shutdown Events...
+[2024-06-25 15:54:16,023: DEBUG/MainProcess] | Consumer: Shutdown Connection...
+[2024-06-25 15:54:16,024: DEBUG/MainProcess] removing tasks from inqueue until task handler finished
+[2024-06-25 15:54:16,042: DEBUG/MainProcess] | Worker: Preparing bootsteps.
+[2024-06-25 15:54:16,044: DEBUG/MainProcess] | Worker: Building graph...
+[2024-06-25 15:54:16,044: DEBUG/MainProcess] | Worker: New boot order: {Timer, Hub, Pool, Autoscaler, Beat, StateDB, Consumer}
+[2024-06-25 15:54:16,048: DEBUG/MainProcess] | Consumer: Preparing bootsteps.
+[2024-06-25 15:54:16,049: DEBUG/MainProcess] | Consumer: Building graph...
+[2024-06-25 15:54:16,057: DEBUG/MainProcess] | Consumer: New boot order: {Connection, Events, Mingle, Gossip, Agent, Tasks, Control, Heart, event loop}
+[2024-06-25 15:54:16,071: DEBUG/MainProcess] | Worker: Starting Hub
+[2024-06-25 15:54:16,071: DEBUG/MainProcess] ^-- substep ok
+[2024-06-25 15:54:16,071: DEBUG/MainProcess] | Worker: Starting Pool
+[2024-06-25 15:54:16,447: DEBUG/MainProcess] ^-- substep ok
+[2024-06-25 15:54:16,448: DEBUG/MainProcess] | Worker: Starting Consumer
+[2024-06-25 15:54:16,449: DEBUG/MainProcess] | Consumer: Starting Connection
+[2024-06-25 15:54:16,451: WARNING/MainProcess] /home/trainboxai/backend/rippo/venv/lib/python3.10/site-packages/celery/worker/consumer/consumer.py:508: CPendingDeprecationWarning: The broker_connection_retry configuration setting will no longer determine
+whether broker connection retries are made during startup in Celery 6.0 and above.
+If you wish to retain the existing behavior for retrying connections on startup,
+you should set broker_connection_retry_on_startup to True.
+  warnings.warn(
+
+[2024-06-25 15:54:16,459: INFO/MainProcess] Connected to redis://localhost:6379/0
+[2024-06-25 15:54:16,459: DEBUG/MainProcess] ^-- substep ok
+[2024-06-25 15:54:16,460: DEBUG/MainProcess] | Consumer: Starting Events
+[2024-06-25 15:54:16,460: WARNING/MainProcess] /home/trainboxai/backend/rippo/venv/lib/python3.10/site-packages/celery/worker/consumer/consumer.py:508: CPendingDeprecationWarning: The broker_connection_retry configuration setting will no longer determine
+whether broker connection retries are made during startup in Celery 6.0 and above.
+If you wish to retain the existing behavior for retrying connections on startup,
+you should set broker_connection_retry_on_startup to True.
+  warnings.warn(
+
+[2024-06-25 15:54:16,463: DEBUG/MainProcess] ^-- substep ok
+[2024-06-25 15:54:16,463: DEBUG/MainProcess] | Consumer: Starting Mingle
+[2024-06-25 15:54:16,463: INFO/MainProcess] mingle: searching for neighbors
+[2024-06-25 15:54:17,474: INFO/MainProcess] mingle: all alone
+[2024-06-25 15:54:17,474: DEBUG/MainProcess] ^-- substep ok
+[2024-06-25 15:54:17,474: DEBUG/MainProcess] | Consumer: Starting Gossip
+[2024-06-25 15:54:17,478: DEBUG/MainProcess] ^-- substep ok
+[2024-06-25 15:54:17,478: DEBUG/MainProcess] | Consumer: Starting Tasks
+[2024-06-25 15:54:17,482: DEBUG/MainProcess] ^-- substep ok
+[2024-06-25 15:54:17,482: DEBUG/MainProcess] | Consumer: Starting Control
+[2024-06-25 15:54:17,485: DEBUG/MainProcess] ^-- substep ok
+[2024-06-25 15:54:17,485: DEBUG/MainProcess] | Consumer: Starting Heart
+[2024-06-25 15:54:17,487: DEBUG/MainProcess] ^-- substep ok
+[2024-06-25 15:54:17,487: DEBUG/MainProcess] | Consumer: Starting event loop
+[2024-06-25 15:54:17,488: DEBUG/MainProcess] | Worker: Hub.register Pool...
+[2024-06-25 15:54:17,488: INFO/MainProcess] celery@rippo-backend-vm ready.
+[2024-06-25 15:54:17,488: DEBUG/MainProcess] basic.qos: prefetch_count->16
+[2024-06-25 15:54:39,661: INFO/MainProcess] Task celery_app.generate_report[6a379316-154f-434a-abb7-2e2262d24a59] received
+[2024-06-25 15:54:39,661: DEBUG/MainProcess] TaskPool: Apply <function fast_trace_task at 0x790e675c3010> (args:('celery_app.generate_report', '6a379316-154f-434a-abb7-2e2262d24a59', {'lang': 'py', 'task': 'celery_app.generate_report', 'id': '6a379316-154f-434a-abb7-2e2262d24a59', 'shadow': None, 'eta': None, 'expires': None, 'group': None, 'group_index': None, 'retries': 0, 'timelimit': [None, None], 'root_id': '6a379316-154f-434a-abb7-2e2262d24a59', 'parent_id': None, 'argsrepr': "('https://github.com/jerrydav1s/ml-tinkering-blog.git', 'jerrydav1s:ml-tinkering-blog', 'E8X3b6', 'qKtISirBQbftY20mLxK0hWXsD053', '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')", 'kwargsrepr': '{}', 'origin': 'gen316480@rippo-backend-vm', 'ignore_result': False, 'replaced_task_nesting': 0, 'stamped_headers': None, 'stamps': {}, 'properties': {'correlation_id': '6a379316-154f-434a-abb7-2e2262d24a59', 'reply_to': '5ea6658b-e6ea-343e-8972-99eff61a4961', 'delivery_mode': 2, 'delivery_info': {'exchange': '', 'routing_key': 'celery'}, 'priority': 0, 'body_encoding': 'base64', 'delivery_tag': '3fb1b754-7523-4187-88ae-c7803772025f'}, 'reply_to':... kwargs:{})
+[2024-06-25 15:54:39,663: WARNING/ForkPoolWorker-2] [32mGet flattened file and extract contents . . .[0m
+[2024-06-25 15:54:39,663: WARNING/ForkPoolWorker-2] [35mGathering search results . . .[0m
+[2024-06-25 15:54:39,667: DEBUG/ForkPoolWorker-2] Popen(['git', 'clone', '-v', '--', 'https://*****@github.com/jerrydav1s/ml-tinkering-blog.git', '/tmp/tmpb2g4hjh1'], cwd=/home/trainboxai/backend/rippo/prod, stdin=None, shell=False, universal_newlines=True)
+[2024-06-25 15:54:40,518: DEBUG/ForkPoolWorker-2] Cmd(['git', 'clone', '-v', '--', 'https://*****@github.com/jerrydav1s/ml-tinkering-blog.git', '/tmp/tmpb2g4hjh1'])'s unused stdout: 
+[2024-06-25 15:54:40,535: WARNING/ForkPoolWorker-2] [32mAnalyse and extract list of dependancies . . . .[0m
+[2024-06-25 15:54:49,900: WARNING/ForkPoolWorker-2] <class 'dict'>
+[2024-06-25 15:54:49,900: WARNING/ForkPoolWorker-2] {'dependencies': {'@headlessui/react': '^1.7.13', '@mapbox/rehype-prism': '^0.9.0', '@mdx-js/loader': '^3.0.0', '@mdx-js/react': '^3.0.0', '@next/mdx': '^14.0.4', '@tailwindcss/typography': '^0.5.4', '@types/node': '^20.10.8', '@types/react': '^18.2.47', '@types/react-dom': '^18.2.18', '@types/webpack-env': '^1.18.1', '@vercel/analytics': '^1.2.2', 'autoprefixer': '^10.4.12', 'cheerio': '^1.0.0-rc.12', 'clsx': '^2.1.0', 'eslint': '^8.56.0', 'eslint-config-next': '^14.0.4', 'fast-glob': '^3.2.11', 'feed': '^4.2.2', 'next': '^14.0.4', 'next-themes': '^0.2.1', 'prettier': '^3.1.1', 'prettier-plugin-tailwindcss': '^0.5.11', 'react': '^18.2.0', 'react-dom': '^18.2.0', 'remark-gfm': '^4.0.0', 'sharp': '0.33.1', 'tailwindcss': '^3.4.1', 'typescript': '^5.3.3'}}
+[2024-06-25 15:54:49,900: WARNING/ForkPoolWorker-2] {'dependencies': {'@headlessui/react': '^1.7.13', '@mapbox/rehype-prism': '^0.9.0', '@mdx-js/loader': '^3.0.0', '@mdx-js/react': '^3.0.0', '@next/mdx': '^14.0.4', '@tailwindcss/typography': '^0.5.4', '@types/node': '^20.10.8', '@types/react': '^18.2.47', '@types/react-dom': '^18.2.18', '@types/webpack-env': '^1.18.1', '@vercel/analytics': '^1.2.2', 'autoprefixer': '^10.4.12', 'cheerio': '^1.0.0-rc.12', 'clsx': '^2.1.0', 'eslint': '^8.56.0', 'eslint-config-next': '^14.0.4', 'fast-glob': '^3.2.11', 'feed': '^4.2.2', 'next': '^14.0.4', 'next-themes': '^0.2.1', 'prettier': '^3.1.1', 'prettier-plugin-tailwindcss': '^0.5.11', 'react': '^18.2.0', 'react-dom': '^18.2.0', 'remark-gfm': '^4.0.0', 'sharp': '0.33.1', 'tailwindcss': '^3.4.1', 'typescript': '^5.3.3'}}
+[2024-06-25 15:54:49,901: WARNING/ForkPoolWorker-2] [32mStarting searching for known Vulnerabilities . . . . .[0m
+[2024-06-25 15:54:49,902: ERROR/ForkPoolWorker-2] Task celery_app.generate_report[6a379316-154f-434a-abb7-2e2262d24a59] raised unexpected: AttributeError("'str' object has no attribute 'get'")
+Traceback (most recent call last):
+  File "/home/trainboxai/backend/rippo/venv/lib/python3.10/site-packages/celery/app/trace.py", line 453, in trace_task
+    R = retval = fun(*args, **kwargs)
+  File "/home/trainboxai/backend/rippo/venv/lib/python3.10/site-packages/celery/app/trace.py", line 736, in __protected_call__
+    return self.run(*args, **kwargs)
+  File "/home/trainboxai/backend/rippo/prod/celery_app.py", line 65, in generate_report
+    search_vulnerabilities(deps_list,uniqueId)
+  File "/home/trainboxai/backend/rippo/prod/search.py", line 22, in search_vulnerabilities
+    name = dep.get("name", "")
+AttributeError: 'str' object has no attribute 'get'
+[2024-06-26 12:43:39,473: WARNING/MainProcess] consumer: Connection to broker lost. Trying to re-establish the connection...
+Traceback (most recent call last):
+  File "/home/trainboxai/backend/rippo/venv/lib/python3.10/site-packages/celery/worker/consumer/consumer.py", line 340, in start
+    blueprint.start(self)
+  File "/home/trainboxai/backend/rippo/venv/lib/python3.10/site-packages/celery/bootsteps.py", line 116, in start
+    step.start(parent)
+  File "/home/trainboxai/backend/rippo/venv/lib/python3.10/site-packages/celery/worker/consumer/consumer.py", line 746, in start
+    c.loop(*c.loop_args())
+  File "/home/trainboxai/backend/rippo/venv/lib/python3.10/site-packages/celery/worker/loops.py", line 97, in asynloop
+    next(loop)
+  File "/home/trainboxai/backend/rippo/venv/lib/python3.10/site-packages/kombu/asynchronous/hub.py", line 317, in create_loop
+    events = poll(poll_timeout)
+  File "/home/trainboxai/backend/rippo/venv/lib/python3.10/site-packages/kombu/utils/eventio.py", line 83, in poll
+    return self._epoll.poll(timeout if timeout is not None else -1)
+  File "/home/trainboxai/backend/rippo/venv/lib/python3.10/site-packages/celery/apps/worker.py", line 289, in _handle_request
+    safe_say(f'worker: {how} shutdown (MainProcess)', sys.__stdout__)
+  File "/home/trainboxai/backend/rippo/venv/lib/python3.10/site-packages/celery/apps/worker.py", line 81, in safe_say
+    print(f'\n{msg}', file=f, flush=True)
+OSError: [Errno 5] Input/output error
+[2024-06-26 12:43:39,502: WARNING/MainProcess] /home/trainboxai/backend/rippo/venv/lib/python3.10/site-packages/celery/worker/consumer/consumer.py:391: CPendingDeprecationWarning: 
+In Celery 5.1 we introduced an optional breaking change which
+on connection loss cancels all currently executed tasks with late acknowledgement enabled.
+These tasks cannot be acknowledged as the connection is gone, and the tasks are automatically redelivered
+back to the queue. You can enable this behavior using the worker_cancel_long_running_tasks_on_connection_loss
+setting. In Celery 5.1 it is set to False by default. The setting will be set to True by default in Celery 6.0.
+
+  warnings.warn(CANCEL_TASKS_BY_DEFAULT, CPendingDeprecationWarning)
+
+[2024-06-26 12:43:39,504: DEBUG/MainProcess] | Consumer: Restarting event loop...
+[2024-06-26 12:43:39,504: DEBUG/MainProcess] | Consumer: Restarting Heart...
+[2024-06-26 12:43:39,505: DEBUG/MainProcess] | Consumer: Restarting Control...
+[2024-06-26 12:43:39,506: DEBUG/MainProcess] | Consumer: Restarting Tasks...
+[2024-06-26 12:43:39,506: DEBUG/MainProcess] Canceling task consumer...
+[2024-06-26 12:43:39,506: DEBUG/MainProcess] | Consumer: Restarting Gossip...
+[2024-06-26 12:43:39,506: DEBUG/MainProcess] | Consumer: Restarting Mingle...
+[2024-06-26 12:43:39,506: DEBUG/MainProcess] | Consumer: Restarting Events...
+[2024-06-26 12:43:39,506: DEBUG/MainProcess] | Consumer: Restarting Connection...
+[2024-06-26 12:43:39,507: DEBUG/MainProcess] | Consumer: Starting Connection
+[2024-06-26 12:43:39,509: WARNING/MainProcess] /home/trainboxai/backend/rippo/venv/lib/python3.10/site-packages/celery/worker/consumer/consumer.py:508: CPendingDeprecationWarning: The broker_connection_retry configuration setting will no longer determine
+whether broker connection retries are made during startup in Celery 6.0 and above.
+If you wish to retain the existing behavior for retrying connections on startup,
+you should set broker_connection_retry_on_startup to True.
+  warnings.warn(
+
+[2024-06-26 12:43:39,516: INFO/MainProcess] Connected to redis://localhost:6379/0
+[2024-06-26 12:43:39,516: DEBUG/MainProcess] ^-- substep ok
+[2024-06-26 12:43:39,516: DEBUG/MainProcess] | Consumer: Starting Events
+[2024-06-26 12:43:39,517: WARNING/MainProcess] /home/trainboxai/backend/rippo/venv/lib/python3.10/site-packages/celery/worker/consumer/consumer.py:508: CPendingDeprecationWarning: The broker_connection_retry configuration setting will no longer determine
+whether broker connection retries are made during startup in Celery 6.0 and above.
+If you wish to retain the existing behavior for retrying connections on startup,
+you should set broker_connection_retry_on_startup to True.
+  warnings.warn(
+
+[2024-06-26 12:43:39,520: DEBUG/MainProcess] ^-- substep ok
+[2024-06-26 12:43:39,520: DEBUG/MainProcess] | Consumer: Starting Mingle
+[2024-06-26 12:43:39,520: INFO/MainProcess] mingle: searching for neighbors
+[2024-06-26 12:43:40,528: INFO/MainProcess] mingle: all alone
+[2024-06-26 12:43:40,528: DEBUG/MainProcess] ^-- substep ok
+[2024-06-26 12:43:40,528: DEBUG/MainProcess] | Consumer: Starting Gossip
+[2024-06-26 12:43:40,533: DEBUG/MainProcess] ^-- substep ok
+[2024-06-26 12:43:40,533: DEBUG/MainProcess] | Consumer: Starting Tasks
+[2024-06-26 12:43:40,538: DEBUG/MainProcess] ^-- substep ok
+[2024-06-26 12:43:40,538: DEBUG/MainProcess] | Consumer: Starting Control
+[2024-06-26 12:43:40,541: DEBUG/MainProcess] ^-- substep ok
+[2024-06-26 12:43:40,541: DEBUG/MainProcess] | Consumer: Starting Heart
+[2024-06-26 12:43:40,543: DEBUG/MainProcess] ^-- substep ok
+[2024-06-26 12:43:40,543: DEBUG/MainProcess] | Consumer: Starting event loop
+[2024-06-26 12:43:40,543: DEBUG/MainProcess] | Worker: Hub.register Pool...
+[2024-06-26 12:43:40,544: DEBUG/MainProcess] basic.qos: prefetch_count->16
+[2024-06-26 12:45:20,121: DEBUG/MainProcess] | Worker: Preparing bootsteps.
+[2024-06-26 12:45:20,123: DEBUG/MainProcess] | Worker: Building graph...
+[2024-06-26 12:45:20,124: DEBUG/MainProcess] | Worker: New boot order: {Timer, Hub, Pool, Autoscaler, StateDB, Beat, Consumer}
+[2024-06-26 12:45:20,128: DEBUG/MainProcess] | Consumer: Preparing bootsteps.
+[2024-06-26 12:45:20,129: DEBUG/MainProcess] | Consumer: Building graph...
+[2024-06-26 12:45:20,138: DEBUG/MainProcess] | Consumer: New boot order: {Connection, Agent, Events, Mingle, Gossip, Tasks, Control, Heart, event loop}
+[2024-06-26 12:45:20,152: DEBUG/MainProcess] | Worker: Starting Hub
+[2024-06-26 12:45:20,152: DEBUG/MainProcess] ^-- substep ok
+[2024-06-26 12:45:20,152: DEBUG/MainProcess] | Worker: Starting Pool
+[2024-06-26 12:45:20,724: DEBUG/MainProcess] ^-- substep ok
+[2024-06-26 12:45:20,725: DEBUG/MainProcess] | Worker: Starting Consumer
+[2024-06-26 12:45:20,727: DEBUG/MainProcess] | Consumer: Starting Connection
+[2024-06-26 12:45:20,732: WARNING/MainProcess] /home/trainboxai/backend/rippo/venv/lib/python3.10/site-packages/celery/worker/consumer/consumer.py:508: CPendingDeprecationWarning: The broker_connection_retry configuration setting will no longer determine
+whether broker connection retries are made during startup in Celery 6.0 and above.
+If you wish to retain the existing behavior for retrying connections on startup,
+you should set broker_connection_retry_on_startup to True.
+  warnings.warn(
+
+[2024-06-26 12:45:20,747: INFO/MainProcess] Connected to redis://localhost:6379/0
+[2024-06-26 12:45:20,747: DEBUG/MainProcess] ^-- substep ok
+[2024-06-26 12:45:20,747: DEBUG/MainProcess] | Consumer: Starting Events
+[2024-06-26 12:45:20,748: WARNING/MainProcess] /home/trainboxai/backend/rippo/venv/lib/python3.10/site-packages/celery/worker/consumer/consumer.py:508: CPendingDeprecationWarning: The broker_connection_retry configuration setting will no longer determine
+whether broker connection retries are made during startup in Celery 6.0 and above.
+If you wish to retain the existing behavior for retrying connections on startup,
+you should set broker_connection_retry_on_startup to True.
+  warnings.warn(
+
+[2024-06-26 12:45:20,751: DEBUG/MainProcess] ^-- substep ok
+[2024-06-26 12:45:20,752: DEBUG/MainProcess] | Consumer: Starting Mingle
+[2024-06-26 12:45:20,752: INFO/MainProcess] mingle: searching for neighbors
+[2024-06-26 12:45:20,763: DEBUG/MainProcess] pidbox received method hello(from_node='celery@rippo-backend-vm', revoked={}) [reply_to:{'exchange': 'reply.celery.pidbox', 'routing_key': '7a6e560a-7d80-3ca6-a81e-358cd568ae84'} ticket:d50b1fa7-1b66-4e4d-9281-14c274d70575]
+[2024-06-26 12:45:21,771: INFO/MainProcess] mingle: all alone
+[2024-06-26 12:45:21,771: DEBUG/MainProcess] ^-- substep ok
+[2024-06-26 12:45:21,771: DEBUG/MainProcess] | Consumer: Starting Gossip
+[2024-06-26 12:45:21,775: DEBUG/MainProcess] ^-- substep ok
+[2024-06-26 12:45:21,775: DEBUG/MainProcess] | Consumer: Starting Tasks
+[2024-06-26 12:45:21,780: DEBUG/MainProcess] ^-- substep ok
+[2024-06-26 12:45:21,780: DEBUG/MainProcess] | Consumer: Starting Control
+[2024-06-26 12:45:21,784: DEBUG/MainProcess] ^-- substep ok
+[2024-06-26 12:45:21,784: DEBUG/MainProcess] | Consumer: Starting Heart
+[2024-06-26 12:45:21,786: DEBUG/MainProcess] ^-- substep ok
+[2024-06-26 12:45:21,786: DEBUG/MainProcess] | Consumer: Starting event loop
+[2024-06-26 12:45:21,787: DEBUG/MainProcess] | Worker: Hub.register Pool...
+[2024-06-26 12:45:21,788: INFO/MainProcess] celery@rippo-backend-vm ready.
+[2024-06-26 12:45:21,788: DEBUG/MainProcess] basic.qos: prefetch_count->16
+[2024-06-26 12:46:10,456: INFO/MainProcess] Task celery_app.generate_report[2c2acea2-9576-4cad-94e2-aa82487ebb8a] received
+[2024-06-26 12:46:10,457: DEBUG/MainProcess] TaskPool: Apply <function fast_trace_task at 0x790e675c3010> (args:('celery_app.generate_report', '2c2acea2-9576-4cad-94e2-aa82487ebb8a', {'lang': 'py', 'task': 'celery_app.generate_report', 'id': '2c2acea2-9576-4cad-94e2-aa82487ebb8a', 'shadow': None, 'eta': None, 'expires': None, 'group': None, 'group_index': None, 'retries': 0, 'timelimit': [None, None], 'root_id': '2c2acea2-9576-4cad-94e2-aa82487ebb8a', 'parent_id': None, 'argsrepr': "('https://github.com/jerrydav1s/theswimcoach.ch.git', 'jerrydav1s:theswimcoach.ch', '8VVdrX', 'qKtISirBQbftY20mLxK0hWXsD053', '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')", 'kwargsrepr': '{}', 'origin': 'gen316480@rippo-backend-vm', 'ignore_result': False, 'replaced_task_nesting': 0, 'stamped_headers': None, 'stamps': {}, 'properties': {'correlation_id': '2c2acea2-9576-4cad-94e2-aa82487ebb8a', 'reply_to': '5ea6658b-e6ea-343e-8972-99eff61a4961', 'delivery_mode': 2, 'delivery_info': {'exchange': '', 'routing_key': 'celery'}, 'priority': 0, 'body_encoding': 'base64', 'delivery_tag': 'dfc8d58b-87fb-462f-8eca-de1206875be4'}, 'reply_to':... kwargs:{})
+[2024-06-26 12:46:10,470: WARNING/ForkPoolWorker-2] [32mGet flattened file and extract contents . . .[0m
+[2024-06-26 12:46:10,473: WARNING/ForkPoolWorker-2] [35mGathering search results . . .[0m
+[2024-06-26 12:46:10,484: DEBUG/ForkPoolWorker-2] Popen(['git', 'clone', '-v', '--', 'https://*****@github.com/jerrydav1s/theswimcoach.ch.git', '/tmp/tmpm9nkg8z2'], cwd=/home/trainboxai/backend/rippo/prod, stdin=None, shell=False, universal_newlines=True)
+[2024-06-26 12:46:12,482: DEBUG/ForkPoolWorker-2] Cmd(['git', 'clone', '-v', '--', 'https://*****@github.com/jerrydav1s/theswimcoach.ch.git', '/tmp/tmpm9nkg8z2'])'s unused stdout: 
+[2024-06-26 12:46:12,510: WARNING/ForkPoolWorker-2] [32mAnalyse and extract list of dependancies . . . .[0m
+[2024-06-26 12:46:16,989: WARNING/ForkPoolWorker-2] <class 'dict'>
+[2024-06-26 12:46:16,989: WARNING/ForkPoolWorker-2] {'dependencies': [{'name': '@headlessui/vue', 'version': '^1.7.19'}, {'name': '@heroicons/vue', 'version': '^2.1.1'}, {'name': 'nuxt', 'version': '^3.11.1'}, {'name': 'vue', 'version': '^3.4.21'}, {'name': 'vue-router', 'version': '^4.3.0'}, {'name': 'autoprefixer', 'version': '^10.4.19'}, {'name': 'postcss', 'version': '^8.4.38'}, {'name': 'tailwindcss', 'version': '^3.4.1'}]}
+[2024-06-26 12:46:16,989: WARNING/ForkPoolWorker-2] {'dependencies': [{'name': '@headlessui/vue', 'version': '^1.7.19'}, {'name': '@heroicons/vue', 'version': '^2.1.1'}, {'name': 'nuxt', 'version': '^3.11.1'}, {'name': 'vue', 'version': '^3.4.21'}, {'name': 'vue-router', 'version': '^4.3.0'}, {'name': 'autoprefixer', 'version': '^10.4.19'}, {'name': 'postcss', 'version': '^8.4.38'}, {'name': 'tailwindcss', 'version': '^3.4.1'}]}
+[2024-06-26 12:46:16,990: WARNING/ForkPoolWorker-2] [32mStarting searching for known Vulnerabilities . . . . .[0m
+[2024-06-26 12:46:17,002: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.googleapis.com:443
+[2024-06-26 12:46:17,332: DEBUG/ForkPoolWorker-2] https://www.googleapis.com:443 "GET /customsearch/v1?key=AIzaSyAQjSPQoMFEWJGCGVjQsg1IMp328NNPy_c&cx=f2954b6edb52b40c7&q=@headlessui/vue%20%5E1.7.19&num=10&start=1&fields=items(link,snippet,htmlFormattedUrl) HTTP/1.1" 200 None
+[2024-06-26 12:46:17,335: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
+[2024-06-26 12:46:17,547: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /package/npm/%40headlessui%2Fvue/1.7.13 HTTP/1.1" 200 18341
+[2024-06-26 12:46:17,578: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.googleapis.com:443
+[2024-06-26 12:46:17,817: DEBUG/ForkPoolWorker-2] https://www.googleapis.com:443 "GET /customsearch/v1?key=AIzaSyAQjSPQoMFEWJGCGVjQsg1IMp328NNPy_c&cx=f2954b6edb52b40c7&q=@heroicons/vue%20%5E2.1.1&num=10&start=1&fields=items(link,snippet,htmlFormattedUrl) HTTP/1.1" 200 None
+[2024-06-26 12:46:17,820: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
+[2024-06-26 12:46:18,035: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /package/npm/%40heroicons%2Fvue HTTP/1.1" 200 24712
+[2024-06-26 12:46:18,216: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.googleapis.com:443
+[2024-06-26 12:46:18,603: DEBUG/ForkPoolWorker-2] https://www.googleapis.com:443 "GET /customsearch/v1?key=AIzaSyAQjSPQoMFEWJGCGVjQsg1IMp328NNPy_c&cx=f2954b6edb52b40c7&q=nuxt%20%5E3.11.1&num=10&start=1&fields=items(link,snippet,htmlFormattedUrl) HTTP/1.1" 200 None
+[2024-06-26 12:46:18,606: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
+[2024-06-26 12:46:18,709: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /package/npm/nuxt HTTP/1.1" 200 24829
+[2024-06-26 12:46:18,886: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
+[2024-06-26 12:46:20,746: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /package/npm/feathers-vuex HTTP/1.1" 200 None
+[2024-06-26 12:46:20,925: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
+[2024-06-26 12:46:21,222: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /package/npm/nuxi/3.10.1 HTTP/1.1" 200 None
+[2024-06-26 12:46:21,256: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.googleapis.com:443
+[2024-06-26 12:46:21,655: DEBUG/ForkPoolWorker-2] https://www.googleapis.com:443 "GET /customsearch/v1?key=AIzaSyAQjSPQoMFEWJGCGVjQsg1IMp328NNPy_c&cx=f2954b6edb52b40c7&q=vue%20%5E3.4.21&num=10&start=1&fields=items(link,snippet,htmlFormattedUrl) HTTP/1.1" 200 None
+[2024-06-26 12:46:21,658: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
+[2024-06-26 12:46:21,762: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /package/npm/vue HTTP/1.1" 200 24684
+[2024-06-26 12:46:22,183: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
+[2024-06-26 12:46:22,373: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /package/npm/%40vue%2Fcompiler-core/3.4.21 HTTP/1.1" 200 None
+[2024-06-26 12:46:22,401: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
+[2024-06-26 12:46:22,671: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /package/npm/%40vue%2Fcompiler-sfc HTTP/1.1" 200 23916
+[2024-06-26 12:46:22,841: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
+[2024-06-26 12:46:23,062: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /package/npm/vue/2.0.0-rc.6 HTTP/1.1" 200 None
+[2024-06-26 12:46:23,095: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.googleapis.com:443
+[2024-06-26 12:46:23,465: DEBUG/ForkPoolWorker-2] https://www.googleapis.com:443 "GET /customsearch/v1?key=AIzaSyAQjSPQoMFEWJGCGVjQsg1IMp328NNPy_c&cx=f2954b6edb52b40c7&q=vue-router%20%5E4.3.0&num=10&start=1&fields=items(link,snippet,htmlFormattedUrl) HTTP/1.1" 200 None
+[2024-06-26 12:46:23,469: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
+[2024-06-26 12:46:23,581: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /package/npm/vue-router HTTP/1.1" 200 24184
+[2024-06-26 12:46:23,760: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.googleapis.com:443
+[2024-06-26 12:46:24,093: DEBUG/ForkPoolWorker-2] https://www.googleapis.com:443 "GET /customsearch/v1?key=AIzaSyAQjSPQoMFEWJGCGVjQsg1IMp328NNPy_c&cx=f2954b6edb52b40c7&q=autoprefixer%20%5E10.4.19&num=10&start=1&fields=items(link,snippet,htmlFormattedUrl) HTTP/1.1" 200 None
+[2024-06-26 12:46:24,096: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
+[2024-06-26 12:46:24,278: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /package/npm/autoprefixer/10.4.15 HTTP/1.1" 200 None
+[2024-06-26 12:46:24,307: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.googleapis.com:443
+[2024-06-26 12:46:24,562: DEBUG/ForkPoolWorker-2] https://www.googleapis.com:443 "GET /customsearch/v1?key=AIzaSyAQjSPQoMFEWJGCGVjQsg1IMp328NNPy_c&cx=f2954b6edb52b40c7&q=postcss%20%5E8.4.38&num=10&start=1&fields=items(link,snippet,htmlFormattedUrl) HTTP/1.1" 200 None
+[2024-06-26 12:46:24,565: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
+[2024-06-26 12:46:24,665: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /package/npm/postcss HTTP/1.1" 200 24788
+[2024-06-26 12:46:24,933: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
+[2024-06-26 12:46:25,132: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /package/npm/postcss/8.4.21 HTTP/1.1" 200 19978
+[2024-06-26 12:46:25,162: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
+[2024-06-26 12:46:25,268: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /package/npm/postcss/8.4.33 HTTP/1.1" 200 18005
+[2024-06-26 12:46:25,294: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
+[2024-06-26 12:46:25,502: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /package/npm/postcss/5.2.18 HTTP/1.1" 200 None
+[2024-06-26 12:46:25,536: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.googleapis.com:443
+[2024-06-26 12:46:25,784: DEBUG/ForkPoolWorker-2] https://www.googleapis.com:443 "GET /customsearch/v1?key=AIzaSyAQjSPQoMFEWJGCGVjQsg1IMp328NNPy_c&cx=f2954b6edb52b40c7&q=tailwindcss%20%5E3.4.1&num=10&start=1&fields=items(link,snippet,htmlFormattedUrl) HTTP/1.1" 200 None
+[2024-06-26 12:46:25,787: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
+[2024-06-26 12:46:25,902: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /package/npm/tailwindcss/3.3.1 HTTP/1.1" 200 18068
+[2024-06-26 12:46:25,926: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
+[2024-06-26 12:46:26,028: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /package/npm/%40toptal%2Fdavinci-graphql-codegen HTTP/1.1" 200 26920
+[2024-06-26 12:46:26,204: WARNING/ForkPoolWorker-2] [32mCompleted searching for known Vulnerabilities . . . . .[0m
+[2024-06-26 12:46:26,207: WARNING/ForkPoolWorker-2] [35mGetting code audit report . . . . . .[0m
+[2024-06-26 12:46:26,207: WARNING/ForkPoolWorker-2] [91mTrying code audit, attempt 1 [0m
+[2024-06-26 12:46:33,530: WARNING/ForkPoolWorker-2] [35mGetting vulnerability report . . . . . . .[0m
+[2024-06-26 12:46:33,530: WARNING/ForkPoolWorker-2] [91mTrying Vuln Report, attempt 1 [0m
+[2024-06-26 12:46:41,353: WARNING/ForkPoolWorker-2] {
+  "vulnerability_report": [
+    {
+      "dependency": "vue",
+      "version": "2.0.0-rc.6",
+      "description": "Vue.js versions 2.0.0-rc.6 and below are vulnerable to multiple Cross-site Scripting (XSS) vulnerabilities, potentially allowing attackers to inject malicious scripts and steal user data. Additionally, these versions are susceptible to Regular Expression Denial of Service (ReDoS) attacks, which can lead to performance degradation.",
+      "source": "https://security.snyk.io/package/npm/vue/2.0.0-rc.6"
+    },
+    {
+      "dependency": "postcss",
+      "version": "5.2.18",
+      "description": "PostCSS versions 5.2.18 and below suffer from Improper Input Validation when parsing external CSS with linters. Attackers can exploit this to inject malicious CSS rules, potentially leading to the execution of arbitrary code or the theft of sensitive information.",
+      "source": "https://security.snyk.io/package/npm/postcss/5.2.18"
+    },
+    {
+      "dependency": "postcss",
+      "version": "8.4.21",
+      "description": "PostCSS versions 8.4.21 and below have an Improper Input Validation vulnerability when parsing external CSS with linters. This allows attackers to inject malicious CSS rules, potentially leading to the execution of arbitrary code or the theft of sensitive information.",
+      "source": "https://security.snyk.io/package/npm/postcss/8.4.21"
+    }
+  ]
+}
+[2024-06-26 12:46:41,355: WARNING/ForkPoolWorker-2] [35mGetting quality report . . . . . . .[0m
+[2024-06-26 12:46:41,355: WARNING/ForkPoolWorker-2] [91mTrying Quality Report, attempt 1 [0m
+[2024-06-26 12:47:02,220: WARNING/ForkPoolWorker-2] Refactoring Plan
+- Finding: Hardcoded URL in pages/about_me.vue: The Open Graph image URL (~/assets/img/Poster.jpg) is hardcoded in the nuxt.config.ts file. This might cause issues when deploying the application to different environments or if the image path changes.
+- Issue: Hardcoded URLs can lead to broken links and maintenance difficulties, especially across different environments.
+- Refactoring Approach:
+    1. Define a variable for the base URL in nuxt.config.ts. This can be set dynamically based on the environment.
+    2. Construct the OG image URL using the base URL and the relative path to the image.
+- Example:
+  ```typescript
+  // nuxt.config.ts
+  export default defineNuxtConfig({
+    // ... other configurations
+
+    publicRuntimeConfig: {
+      baseUrl: process.env.BASE_URL || 'http://localhost:3000', // Default to localhost
+    },
+
+    app: {
+      head: {
+        // ... other meta tags
+
+        {
+          hid: "og:image",
+          property: "og:image",
+          content: `${process.env.BASE_URL || 'http://localhost:3000'}/assets/img/Poster.jpg`, // Use base URL
+        },
+
+        // ... other meta tags
+      },
+    },
+
+    // ... other configurations
+  });
+  ```
+- Relevant Files: nuxt.config.ts
+
+- Finding: Hardcoded URL in pages/index.vue: The Open Graph image URL (~/assets/img/Poster.jpg) is hardcoded in the nuxt.config.ts file. This might cause issues when deploying the application to different environments or if the image path changes.
+- Issue: Hardcoded URLs can lead to broken links and maintenance difficulties, especially across different environments.
+- Refactoring Approach:
+    1. Define a variable for the base URL in nuxt.config.ts. This can be set dynamically based on the environment.
+    2. Construct the OG image URL using the base URL and the relative path to the image.
+- Example:
+  ```typescript
+  // nuxt.config.ts
+  export default defineNuxtConfig({
+    // ... other configurations
+
+    publicRuntimeConfig: {
+      baseUrl: process.env.BASE_URL || 'http://localhost:3000', // Default to localhost
+    },
+
+    app: {
+      head: {
+        // ... other meta tags
+
+        {
+          hid: "og:image",
+          property: "og:image",
+          content: `${process.env.BASE_URL || 'http://localhost:3000'}/assets/img/Poster.jpg`, // Use base URL
+        },
+
+        // ... other meta tags
+      },
+    },
+
+    // ... other configurations
+  });
+  ```
+- Relevant Files: nuxt.config.ts
+[2024-06-26 12:47:02,237: WARNING/ForkPoolWorker-2] <!-- Bug Analysis (data from code_audit.json) -->
+<div class="border-t-2">
+    <div class="mt-8 px-4 sm:px-0">
+      <h3 class="text-xl font-semibold leading-7 text-gray-900">
+        Bug Analysis
+      </h3>
+      <p class="mt-1 max-w-2xl text-sm leading-6 text-gray-500">
+        Potential bugs and issues found in code.
+      </p>
+    </div>
+    <div class="mt-6 border-t border-gray-100">
+      <dl class="divide-y divide-gray-100">
+        <!-- High -->
+        <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+          <dt class="text-sm font-medium leading-6 text-gray-900">
+            High
+          </dt>
+          <dd
+            class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0"
+          >
+            
+              No "high" profile bugs / alerts found.
+            
+          </dd>
+        </div>
+        <!-- Medium -->
+        <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+          <dt class="text-sm font-medium leading-6 text-gray-900">
+            Medium
+          </dt>
+          <dd
+            class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0"
+          >
+            
+              <ul>
+                
+                  <li>
+                    <p>Hardcoded URL in pages/about_me.vue: The Open Graph image URL (~/assets/img/Poster.jpg) is hardcoded in the nuxt.config.ts file. This might cause issues when deploying the application to different environments or if the image path changes.</p>
+                    <p class="mt-2">
+                      <strong>Impact:</strong> The OG image might not load correctly when the application is deployed, or if the image path is changed, requiring a code change and redeployment.
+                    </p>
+                    <div class="mt-1">
+                      <strong>Related files:</strong>
+                      <ul class="mb-8 list-disc list-inside">
+                        
+                         <li class="italic">nuxt.config.ts</li>
+                        
+                      </ul>
+                    </div>
+                  </li>
+                
+                  <li>
+                    <p>Hardcoded URL in pages/index.vue: The Open Graph image URL (~/assets/img/Poster.jpg) is hardcoded in the nuxt.config.ts file. This might cause issues when deploying the application to different environments or if the image path changes.</p>
+                    <p class="mt-2">
+                      <strong>Impact:</strong> The OG image might not load correctly when the application is deployed, or if the image path is changed, requiring a code change and redeployment.
+                    </p>
+                    <div class="mt-1">
+                      <strong>Related files:</strong>
+                      <ul class="mb-8 list-disc list-inside">
+                        
+                         <li class="italic">nuxt.config.ts</li>
+                        
+                      </ul>
+                    </div>
+                  </li>
+                
+              </ul>
+            
+          </dd>
+        </div>
+        <!-- Low -->
+        <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+          <dt class="text-sm font-medium leading-6 text-gray-900">
+            Low
+          </dt>
+          <dd
+            class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0"
+          >
+            
+              No "Low" profile bugs / alerts found.
+            
+          </dd>
+        </div>
+      </dl>
+    </div>
+  </div>
+
+<!-- Vulnerabilities (data from vuln_report.json)  -->
+<div class="border-t-2">
+  <div class="mt-12 px-4 sm:px-0">
+    <h3 class="text-xl font-semibold leading-7 text-gray-900">
+      Vulnerabilities
+    </h3>
+    <p class="mt-1 max-w-2xl text-sm leading-6 text-gray-500">
+      Based on the dependancies used in your code, below are the known vulnerabilities.
+    </p>
+  </div>
+  <div class="mt-6 border-t border-gray-100">
+    <dl class="divide-y divide-gray-100">
+      <!-- Items -->
+      <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+        <dt class="text-sm font-medium leading-6 text-gray-900">
+          Items
+        </dt>
+        <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">
+          
+            <ul>
+              
+                <li>
+                  <p>Vue.js versions 2.0.0-rc.6 and below are vulnerable to multiple Cross-site Scripting (XSS) vulnerabilities, potentially allowing attackers to inject malicious scripts and steal user data. Additionally, these versions are susceptible to Regular Expression Denial of Service (ReDoS) attacks, which can lead to performance degradation.</p>
+                  <p class="mt-1 mb-8 ">
+                    <strong>Source:</strong> <a href="https://security.snyk.io/package/npm/vue/2.0.0-rc.6" class=" cursor-pointer text-indigo-600 font-light ml-2">https://security.snyk.io/package/npm/vue/2.0.0-rc.6</a>
+                  </p>
+                </li>
+              
+                <li>
+                  <p>PostCSS versions 5.2.18 and below suffer from Improper Input Validation when parsing external CSS with linters. Attackers can exploit this to inject malicious CSS rules, potentially leading to the execution of arbitrary code or the theft of sensitive information.</p>
+                  <p class="mt-1 mb-8 ">
+                    <strong>Source:</strong> <a href="https://security.snyk.io/package/npm/postcss/5.2.18" class=" cursor-pointer text-indigo-600 font-light ml-2">https://security.snyk.io/package/npm/postcss/5.2.18</a>
+                  </p>
+                </li>
+              
+                <li>
+                  <p>PostCSS versions 8.4.21 and below have an Improper Input Validation vulnerability when parsing external CSS with linters. This allows attackers to inject malicious CSS rules, potentially leading to the execution of arbitrary code or the theft of sensitive information.</p>
+                  <p class="mt-1 mb-8 ">
+                    <strong>Source:</strong> <a href="https://security.snyk.io/package/npm/postcss/8.4.21" class=" cursor-pointer text-indigo-600 font-light ml-2">https://security.snyk.io/package/npm/postcss/8.4.21</a>
+                  </p>
+                </li>
+              
+            </ul>
+          
+        </dd>
+      </div>
+
+    </dl>
+  </div>
+</div>
+  <!-- Code Quality (data from quality_report.json)   -->
+  <div class="border-t-2">
+    <div class="mt-12 px-4 sm:px-0">
+      <h3 class="text-xl font-semibold leading-7 text-gray-900">
+        Code Quality
+      </h3>
+      <p class="mt-1 max-w-2xl text-sm leading-6 text-gray-500">
+        Overall quality of code.
+      </p>
+    </div>
+    <div class="mt-6 border-t border-gray-100">
+      <dl class="divide-y divide-gray-100">
+        <!-- readability -->
+        <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+          <dt class="text-sm font-medium leading-6 text-gray-900">
+            Readability
+          </dt>
+          <dd
+            class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0"
+          >
+            <p><strong>Score:</strong> 75</p>
+            <p class="mt-2">
+              The code generally demonstrates good readability with consistent indentation and clear naming. However, incorporating more comments to explain complex logic, particularly within component structures, would further enhance clarity.
+            </p>
+          </dd>
+        </div>
+        <!-- efficiency -->
+        <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+          <dt class="text-sm font-medium leading-6 text-gray-900">
+            Efficiency
+          </dt>
+          <dd
+            class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0"
+          >
+            <p><strong>Score:</strong> 80</p>
+            <p class="mt-2">
+              The code exhibits good efficiency overall. However, the audit highlights a redundancy in hardcoded Open Graph image URLs in both 'pages/about_me.vue' and 'pages/index.vue'. Addressing this duplication would improve maintainability and reduce potential for errors.
+            </p>
+          </dd>
+        </div>
+        <!-- documentation -->
+        <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+          <dt class="text-sm font-medium leading-6 text-gray-900">
+            Documentation
+          </dt>
+          <dd
+            class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0"
+          >
+            <p><strong>Score:</strong> 50</p>
+            <p class="mt-2">
+              The documentation is satisfactory with basic comments present in the code.  However, the absence of docstrings to elaborate on functions and components limits a comprehensive understanding of the code's functionality.
+            </p>
+          </dd>
+        </div>
+      </dl>
+    </div>
+  </div>
+[2024-06-26 12:47:25,634: DEBUG/ForkPoolWorker-2] Making request: POST https://oauth2.googleapis.com/token
+[2024-06-26 12:47:25,636: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): oauth2.googleapis.com:443
+[2024-06-26 12:47:25,722: DEBUG/ForkPoolWorker-2] https://oauth2.googleapis.com:443 "POST /token HTTP/1.1" 200 None
+[2024-06-26 12:47:25,768: WARNING/ForkPoolWorker-2] Uploading HTML to:
+[2024-06-26 12:47:25,769: WARNING/ForkPoolWorker-2]  
+[2024-06-26 12:47:25,769: WARNING/ForkPoolWorker-2] projects/qKtISirBQbftY20mLxK0hWXsD053/jerrydav1s:theswimcoach.ch/8VVdrX
+[2024-06-26 12:47:25,771: DEBUG/ForkPoolWorker-2] Making request: POST https://oauth2.googleapis.com/token
+[2024-06-26 12:47:25,773: DEBUG/ForkPoolWorker-2] Resetting dropped connection: oauth2.googleapis.com
+[2024-06-26 12:47:25,852: DEBUG/ForkPoolWorker-2] https://oauth2.googleapis.com:443 "POST /token HTTP/1.1" 200 None
+[2024-06-26 12:47:25,854: DEBUG/ForkPoolWorker-2] Resetting dropped connection: storage.googleapis.com
+[2024-06-26 12:47:25,972: DEBUG/ForkPoolWorker-2] https://storage.googleapis.com:443 "POST /upload/storage/v1/b/rippo-777.appspot.com/o?uploadType=resumable HTTP/1.1" 200 0
+[2024-06-26 12:47:26,152: DEBUG/ForkPoolWorker-2] https://storage.googleapis.com:443 "PUT /upload/storage/v1/b/rippo-777.appspot.com/o?uploadType=resumable&upload_id=ACJd0NplY4Tl34xy2-fnQNZ3jhsHTNHGO6THZYU8ZKtV9h3nbwyniV8cHQyJ38OEKcFB0P8M1RNh4JtuJ84ouEHuA6VoKgz8VlnDDRGuhFpWVJ57Dg HTTP/1.1" 200 1075
+[2024-06-26 12:47:26,152: WARNING/ForkPoolWorker-2] Uploaded 8VVdrX.html to projects/qKtISirBQbftY20mLxK0hWXsD053/jerrydav1s:theswimcoach.ch/8VVdrX/8VVdrX.html
+[2024-06-26 12:47:26,153: INFO/ForkPoolWorker-2] Task celery_app.generate_report[2c2acea2-9576-4cad-94e2-aa82487ebb8a] succeeded in 75.68589062523097s: None
+[2024-06-26 13:05:27,064: DEBUG/MainProcess] | Worker: Closing Hub...
+[2024-06-26 13:05:27,065: DEBUG/MainProcess] | Worker: Closing Pool...
+[2024-06-26 13:05:27,065: DEBUG/MainProcess] | Worker: Closing Consumer...
+[2024-06-26 13:05:27,065: DEBUG/MainProcess] | Worker: Stopping Consumer...
+[2024-06-26 13:05:27,065: DEBUG/MainProcess] | Consumer: Closing Connection...
+[2024-06-26 13:05:27,065: DEBUG/MainProcess] | Consumer: Closing Events...
+[2024-06-26 13:05:27,065: DEBUG/MainProcess] | Consumer: Closing Mingle...
+[2024-06-26 13:05:27,065: DEBUG/MainProcess] | Consumer: Closing Gossip...
+[2024-06-26 13:05:27,065: DEBUG/MainProcess] | Consumer: Closing Tasks...
+[2024-06-26 13:05:27,066: DEBUG/MainProcess] | Consumer: Closing Control...
+[2024-06-26 13:05:27,066: DEBUG/MainProcess] | Consumer: Closing Heart...
+[2024-06-26 13:05:27,066: DEBUG/MainProcess] | Consumer: Closing event loop...
+[2024-06-26 13:05:27,066: DEBUG/MainProcess] | Consumer: Stopping event loop...
+[2024-06-26 13:05:27,066: DEBUG/MainProcess] | Consumer: Stopping Heart...
+[2024-06-26 13:05:27,067: DEBUG/MainProcess] | Consumer: Stopping Control...
+[2024-06-26 13:05:27,069: DEBUG/MainProcess] | Consumer: Stopping Tasks...
+[2024-06-26 13:05:27,069: DEBUG/MainProcess] Canceling task consumer...
+[2024-06-26 13:05:27,069: DEBUG/MainProcess] | Consumer: Stopping Gossip...
+[2024-06-26 13:05:27,070: DEBUG/MainProcess] | Consumer: Stopping Mingle...
+[2024-06-26 13:05:27,070: DEBUG/MainProcess] | Consumer: Stopping Events...
+[2024-06-26 13:05:27,071: DEBUG/MainProcess] | Consumer: Stopping Connection...
+[2024-06-26 13:05:27,071: DEBUG/MainProcess] | Worker: Stopping Pool...
+[2024-06-26 13:05:28,081: DEBUG/MainProcess] | Worker: Stopping Hub...
+[2024-06-26 13:05:28,081: DEBUG/MainProcess] | Consumer: Shutdown Heart...
+[2024-06-26 13:05:28,081: DEBUG/MainProcess] | Consumer: Shutdown Control...
+[2024-06-26 13:05:28,082: DEBUG/MainProcess] | Consumer: Shutdown Tasks...
+[2024-06-26 13:05:28,082: DEBUG/MainProcess] Canceling task consumer...
+[2024-06-26 13:05:28,082: DEBUG/MainProcess] Closing consumer channel...
+[2024-06-26 13:05:28,082: DEBUG/MainProcess] | Consumer: Shutdown Gossip...
+[2024-06-26 13:05:28,082: DEBUG/MainProcess] | Consumer: Shutdown Events...
+[2024-06-26 13:05:28,083: DEBUG/MainProcess] | Consumer: Shutdown Connection...
+[2024-06-26 13:05:28,084: DEBUG/MainProcess] removing tasks from inqueue until task handler finished
+[2024-06-26 13:05:33,325: DEBUG/MainProcess] | Worker: Preparing bootsteps.
+[2024-06-26 13:05:33,327: DEBUG/MainProcess] | Worker: Building graph...
+[2024-06-26 13:05:33,327: DEBUG/MainProcess] | Worker: New boot order: {StateDB, Timer, Hub, Pool, Autoscaler, Beat, Consumer}
+[2024-06-26 13:05:33,331: DEBUG/MainProcess] | Consumer: Preparing bootsteps.
+[2024-06-26 13:05:33,332: DEBUG/MainProcess] | Consumer: Building graph...
+[2024-06-26 13:05:33,340: DEBUG/MainProcess] | Consumer: New boot order: {Connection, Events, Heart, Mingle, Gossip, Tasks, Control, Agent, event loop}
+[2024-06-26 13:05:33,353: DEBUG/MainProcess] | Worker: Starting Hub
+[2024-06-26 13:05:33,353: DEBUG/MainProcess] ^-- substep ok
+[2024-06-26 13:05:33,354: DEBUG/MainProcess] | Worker: Starting Pool
+[2024-06-26 13:05:33,704: DEBUG/MainProcess] ^-- substep ok
+[2024-06-26 13:05:33,705: DEBUG/MainProcess] | Worker: Starting Consumer
+[2024-06-26 13:05:33,705: DEBUG/MainProcess] | Consumer: Starting Connection
+[2024-06-26 13:05:33,708: WARNING/MainProcess] /home/trainboxai/backend/rippo/venv/lib/python3.10/site-packages/celery/worker/consumer/consumer.py:508: CPendingDeprecationWarning: The broker_connection_retry configuration setting will no longer determine
+whether broker connection retries are made during startup in Celery 6.0 and above.
+If you wish to retain the existing behavior for retrying connections on startup,
+you should set broker_connection_retry_on_startup to True.
+  warnings.warn(
+
+[2024-06-26 13:05:33,715: INFO/MainProcess] Connected to redis://localhost:6379/0
+[2024-06-26 13:05:33,715: DEBUG/MainProcess] ^-- substep ok
+[2024-06-26 13:05:33,715: DEBUG/MainProcess] | Consumer: Starting Events
+[2024-06-26 13:05:33,716: WARNING/MainProcess] /home/trainboxai/backend/rippo/venv/lib/python3.10/site-packages/celery/worker/consumer/consumer.py:508: CPendingDeprecationWarning: The broker_connection_retry configuration setting will no longer determine
+whether broker connection retries are made during startup in Celery 6.0 and above.
+If you wish to retain the existing behavior for retrying connections on startup,
+you should set broker_connection_retry_on_startup to True.
+  warnings.warn(
+
+[2024-06-26 13:05:33,718: DEBUG/MainProcess] ^-- substep ok
+[2024-06-26 13:05:33,718: DEBUG/MainProcess] | Consumer: Starting Heart
+[2024-06-26 13:05:33,720: DEBUG/MainProcess] ^-- substep ok
+[2024-06-26 13:05:33,720: DEBUG/MainProcess] | Consumer: Starting Mingle
+[2024-06-26 13:05:33,721: INFO/MainProcess] mingle: searching for neighbors
+[2024-06-26 13:05:33,727: DEBUG/MainProcess] pidbox received method hello(from_node='celery@rippo-backend-vm', revoked={}) [reply_to:{'exchange': 'reply.celery.pidbox', 'routing_key': '6b3ce294-f01b-34bb-a03a-34a768b45ce3'} ticket:7cee68c5-ef85-4da2-b62a-25d28702bc7c]
+[2024-06-26 13:05:34,732: INFO/MainProcess] mingle: all alone
+[2024-06-26 13:05:34,732: DEBUG/MainProcess] ^-- substep ok
+[2024-06-26 13:05:34,732: DEBUG/MainProcess] | Consumer: Starting Gossip
+[2024-06-26 13:05:34,736: DEBUG/MainProcess] ^-- substep ok
+[2024-06-26 13:05:34,736: DEBUG/MainProcess] | Consumer: Starting Tasks
+[2024-06-26 13:05:34,740: DEBUG/MainProcess] ^-- substep ok
+[2024-06-26 13:05:34,740: DEBUG/MainProcess] | Consumer: Starting Control
+[2024-06-26 13:05:34,744: DEBUG/MainProcess] ^-- substep ok
+[2024-06-26 13:05:34,744: DEBUG/MainProcess] | Consumer: Starting event loop
+[2024-06-26 13:05:34,745: DEBUG/MainProcess] | Worker: Hub.register Pool...
+[2024-06-26 13:05:34,745: INFO/MainProcess] celery@rippo-backend-vm ready.
+[2024-06-26 13:05:34,745: DEBUG/MainProcess] basic.qos: prefetch_count->16

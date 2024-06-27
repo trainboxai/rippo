@@ -16,6 +16,7 @@ from list_repos import list_repositories
 from event_logger import write_event_log
 from celery_app import celery_app, generate_report, create_test_file
 from colorama import Fore, Style
+from starlette.responses import HTMLResponse
 
 
 app = FastAPI()
@@ -67,6 +68,10 @@ class ReportId(BaseModel):
 
 class ProjectName(BaseModel):
     project_name: str
+
+class ReportRequest(BaseModel):
+    project_name: str
+    report_id: str
 
 
 
@@ -132,10 +137,7 @@ async def verify_token(request: Request):
 
 
 @app.post("/initialize")
-async def initialize_project(user_id: str = Depends(get_current_user)):
-    #print("User ID:", user_id) 
-    #print(bucket)
-    
+async def initialize_project(user_id: str = Depends(get_current_user)):    
     report_id = base64.urlsafe_b64encode(uuid.uuid4().bytes).rstrip(b'=').decode('ascii')[:6]
 
     log_path = f"{output_dir}/RUN_LOG.log"
@@ -209,6 +211,24 @@ async def fetch_reports(project_name: ProjectName, user_id: str = Depends(get_cu
 
     return {"reports": reports_list}
 
+
+@app.post("/fetch_report_content")
+async def fetch_report_content(request: ReportRequest, user_id: str = Depends(get_current_user)):
+    """Fetches the HTML content of the report from Firebase storage."""
+    
+    project_name = request.project_name
+    report_id = request.report_id
+    
+    # Construct the path to the report in the storage bucket
+    blob = bucket.blob(f'projects/{user_id}/{project_name}/{report_id}/{report_id}.html')
+    
+    if not blob.exists():
+        raise HTTPException(status_code=404, detail="Report not found")
+    
+    # Download the report content
+    report_content = blob.download_as_text()
+    
+    return HTMLResponse(content=report_content)
 
 
 @app.post("/master")

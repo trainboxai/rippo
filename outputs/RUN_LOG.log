@@ -1,0 +1,9 @@
+2024-06-26 12:45:52  ·  Event ID:101  ·  Source:/initialize  ·  Details:Initialization completed for new report 8VVdrX. Repos found = 16  ·  Level:INFO
+2024-06-26 12:46:10  ·  Event ID:102  ·  Source:/master  ·  Details:New docs creted for user: qKtISirBQbftY20mLxK0hWXsD053 and project:8VVdrX in master initialisation phase  ·  Level:INFO
+2024-06-26 12:46:12  ·  Event ID:103  ·  Source:flattener.py/extract_and_write_to_markdown  ·  Details:Markdown file created final_8VVdrX.md.  ·  Level:INFO
+2024-06-26 12:46:16  ·  Event ID:104  ·  Source:analyser.py/get_dependancy_list  ·  Details:Analysed and extracted list of dependancies  ·  Level:INFO
+2024-06-26 12:46:26  ·  Event ID:105  ·  Source:search.py/search_vulnerabilities  ·  Details:Google searched dor known vulnerabilities  ·  Level:INFO
+2024-06-26 12:46:33  ·  Event ID:106  ·  Source:reporter.py/code_audit_report_with_backoff  ·  Details:Code audit completed  ·  Level:INFO
+2024-06-26 12:46:41  ·  Event ID:107  ·  Source:reporter.py/vulnerability_report_with_backoff  ·  Details:Vulnerability report completed  ·  Level:INFO
+2024-06-26 12:46:47  ·  Event ID:108  ·  Source:reporter.py/quality_report_with_backoff  ·  Details:Code Quality report completed  ·  Level:INFO
+2024-06-26 12:47:02  ·  Event ID:108  ·  Source:reporter.py/generate_refactor_plan_with_backoff  ·  Details:Code Refactor Plan completed  ·  Level:INFO

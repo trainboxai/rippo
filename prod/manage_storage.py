@@ -39,7 +39,7 @@ def upload_html(user_id, report_id, repo_name):
 
                 # Combine HTML files
                 report_file = os.path.join(reports_dir, f"report_{report_id}.html")
-                refactor_file = os.path.join(reports_dir, f"refactor_guide_{report_id}.html")
+                refactor_file = os.path.join(reports_dir, f"refactor_{report_id}.html")
                 combined_html = os.path.join(reports_dir, f"{report_id}.html")
 
                 with open(report_file, 'r') as report, open(refactor_file, 'r') as refactor, open(combined_html, 'w') as combined:
