@@ -39,9 +39,9 @@ def extract_and_write_to_markdown(repo_url,oauth_token ,unique_id=0 ):
 
 # # #  MAIN # # # 
 """
-valid_repo_url = "https://github.com/Digimonger/botmaster_v2.git"
-oauth_token = "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"
-uniqueId = "TLWO1x"
+valid_repo_url = "https://github.com/Digimonger/upscalerlabs.git"
+oauth_token = "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"
+uniqueId = "TEST_2"
 #usage
 extract_and_write_to_markdown(valid_repo_url,oauth_token, uniqueId )
-"""
+#"""

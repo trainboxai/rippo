@@ -1185,3 +1185,1171 @@ you should set broker_connection_retry_on_startup to True.
 [2024-06-26 13:05:34,745: DEBUG/MainProcess] | Worker: Hub.register Pool...
 [2024-06-26 13:05:34,745: INFO/MainProcess] celery@rippo-backend-vm ready.
 [2024-06-26 13:05:34,745: DEBUG/MainProcess] basic.qos: prefetch_count->16
+[2024-06-27 10:05:57,402: INFO/MainProcess] Task celery_app.generate_report[5cc40b7d-4846-49e8-88f6-e7645baeea9b] received
+[2024-06-27 10:05:57,405: DEBUG/MainProcess] TaskPool: Apply <function fast_trace_task at 0x78cf9aac7010> (args:('celery_app.generate_report', '5cc40b7d-4846-49e8-88f6-e7645baeea9b', {'lang': 'py', 'task': 'celery_app.generate_report', 'id': '5cc40b7d-4846-49e8-88f6-e7645baeea9b', 'shadow': None, 'eta': None, 'expires': None, 'group': None, 'group_index': None, 'retries': 0, 'timelimit': [None, None], 'root_id': '5cc40b7d-4846-49e8-88f6-e7645baeea9b', 'parent_id': None, 'argsrepr': "('https://github.com/jerrydav1s/ml-tinkering-blog.git', 'jerrydav1s:ml-tinkering-blog', '5_Eg0k', 'qKtISirBQbftY20mLxK0hWXsD053', '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')", 'kwargsrepr': '{}', 'origin': 'gen347716@rippo-backend-vm', 'ignore_result': False, 'replaced_task_nesting': 0, 'stamped_headers': None, 'stamps': {}, 'properties': {'correlation_id': '5cc40b7d-4846-49e8-88f6-e7645baeea9b', 'reply_to': 'ce917c71-6516-322c-b32d-b794d9a8d1dc', 'delivery_mode': 2, 'delivery_info': {'exchange': '', 'routing_key': 'celery'}, 'priority': 0, 'body_encoding': 'base64', 'delivery_tag': 'b86f8a2a-16f3-4101-abbb-03983bd1f399'}, 'reply_to':... kwargs:{})
+[2024-06-27 10:05:57,418: WARNING/ForkPoolWorker-2] [32mGet flattened file and extract contents . . .[0m
+[2024-06-27 10:05:57,421: WARNING/ForkPoolWorker-2] [35mGathering search results . . .[0m
+[2024-06-27 10:05:57,432: DEBUG/ForkPoolWorker-2] Popen(['git', 'clone', '-v', '--', 'https://*****@github.com/jerrydav1s/ml-tinkering-blog.git', '/tmp/tmpnwnx70j9'], cwd=/home/trainboxai/backend/rippo/prod, stdin=None, shell=False, universal_newlines=True)
+[2024-06-27 10:05:58,277: DEBUG/ForkPoolWorker-2] Cmd(['git', 'clone', '-v', '--', 'https://*****@github.com/jerrydav1s/ml-tinkering-blog.git', '/tmp/tmpnwnx70j9'])'s unused stdout: 
+[2024-06-27 10:05:58,300: WARNING/ForkPoolWorker-2] [32mAnalyse and extract list of dependancies . . . .[0m
+[2024-06-27 10:06:08,232: WARNING/ForkPoolWorker-2] "dependancy","version"
+"@headlessui/react","^1.7.13"
+"@mapbox/rehype-prism","^0.9.0"
+"@mdx-js/loader","^3.0.0"
+"@mdx-js/react","^3.0.0"
+"@next/mdx","^14.0.4"
+"@tailwindcss/typography","^0.5.4"
+"@types/node","^20.10.8"
+"@types/react","^18.2.47"
+"@types/react-dom","^18.2.18"
+"@types/webpack-env","^1.18.1"
+"@vercel/analytics","^1.2.2"
+"autoprefixer","^10.4.12"
+"cheerio","^1.0.0-rc.12"
+"clsx","^2.1.0"
+"fast-glob","^3.2.11"
+"feed","^4.2.2"
+"next","^14.0.4"
+"next-themes","^0.2.1"
+"react","^18.2.0"
+"react-dom","^18.2.0"
+"remark-gfm","^4.0.0"
+"tailwindcss","^3.4.1"
+"typescript","^5.3.3"
+"eslint","^8.56.0"
+"eslint-config-next","^14.0.4"
+"prettier","^3.1.1"
+"prettier-plugin-tailwindcss","^0.5.11"
+"sharp","0.33.1"
+[2024-06-27 10:06:08,232: WARNING/ForkPoolWorker-2] "dependancy","version"
+"@headlessui/react","^1.7.13"
+"@mapbox/rehype-prism","^0.9.0"
+"@mdx-js/loader","^3.0.0"
+"@mdx-js/react","^3.0.0"
+"@next/mdx","^14.0.4"
+"@tailwindcss/typography","^0.5.4"
+"@types/node","^20.10.8"
+"@types/react","^18.2.47"
+"@types/react-dom","^18.2.18"
+"@types/webpack-env","^1.18.1"
+"@vercel/analytics","^1.2.2"
+"autoprefixer","^10.4.12"
+"cheerio","^1.0.0-rc.12"
+"clsx","^2.1.0"
+"fast-glob","^3.2.11"
+"feed","^4.2.2"
+"next","^14.0.4"
+"next-themes","^0.2.1"
+"react","^18.2.0"
+"react-dom","^18.2.0"
+"remark-gfm","^4.0.0"
+"tailwindcss","^3.4.1"
+"typescript","^5.3.3"
+"eslint","^8.56.0"
+"eslint-config-next","^14.0.4"
+"prettier","^3.1.1"
+"prettier-plugin-tailwindcss","^0.5.11"
+"sharp","0.33.1"
+[2024-06-27 10:06:08,232: WARNING/ForkPoolWorker-2] [32mStarting searching for known Vulnerabilities . . . . .[0m
+[2024-06-27 10:06:08,239: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.googleapis.com:443
+[2024-06-27 10:06:08,509: DEBUG/ForkPoolWorker-2] https://www.googleapis.com:443 "GET /customsearch/v1?key=AIzaSyAQjSPQoMFEWJGCGVjQsg1IMp328NNPy_c&cx=f2954b6edb52b40c7&q=@headlessui/react%20%5E1.7.13&num=10&start=1&fields=items(link,snippet,htmlFormattedUrl) HTTP/1.1" 200 None
+[2024-06-27 10:06:08,511: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
+[2024-06-27 10:06:08,840: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /package/npm/%40headlessui%2Freact HTTP/1.1" 200 24594
+[2024-06-27 10:06:09,025: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.googleapis.com:443
+[2024-06-27 10:06:09,375: DEBUG/ForkPoolWorker-2] https://www.googleapis.com:443 "GET /customsearch/v1?key=AIzaSyAQjSPQoMFEWJGCGVjQsg1IMp328NNPy_c&cx=f2954b6edb52b40c7&q=@mapbox/rehype-prism%20%5E0.9.0&num=10&start=1&fields=items(link,snippet,htmlFormattedUrl) HTTP/1.1" 200 None
+[2024-06-27 10:06:09,378: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
+[2024-06-27 10:06:10,263: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /package/npm/%40mapbox%2Frehype-prism/0.9.0 HTTP/1.1" 200 16665
+[2024-06-27 10:06:10,285: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.googleapis.com:443
+[2024-06-27 10:06:10,671: DEBUG/ForkPoolWorker-2] https://www.googleapis.com:443 "GET /customsearch/v1?key=AIzaSyAQjSPQoMFEWJGCGVjQsg1IMp328NNPy_c&cx=f2954b6edb52b40c7&q=@mdx-js/loader%20%5E3.0.0&num=10&start=1&fields=items(link,snippet,htmlFormattedUrl) HTTP/1.1" 200 None
+[2024-06-27 10:06:10,674: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
+[2024-06-27 10:06:11,546: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /package/npm/%40bevry%2Fmdx HTTP/1.1" 200 None
+[2024-06-27 10:06:11,731: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.googleapis.com:443
+[2024-06-27 10:06:12,075: DEBUG/ForkPoolWorker-2] https://www.googleapis.com:443 "GET /customsearch/v1?key=AIzaSyAQjSPQoMFEWJGCGVjQsg1IMp328NNPy_c&cx=f2954b6edb52b40c7&q=@mdx-js/react%20%5E3.0.0&num=10&start=1&fields=items(link,snippet,htmlFormattedUrl) HTTP/1.1" 200 None
+[2024-06-27 10:06:12,079: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
+[2024-06-27 10:06:12,259: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /package/npm/%40mdx-js%2Freact/3.0.0 HTTP/1.1" 200 None
+[2024-06-27 10:06:12,293: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
+[2024-06-27 10:06:12,476: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /vuln/SNYK-JS-GATSBYPLUGINMDX-2405699 HTTP/1.1" 200 23975
+[2024-06-27 10:06:12,561: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.cvedetails.com:443
+[2024-06-27 10:06:12,701: DEBUG/ForkPoolWorker-2] https://www.cvedetails.com:443 "GET /vulnerability-list/assigner-96/security-advisories-github.com.html?page=1&cvssscoremin=3&year=2022&month=8&order=1&trc=47&sha=a0fb6fb0ddbcde38e29aabc03cb4171735a40243 HTTP/1.1" 403 None
+[2024-06-27 10:06:12,707: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.cvedetails.com:443
+[2024-06-27 10:06:12,818: DEBUG/ForkPoolWorker-2] https://www.cvedetails.com:443 "GET /vulnerability-list/published_since-2022-08-01/?page=819&cvssscoremin=7&cvssscoremax=10&order=1&trc=25513&sha=58271cfdd1503cbd2652068be70eee1c97ea988e HTTP/1.1" 403 None
+[2024-06-27 10:06:12,825: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.cvedetails.com:443
+[2024-06-27 10:06:12,932: DEBUG/ForkPoolWorker-2] https://www.cvedetails.com:443 "GET /vulnerability-list/cvssscoremin-9/cvssscoremax-10/vulnerabilities.html?page=317&cvssscoremin=9&cvssscoremax=10&order=1&trc=40685&sha=2721cbf47ba1e57d8b65ae1c3cf8883295fd04d7 HTTP/1.1" 403 None
+[2024-06-27 10:06:12,939: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.cvedetails.com:443
+[2024-06-27 10:06:13,044: DEBUG/ForkPoolWorker-2] https://www.cvedetails.com:443 "GET /vulnerability-list/year-2022/month-6/June.html?page=19&cvssscoremin=8&cvssscoremax=10&order=7&trc=728&sha=8c162d80aeb40400d3585a6f70d0a2766056beac HTTP/1.1" 403 None
+[2024-06-27 10:06:13,051: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.cvedetails.com:443
+[2024-06-27 10:06:13,155: DEBUG/ForkPoolWorker-2] https://www.cvedetails.com:443 "GET /vulnerability-list/year-2022/vulnerabilities.html?page=291&cvssscoremin=7&cvssscoremax=10&order=1&trc=15097&sha=cd4852cc6309772c8378bbb0656aad0649b68acf HTTP/1.1" 403 None
+[2024-06-27 10:06:13,162: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.cvedetails.com:443
+[2024-06-27 10:06:13,270: DEBUG/ForkPoolWorker-2] https://www.cvedetails.com:443 "GET /vulnerability-list/year-2022/month-6/June.html?page=1&cvssscoremin=2&cweid=502&order=1&trc=12&sha=29d295f6818e51e3dfc9ea14773eae5c3c0e7f9f HTTP/1.1" 403 None
+[2024-06-27 10:06:13,277: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.cvedetails.com:443
+[2024-06-27 10:06:13,381: DEBUG/ForkPoolWorker-2] https://www.cvedetails.com:443 "GET /vulnerability-list/cvssscoremin-9/cvssscoremax-10/vulnerabilities.html?page=332&cvssscoremin=9&cvssscoremax=10&order=1&trc=41081&sha=2958b3df7d96412274fc8cc8f59e685eb6debe4e HTTP/1.1" 403 None
+[2024-06-27 10:06:13,388: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.cvedetails.com:443
+[2024-06-27 10:06:13,495: DEBUG/ForkPoolWorker-2] https://www.cvedetails.com:443 "GET /vulnerability-list/year-2022/vulnerabilities.html?page=434&cvssscoremin=6&order=7&trc=19157&sha=b4ad9b888e0d0972dbb43d0573142a0813643ed7 HTTP/1.1" 403 None
+[2024-06-27 10:06:13,501: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.googleapis.com:443
+[2024-06-27 10:06:13,735: DEBUG/ForkPoolWorker-2] https://www.googleapis.com:443 "GET /customsearch/v1?key=AIzaSyAQjSPQoMFEWJGCGVjQsg1IMp328NNPy_c&cx=f2954b6edb52b40c7&q=@next/mdx%20%5E14.0.4&num=10&start=1&fields=items(link,snippet,htmlFormattedUrl) HTTP/1.1" 200 None
+[2024-06-27 10:06:13,738: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
+[2024-06-27 10:06:14,893: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /package/npm/%40next%2Fmdx/14.0.4-canary.4 HTTP/1.1" 200 17922
+[2024-06-27 10:06:14,917: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.googleapis.com:443
+[2024-06-27 10:06:15,317: DEBUG/ForkPoolWorker-2] https://www.googleapis.com:443 "GET /customsearch/v1?key=AIzaSyAQjSPQoMFEWJGCGVjQsg1IMp328NNPy_c&cx=f2954b6edb52b40c7&q=@tailwindcss/typography%20%5E0.5.4&num=10&start=1&fields=items(link,snippet,htmlFormattedUrl) HTTP/1.1" 200 None
+[2024-06-27 10:06:15,321: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
+[2024-06-27 10:06:15,643: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /package/npm/%40tailwindcss%2Ftypography HTTP/1.1" 200 24836
+[2024-06-27 10:06:16,008: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.googleapis.com:443
+[2024-06-27 10:06:16,552: DEBUG/ForkPoolWorker-2] https://www.googleapis.com:443 "GET /customsearch/v1?key=AIzaSyAQjSPQoMFEWJGCGVjQsg1IMp328NNPy_c&cx=f2954b6edb52b40c7&q=@types/node%20%5E20.10.8&num=10&start=1&fields=items(link,snippet,htmlFormattedUrl) HTTP/1.1" 200 None
+[2024-06-27 10:06:16,555: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
+[2024-06-27 10:06:16,800: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /package/npm/%40types%2Fnode HTTP/1.1" 200 23688
+[2024-06-27 10:06:16,974: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.cvedetails.com:443
+[2024-06-27 10:06:17,084: DEBUG/ForkPoolWorker-2] https://www.cvedetails.com:443 "GET /vulnerability-list/vendor_id-13534/product_id-28125/Docker-Docker.html HTTP/1.1" 403 None
+[2024-06-27 10:06:17,090: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.cvedetails.com:443
+[2024-06-27 10:06:17,194: DEBUG/ForkPoolWorker-2] https://www.cvedetails.com:443 "GET /vulnerability-list/year-2021/month-8/August.html?page=6&cvssscoremin=8&order=4&trc=688&sha=41c147b7eb476628afbf315c8578adeede997bc0 HTTP/1.1" 403 None
+[2024-06-27 10:06:17,201: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.googleapis.com:443
+[2024-06-27 10:06:17,654: DEBUG/ForkPoolWorker-2] https://www.googleapis.com:443 "GET /customsearch/v1?key=AIzaSyAQjSPQoMFEWJGCGVjQsg1IMp328NNPy_c&cx=f2954b6edb52b40c7&q=@types/react%20%5E18.2.47&num=10&start=1&fields=items(link,snippet,htmlFormattedUrl) HTTP/1.1" 200 None
+[2024-06-27 10:06:17,658: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
+[2024-06-27 10:06:17,858: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /package/npm/%40types%2Freact HTTP/1.1" 200 None
+[2024-06-27 10:06:18,031: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.googleapis.com:443
+[2024-06-27 10:06:18,336: DEBUG/ForkPoolWorker-2] https://www.googleapis.com:443 "GET /customsearch/v1?key=AIzaSyAQjSPQoMFEWJGCGVjQsg1IMp328NNPy_c&cx=f2954b6edb52b40c7&q=@types/react-dom%20%5E18.2.18&num=10&start=1&fields=items(link,snippet,htmlFormattedUrl) HTTP/1.1" 200 None
+[2024-06-27 10:06:18,340: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
+[2024-06-27 10:06:18,539: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /package/npm/%40types%2Freact-dom HTTP/1.1" 200 None
+[2024-06-27 10:06:18,715: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.googleapis.com:443
+[2024-06-27 10:06:18,975: DEBUG/ForkPoolWorker-2] https://www.googleapis.com:443 "GET /customsearch/v1?key=AIzaSyAQjSPQoMFEWJGCGVjQsg1IMp328NNPy_c&cx=f2954b6edb52b40c7&q=@types/webpack-env%20%5E1.18.1&num=10&start=1&fields=items(link,snippet,htmlFormattedUrl) HTTP/1.1" 200 None
+[2024-06-27 10:06:18,978: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
+[2024-06-27 10:06:19,185: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /package/npm/%40types%2Fwebpack-env HTTP/1.1" 200 20062
+[2024-06-27 10:06:19,258: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.googleapis.com:443
+[2024-06-27 10:06:19,496: DEBUG/ForkPoolWorker-2] https://www.googleapis.com:443 "GET /customsearch/v1?key=AIzaSyAQjSPQoMFEWJGCGVjQsg1IMp328NNPy_c&cx=f2954b6edb52b40c7&q=@vercel/analytics%20%5E1.2.2&num=10&start=1&fields=items(link,snippet,htmlFormattedUrl) HTTP/1.1" 200 None
+[2024-06-27 10:06:19,499: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
+[2024-06-27 10:06:20,377: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /package/npm/%40vercel%2Fanalytics HTTP/1.1" 200 None
+[2024-06-27 10:06:20,578: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.googleapis.com:443
+[2024-06-27 10:06:21,162: DEBUG/ForkPoolWorker-2] https://www.googleapis.com:443 "GET /customsearch/v1?key=AIzaSyAQjSPQoMFEWJGCGVjQsg1IMp328NNPy_c&cx=f2954b6edb52b40c7&q=autoprefixer%20%5E10.4.12&num=10&start=1&fields=items(link,snippet,htmlFormattedUrl) HTTP/1.1" 200 None
+[2024-06-27 10:06:21,165: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
+[2024-06-27 10:06:21,388: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /package/npm/autoprefixer HTTP/1.1" 200 None
+[2024-06-27 10:06:21,562: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.googleapis.com:443
+[2024-06-27 10:06:21,908: DEBUG/ForkPoolWorker-2] https://www.googleapis.com:443 "GET /customsearch/v1?key=AIzaSyAQjSPQoMFEWJGCGVjQsg1IMp328NNPy_c&cx=f2954b6edb52b40c7&q=cheerio%20%5E1.0.0-rc.12&num=10&start=1&fields=items(link,snippet,htmlFormattedUrl) HTTP/1.1" 200 None
+[2024-06-27 10:06:21,912: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
+[2024-06-27 10:06:22,139: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /package/npm/cheerio/1.0.0-rc.12 HTTP/1.1" 200 17589
+[2024-06-27 10:06:22,164: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
+[2024-06-27 10:06:22,440: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /package/npm/cheerio HTTP/1.1" 200 None
+[2024-06-27 10:06:22,570: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
+[2024-06-27 10:06:22,760: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /package/npm/cheerio/0.2.1 HTTP/1.1" 200 21391
+[2024-06-27 10:06:22,790: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
+[2024-06-27 10:06:22,980: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /package/npm/cheerio/0.7.0 HTTP/1.1" 200 21391
+[2024-06-27 10:06:23,010: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.googleapis.com:443
+[2024-06-27 10:06:23,312: DEBUG/ForkPoolWorker-2] https://www.googleapis.com:443 "GET /customsearch/v1?key=AIzaSyAQjSPQoMFEWJGCGVjQsg1IMp328NNPy_c&cx=f2954b6edb52b40c7&q=clsx%20%5E2.1.0&num=10&start=1&fields=items(link,snippet,htmlFormattedUrl) HTTP/1.1" 200 None
+[2024-06-27 10:06:23,316: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
+[2024-06-27 10:06:23,540: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /package/npm/clsx/2.1.0 HTTP/1.1" 200 16716
+[2024-06-27 10:06:23,562: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
+[2024-06-27 10:06:24,085: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /package/npm/preact-auto-clsx HTTP/1.1" 200 19809
+[2024-06-27 10:06:24,150: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.googleapis.com:443
+[2024-06-27 10:06:24,400: DEBUG/ForkPoolWorker-2] https://www.googleapis.com:443 "GET /customsearch/v1?key=AIzaSyAQjSPQoMFEWJGCGVjQsg1IMp328NNPy_c&cx=f2954b6edb52b40c7&q=fast-glob%20%5E3.2.11&num=10&start=1&fields=items(link,snippet,htmlFormattedUrl) HTTP/1.1" 200 None
+[2024-06-27 10:06:24,403: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
+[2024-06-27 10:06:24,651: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /package/npm/fast-glob HTTP/1.1" 200 20760
+[2024-06-27 10:06:24,743: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.googleapis.com:443
+[2024-06-27 10:06:25,013: DEBUG/ForkPoolWorker-2] https://www.googleapis.com:443 "GET /customsearch/v1?key=AIzaSyAQjSPQoMFEWJGCGVjQsg1IMp328NNPy_c&cx=f2954b6edb52b40c7&q=feed%20%5E4.2.2&num=10&start=1&fields=items(link,snippet,htmlFormattedUrl) HTTP/1.1" 200 None
+[2024-06-27 10:06:25,017: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
+[2024-06-27 10:06:25,206: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /package/npm/feed/4.2.2 HTTP/1.1" 200 None
+[2024-06-27 10:06:25,234: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
+[2024-06-27 10:06:25,444: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /package/npm/feed HTTP/1.1" 200 20132
+[2024-06-27 10:06:25,515: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.exploit-db.com:443
+[2024-06-27 10:06:25,792: DEBUG/ForkPoolWorker-2] https://www.exploit-db.com:443 "GET /exploits/40920 HTTP/1.1" 403 None
+[2024-06-27 10:06:25,801: DEBUG/ForkPoolWorker-2] Encoding detection: ascii is most likely the one.
+[2024-06-27 10:06:25,807: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.cvedetails.com:443
+[2024-06-27 10:06:25,918: DEBUG/ForkPoolWorker-2] https://www.cvedetails.com:443 "GET /vulnerability-list/vendor_id-1224/product_id-19997/version_id-515007/Google-Android-4.2.2.html HTTP/1.1" 403 None
+[2024-06-27 10:06:25,925: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.cvedetails.com:443
+[2024-06-27 10:06:26,030: DEBUG/ForkPoolWorker-2] https://www.cvedetails.com:443 "GET /cve/CVE-2016-9565/ HTTP/1.1" 403 None
+[2024-06-27 10:06:26,036: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.cvedetails.com:443
+[2024-06-27 10:06:26,144: DEBUG/ForkPoolWorker-2] https://www.cvedetails.com:443 "GET /vulnerability-list/vendor_id-12752/product_id-25450/Mongodb-Mongodb.html HTTP/1.1" 403 None
+[2024-06-27 10:06:26,151: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.cvedetails.com:443
+[2024-06-27 10:06:26,260: DEBUG/ForkPoolWorker-2] https://www.cvedetails.com:443 "GET /version-list/16953/40173/1/Anydesk-Anydesk.html HTTP/1.1" 403 None
+[2024-06-27 10:06:26,266: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.cvedetails.com:443
+[2024-06-27 10:06:26,373: DEBUG/ForkPoolWorker-2] https://www.cvedetails.com:443 "GET /cve/CVE-2024-31744/ HTTP/1.1" 403 None
+[2024-06-27 10:06:26,379: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
+[2024-06-27 10:06:26,498: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET / HTTP/1.1" 200 55612
+[2024-06-27 10:06:26,659: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.cvedetails.com:443
+[2024-06-27 10:06:26,778: DEBUG/ForkPoolWorker-2] https://www.cvedetails.com:443 "GET /vulnerability-list/vendor_id-1424/product_id-2468/version_id-563855/Nagios-Nagios-4.2.0.html?page=1&order=8&trc=9&sha=0874bd5213fd66e302161adf37e9227cf506d706 HTTP/1.1" 403 None
+[2024-06-27 10:06:26,785: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.googleapis.com:443
+[2024-06-27 10:06:27,269: DEBUG/ForkPoolWorker-2] https://www.googleapis.com:443 "GET /customsearch/v1?key=AIzaSyAQjSPQoMFEWJGCGVjQsg1IMp328NNPy_c&cx=f2954b6edb52b40c7&q=next%20%5E14.0.4&num=10&start=1&fields=items(link,snippet,htmlFormattedUrl) HTTP/1.1" 200 None
+[2024-06-27 10:06:27,273: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
+[2024-06-27 10:06:27,473: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /package/npm/next/14.0.4 HTTP/1.1" 200 None
+[2024-06-27 10:06:27,523: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
+[2024-06-27 10:06:27,723: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /package/npm/%40next%2Feslint-plugin-next/14.0.4-canary.16 HTTP/1.1" 200 None
+[2024-06-27 10:06:27,760: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
+[2024-06-27 10:06:28,045: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /package/npm/next HTTP/1.1" 200 25253
+[2024-06-27 10:06:28,234: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
+[2024-06-27 10:06:28,419: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /package/npm/%40next%2Freact-dev-overlay/14.0.4-canary.11 HTTP/1.1" 200 17929
+[2024-06-27 10:06:28,444: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
+[2024-06-27 10:06:28,705: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /package/npm/%40next%2Fswc-linux-x64-gnu/14.0.4-canary.39 HTTP/1.1" 200 17945
+[2024-06-27 10:06:28,728: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
+[2024-06-27 10:06:28,973: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /package/npm/ng-packagr HTTP/1.1" 200 None
+[2024-06-27 10:06:29,148: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
+[2024-06-27 10:06:29,355: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /package/npm/%40angular%2Fmaterial-moment-adapter/versions?page=2 HTTP/1.1" 200 None
+[2024-06-27 10:06:29,527: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.cvedetails.com:443
+[2024-06-27 10:06:29,634: DEBUG/ForkPoolWorker-2] https://www.cvedetails.com:443 "GET /vulnerability-list/vendor_id-23551/product_id-87327/Vercel-Next.js.html?page=1&order=1&trc=10&sha=a6f054a3e9f2705851b9866dec112589c106a41a HTTP/1.1" 403 None
+[2024-06-27 10:06:29,641: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
+[2024-06-27 10:06:29,883: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /package/npm/next/12.0.4 HTTP/1.1" 200 21300
+[2024-06-27 10:06:29,917: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
+[2024-06-27 10:06:30,129: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /package/npm/%40angular-devkit%2Fbuild-angular/versions?page=2 HTTP/1.1" 200 21357
+[2024-06-27 10:06:30,398: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.googleapis.com:443
+[2024-06-27 10:06:30,661: DEBUG/ForkPoolWorker-2] https://www.googleapis.com:443 "GET /customsearch/v1?key=AIzaSyAQjSPQoMFEWJGCGVjQsg1IMp328NNPy_c&cx=f2954b6edb52b40c7&q=next-themes%20%5E0.2.1&num=10&start=1&fields=items(link,snippet,htmlFormattedUrl) HTTP/1.1" 200 None
+[2024-06-27 10:06:30,664: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
+[2024-06-27 10:06:30,948: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /package/npm/next-themes/0.2.1 HTTP/1.1" 200 None
+[2024-06-27 10:06:30,972: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
+[2024-06-27 10:06:31,172: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /package/npm/%40theme-ui%2Ftypography/versions?page=5 HTTP/1.1" 200 17096
+[2024-06-27 10:06:31,227: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.cvedetails.com:443
+[2024-06-27 10:06:31,340: DEBUG/ForkPoolWorker-2] https://www.cvedetails.com:443 "GET /cve/CVE-2010-2275/ HTTP/1.1" 403 None
+[2024-06-27 10:06:31,347: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.exploit-db.com:443
+[2024-06-27 10:06:31,504: DEBUG/ForkPoolWorker-2] https://www.exploit-db.com:443 "GET /exploits/13156 HTTP/1.1" 403 None
+[2024-06-27 10:06:31,509: DEBUG/ForkPoolWorker-2] Encoding detection: ascii is most likely the one.
+[2024-06-27 10:06:31,515: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.googleapis.com:443
+[2024-06-27 10:06:31,977: DEBUG/ForkPoolWorker-2] https://www.googleapis.com:443 "GET /customsearch/v1?key=AIzaSyAQjSPQoMFEWJGCGVjQsg1IMp328NNPy_c&cx=f2954b6edb52b40c7&q=react%20%5E18.2.0&num=10&start=1&fields=items(link,snippet,htmlFormattedUrl) HTTP/1.1" 200 None
+[2024-06-27 10:06:31,980: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
+[2024-06-27 10:06:32,115: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /package/npm/react/18.2.0 HTTP/1.1" 200 18774
+[2024-06-27 10:06:32,139: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
+[2024-06-27 10:06:32,406: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /package/npm/react-art/18.2.0 HTTP/1.1" 200 18890
+[2024-06-27 10:06:32,431: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
+[2024-06-27 10:06:32,710: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /package/npm/react-dom HTTP/1.1" 200 26399
+[2024-06-27 10:06:32,887: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
+[2024-06-27 10:06:33,149: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /package/maven/org.webjars.npm%3Areact-dom HTTP/1.1" 200 24062
+[2024-06-27 10:06:33,312: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
+[2024-06-27 10:06:33,523: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /package/maven/org.webjars.npm%3Areact-dom/16.1.0 HTTP/1.1" 200 21607
+[2024-06-27 10:06:33,553: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
+[2024-06-27 10:06:34,393: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /package/npm/%40react-native-firebase%2Fapp HTTP/1.1" 200 24484
+[2024-06-27 10:06:34,664: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
+[2024-06-27 10:06:34,888: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /package/npm/react/0.13.2 HTTP/1.1" 200 None
+[2024-06-27 10:06:34,919: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
+[2024-06-27 10:06:35,895: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /package/npm/%40nrwl%2Freact-native HTTP/1.1" 200 24783
+[2024-06-27 10:06:36,072: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
+[2024-06-27 10:06:36,267: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /package/npm/%40react-native-firebase%2Fmessaging HTTP/1.1" 200 24364
+[2024-06-27 10:06:36,441: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
+[2024-06-27 10:06:36,650: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /package/npm/%40react-native-firebase%2Fanalytics HTTP/1.1" 200 24421
+[2024-06-27 10:06:36,833: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.googleapis.com:443
+[2024-06-27 10:06:37,040: DEBUG/ForkPoolWorker-2] https://www.googleapis.com:443 "GET /customsearch/v1?key=AIzaSyAQjSPQoMFEWJGCGVjQsg1IMp328NNPy_c&cx=f2954b6edb52b40c7&q=react-dom%20%5E18.2.0&num=10&start=1&fields=items(link,snippet,htmlFormattedUrl) HTTP/1.1" 200 None
+[2024-06-27 10:06:37,044: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
+[2024-06-27 10:06:37,262: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /package/npm/react-dom/18.2.0 HTTP/1.1" 200 None
+[2024-06-27 10:06:37,287: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
+[2024-06-27 10:06:37,386: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /package/npm/react-dom HTTP/1.1" 200 26399
+[2024-06-27 10:06:37,669: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
+[2024-06-27 10:06:37,768: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /package/npm/%40types%2Freact-dom HTTP/1.1" 200 24023
+[2024-06-27 10:06:37,950: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
+[2024-06-27 10:06:38,051: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /package/maven/org.webjars.npm%3Areact-dom HTTP/1.1" 200 24062
+[2024-06-27 10:06:38,212: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
+[2024-06-27 10:06:38,314: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /package/maven/org.webjars.npm%3Areact-dom/16.1.0 HTTP/1.1" 200 21607
+[2024-06-27 10:06:38,347: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.cvedetails.com:443
+[2024-06-27 10:06:38,473: DEBUG/ForkPoolWorker-2] https://www.cvedetails.com:443 "GET /cve/CVE-2018-6341/ HTTP/1.1" 403 None
+[2024-06-27 10:06:38,480: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.googleapis.com:443
+[2024-06-27 10:06:38,791: DEBUG/ForkPoolWorker-2] https://www.googleapis.com:443 "GET /customsearch/v1?key=AIzaSyAQjSPQoMFEWJGCGVjQsg1IMp328NNPy_c&cx=f2954b6edb52b40c7&q=remark-gfm%20%5E4.0.0&num=10&start=1&fields=items(link,snippet,htmlFormattedUrl) HTTP/1.1" 200 None
+[2024-06-27 10:06:38,794: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
+[2024-06-27 10:06:38,982: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /package/npm/remark-gfm/1.0.0 HTTP/1.1" 200 None
+[2024-06-27 10:06:39,007: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
+[2024-06-27 10:06:39,210: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /package/npm/remark-gfm HTTP/1.1" 200 18246
+[2024-06-27 10:06:39,242: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.googleapis.com:443
+[2024-06-27 10:06:39,524: DEBUG/ForkPoolWorker-2] https://www.googleapis.com:443 "GET /customsearch/v1?key=AIzaSyAQjSPQoMFEWJGCGVjQsg1IMp328NNPy_c&cx=f2954b6edb52b40c7&q=tailwindcss%20%5E3.4.1&num=10&start=1&fields=items(link,snippet,htmlFormattedUrl) HTTP/1.1" 200 None
+[2024-06-27 10:06:39,528: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
+[2024-06-27 10:06:39,764: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /package/npm/tailwindcss HTTP/1.1" 200 24010
+[2024-06-27 10:06:40,032: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
+[2024-06-27 10:06:43,883: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /package/npm/%40toptal%2Fdavinci-graphql-codegen HTTP/1.1" 200 26921
+[2024-06-27 10:06:44,057: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.googleapis.com:443
+[2024-06-27 10:06:44,310: DEBUG/ForkPoolWorker-2] https://www.googleapis.com:443 "GET /customsearch/v1?key=AIzaSyAQjSPQoMFEWJGCGVjQsg1IMp328NNPy_c&cx=f2954b6edb52b40c7&q=typescript%20%5E5.3.3&num=10&start=1&fields=items(link,snippet,htmlFormattedUrl) HTTP/1.1" 200 None
+[2024-06-27 10:06:44,313: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
+[2024-06-27 10:06:44,640: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /package/npm/plugin-typescript/5.3.3 HTTP/1.1" 200 None
+[2024-06-27 10:06:44,663: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
+[2024-06-27 10:06:44,930: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /package/npm/typescript HTTP/1.1" 200 None
+[2024-06-27 10:06:45,126: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.exploit-db.com:443
+[2024-06-27 10:06:45,230: DEBUG/ForkPoolWorker-2] https://www.exploit-db.com:443 "GET /exploits/15431 HTTP/1.1" 403 None
+[2024-06-27 10:06:45,234: DEBUG/ForkPoolWorker-2] Encoding detection: ascii is most likely the one.
+[2024-06-27 10:06:45,240: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.exploit-db.com:443
+[2024-06-27 10:06:45,343: DEBUG/ForkPoolWorker-2] https://www.exploit-db.com:443 "GET /exploits/29290 HTTP/1.1" 403 None
+[2024-06-27 10:06:45,347: DEBUG/ForkPoolWorker-2] Encoding detection: ascii is most likely the one.
+[2024-06-27 10:06:45,354: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.exploit-db.com:443
+[2024-06-27 10:06:45,502: DEBUG/ForkPoolWorker-2] https://www.exploit-db.com:443 "GET /exploits/17004 HTTP/1.1" 403 None
+[2024-06-27 10:06:45,507: DEBUG/ForkPoolWorker-2] Encoding detection: ascii is most likely the one.
+[2024-06-27 10:06:45,513: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.exploit-db.com:443
+[2024-06-27 10:06:45,613: DEBUG/ForkPoolWorker-2] https://www.exploit-db.com:443 "GET /exploits/22302 HTTP/1.1" 403 None
+[2024-06-27 10:06:45,618: DEBUG/ForkPoolWorker-2] Encoding detection: ascii is most likely the one.
+[2024-06-27 10:06:45,624: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.exploit-db.com:443
+[2024-06-27 10:06:45,723: DEBUG/ForkPoolWorker-2] https://www.exploit-db.com:443 "GET /exploits/34851 HTTP/1.1" 403 None
+[2024-06-27 10:06:45,728: DEBUG/ForkPoolWorker-2] Encoding detection: ascii is most likely the one.
+[2024-06-27 10:06:45,734: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.exploit-db.com:443
+[2024-06-27 10:06:45,841: DEBUG/ForkPoolWorker-2] https://www.exploit-db.com:443 "GET /exploits/42535 HTTP/1.1" 403 None
+[2024-06-27 10:06:45,846: DEBUG/ForkPoolWorker-2] Encoding detection: ascii is most likely the one.
+[2024-06-27 10:06:45,852: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.exploit-db.com:443
+[2024-06-27 10:06:45,952: DEBUG/ForkPoolWorker-2] https://www.exploit-db.com:443 "GET /exploits/48833 HTTP/1.1" 403 None
+[2024-06-27 10:06:45,957: DEBUG/ForkPoolWorker-2] Encoding detection: ascii is most likely the one.
+[2024-06-27 10:06:45,963: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.exploit-db.com:443
+[2024-06-27 10:06:46,112: DEBUG/ForkPoolWorker-2] https://www.exploit-db.com:443 "GET /exploits/24201 HTTP/1.1" 403 None
+[2024-06-27 10:06:46,117: DEBUG/ForkPoolWorker-2] Encoding detection: ascii is most likely the one.
+[2024-06-27 10:06:46,123: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.googleapis.com:443
+[2024-06-27 10:06:46,528: DEBUG/ForkPoolWorker-2] https://www.googleapis.com:443 "GET /customsearch/v1?key=AIzaSyAQjSPQoMFEWJGCGVjQsg1IMp328NNPy_c&cx=f2954b6edb52b40c7&q=eslint%20%5E8.56.0&num=10&start=1&fields=items(link,snippet,htmlFormattedUrl) HTTP/1.1" 200 None
+[2024-06-27 10:06:46,532: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
+[2024-06-27 10:06:46,770: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /package/npm/eslint HTTP/1.1" 200 24650
+[2024-06-27 10:06:46,945: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
+[2024-06-27 10:06:47,143: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /package/npm/%40eslint%2Fjs HTTP/1.1" 200 20546
+[2024-06-27 10:06:47,229: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.googleapis.com:443
+[2024-06-27 10:06:47,761: DEBUG/ForkPoolWorker-2] https://www.googleapis.com:443 "GET /customsearch/v1?key=AIzaSyAQjSPQoMFEWJGCGVjQsg1IMp328NNPy_c&cx=f2954b6edb52b40c7&q=eslint-config-next%20%5E14.0.4&num=10&start=1&fields=items(link,snippet,htmlFormattedUrl) HTTP/1.1" 200 None
+[2024-06-27 10:06:47,765: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
+[2024-06-27 10:06:48,006: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /package/npm/eslint-config-next/14.0.4-canary.39 HTTP/1.1" 200 17878
+[2024-06-27 10:06:48,144: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.googleapis.com:443
+[2024-06-27 10:06:48,997: DEBUG/ForkPoolWorker-2] https://www.googleapis.com:443 "GET /customsearch/v1?key=AIzaSyAQjSPQoMFEWJGCGVjQsg1IMp328NNPy_c&cx=f2954b6edb52b40c7&q=prettier%20%5E3.1.1&num=10&start=1&fields=items(link,snippet,htmlFormattedUrl) HTTP/1.1" 200 None
+[2024-06-27 10:06:49,001: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
+[2024-06-27 10:06:49,326: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /package/npm/prettier HTTP/1.1" 200 24084
+[2024-06-27 10:06:49,502: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
+[2024-06-27 10:06:49,679: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /package/npm/prettier-plugin-svelte/3.1.1 HTTP/1.1" 200 None
+[2024-06-27 10:06:49,708: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
+[2024-06-27 10:06:50,206: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /package/npm/cypress-helper HTTP/1.1" 200 18755
+[2024-06-27 10:06:50,247: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.exploit-db.com:443
+[2024-06-27 10:06:50,347: DEBUG/ForkPoolWorker-2] https://www.exploit-db.com:443 "GET /exploits/42912 HTTP/1.1" 403 None
+[2024-06-27 10:06:50,352: DEBUG/ForkPoolWorker-2] Encoding detection: ascii is most likely the one.
+[2024-06-27 10:06:50,358: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.googleapis.com:443
+[2024-06-27 10:06:50,596: DEBUG/ForkPoolWorker-2] https://www.googleapis.com:443 "GET /customsearch/v1?key=AIzaSyAQjSPQoMFEWJGCGVjQsg1IMp328NNPy_c&cx=f2954b6edb52b40c7&q=prettier-plugin-tailwindcss%20%5E0.5.11&num=10&start=1&fields=items(link,snippet,htmlFormattedUrl) HTTP/1.1" 200 None
+[2024-06-27 10:06:50,601: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
+[2024-06-27 10:06:50,783: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /package/npm/prettier-plugin-tailwindcss/0.5.11 HTTP/1.1" 200 None
+[2024-06-27 10:06:50,816: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.googleapis.com:443
+[2024-06-27 10:06:51,324: DEBUG/ForkPoolWorker-2] https://www.googleapis.com:443 "GET /customsearch/v1?key=AIzaSyAQjSPQoMFEWJGCGVjQsg1IMp328NNPy_c&cx=f2954b6edb52b40c7&q=sharp%200.33.1&num=10&start=1&fields=items(link,snippet,htmlFormattedUrl) HTTP/1.1" 200 None
+[2024-06-27 10:06:51,328: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
+[2024-06-27 10:06:51,543: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /package/npm/sharp HTTP/1.1" 200 25083
+[2024-06-27 10:06:51,720: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
+[2024-06-27 10:06:51,945: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /package/npm/sharp/0.33.1 HTTP/1.1" 200 None
+[2024-06-27 10:06:51,976: WARNING/ForkPoolWorker-2] [32mCompleted searching for known Vulnerabilities . . . . .[0m
+[2024-06-27 10:06:51,980: WARNING/ForkPoolWorker-2] [35mGetting code audit report . . . . . .[0m
+[2024-06-27 10:06:51,981: WARNING/ForkPoolWorker-2] [91mTrying code audit, attempt 1 [0m
+[2024-06-27 10:06:56,479: WARNING/ForkPoolWorker-2] [35mGetting vulnerability report . . . . . . .[0m
+[2024-06-27 10:06:56,479: WARNING/ForkPoolWorker-2] [91mTrying Vuln Report, attempt 1 [0m
+[2024-06-27 10:07:09,926: WARNING/ForkPoolWorker-2] {
+  "vulnerability_report": [
+    {
+      "dependency": "cheerio",
+      "version": "0.7.0",
+      "description": "Versions 0.7.0 and below of Cheerio are vulnerable to prototype pollution, allowing attackers to manipulate prototypes of Object.prototype and potentially execute arbitrary code.",
+      "source": "https://security.snyk.io/package/npm/cheerio/0.7.0"
+    },
+    {
+      "dependency": "feed",
+      "version": "4.2.2",
+      "description": "Version 4.2.2 of Feed is vulnerable to cross-site scripting (XSS) due to improper sanitization in the legend data, potentially allowing attackers to inject malicious code.",
+      "source": "https://www.cvedetails.com/vulnerability-list/vendor_id-1424/product_id-2468/version_id-563855/Nagios-Nagios-4.2.0.html?page=1&order=8&trc=9&sha=0874bd5213fd66e302161adf37e9227cf506d706"
+    },
+    {
+      "dependency": "next",
+      "version": "12.0.4",
+      "description": "Version 12.0.4 of Next.js is vulnerable to Denial of Service (DoS) due to mishandling of invalid URLs. This vulnerability affects Node.js versions 15.0.0 and above, but not deployments on Vercel or similar environments.",
+      "source": "https://security.snyk.io/package/npm/%40angular-devkit%2Fbuild-angular/versions?page=2"
+    },
+    {
+      "dependency": "react",
+      "version": "0.13.2",
+      "description": "Version 0.13.2 of React is vulnerable to cross-site scripting (XSS) due to the way it handles HTML entities in JSX attributes, potentially allowing attackers to inject malicious code.",
+      "source": "https://security.snyk.io/package/npm/%40react-native-firebase%2Fanalytics"
+    },
+    {
+      "dependency": "react-dom",
+      "version": "16.1.0",
+      "description": "Version 16.1.0 of react-dom is vulnerable to cross-site scripting (XSS) when using dangerouslySetInnerHTML, allowing attackers to inject malicious code if user input is not properly sanitized.",
+      "source": "https://www.cvedetails.com/cve/CVE-2018-6341/"
+    }
+  ]
+}
+[2024-06-27 10:07:09,927: WARNING/ForkPoolWorker-2] [35mGetting quality report . . . . . . .[0m
+[2024-06-27 10:07:09,928: WARNING/ForkPoolWorker-2] [91mTrying Quality Report, attempt 1 [0m
+[2024-06-27 10:07:22,321: WARNING/ForkPoolWorker-2] Refactoring Plan
+- Finding: Hardcoded value: The API endpoint URLs for Gemini, Anthropic, and Groq are hardcoded in the '.env' file. This limits flexibility for deploying to different environments.
+- Issue: Hardcoding API endpoints reduces deployment flexibility and maintainability.
+- Refactoring Approach:
+    1. Replace hardcoded endpoint URLs in the '.env' file with environment-specific variables. For example:
+        - `GEMINI_API_URL=https://api.gemini.example.com` (default value)
+        - `ANTHROPIC_API_URL=https://api.anthropic.example.com` (default value)
+        - `GROQ_API_URL=https://api.groq.example.com` (default value)
+    2. In your application code, retrieve these environment variables instead of using hardcoded URLs.
+- Relevant Files: .env, [ ... list of files where API endpoints are used ...] 
+[2024-06-27 10:07:22,337: WARNING/ForkPoolWorker-2] <!-- Bug Analysis (data from code_audit.json) -->
+<div class="mb-24 mt-12 border-t-2">
+  <div class="mt-8 px-4 sm:px-0">
+    <h3 class="text-xl font-semibold leading-7 text-gray-900">Bug Analysis</h3>
+    <p class="mt-1 max-w-2xl text-sm leading-6 text-gray-500">
+      Potential bugs and issues found in code.
+    </p>
+  </div>
+  <div class="mt-6 border-t border-gray-100">
+    <dl class="divide-y divide-gray-100">
+      <!-- High -->
+      <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+        <dt class="text-sm font-medium leading-6 text-gray-900">High</dt>
+        <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">
+           No "high" profile bugs / alerts found. 
+        </dd>
+      </div>
+      <!-- Medium -->
+      <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+        <dt class="text-sm font-medium leading-6 text-gray-900">Medium</dt>
+        <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">
+           No "Medium" profile bugs / alerts found. 
+        </dd>
+      </div>
+      <!-- Low -->
+      <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+        <dt class="text-sm font-medium leading-6 text-gray-900">Low</dt>
+        <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">
+          
+          <ul>
+            
+            <li>
+              <p>Hardcoded value: The API endpoint URLs for Gemini, Anthropic, and Groq are hardcoded in the '.env' file. This limits flexibility for deploying to different environments.</p>
+              <p class="mt-2"><strong>Impact:</strong> Deployment challenges and difficulty adapting to environment changes. It is advisable to use environment variables for sensitive data like API keys instead of directly hardcoding.</p>
+              <div class="mt-1">
+                <strong>Related files:</strong>
+                <ul class="mb-8 list-disc list-inside">
+                  
+                  <li class="italic">.env</li>
+                  
+                </ul>
+              </div>
+            </li>
+            
+          </ul>
+          
+        </dd>
+      </div>
+    </dl>
+  </div>
+</div>
+
+<!-- Vulnerabilities (data from vuln_report.json)  -->
+<div class="mb-24 mt-12 border-t-2">
+  <div class="mt-12 px-4 sm:px-0">
+    <h3 class="text-xl font-semibold leading-7 text-gray-900">
+      Vulnerabilities
+    </h3>
+    <p class="mt-1 max-w-2xl text-sm leading-6 text-gray-500">
+      Based on the dependancies used in your code, below are the known
+      vulnerabilities.
+    </p>
+  </div>
+  <div class="mt-6 border-t border-gray-100">
+    <dl class="divide-y divide-gray-100">
+      <!-- Items -->
+      <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+        <dt class="text-sm font-medium leading-6 text-gray-900">Items</dt>
+        <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">
+          
+          <ul>
+            
+            <li>
+              <p>Versions 0.7.0 and below of Cheerio are vulnerable to prototype pollution, allowing attackers to manipulate prototypes of Object.prototype and potentially execute arbitrary code.</p>
+              <p class="mt-1 mb-8">
+                <strong>Source:</strong>
+                <a
+                  href="https://security.snyk.io/package/npm/cheerio/0.7.0"
+                  class="cursor-pointer text-indigo-600 font-light ml-2"
+                  >https://security.snyk.io/package/npm/cheerio/0.7.0</a
+                >
+              </p>
+            </li>
+            
+            <li>
+              <p>Version 4.2.2 of Feed is vulnerable to cross-site scripting (XSS) due to improper sanitization in the legend data, potentially allowing attackers to inject malicious code.</p>
+              <p class="mt-1 mb-8">
+                <strong>Source:</strong>
+                <a
+                  href="https://www.cvedetails.com/vulnerability-list/vendor_id-1424/product_id-2468/version_id-563855/Nagios-Nagios-4.2.0.html?page=1&order=8&trc=9&sha=0874bd5213fd66e302161adf37e9227cf506d706"
+                  class="cursor-pointer text-indigo-600 font-light ml-2"
+                  >https://www.cvedetails.com/vulnerability-list/vendor_id-1424/product_id-2468/version_id-563855/Nagios-Nagios-4.2.0.html?page=1&order=8&trc=9&sha=0874bd5213fd66e302161adf37e9227cf506d706</a
+                >
+              </p>
+            </li>
+            
+            <li>
+              <p>Version 12.0.4 of Next.js is vulnerable to Denial of Service (DoS) due to mishandling of invalid URLs. This vulnerability affects Node.js versions 15.0.0 and above, but not deployments on Vercel or similar environments.</p>
+              <p class="mt-1 mb-8">
+                <strong>Source:</strong>
+                <a
+                  href="https://security.snyk.io/package/npm/%40angular-devkit%2Fbuild-angular/versions?page=2"
+                  class="cursor-pointer text-indigo-600 font-light ml-2"
+                  >https://security.snyk.io/package/npm/%40angular-devkit%2Fbuild-angular/versions?page=2</a
+                >
+              </p>
+            </li>
+            
+            <li>
+              <p>Version 0.13.2 of React is vulnerable to cross-site scripting (XSS) due to the way it handles HTML entities in JSX attributes, potentially allowing attackers to inject malicious code.</p>
+              <p class="mt-1 mb-8">
+                <strong>Source:</strong>
+                <a
+                  href="https://security.snyk.io/package/npm/%40react-native-firebase%2Fanalytics"
+                  class="cursor-pointer text-indigo-600 font-light ml-2"
+                  >https://security.snyk.io/package/npm/%40react-native-firebase%2Fanalytics</a
+                >
+              </p>
+            </li>
+            
+            <li>
+              <p>Version 16.1.0 of react-dom is vulnerable to cross-site scripting (XSS) when using dangerouslySetInnerHTML, allowing attackers to inject malicious code if user input is not properly sanitized.</p>
+              <p class="mt-1 mb-8">
+                <strong>Source:</strong>
+                <a
+                  href="https://www.cvedetails.com/cve/CVE-2018-6341/"
+                  class="cursor-pointer text-indigo-600 font-light ml-2"
+                  >https://www.cvedetails.com/cve/CVE-2018-6341/</a
+                >
+              </p>
+            </li>
+            
+          </ul>
+          
+        </dd>
+      </div>
+    </dl>
+  </div>
+</div>
+<!-- Code Quality (data from quality_report.json)   -->
+<div class="mb-24 mt-12 border-t-2">
+  <div class="mt-12 px-4 sm:px-0">
+    <h3 class="text-xl font-semibold leading-7 text-gray-900">Code Quality</h3>
+    <p class="mt-1 max-w-2xl text-sm leading-6 text-gray-500">
+      Overall quality of code.
+    </p>
+  </div>
+  <div class="mt-6 border-t border-gray-100">
+    <dl class="divide-y divide-gray-100">
+      <!-- readability -->
+      <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+        <dt class="text-sm font-medium leading-6 text-gray-900">Readability</dt>
+        <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">
+          <p><strong>Score:</strong> 75</p>
+          <p class="mt-2">The code generally exhibits good readability, with consistent formatting, clear naming conventions, and well-structured components. However, there's room for improvement in adding more descriptive comments to explain the logic, particularly in complex functions or components like 'typography.ts'.</p>
+        </dd>
+      </div>
+      <!-- efficiency -->
+      <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+        <dt class="text-sm font-medium leading-6 text-gray-900">Efficiency</dt>
+        <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">
+          <p><strong>Score:</strong> 90</p>
+          <p class="mt-2">The codebase demonstrates a high level of efficiency with the use of optimized WASM, appropriate image sizing techniques, and effective caching mechanisms. There are no significant efficiency issues identified in the code audit report.</p>
+        </dd>
+      </div>
+      <!-- documentation -->
+      <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+        <dt class="text-sm font-medium leading-6 text-gray-900">
+          Documentation
+        </dt>
+        <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">
+          <p>
+            <strong>Score:</strong> 60
+          </p>
+          <p class="mt-2">The codebase has some level of documentation, including JSDoc-style comments and clear explanations for components like 'SimpleLayout' and 'Section.' However, it lacks comprehensive documentation, particularly for the logic in utility functions like 'formatDate' and 'getAllArticles,' which would benefit from more detailed explanations.</p>
+        </dd>
+      </div>
+    </dl>
+  </div>
+</div>
+<!-- Refactor PLAN HERE   -->
+[2024-06-27 10:07:32,562: DEBUG/ForkPoolWorker-2] Making request: POST https://oauth2.googleapis.com/token
+[2024-06-27 10:07:32,563: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): oauth2.googleapis.com:443
+[2024-06-27 10:07:32,643: DEBUG/ForkPoolWorker-2] https://oauth2.googleapis.com:443 "POST /token HTTP/1.1" 200 None
+[2024-06-27 10:07:32,686: WARNING/ForkPoolWorker-2] Uploading HTML to:
+[2024-06-27 10:07:32,686: WARNING/ForkPoolWorker-2]  
+[2024-06-27 10:07:32,687: WARNING/ForkPoolWorker-2] projects/qKtISirBQbftY20mLxK0hWXsD053/jerrydav1s:ml-tinkering-blog/5_Eg0k
+[2024-06-27 10:07:32,689: DEBUG/ForkPoolWorker-2] Making request: POST https://oauth2.googleapis.com/token
+[2024-06-27 10:07:32,690: DEBUG/ForkPoolWorker-2] Resetting dropped connection: oauth2.googleapis.com
+[2024-06-27 10:07:32,770: DEBUG/ForkPoolWorker-2] https://oauth2.googleapis.com:443 "POST /token HTTP/1.1" 200 None
+[2024-06-27 10:07:32,772: DEBUG/ForkPoolWorker-2] Resetting dropped connection: storage.googleapis.com
+[2024-06-27 10:07:32,890: DEBUG/ForkPoolWorker-2] https://storage.googleapis.com:443 "POST /upload/storage/v1/b/rippo-777.appspot.com/o?uploadType=resumable HTTP/1.1" 200 0
+[2024-06-27 10:07:33,070: DEBUG/ForkPoolWorker-2] https://storage.googleapis.com:443 "PUT /upload/storage/v1/b/rippo-777.appspot.com/o?uploadType=resumable&upload_id=ACJd0NoB9KmPp3_zQtEmxuS1VGJ55o9X8YT8-LTe0j3ao73cMqGoPafp-UIAW-947KyiMxpCAgZfAiE1aZECMa5zZuHHL9a16AVRAEVV8DjL8dkK HTTP/1.1" 200 1083
+[2024-06-27 10:07:33,070: WARNING/ForkPoolWorker-2] Uploaded 5_Eg0k.html to projects/qKtISirBQbftY20mLxK0hWXsD053/jerrydav1s:ml-tinkering-blog/5_Eg0k/5_Eg0k.html
+[2024-06-27 10:07:33,071: WARNING/ForkPoolWorker-2] Deleted: /home/trainboxai/backend/rippo/reports/code_audit_5_Eg0k.json
+[2024-06-27 10:07:33,071: WARNING/ForkPoolWorker-2] Deleted: /home/trainboxai/backend/rippo/reports/vuln_report_5_Eg0k.json
+[2024-06-27 10:07:33,071: WARNING/ForkPoolWorker-2] Deleted: /home/trainboxai/backend/rippo/reports/quality_report_5_Eg0k.json
+[2024-06-27 10:07:33,071: WARNING/ForkPoolWorker-2] Deleted: /home/trainboxai/backend/rippo/outputs/final_5_Eg0k.md
+[2024-06-27 10:07:33,071: WARNING/ForkPoolWorker-2] Deleted: /home/trainboxai/backend/rippo/outputs/vuln_search_results_5_Eg0k.json
+[2024-06-27 10:07:33,072: WARNING/ForkPoolWorker-2] Deleted: /home/trainboxai/backend/rippo/reports/refactor_5_Eg0k.html
+[2024-06-27 10:07:33,072: WARNING/ForkPoolWorker-2] Deleted: /home/trainboxai/backend/rippo/reports/report_5_Eg0k.html
+[2024-06-27 10:07:33,072: WARNING/ForkPoolWorker-2] Deleted: /home/trainboxai/backend/rippo/reports/refactor_guide_5_Eg0k.md
+[2024-06-27 10:07:33,072: WARNING/ForkPoolWorker-2] Deleted: /home/trainboxai/backend/rippo/reports/5_Eg0k.html
+[2024-06-27 10:07:33,072: INFO/ForkPoolWorker-2] Task celery_app.generate_report[5cc40b7d-4846-49e8-88f6-e7645baeea9b] succeeded in 95.65769880311564s: None
+[2024-06-28 08:19:36,707: INFO/MainProcess] Task celery_app.generate_report[be1a950e-892a-4ce3-884e-f3a193d87670] received
+[2024-06-28 08:19:36,710: DEBUG/MainProcess] TaskPool: Apply <function fast_trace_task at 0x78cf9aac7010> (args:('celery_app.generate_report', 'be1a950e-892a-4ce3-884e-f3a193d87670', {'lang': 'py', 'task': 'celery_app.generate_report', 'id': 'be1a950e-892a-4ce3-884e-f3a193d87670', 'shadow': None, 'eta': None, 'expires': None, 'group': None, 'group_index': None, 'retries': 0, 'timelimit': [None, None], 'root_id': 'be1a950e-892a-4ce3-884e-f3a193d87670', 'parent_id': None, 'argsrepr': "('https://github.com/jerrydav1s/HoldingPage.git', 'jerrydav1s:HoldingPage', 'iNAByT', 'qKtISirBQbftY20mLxK0hWXsD053', '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')", 'kwargsrepr': '{}', 'origin': 'gen370173@rippo-backend-vm', 'ignore_result': False, 'replaced_task_nesting': 0, 'stamped_headers': None, 'stamps': {}, 'properties': {'correlation_id': 'be1a950e-892a-4ce3-884e-f3a193d87670', 'reply_to': '4a745259-6032-3381-a438-0bd617944c4b', 'delivery_mode': 2, 'delivery_info': {'exchange': '', 'routing_key': 'celery'}, 'priority': 0, 'body_encoding': 'base64', 'delivery_tag': '5c5d2ad7-2807-4679-9d36-2afa4704f590'}, 'reply_to':... kwargs:{})
+[2024-06-28 08:19:36,722: WARNING/ForkPoolWorker-2] [32mGet flattened file and extract contents . . .[0m
+[2024-06-28 08:19:36,723: WARNING/ForkPoolWorker-2] [35mGathering search results . . .[0m
+[2024-06-28 08:19:36,730: DEBUG/ForkPoolWorker-2] Popen(['git', 'clone', '-v', '--', 'https://*****@github.com/jerrydav1s/HoldingPage.git', '/tmp/tmp6ras80gg'], cwd=/home/trainboxai/backend/rippo/prod, stdin=None, shell=False, universal_newlines=True)
+[2024-06-28 08:19:37,279: DEBUG/ForkPoolWorker-2] Cmd(['git', 'clone', '-v', '--', 'https://*****@github.com/jerrydav1s/HoldingPage.git', '/tmp/tmp6ras80gg'])'s unused stdout: 
+[2024-06-28 08:19:37,295: WARNING/ForkPoolWorker-2] [32mAnalyse and extract list of dependancies . . . .[0m
+[2024-06-28 08:19:40,777: WARNING/ForkPoolWorker-2] {"dependancy": "autoprefixer", "version": "^10.4.17"},
+{"dependancy": "nuxt", "version": "^3.9.3"},
+{"dependancy": "postcss", "version": "^8.4.33"},
+{"dependancy": "tailwindcss", "version": "^3.4.1"},
+{"dependancy": "vue", "version": "^3.4.14"},
+{"dependancy": "vue-router", "version": "^4.2.5"},
+{"dependancy": "vite-plugin-pwa", "version": "unknown"}
+[2024-06-28 08:19:40,778: WARNING/ForkPoolWorker-2] {"dependancy": "autoprefixer", "version": "^10.4.17"},
+{"dependancy": "nuxt", "version": "^3.9.3"},
+{"dependancy": "postcss", "version": "^8.4.33"},
+{"dependancy": "tailwindcss", "version": "^3.4.1"},
+{"dependancy": "vue", "version": "^3.4.14"},
+{"dependancy": "vue-router", "version": "^4.2.5"},
+{"dependancy": "vite-plugin-pwa", "version": "unknown"}
+[2024-06-28 08:19:40,778: WARNING/ForkPoolWorker-2] [32mStarting searching for known Vulnerabilities . . . . .[0m
+[2024-06-28 08:19:40,785: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.googleapis.com:443
+[2024-06-28 08:19:41,080: DEBUG/ForkPoolWorker-2] https://www.googleapis.com:443 "GET /customsearch/v1?key=AIzaSyAQjSPQoMFEWJGCGVjQsg1IMp328NNPy_c&cx=f2954b6edb52b40c7&q=%20&num=10&start=1&fields=items(link,snippet,htmlFormattedUrl) HTTP/1.1" 200 None
+[2024-06-28 08:19:41,083: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
+[2024-06-28 08:19:41,621: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET / HTTP/1.1" 200 54435
+[2024-06-28 08:19:41,703: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.cvedetails.com:443
+[2024-06-28 08:19:41,852: DEBUG/ForkPoolWorker-2] https://www.cvedetails.com:443 "GET / HTTP/1.1" 403 None
+[2024-06-28 08:19:41,859: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.exploit-db.com:443
+[2024-06-28 08:19:42,025: DEBUG/ForkPoolWorker-2] https://www.exploit-db.com:443 "GET / HTTP/1.1" 403 None
+[2024-06-28 08:19:42,031: DEBUG/ForkPoolWorker-2] Encoding detection: ascii is most likely the one.
+[2024-06-28 08:19:42,037: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
+[2024-06-28 08:19:42,139: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /vuln HTTP/1.1" 200 21845
+[2024-06-28 08:19:42,215: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.exploit-db.com:443
+[2024-06-28 08:19:42,313: DEBUG/ForkPoolWorker-2] https://www.exploit-db.com:443 "GET /search HTTP/1.1" 403 None
+[2024-06-28 08:19:42,319: DEBUG/ForkPoolWorker-2] Encoding detection: ascii is most likely the one.
+[2024-06-28 08:19:42,324: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.exploit-db.com:443
+[2024-06-28 08:19:42,472: DEBUG/ForkPoolWorker-2] https://www.exploit-db.com:443 "GET /shellcodes HTTP/1.1" 403 None
+[2024-06-28 08:19:42,477: DEBUG/ForkPoolWorker-2] Encoding detection: ascii is most likely the one.
+[2024-06-28 08:19:42,483: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
+[2024-06-28 08:19:42,639: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /vuln/maven HTTP/1.1" 200 None
+[2024-06-28 08:19:42,712: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.exploit-db.com:443
+[2024-06-28 08:19:42,811: DEBUG/ForkPoolWorker-2] https://www.exploit-db.com:443 "GET /searchsploit HTTP/1.1" 403 None
+[2024-06-28 08:19:42,815: DEBUG/ForkPoolWorker-2] Encoding detection: ascii is most likely the one.
+[2024-06-28 08:19:42,823: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.cvedetails.com:443
+[2024-06-28 08:19:42,932: DEBUG/ForkPoolWorker-2] https://www.cvedetails.com:443 "GET /sign-in HTTP/1.1" 403 None
+[2024-06-28 08:19:42,938: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
+[2024-06-28 08:19:43,093: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /vuln/npm HTTP/1.1" 200 None
+[2024-06-28 08:19:43,163: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.googleapis.com:443
+[2024-06-28 08:19:43,385: DEBUG/ForkPoolWorker-2] https://www.googleapis.com:443 "GET /customsearch/v1?key=AIzaSyAQjSPQoMFEWJGCGVjQsg1IMp328NNPy_c&cx=f2954b6edb52b40c7&q=%20&num=10&start=1&fields=items(link,snippet,htmlFormattedUrl) HTTP/1.1" 200 None
+[2024-06-28 08:19:43,388: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
+[2024-06-28 08:19:43,488: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET / HTTP/1.1" 200 54435
+[2024-06-28 08:19:43,765: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.cvedetails.com:443
+[2024-06-28 08:19:43,869: DEBUG/ForkPoolWorker-2] https://www.cvedetails.com:443 "GET / HTTP/1.1" 403 None
+[2024-06-28 08:19:43,876: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.exploit-db.com:443
+[2024-06-28 08:19:43,976: DEBUG/ForkPoolWorker-2] https://www.exploit-db.com:443 "GET / HTTP/1.1" 403 None
+[2024-06-28 08:19:43,981: DEBUG/ForkPoolWorker-2] Encoding detection: ascii is most likely the one.
+[2024-06-28 08:19:43,986: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
+[2024-06-28 08:19:44,086: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /vuln HTTP/1.1" 200 21845
+[2024-06-28 08:19:44,157: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.exploit-db.com:443
+[2024-06-28 08:19:44,306: DEBUG/ForkPoolWorker-2] https://www.exploit-db.com:443 "GET /search HTTP/1.1" 403 None
+[2024-06-28 08:19:44,311: DEBUG/ForkPoolWorker-2] Encoding detection: ascii is most likely the one.
+[2024-06-28 08:19:44,317: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.exploit-db.com:443
+[2024-06-28 08:19:44,415: DEBUG/ForkPoolWorker-2] https://www.exploit-db.com:443 "GET /shellcodes HTTP/1.1" 403 None
+[2024-06-28 08:19:44,420: DEBUG/ForkPoolWorker-2] Encoding detection: ascii is most likely the one.
+[2024-06-28 08:19:44,425: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
+[2024-06-28 08:19:44,526: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /vuln/maven HTTP/1.1" 200 21130
+[2024-06-28 08:19:44,596: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.exploit-db.com:443
+[2024-06-28 08:19:44,745: DEBUG/ForkPoolWorker-2] https://www.exploit-db.com:443 "GET /searchsploit HTTP/1.1" 403 None
+[2024-06-28 08:19:44,750: DEBUG/ForkPoolWorker-2] Encoding detection: ascii is most likely the one.
+[2024-06-28 08:19:44,755: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.cvedetails.com:443
+[2024-06-28 08:19:44,859: DEBUG/ForkPoolWorker-2] https://www.cvedetails.com:443 "GET /sign-in HTTP/1.1" 403 None
+[2024-06-28 08:19:44,866: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
+[2024-06-28 08:19:44,966: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /vuln/npm HTTP/1.1" 200 21200
+[2024-06-28 08:19:45,038: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.googleapis.com:443
+[2024-06-28 08:19:45,259: DEBUG/ForkPoolWorker-2] https://www.googleapis.com:443 "GET /customsearch/v1?key=AIzaSyAQjSPQoMFEWJGCGVjQsg1IMp328NNPy_c&cx=f2954b6edb52b40c7&q=%20&num=10&start=1&fields=items(link,snippet,htmlFormattedUrl) HTTP/1.1" 200 None
+[2024-06-28 08:19:45,262: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
+[2024-06-28 08:19:45,363: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET / HTTP/1.1" 200 54435
+[2024-06-28 08:19:45,432: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.cvedetails.com:443
+[2024-06-28 08:19:45,538: DEBUG/ForkPoolWorker-2] https://www.cvedetails.com:443 "GET / HTTP/1.1" 403 None
+[2024-06-28 08:19:45,545: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.exploit-db.com:443
+[2024-06-28 08:19:45,692: DEBUG/ForkPoolWorker-2] https://www.exploit-db.com:443 "GET / HTTP/1.1" 403 None
+[2024-06-28 08:19:45,697: DEBUG/ForkPoolWorker-2] Encoding detection: ascii is most likely the one.
+[2024-06-28 08:19:45,702: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
+[2024-06-28 08:19:45,802: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /vuln HTTP/1.1" 200 21845
+[2024-06-28 08:19:45,873: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.exploit-db.com:443
+[2024-06-28 08:19:45,972: DEBUG/ForkPoolWorker-2] https://www.exploit-db.com:443 "GET /search HTTP/1.1" 403 None
+[2024-06-28 08:19:45,977: DEBUG/ForkPoolWorker-2] Encoding detection: ascii is most likely the one.
+[2024-06-28 08:19:45,983: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.exploit-db.com:443
+[2024-06-28 08:19:46,082: DEBUG/ForkPoolWorker-2] https://www.exploit-db.com:443 "GET /shellcodes HTTP/1.1" 403 None
+[2024-06-28 08:19:46,087: DEBUG/ForkPoolWorker-2] Encoding detection: ascii is most likely the one.
+[2024-06-28 08:19:46,093: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
+[2024-06-28 08:19:46,193: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /vuln/maven HTTP/1.1" 200 21130
+[2024-06-28 08:19:46,263: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.exploit-db.com:443
+[2024-06-28 08:19:46,362: DEBUG/ForkPoolWorker-2] https://www.exploit-db.com:443 "GET /searchsploit HTTP/1.1" 403 None
+[2024-06-28 08:19:46,367: DEBUG/ForkPoolWorker-2] Encoding detection: ascii is most likely the one.
+[2024-06-28 08:19:46,372: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.cvedetails.com:443
+[2024-06-28 08:19:46,480: DEBUG/ForkPoolWorker-2] https://www.cvedetails.com:443 "GET /sign-in HTTP/1.1" 403 None
+[2024-06-28 08:19:46,486: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
+[2024-06-28 08:19:46,585: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /vuln/npm HTTP/1.1" 200 21200
+[2024-06-28 08:19:46,656: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.googleapis.com:443
+[2024-06-28 08:19:47,079: DEBUG/ForkPoolWorker-2] https://www.googleapis.com:443 "GET /customsearch/v1?key=AIzaSyAQjSPQoMFEWJGCGVjQsg1IMp328NNPy_c&cx=f2954b6edb52b40c7&q=%20&num=10&start=1&fields=items(link,snippet,htmlFormattedUrl) HTTP/1.1" 200 None
+[2024-06-28 08:19:47,082: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
+[2024-06-28 08:19:47,182: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET / HTTP/1.1" 200 54435
+[2024-06-28 08:19:47,254: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.cvedetails.com:443
+[2024-06-28 08:19:47,359: DEBUG/ForkPoolWorker-2] https://www.cvedetails.com:443 "GET / HTTP/1.1" 403 None
+[2024-06-28 08:19:47,366: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.exploit-db.com:443
+[2024-06-28 08:19:47,465: DEBUG/ForkPoolWorker-2] https://www.exploit-db.com:443 "GET / HTTP/1.1" 403 None
+[2024-06-28 08:19:47,470: DEBUG/ForkPoolWorker-2] Encoding detection: ascii is most likely the one.
+[2024-06-28 08:19:47,477: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
+[2024-06-28 08:19:47,577: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /vuln HTTP/1.1" 200 21845
+[2024-06-28 08:19:47,648: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.exploit-db.com:443
+[2024-06-28 08:19:47,747: DEBUG/ForkPoolWorker-2] https://www.exploit-db.com:443 "GET /search HTTP/1.1" 403 None
+[2024-06-28 08:19:47,752: DEBUG/ForkPoolWorker-2] Encoding detection: ascii is most likely the one.
+[2024-06-28 08:19:47,758: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.exploit-db.com:443
+[2024-06-28 08:19:47,907: DEBUG/ForkPoolWorker-2] https://www.exploit-db.com:443 "GET /shellcodes HTTP/1.1" 403 None
+[2024-06-28 08:19:47,912: DEBUG/ForkPoolWorker-2] Encoding detection: ascii is most likely the one.
+[2024-06-28 08:19:47,919: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
+[2024-06-28 08:19:48,021: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /vuln/maven HTTP/1.1" 200 21130
+[2024-06-28 08:19:48,092: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.exploit-db.com:443
+[2024-06-28 08:19:48,241: DEBUG/ForkPoolWorker-2] https://www.exploit-db.com:443 "GET /searchsploit HTTP/1.1" 403 None
+[2024-06-28 08:19:48,246: DEBUG/ForkPoolWorker-2] Encoding detection: ascii is most likely the one.
+[2024-06-28 08:19:48,251: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.cvedetails.com:443
+[2024-06-28 08:19:48,356: DEBUG/ForkPoolWorker-2] https://www.cvedetails.com:443 "GET /sign-in HTTP/1.1" 403 None
+[2024-06-28 08:19:48,362: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
+[2024-06-28 08:19:48,463: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /vuln/npm HTTP/1.1" 200 21200
+[2024-06-28 08:19:48,535: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.googleapis.com:443
+[2024-06-28 08:19:48,760: DEBUG/ForkPoolWorker-2] https://www.googleapis.com:443 "GET /customsearch/v1?key=AIzaSyAQjSPQoMFEWJGCGVjQsg1IMp328NNPy_c&cx=f2954b6edb52b40c7&q=%20&num=10&start=1&fields=items(link,snippet,htmlFormattedUrl) HTTP/1.1" 200 None
+[2024-06-28 08:19:48,763: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
+[2024-06-28 08:19:48,866: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET / HTTP/1.1" 200 54435
+[2024-06-28 08:19:49,023: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.cvedetails.com:443
+[2024-06-28 08:19:49,134: DEBUG/ForkPoolWorker-2] https://www.cvedetails.com:443 "GET / HTTP/1.1" 403 None
+[2024-06-28 08:19:49,140: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.exploit-db.com:443
+[2024-06-28 08:19:49,289: DEBUG/ForkPoolWorker-2] https://www.exploit-db.com:443 "GET / HTTP/1.1" 403 None
+[2024-06-28 08:19:49,294: DEBUG/ForkPoolWorker-2] Encoding detection: ascii is most likely the one.
+[2024-06-28 08:19:49,299: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
+[2024-06-28 08:19:49,398: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /vuln HTTP/1.1" 200 21845
+[2024-06-28 08:19:49,469: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.exploit-db.com:443
+[2024-06-28 08:19:49,568: DEBUG/ForkPoolWorker-2] https://www.exploit-db.com:443 "GET /search HTTP/1.1" 403 None
+[2024-06-28 08:19:49,572: DEBUG/ForkPoolWorker-2] Encoding detection: ascii is most likely the one.
+[2024-06-28 08:19:49,578: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.exploit-db.com:443
+[2024-06-28 08:19:49,728: DEBUG/ForkPoolWorker-2] https://www.exploit-db.com:443 "GET /shellcodes HTTP/1.1" 403 None
+[2024-06-28 08:19:49,733: DEBUG/ForkPoolWorker-2] Encoding detection: ascii is most likely the one.
+[2024-06-28 08:19:49,738: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
+[2024-06-28 08:19:49,838: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /vuln/maven HTTP/1.1" 200 21130
+[2024-06-28 08:19:49,909: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.exploit-db.com:443
+[2024-06-28 08:22:03,440: WARNING/ForkPoolWorker-2] Request failed, retrying in 2.43 seconds...
+[2024-06-28 08:22:05,872: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.exploit-db.com:443
+[2024-06-28 08:22:10,942: WARNING/ForkPoolWorker-2] Request failed, retrying in 4.32 seconds...
+[2024-06-28 08:22:15,267: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.exploit-db.com:443
+[2024-06-28 08:22:20,272: WARNING/ForkPoolWorker-2] Request failed, retrying in 8.08 seconds...
+[2024-06-28 08:22:28,357: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.exploit-db.com:443
+[2024-06-28 08:22:33,363: WARNING/ForkPoolWorker-2] Request failed, retrying in 16.07 seconds...
+[2024-06-28 08:22:49,452: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.exploit-db.com:443
+[2024-06-28 08:22:54,632: WARNING/ForkPoolWorker-2] Request failed, retrying in 32.65 seconds...
+[2024-06-28 08:23:27,316: WARNING/ForkPoolWorker-2] Failed to fetch results for   after 5 retries.
+[2024-06-28 08:23:27,318: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.googleapis.com:443
+[2024-06-28 08:23:27,544: DEBUG/ForkPoolWorker-2] https://www.googleapis.com:443 "GET /customsearch/v1?key=AIzaSyAQjSPQoMFEWJGCGVjQsg1IMp328NNPy_c&cx=f2954b6edb52b40c7&q=%20&num=10&start=1&fields=items(link,snippet,htmlFormattedUrl) HTTP/1.1" 200 None
+[2024-06-28 08:23:27,548: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
+[2024-06-28 08:23:27,798: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET / HTTP/1.1" 200 54435
+[2024-06-28 08:23:27,869: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.cvedetails.com:443
+[2024-06-28 08:23:27,990: DEBUG/ForkPoolWorker-2] https://www.cvedetails.com:443 "GET / HTTP/1.1" 403 None
+[2024-06-28 08:23:27,997: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.exploit-db.com:443
+[2024-06-28 08:25:42,576: WARNING/ForkPoolWorker-2] Request failed, retrying in 2.50 seconds...
+[2024-06-28 08:25:45,085: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.exploit-db.com:443
+[2024-06-28 08:25:50,092: WARNING/ForkPoolWorker-2] Request failed, retrying in 4.92 seconds...
+[2024-06-28 08:25:55,019: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.exploit-db.com:443
+[2024-06-28 08:26:00,099: WARNING/ForkPoolWorker-2] Request failed, retrying in 8.12 seconds...
+[2024-06-28 08:26:08,230: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.exploit-db.com:443
+[2024-06-28 08:26:13,237: WARNING/ForkPoolWorker-2] Request failed, retrying in 16.50 seconds...
+[2024-06-28 08:26:29,753: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.exploit-db.com:443
+[2024-06-28 08:26:34,924: WARNING/ForkPoolWorker-2] Request failed, retrying in 32.20 seconds...
+[2024-06-28 08:27:07,159: WARNING/ForkPoolWorker-2] Failed to fetch results for   after 5 retries.
+[2024-06-28 08:27:07,159: WARNING/ForkPoolWorker-2] [32mCompleted searching for known Vulnerabilities . . . . .[0m
+[2024-06-28 08:27:07,160: WARNING/ForkPoolWorker-2] [35mGetting code audit report . . . . . .[0m
+[2024-06-28 08:27:07,161: WARNING/ForkPoolWorker-2] [91mTrying code audit, attempt 1 [0m
+[2024-06-28 08:27:13,836: WARNING/ForkPoolWorker-2] [35mGetting vulnerability report . . . . . . .[0m
+[2024-06-28 08:27:13,836: WARNING/ForkPoolWorker-2] [91mTrying Vuln Report, attempt 1 [0m
+[2024-06-28 08:27:15,756: WARNING/ForkPoolWorker-2] {
+  "vulnerability_report": []
+}
+[2024-06-28 08:27:15,757: WARNING/ForkPoolWorker-2] [35mGetting quality report . . . . . . .[0m
+[2024-06-28 08:27:15,757: WARNING/ForkPoolWorker-2] [91mTrying Quality Report, attempt 1 [0m
+[2024-06-28 08:27:37,375: WARNING/ForkPoolWorker-2] ## Refactoring Plan
+
+**Finding:** The service worker in 'public/service-worker.js' currently caches every request. This can lead to unexpected behavior and stale data. It's recommended to implement a more robust caching strategy.
+**Issue:** Caching all requests can lead to serving outdated content and negatively impact app performance.
+**Refactoring Approach:** Implement a caching strategy that differentiates between static and dynamic assets. Cache static assets (e.g., images, CSS, JavaScript) aggressively and use a stale-while-revalidate approach for dynamic content. 
+**Example:**
+```javascript
+// public/service-worker.js
+self.addEventListener('fetch', function(event) {
+  event.respondWith(
+    caches.open('my-cache').then(function(cache) {
+      return cache.match(event.request).then(function(response) {
+        // Cache static assets aggressively
+        if (response && event.request.url.match(/\.(png|jpg|jpeg|css|js)$/i)) {
+          return response;
+        }
+
+        // Stale-while-revalidate for dynamic content
+        const fetchPromise = fetch(event.request).then(function(networkResponse) {
+          cache.put(event.request, networkResponse.clone());
+          return networkResponse;
+        });
+
+        return response || fetchPromise;
+      });
+    })
+  );
+});
+```
+**Relevant Files:** public/service-worker.js
+
+**Finding:** The email submission in 'pages/index.vue' sends data to a hardcoded external URL.  This could be moved to an environment variable for better security and flexibility.
+**Issue:** Hardcoded URLs pose security risks and make it difficult to change the endpoint in different environments.
+**Refactoring Approach:** Store the API endpoint URL in an environment variable and access it using `process.env`.
+**Example:**
+```javascript
+// pages/index.vue
+// ... other code ...
+
+  methods: {
+    async submitEmail(event) {
+      event.preventDefault();
+      const formData = new FormData(event.target);
+      const apiEndpoint = process.env.API_ENDPOINT || 'https://speakyes.ew.r.appspot.com/submit_email/'; // Provide a default value if needed
+
+      try {
+        const response = await fetch(apiEndpoint, {
+          method: "POST",
+          body: formData,
+        });
+        // ... rest of the code ...
+      }
+      // ... rest of the code ...
+    }
+}
+```
+**Relevant Files:** pages/index.vue
+
+**Finding:** The theme colors in 'public/manifest.json' and 'pwa.config.ts' are hardcoded.  Using a variable or constant for these values would improve maintainability.
+**Issue:** Hardcoded theme colors make it tedious to update the color scheme across multiple files.
+**Refactoring Approach:** Define a constant for the theme color in a separate file (e.g., 'constants.ts') and import it where needed.
+**Example:**
+```javascript
+// constants.ts
+export const THEME_COLOR = '#ffffff'; 
+
+// public/manifest.json
+{
+  // ... other properties ...
+  "theme_color": THEME_COLOR,
+  // ... other properties ...
+}
+
+// pwa.config.ts
+import { THEME_COLOR } from './constants';
+
+const pwaConfig: VitePWAOptions = {
+  // ... other configurations ...
+  manifest: {
+    // ... other properties ...
+    theme_color: THEME_COLOR,
+    // ... other properties ...
+  },
+};
+```
+**Relevant Files:** public/manifest.json, pwa.config.ts, constants.ts (new file)
+[2024-06-28 08:27:37,392: WARNING/ForkPoolWorker-2] <!-- Bug Analysis (data from code_audit.json) -->
+<div class="mb-24 mt-12 border-t-2">
+  <div class="mt-8 px-4 sm:px-0">
+    <h3 class="text-xl font-semibold leading-7 text-gray-900">Bug Analysis</h3>
+    <p class="mt-1 max-w-2xl text-sm leading-6 text-gray-500">
+      Potential bugs and issues found in code.
+    </p>
+  </div>
+  <div class="mt-6 border-t border-gray-100">
+    <dl class="divide-y divide-gray-100">
+      <!-- High -->
+      <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+        <dt class="text-sm font-medium leading-6 text-gray-900">High</dt>
+        <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">
+           No "high" profile bugs / alerts found. 
+        </dd>
+      </div>
+      <!-- Medium -->
+      <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+        <dt class="text-sm font-medium leading-6 text-gray-900">Medium</dt>
+        <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">
+          
+          <ul>
+            
+            <li>
+              <p>The service worker in 'public/service-worker.js' currently caches every request. This can lead to unexpected behavior and stale data. It's recommended to implement a more robust caching strategy.</p>
+              <p class="mt-2"><strong>Impact:</strong> Potential for serving outdated content and reduced app performance.</p>
+              <div class="mt-1">
+                <strong>Related files:</strong>
+                <ul class="mb-8 list-disc list-inside">
+                  
+                  <li class="italic">public/service-worker.js</li>
+                  
+                </ul>
+              </div>
+            </li>
+            
+            <li>
+              <p>The email submission in 'pages/index.vue' sends data to a hardcoded external URL.  This could be moved to an environment variable for better security and flexibility.</p>
+              <p class="mt-2"><strong>Impact:</strong> Potential security risks and difficulties in changing the endpoint URL in different environments.</p>
+              <div class="mt-1">
+                <strong>Related files:</strong>
+                <ul class="mb-8 list-disc list-inside">
+                  
+                  <li class="italic">pages/index.vue</li>
+                  
+                </ul>
+              </div>
+            </li>
+            
+          </ul>
+          
+        </dd>
+      </div>
+      <!-- Low -->
+      <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+        <dt class="text-sm font-medium leading-6 text-gray-900">Low</dt>
+        <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">
+          
+          <ul>
+            
+            <li>
+              <p>The theme colors in 'public/manifest.json' and 'pwa.config.ts' are hardcoded.  Using a variable or constant for these values would improve maintainability.</p>
+              <p class="mt-2"><strong>Impact:</strong> Increased effort when updating the theme color across multiple files.</p>
+              <div class="mt-1">
+                <strong>Related files:</strong>
+                <ul class="mb-8 list-disc list-inside">
+                  
+                  <li class="italic">public/manifest.json</li>
+                  
+                  <li class="italic">pwa.config.ts</li>
+                  
+                </ul>
+              </div>
+            </li>
+            
+          </ul>
+          
+        </dd>
+      </div>
+    </dl>
+  </div>
+</div>
+
+<!-- Vulnerabilities (data from vuln_report.json)  -->
+<div class="mb-24 mt-12 border-t-2">
+  <div class="mt-12 px-4 sm:px-0">
+    <h3 class="text-xl font-semibold leading-7 text-gray-900">
+      Vulnerabilities
+    </h3>
+    <p class="mt-1 max-w-2xl text-sm leading-6 text-gray-500">
+      Based on the dependancies used in your code, below are the known
+      vulnerabilities.
+    </p>
+  </div>
+  <div class="mt-6 border-t border-gray-100">
+    <dl class="divide-y divide-gray-100">
+      <!-- Items -->
+      <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+        <dt class="text-sm font-medium leading-6 text-gray-900">Items</dt>
+        <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">
+           No "High" profile vulnerabilities found. 
+        </dd>
+      </div>
+    </dl>
+  </div>
+</div>
+<!-- Code Quality (data from quality_report.json)   -->
+<div class="mb-24 mt-12 border-t-2">
+  <div class="mt-12 px-4 sm:px-0">
+    <h3 class="text-xl font-semibold leading-7 text-gray-900">Code Quality</h3>
+    <p class="mt-1 max-w-2xl text-sm leading-6 text-gray-500">
+      Overall quality of code.
+    </p>
+  </div>
+  <div class="mt-6 border-t border-gray-100">
+    <dl class="divide-y divide-gray-100">
+      <!-- readability -->
+      <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+        <dt class="text-sm font-medium leading-6 text-gray-900">Readability</dt>
+        <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">
+          <p><strong>Score:</strong> 75</p>
+          <p class="mt-2">The code demonstrates good use of indentation and clear naming. Some areas, like the 'typeEffect' function in 'index.vue', could benefit from additional comments explaining the logic.</p>
+        </dd>
+      </div>
+      <!-- efficiency -->
+      <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+        <dt class="text-sm font-medium leading-6 text-gray-900">Efficiency</dt>
+        <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">
+          <p><strong>Score:</strong> 65</p>
+          <p class="mt-2">The code audit highlights efficiency issues with the service worker's caching strategy. Additionally, using a constant for the repeated theme color would be more efficient.</p>
+        </dd>
+      </div>
+      <!-- documentation -->
+      <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+        <dt class="text-sm font-medium leading-6 text-gray-900">
+          Documentation
+        </dt>
+        <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">
+          <p>
+            <strong>Score:</strong> 45
+          </p>
+          <p class="mt-2">The code has minimal comments explaining basic functionality.  It would benefit from docstrings, especially in 'pwa.config.ts' to describe PWA configurations.</p>
+        </dd>
+      </div>
+    </dl>
+  </div>
+</div>
+<!-- Refactor PLAN HERE   -->
+[2024-06-28 08:28:10,380: DEBUG/ForkPoolWorker-2] Making request: POST https://oauth2.googleapis.com/token
+[2024-06-28 08:28:10,382: DEBUG/ForkPoolWorker-2] Resetting dropped connection: oauth2.googleapis.com
+[2024-06-28 08:28:10,470: DEBUG/ForkPoolWorker-2] https://oauth2.googleapis.com:443 "POST /token HTTP/1.1" 200 None
+[2024-06-28 08:28:10,521: WARNING/ForkPoolWorker-2] Uploading HTML to:
+[2024-06-28 08:28:10,521: WARNING/ForkPoolWorker-2]  
+[2024-06-28 08:28:10,521: WARNING/ForkPoolWorker-2] projects/qKtISirBQbftY20mLxK0hWXsD053/jerrydav1s:HoldingPage/iNAByT
+[2024-06-28 08:28:10,523: DEBUG/ForkPoolWorker-2] Making request: POST https://oauth2.googleapis.com/token
+[2024-06-28 08:28:10,524: DEBUG/ForkPoolWorker-2] Resetting dropped connection: oauth2.googleapis.com
+[2024-06-28 08:28:10,599: DEBUG/ForkPoolWorker-2] https://oauth2.googleapis.com:443 "POST /token HTTP/1.1" 200 None
+[2024-06-28 08:28:10,601: DEBUG/ForkPoolWorker-2] Resetting dropped connection: storage.googleapis.com
+[2024-06-28 08:28:10,710: DEBUG/ForkPoolWorker-2] https://storage.googleapis.com:443 "POST /upload/storage/v1/b/rippo-777.appspot.com/o?uploadType=resumable HTTP/1.1" 200 0
+[2024-06-28 08:28:10,849: DEBUG/ForkPoolWorker-2] https://storage.googleapis.com:443 "PUT /upload/storage/v1/b/rippo-777.appspot.com/o?uploadType=resumable&upload_id=ACJd0NqpGvx5ZVZACPw7PGf-EYs79H5Ni5BGjJPohRUoM9bwp_c4PZUmWJkcPeCzB0Yb_dlC0OUT-MvhJOdjRGUFsOXBVhEC22CVM8NGVhGHXsJFyA HTTP/1.1" 200 1059
+[2024-06-28 08:28:10,849: WARNING/ForkPoolWorker-2] Uploaded iNAByT.html to projects/qKtISirBQbftY20mLxK0hWXsD053/jerrydav1s:HoldingPage/iNAByT/iNAByT.html
+[2024-06-28 08:28:10,850: WARNING/ForkPoolWorker-2] Deleted: /home/trainboxai/backend/rippo/reports/code_audit_iNAByT.json
+[2024-06-28 08:28:10,850: WARNING/ForkPoolWorker-2] Deleted: /home/trainboxai/backend/rippo/reports/vuln_report_iNAByT.json
+[2024-06-28 08:28:10,850: WARNING/ForkPoolWorker-2] Deleted: /home/trainboxai/backend/rippo/reports/quality_report_iNAByT.json
+[2024-06-28 08:28:10,850: WARNING/ForkPoolWorker-2] Deleted: /home/trainboxai/backend/rippo/outputs/final_iNAByT.md
+[2024-06-28 08:28:10,850: WARNING/ForkPoolWorker-2] Deleted: /home/trainboxai/backend/rippo/outputs/vuln_search_results_iNAByT.json
+[2024-06-28 08:28:10,851: WARNING/ForkPoolWorker-2] Deleted: /home/trainboxai/backend/rippo/reports/refactor_iNAByT.html
+[2024-06-28 08:28:10,851: WARNING/ForkPoolWorker-2] Deleted: /home/trainboxai/backend/rippo/reports/report_iNAByT.html
+[2024-06-28 08:28:10,851: WARNING/ForkPoolWorker-2] Deleted: /home/trainboxai/backend/rippo/reports/refactor_guide_iNAByT.md
+[2024-06-28 08:28:10,851: WARNING/ForkPoolWorker-2] Deleted: /home/trainboxai/backend/rippo/reports/iNAByT.html
+[2024-06-28 08:28:10,851: INFO/ForkPoolWorker-2] Task celery_app.generate_report[be1a950e-892a-4ce3-884e-f3a193d87670] succeeded in 514.1318437079899s: None
+[2024-06-28 08:47:54,142: INFO/MainProcess] Task celery_app.generate_report[43e968fc-6025-41e2-8175-2558d325cc00] received
+[2024-06-28 08:47:54,143: DEBUG/MainProcess] TaskPool: Apply <function fast_trace_task at 0x78cf9aac7010> (args:('celery_app.generate_report', '43e968fc-6025-41e2-8175-2558d325cc00', {'lang': 'py', 'task': 'celery_app.generate_report', 'id': '43e968fc-6025-41e2-8175-2558d325cc00', 'shadow': None, 'eta': None, 'expires': None, 'group': None, 'group_index': None, 'retries': 0, 'timelimit': [None, None], 'root_id': '43e968fc-6025-41e2-8175-2558d325cc00', 'parent_id': None, 'argsrepr': "('https://github.com/jerrydav1s/HoldingPage.git', 'jerrydav1s:HoldingPage', 'AY3ON0', 'qKtISirBQbftY20mLxK0hWXsD053', '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')", 'kwargsrepr': '{}', 'origin': 'gen370173@rippo-backend-vm', 'ignore_result': False, 'replaced_task_nesting': 0, 'stamped_headers': None, 'stamps': {}, 'properties': {'correlation_id': '43e968fc-6025-41e2-8175-2558d325cc00', 'reply_to': '4a745259-6032-3381-a438-0bd617944c4b', 'delivery_mode': 2, 'delivery_info': {'exchange': '', 'routing_key': 'celery'}, 'priority': 0, 'body_encoding': 'base64', 'delivery_tag': 'd73a75cf-f3ce-4853-ba11-6a3cdb440238'}, 'reply_to':... kwargs:{})
+[2024-06-28 08:47:54,144: WARNING/ForkPoolWorker-2] [32mGet flattened file and extract contents . . .[0m
+[2024-06-28 08:47:54,144: WARNING/ForkPoolWorker-2] [35mGathering search results . . .[0m
+[2024-06-28 08:47:54,145: DEBUG/ForkPoolWorker-2] Popen(['git', 'clone', '-v', '--', 'https://*****@github.com/jerrydav1s/HoldingPage.git', '/tmp/tmpaftx_nvz'], cwd=/home/trainboxai/backend/rippo/prod, stdin=None, shell=False, universal_newlines=True)
+[2024-06-28 08:47:54,643: DEBUG/ForkPoolWorker-2] Cmd(['git', 'clone', '-v', '--', 'https://*****@github.com/jerrydav1s/HoldingPage.git', '/tmp/tmpaftx_nvz'])'s unused stdout: 
+[2024-06-28 08:47:54,651: WARNING/ForkPoolWorker-2] [32mAnalyse and extract list of dependancies . . . .[0m
+[2024-06-28 08:47:57,791: WARNING/ForkPoolWorker-2] {"dependancy":"autoprefixer","version":"^10.4.17"},{"dependancy":"nuxt","version":"^3.9.3"},{"dependancy":"postcss","version":"^8.4.33"},{"dependancy":"tailwindcss","version":"^3.4.1"},{"dependancy":"vue","version":"^3.4.14"},{"dependancy":"vue-router","version":"^4.2.5"},{"dependancy":"vite-plugin-pwa","version":"unknown"}
+[2024-06-28 08:47:57,791: WARNING/ForkPoolWorker-2] {"dependancy":"autoprefixer","version":"^10.4.17"},{"dependancy":"nuxt","version":"^3.9.3"},{"dependancy":"postcss","version":"^8.4.33"},{"dependancy":"tailwindcss","version":"^3.4.1"},{"dependancy":"vue","version":"^3.4.14"},{"dependancy":"vue-router","version":"^4.2.5"},{"dependancy":"vite-plugin-pwa","version":"unknown"}
+[2024-06-28 08:47:57,791: WARNING/ForkPoolWorker-2] [32mStarting searching for known Vulnerabilities . . . . .[0m
+[2024-06-28 08:47:57,792: WARNING/ForkPoolWorker-2] [32mCompleted searching for known Vulnerabilities . . . . .[0m
+[2024-06-28 08:47:57,792: WARNING/ForkPoolWorker-2] [35mGetting code audit report . . . . . .[0m
+[2024-06-28 08:47:57,792: WARNING/ForkPoolWorker-2] [91mTrying code audit, attempt 1 [0m
+[2024-06-28 08:48:07,497: WARNING/ForkPoolWorker-2] [35mGetting vulnerability report . . . . . . .[0m
+[2024-06-28 08:48:07,497: WARNING/ForkPoolWorker-2] [91mTrying Vuln Report, attempt 1 [0m
+[2024-06-28 08:48:08,319: WARNING/ForkPoolWorker-2] ```json
+{
+  "vulnerability_report": []
+}
+```
+[2024-06-28 08:48:08,320: WARNING/ForkPoolWorker-2] [35mGetting quality report . . . . . . .[0m
+[2024-06-28 08:48:08,320: WARNING/ForkPoolWorker-2] [91mTrying Quality Report, attempt 1 [0m
+[2024-06-28 08:48:35,248: WARNING/ForkPoolWorker-2] Refactoring Plan
+## Finding: The service worker in public/service-worker.js implements a basic caching strategy that could be improved. Currently, it caches every request and serves it from the cache if available.  Consider implementing a more robust strategy like 'stale-while-revalidate' for better performance and updated content.
+Issue: Suboptimal caching strategy might lead to outdated content being served and potentially impact user experience.
+Refactoring Approach: Implement the 'stale-while-revalidate' caching strategy in the service worker. This strategy involves serving cached content immediately (if available) while simultaneously fetching the latest version from the network. If the network request succeeds, update the cache and serve the fresh content for subsequent requests.
+Example:
+```javascript
+// Before:
+self.addEventListener('fetch', function(event) {
+  event.respondWith(
+    caches.match(event.request).then(function(response) {
+      return response || fetch(event.request);
+    })
+  );
+});
+
+// After:
+self.addEventListener('fetch', function(event) {
+  event.respondWith(
+    caches.open('my-cache').then(function(cache) {
+      return cache.match(event.request).then(function(cachedResponse) {
+        const fetchPromise = fetch(event.request).then(function(networkResponse) {
+          cache.put(event.request, networkResponse.clone());
+          return networkResponse;
+        });
+        return cachedResponse || fetchPromise;
+      });
+    })
+  );
+});
+
+```
+
+Relevant Files: public/service-worker.js
+
+## Finding: Hardcoded URL for email submission in pages/index.vue. This URL should be stored as an environment variable or configuration value to allow for easier deployment across different environments.
+Issue: Difficulty managing different environments (development, production) due to the hardcoded URL.  It increases the risk of errors during deployment or when switching environments.
+Refactoring Approach: 
+1. **Create an environment variable:** Define an environment variable to store the base URL for your API. You can use Nuxt's runtime configuration for this.
+2. **Access the environment variable:** In your component, access the environment variable using `process.env`.
+Example:
+```javascript
+// nuxt.config.ts
+export default defineNuxtConfig({
+  // ... other configurations
+  runtimeConfig: {
+    public: {
+      apiBaseUrl: process.env.API_BASE_URL || 'https://speakyes.ew.r.appspot.com', // Default value for development
+    },
+  },
+});
+
+// pages/index.vue
+// ... inside the submitEmail method
+try {
+  const response = await fetch(
+    `${process.env.API_BASE_URL}/submit_email/`, // Accessing the environment variable
+    {
+      method: "POST",
+      body: formData,
+    }
+  );
+
+  // ... rest of the code
+} catch (error) {
+  // ... error handling
+}
+```
+
+Relevant Files: pages/index.vue, nuxt.config.ts
+
+## Finding: The 'commit-push.sh' script builds the application before every commit and push. While this can be useful for ensuring the latest build is always deployed, it can slow down the development process, especially for small commits.
+Issue: Potential slowdown in development workflow due to unnecessary builds for each commit.
+Refactoring Approach: Remove the `yarn build` command from the 'commit-push.sh' script. Instead, rely on your CI/CD pipeline to build and deploy the application whenever there's a push to the repository.
+Example:
+```bash
+#!/bin/bash
+
+# Before:
+# yarn build
+# git add .
+
+# After:
+git add .
+git commit -m "$1"
+git push origin main
+```
+
+Relevant Files: commit-push.sh
+
+## Finding: The manifest.json and pwa.config.ts both define icons for the PWA. While not inherently an issue, it's generally a good practice to consolidate these in one place, usually the manifest.json, for better maintainability.
+Issue: Potential inconsistencies or confusion when managing PWA icons due to duplication of information.
+Refactoring Approach: Remove the icon definitions from pwa.config.ts and ensure that the manifest.json file contains the complete and up-to-date icon configuration for your PWA.
+Example:
+```javascript
+// pwa.config.ts
+import type { VitePWAOptions } from 'vite-plugin-pwa';
+
+const pwaConfig: VitePWAOptions = {
+  // ... other configurations
+  manifest: {
+    // ... other manifest properties
+    // Remove the 'icons' property from here
+  },
+} as VitePWAOptions;
+
+export default pwaConfig;
+
+```
+
+Relevant Files: pwa.config.ts, public/manifest.json
+[2024-06-28 08:48:35,262: ERROR/ForkPoolWorker-2] Task celery_app.generate_report[43e968fc-6025-41e2-8175-2558d325cc00] raised unexpected: JSONDecodeError('Expecting value: line 1 column 1 (char 0)')
+Traceback (most recent call last):
+  File "/home/trainboxai/backend/rippo/venv/lib/python3.10/site-packages/celery/app/trace.py", line 453, in trace_task
+    R = retval = fun(*args, **kwargs)
+  File "/home/trainboxai/backend/rippo/venv/lib/python3.10/site-packages/celery/app/trace.py", line 736, in __protected_call__
+    return self.run(*args, **kwargs)
+  File "/home/trainboxai/backend/rippo/prod/celery_app.py", line 112, in generate_report
+    htmlReport = update_html_with_json(template_path, code_audit_path, vuln_report_path, quality_report_path)
+  File "/home/trainboxai/backend/rippo/prod/update_html_report.py", line 14, in update_html_with_json
+    vuln_report = json.load(f)
+  File "/usr/lib/python3.10/json/__init__.py", line 293, in load
+    return loads(fp.read(),
+  File "/usr/lib/python3.10/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python3.10/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib/python3.10/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)

@@ -4,3 +4,6 @@ when searching for vulns it often times out . Error: Some characters could not b
 
 
 # Huge repos create huge MD files, how to get round this??
+
+
+# If Vulns search fails after max tries, we must return an empty array
