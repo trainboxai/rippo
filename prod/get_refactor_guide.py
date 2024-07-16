@@ -18,15 +18,17 @@ generation_config = {
   "response_mime_type": "text/plain",
 }
 
-def get_refactor_html_withbackoff(guide_markdown_file_content,max_retries=5):
+def get_refactor_html_withbackoff(guide_markdown_file_content, max_retries=5):
     for attempt in range(max_retries):
         try:
-            return get_refactor_html(guide_markdown_file_content) 
+            return get_refactor_html(guide_markdown_file_content)
         except DeadlineExceeded:
             sleep_duration = 2**attempt + random.uniform(0, 1)
             print(f"Request timed out. Retrying in {sleep_duration} seconds...")
             time.sleep(sleep_duration)
-    raise Exception(f"Failed to get a response after {max_retries} retries.")
+    print(f"Failed to get a response after {max_retries} retries.")
+    # # TODO: write error to a log and use for rettries
+    return None
 
 
 
@@ -65,7 +67,7 @@ output_dir = os.path.join(script_dir, '..', 'outputs')
 reports_dir = os.path.join(script_dir, '..', 'reports')
 
 
-guide_markdown_file_content = "## Refactoring Plan\n\n**Finding:** Code duplication: The header and navigation components are duplicated in 'pages/index.vue' and 'pages/about_me.vue'. This could be refactored into a shared layout component for better maintainability.\n**Issue:** Increased maintenance effort and potential for inconsistencies between pages.\n**Refactoring Approach:**\n1. Create a new layout component, e.g., `layouts/default.vue`.\n2. Move the duplicated header and navigation code from `pages/index.vue` and `pages/about_me.vue` into `layouts/default.vue`.\n3. Replace the duplicated code in both pages with `<NuxtLayout>` component.\n**Example:**\n```vue\n// layouts/default.vue\n<template>\n  <header>\n    <!-- Header content here -->\n  </header>\n  <nav>\n    <!-- Navigation content here -->\n  </nav>\n  <slot /> \n</template>\n\n// pages/index.vue\n<template>\n  <NuxtLayout>\n    <!-- Page content here -->\n  </NuxtLayout>\n</template>\n\n// pages/about_me.vue\n<template>\n  <NuxtLayout>\n    <!-- Page content here -->\n  </NuxtLayout>\n</template>\n```\n**Relevant Files:** layouts/default.vue, pages/index.vue, pages/about_me.vue\n\n**Finding:** Hardcoded value: The YouTube video embed URLs are hardcoded within 'pages/index.vue' and 'pages/about_me.vue'.  Consider storing these in a separate configuration file or data component for better organization and easier updates.\n**Issue:** Increased difficulty when updating or modifying the embedded videos.\n**Refactoring Approach:**\n1. Create a new data file, e.g., `data/videoUrls.ts`.\n2. Define a constant object containing the video URLs.\n3. Import and use the constants in the relevant components.\n**Example:**\n```typescript\n// data/videoUrls.ts\nexport const VIDEO_URLS = {\n  home: 'https://www.youtube.com/embed/5e0ASS9j9Y4',\n  about: 'https://www.youtube.com/embed/CY1GQcj50H0',\n};\n\n// pages/index.vue\n<template>\n  <iframe :src=\"VIDEO_URLS.home\"></iframe>\n</template>\n<script lang=\"ts\">\nimport { VIDEO_URLS } from '~/data/videoUrls';\n// ...\n</script>\n```\n**Relevant Files:** data/videoUrls.ts, pages/index.vue, pages/about_me.vue\n\n**Finding:** Hardcoded value: The WhatsApp phone number is hardcoded in multiple offer links in 'pages/index.vue' and 'pages/about_me.vue'. Replacing this with a variable or configuration would improve maintainability.\n**Issue:** Updating the phone number requires changes in multiple places, increasing the risk of errors.\n**Refactoring Approach:**\n1. Define a constant for the WhatsApp phone number, e.g., in `data/contactInfo.ts`.\n2. Use this constant in all relevant links.\n**Example:**\n```typescript\n// data/contactInfo.ts\nexport const WHATSAPP_NUMBER = '41764140776';\n\n// pages/index.vue\n<template>\n  <a :href=\"`https://wa.me/${WHATSAPP_NUMBER}`\">Contact Me</a>\n</template>\n<script lang=\"ts\">\nimport { WHATSAPP_NUMBER } from '~/data/contactInfo';\n// ...\n</script>\n```\n**Relevant Files:** data/contactInfo.ts, pages/index.vue, pages/about_me.vue\n\n**Finding:** Hardcoded Value: The image path inside the commit-push.sh script is hardcoded. This could be made more robust by using a variable for the branch name.\n**Issue:** The script might push to the wrong branch if the default branch changes, leading to potential data loss or inconsistencies.\n**Refactoring Approach:**\n1. Replace the hardcoded branch name with `$BRANCH_NAME`.\n2. Define `$BRANCH_NAME` variable either within the script or pass it as an environment variable.\n**Example:**\n```bash\n#!/bin/bash\n\nBRANCH_NAME=\"main\" # Or get it from an environment variable\n\nif [ -z \"$1\" ]; then\n  echo \"Missing commit message\"\n  exit 1\nfi\n\nyarn build\ngit add .\ngit commit -m \"$1\"\ngit push origin $BRANCH_NAME\n```\n**Relevant Files:** commit-push.sh \n"
+guide_markdown_file_content = ""
 
 refactor_guide_html = get_refactor_html_withbackoff(guide_markdown_file_content)
 with open(os.path.join(reports_dir, f"refactor_guide_1234.html"), "w") as file:

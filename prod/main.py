@@ -248,14 +248,14 @@ async def master(repo_url: RepoUrl, repo_name: RepoName,report_id: ReportId,  us
     project_path = f"projects/{user_id}/{repo_name}/{report_id}"
 
     # Create Firebase Storage folder structure
-    for folder in [f"code_audit_{report_id}.json", f"quality_report_{report_id}.json", f"vulnerability_report_{report_id}.json", f"refactor_guide_{report_id}.md"]:
-        blob = bucket.blob(f"{project_path}/{folder}")
-        blob.upload_from_string("")
+    folder = f"{project_path}/"
+    blob = bucket.blob(folder)
+    blob.upload_from_string("")
 
-        # Check if upload was successful
-        if not blob.exists():
-            write_event_log(event_id=202, source='/master', details=f"Failed to create folder: {folder}", level='ERROR', log_path=log_path )
-            raise HTTPException(status_code=500, detail=f"Failed to create folder: {folder}")
+    # Check if upload was successful
+    if not blob.exists():
+        write_event_log(event_id=202, source='/master', details=f"Failed to create folder: {folder}", level='ERROR', log_path=log_path)
+        raise HTTPException(status_code=500, detail=f"Failed to create folder: {folder}")
 
     
 

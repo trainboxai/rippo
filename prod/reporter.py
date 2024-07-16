@@ -59,8 +59,9 @@ def code_audit_report(md_file, unique_id=0):
 
     script_dir = os.path.dirname(os.path.abspath(__file__))
     reports_dir = os.path.join(script_dir, '..', 'reports')
+    # Remove both opening and closing delimiters
     cleaned_text = re.sub(r'```json', '', response.text)
-    cleaned_text = cleaned_text.replace('`', '')
+    cleaned_text = re.sub(r'```', '', cleaned_text)
 
     with open(os.path.join(reports_dir,f'code_audit_{unique_id}.json'), 'w') as file:
         file.write(cleaned_text)
@@ -112,8 +113,9 @@ def vulnerability_report(input_file, unique_id=0):
     print(response.text)
     script_dir = os.path.dirname(os.path.abspath(__file__))
     reports_dir = os.path.join(script_dir, '..', 'reports')
+    # Remove both opening and closing delimiters
     cleaned_text = re.sub(r'```json', '', response.text)
-    cleaned_text = cleaned_text.replace('`', '')
+    cleaned_text = re.sub(r'```', '', cleaned_text)
     with open(os.path.join(reports_dir,f'vuln_report_{unique_id}.json'), 'w') as file:
         file.write(cleaned_text) 
     return response.text
@@ -163,8 +165,9 @@ def quality_report(input_file,unique_id=0):
     #print(response.text)
     script_dir = os.path.dirname(os.path.abspath(__file__))
     reports_dir = os.path.join(script_dir, '..', 'reports')
+    # Remove both opening and closing delimiters
     cleaned_text = re.sub(r'```json', '', response.text)
-    cleaned_text = cleaned_text.replace('`', '')
+    cleaned_text = re.sub(r'```', '', cleaned_text)
 
     with open(os.path.join(reports_dir, f'quality_report_{unique_id}.json'), 'w') as file:
         file.write(cleaned_text)
@@ -176,37 +179,37 @@ def code_audit_report_with_backoff(md_file, unique_id=0, max_retries=5):
     for attempt in range(max_retries):
         try:
             print(Fore.LIGHTRED_EX + f"Trying code audit, attempt {attempt + 1} " + Style.RESET_ALL)
-            return code_audit_report(md_file, unique_id) 
+            return code_audit_report(md_file, unique_id)
         except DeadlineExceeded:
             sleep_duration = 2**attempt + random.uniform(0, 1)
             print(f"Request timed out. Retrying in {sleep_duration} seconds...")
             time.sleep(sleep_duration)
-    return json.dumps({"error": f"Code audit failed after {max_retries} retries. "}) 
-
+    print(f"Code audit failed after {max_retries} retries.")
+    return json.dumps({"error": f"Code audit failed after {max_retries} retries."})
 
 def vulnerability_report_with_backoff(input_file, unique_id=0, max_retries=5):
     for attempt in range(max_retries):
         try:
             print(Fore.LIGHTRED_EX + f"Trying Vuln Report, attempt {attempt + 1} " + Style.RESET_ALL)
-            return vulnerability_report(input_file, unique_id) 
+            return vulnerability_report(input_file, unique_id)
         except DeadlineExceeded:
             sleep_duration = 2**attempt + random.uniform(0, 1)
             print(f"Request timed out. Retrying in {sleep_duration} seconds...")
             time.sleep(sleep_duration)
-    return json.dumps({"error": f"Vuln Report failed after {max_retries} retries. "}) 
-
+    print(f"Vuln Report failed after {max_retries} retries.")
+    return json.dumps({"error": f"Vuln Report failed after {max_retries} retries."})
 
 def quality_report_with_backoff(input_files, unique_id=0, max_retries=5):
     for attempt in range(max_retries):
         try:
             print(Fore.LIGHTRED_EX + f"Trying Quality Report, attempt {attempt + 1} " + Style.RESET_ALL)
-            return quality_report(input_files, unique_id) 
+            return quality_report(input_files, unique_id)
         except DeadlineExceeded:
             sleep_duration = 2**attempt + random.uniform(0, 1)
             print(f"Request timed out. Retrying in {sleep_duration} seconds...")
             time.sleep(sleep_duration)
-    return json.dumps({"error": f"Quality Report failed after {max_retries} retries. "})
-
+    print(f"Quality Report failed after {max_retries} retries.")
+    return json.dumps({"error": f"Quality Report failed after {max_retries} retries."})
 
 
 

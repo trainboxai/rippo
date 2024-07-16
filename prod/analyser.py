@@ -1,9 +1,12 @@
 import os
+import time
+import random
 import json
 from pathlib import Path
 from dotenv import load_dotenv
 import google.generativeai as genai
 from colorama import Fore, Style
+from google.api_core.exceptions import DeadlineExceeded
 
 load_dotenv()
 
@@ -111,6 +114,17 @@ def get_dependancy_list(markdown_file_content):
     return response.text 
 
    
+def get_dependancy_list_with_backoff(markdown_file_content, max_retries=5):
+    for attempt in range(max_retries):
+        try:
+            return get_dependancy_list(markdown_file_content) 
+        except DeadlineExceeded:
+            sleep_duration = 2**attempt + random.uniform(0, 1)
+            print(f"Request timed out. Retrying in {sleep_duration} seconds...")
+            time.sleep(sleep_duration)
+    print(f"Failed to get Analysis response after {max_retries} retries.")
+        # # TODO: write error to a log and use for rettries
+    return None
 
 
 ## USE / TEST ##

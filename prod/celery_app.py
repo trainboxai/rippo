@@ -6,7 +6,7 @@ import json
 from pathlib import Path
 from manage_storage import upload_to_storage, upload_html
 from flattener import extract_and_write_to_markdown
-from analyser import get_dependancy_list
+from analyser import get_dependancy_list_with_backoff
 from search import search_vulnerabilities
 from reporter import code_audit_report_with_backoff,vulnerability_report_with_backoff, quality_report_with_backoff
 from recomender import generate_refactor_plan_with_backoff
@@ -14,8 +14,10 @@ from update_html_report import update_html_with_json
 from clean_up_report_files import clean_up_files
 from get_refactor_guide import get_refactor_html_withbackoff
 from event_logger import write_event_log
+from update_report_status import update_report_status
 from colorama import Fore, Style
 import datetime
+
 
 
 celery_app = Celery(
@@ -54,7 +56,7 @@ def generate_report(repo_url, repo_name, report_id, user_id, oauth_token):
     markdown_file = markdown_file_path.read_text()
     print(Fore.GREEN + "Analyse and extract list of dependancies . . . ." + Style.RESET_ALL)
     #get deps
-    deps_list = get_dependancy_list(markdown_file)
+    deps_list = get_dependancy_list_with_backoff(markdown_file)
     print(deps_list)
     write_event_log(event_id=104, source='analyser.py/get_dependancy_list', details='Analysed and extracted list of dependancies', level='INFO', log_path=log_path )
  
@@ -127,9 +129,15 @@ def generate_report(repo_url, repo_name, report_id, user_id, oauth_token):
     upload_html(user_id,report_id,repo_name) 
 
 
-     
 
-    # 8. Cleanup local files
+    # 8. Update report status
+    print("Updating report status")
+    update_report_status(user_id, report_id, repo_name)
+    print("Report status updated")
+
+    
+
+    # 9. Cleanup local files
     final_md_path = f"/home/trainboxai/backend/rippo/outputs/final_{uniqueId}.md"
     vuln_search_path = f"/home/trainboxai/backend/rippo/outputs/vuln_search_results_{uniqueId}.json"
     refactor_html_path = f"/home/trainboxai/backend/rippo/reports/refactor_{uniqueId}.html"

@@ -35,13 +35,13 @@ reports_dir = os.path.join(script_dir, '..', 'reports')
 
 
 
-
+report_id = "-sv1yR"
 template_path = "template.html"
-code_audit_path = "/home/trainboxai/backend/rippo/reports/code_audit_Test_2.json"
-vuln_report_path = "/home/trainboxai/backend/rippo/reports/vuln_report_Test_2.json"
-quality_report_path = "/home/trainboxai/backend/rippo/reports/quality_report_Test_2.json"
+code_audit_path = f"/home/trainboxai/backend/rippo/reports/code_audit_{report_id }.json"
+vuln_report_path = f"/home/trainboxai/backend/rippo/reports/vuln_report_{report_id }.json"
+quality_report_path = f"/home/trainboxai/backend/rippo/reports/quality_report_{report_id }.json"
 
 htmlReport = update_html_with_json(template_path, code_audit_path, vuln_report_path, quality_report_path)
 with open(os.path.join(reports_dir, f"report_1234.html"), "w") as file:
         file.write(htmlReport)
-"""
+#"""
