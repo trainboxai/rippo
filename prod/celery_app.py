@@ -15,6 +15,8 @@ from clean_up_report_files import clean_up_files
 from get_refactor_guide import get_refactor_html_withbackoff
 from event_logger import write_event_log
 from update_report_status import update_report_status
+from update_dash_stats import count_findings,count_vulnerabilities,update_dashboard_stats
+from update_credits_usage import update_usage
 from colorama import Fore, Style
 import datetime
 
@@ -117,10 +119,16 @@ def generate_report(repo_url, repo_name, report_id, user_id, oauth_token):
     #print(htmlReport)
 
     # 6.2 Convert refactor guide from MD to HTML
+        # Default value for the refactor guide in case of failure
+    default_refactor_guide_html = "<p> Refactor Report missing. Click below to fetch it. </p>"
     guide_md_file_path = f"/home/trainboxai/backend/rippo/reports/refactor_guide_{uniqueId}.md"
     with open(guide_md_file_path, 'r') as file:
         guide_markdown_file_content = file.read()
     refactor_guide_html = get_refactor_html_withbackoff(guide_markdown_file_content)
+
+    # Use default value if refactor_guide_html is None
+    if refactor_guide_html is None:
+        refactor_guide_html = default_refactor_guide_html
     with open(os.path.join(reports_dir, f"refactor_{uniqueId}.html"), "w") as file:
             file.write(refactor_guide_html)
 
@@ -135,9 +143,21 @@ def generate_report(repo_url, repo_name, report_id, user_id, oauth_token):
     update_report_status(user_id, report_id, repo_name)
     print("Report status updated")
 
-    
 
-    # 9. Cleanup local files
+    # 9. Update Dashboard Stats
+    # Count the findings and vulnerabilities
+    findings_count = count_findings(code_audit_path)
+    vulnerabilities_count = count_vulnerabilities(vuln_report_path)
+
+    update_dashboard_stats(user_id, repo_name, findings_count, vulnerabilities_count)
+
+
+    # 10. Update usage and credits
+    credits_used = 10 #TODO: REMOVE THIS DEFAULT VALUE ONCE WE CAN DO MORE THAN 25MB
+    update_usage(user_id, repo_name, report_id, credits_used)
+
+
+    # 11. Cleanup local files
     final_md_path = f"/home/trainboxai/backend/rippo/outputs/final_{uniqueId}.md"
     vuln_search_path = f"/home/trainboxai/backend/rippo/outputs/vuln_search_results_{uniqueId}.json"
     refactor_html_path = f"/home/trainboxai/backend/rippo/reports/refactor_{uniqueId}.html"
@@ -146,6 +166,8 @@ def generate_report(repo_url, repo_name, report_id, user_id, oauth_token):
     html_path = f"/home/trainboxai/backend/rippo/reports/{uniqueId}.html"
 
     clean_up_files(code_audit_path, vuln_report_path, quality_report_path, final_md_path,vuln_search_path,refactor_html_path, report_html_path, refactor_md_path, html_path)
+
+
   
 
 

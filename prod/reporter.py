@@ -193,11 +193,20 @@ def vulnerability_report_with_backoff(input_file, unique_id=0, max_retries=5):
             print(Fore.LIGHTRED_EX + f"Trying Vuln Report, attempt {attempt + 1} " + Style.RESET_ALL)
             return vulnerability_report(input_file, unique_id)
         except DeadlineExceeded:
-            sleep_duration = 2**attempt + random.uniform(0, 1)
+            sleep_duration = 5**attempt + random.uniform(0, 1)
             print(f"Request timed out. Retrying in {sleep_duration} seconds...")
             time.sleep(sleep_duration)
+    
     print(f"Vuln Report failed after {max_retries} retries.")
-    return json.dumps({"error": f"Vuln Report failed after {max_retries} retries."})
+    
+    # Create a default file if it fails
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    reports_dir = os.path.join(script_dir, '..', 'reports')
+    default_content = json.dumps({"vulnerability_report": []})
+    with open(os.path.join(reports_dir, f'vuln_report_{unique_id}.json'), 'w') as file:
+        file.write(default_content)
+    
+    return default_content
 
 def quality_report_with_backoff(input_files, unique_id=0, max_retries=5):
     for attempt in range(max_retries):

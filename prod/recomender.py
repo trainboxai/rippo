@@ -21,12 +21,18 @@ def generate_refactor_plan_with_backoff(input_files, unique_id=0, max_retries=5)
         try:
             return generate_refactoring_plan(input_files, unique_id) 
         except DeadlineExceeded:
-            sleep_duration = 2**attempt + random.uniform(0, 1)
+            sleep_duration = 5**attempt + random.uniform(0, 1)
             print(f"Request timed out. Retrying in {sleep_duration} seconds...")
             time.sleep(sleep_duration)
+    
     print(f"Failed to get a response after {max_retries} retries.")
-        # # TODO: write error to a log and use for rettries
-    return None
+    
+    # Return the specified HTML content upon failure
+    return '''
+        <div class="mb-32 mt-12 border-t-2">
+        <p class="mt-2">Refactor PLAN not available</p>
+        </div>
+        '''
 
 
 def generate_refactoring_plan(input_files,unique_id=0):

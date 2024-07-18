@@ -98,7 +98,6 @@ async def get_current_user(token: str = Depends(oauth2_scheme)):
 async def root():
     return {"message": "Welcome to the Rippo API!"}
 
-
 @app.post("/verify-token")
 async def verify_token(request: Request):
     body = await request.json()
@@ -122,11 +121,14 @@ async def verify_token(request: Request):
             "email": email,
             "displayName": displayName,
             "photoUrl": photoUrl,
-            "oauthAccessToken": oauthToken
+            "oauthAccessToken": oauthToken,
+            "credits": 0,
         }
         
-        
         if user_doc.exists:
+            existing_data = user_doc.to_dict()
+            # Preserve existing credits if already present
+            user_data["credits"] = existing_data.get("credits", 0)
             user_ref.update(user_data)
         else:
             user_ref.set(user_data)
@@ -231,6 +233,28 @@ async def fetch_report_content(request: ReportRequest, user_id: str = Depends(ge
     return HTMLResponse(content=report_content)
 
 
+@app.post("/get_usage")
+async def get_usage(user_id: str = Depends(get_current_user)):
+    """Fetches the usage data for the authenticated user."""
+
+    print("Received USER ID:", user_id)
+
+    # Query Firestore for usage data
+    usage_docs = db.collection('users').document(user_id).collection('usage').stream()
+    
+    # Prepare a list of dictionaries with usage data
+    usage_data = [{
+        'projectName': doc.to_dict().get('projectName'),
+        'reportID': doc.to_dict().get('reportID'),
+        'date': doc.to_dict().get('date').isoformat() if doc.to_dict().get('date') else None,
+        'creditsUsed': doc.to_dict().get('creditsUsed')
+    } for doc in usage_docs]
+
+    print("USAGE DATA:", usage_data)
+
+    return {"usage": usage_data}
+
+
 @app.post("/master")
 async def master(repo_url: RepoUrl, repo_name: RepoName,report_id: ReportId,  user_id: str = Depends(get_current_user)):
   
@@ -277,6 +301,16 @@ async def master(repo_url: RepoUrl, repo_name: RepoName,report_id: ReportId,  us
             'status': 'In progress',
         }])
     }, merge=True)
+
+       # Create "stats" collection at the same level as "projects"
+    stats_ref = db.collection('users').document(user_id).collection('stats').document('statsDoc')
+    stats_doc = stats_ref.get()
+    if not stats_doc.exists:
+        stats_ref.set({
+            'reviews': 0,
+            'bugs': 0,
+            'vulnerabilities': 0
+        })
 
     # get unique id from report_id
     uniqueId = report_id

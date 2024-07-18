@@ -1,0 +1,802 @@
+[2024-07-18 09:08:23,194: DEBUG/MainProcess] | Worker: Preparing bootsteps.
+[2024-07-18 09:08:23,195: DEBUG/MainProcess] | Worker: Building graph...
+[2024-07-18 09:08:23,196: DEBUG/MainProcess] | Worker: New boot order: {Timer, Hub, Pool, Autoscaler, Beat, StateDB, Consumer}
+[2024-07-18 09:08:23,198: DEBUG/MainProcess] | Consumer: Preparing bootsteps.
+[2024-07-18 09:08:23,198: DEBUG/MainProcess] | Consumer: Building graph...
+[2024-07-18 09:08:23,205: DEBUG/MainProcess] | Consumer: New boot order: {Connection, Events, Mingle, Tasks, Control, Agent, Gossip, Heart, event loop}
+[2024-07-18 09:08:23,214: DEBUG/MainProcess] | Worker: Starting Hub
+[2024-07-18 09:08:23,214: DEBUG/MainProcess] ^-- substep ok
+[2024-07-18 09:08:23,214: DEBUG/MainProcess] | Worker: Starting Pool
+[2024-07-18 09:08:23,406: DEBUG/MainProcess] ^-- substep ok
+[2024-07-18 09:08:23,406: DEBUG/MainProcess] | Worker: Starting Consumer
+[2024-07-18 09:08:23,406: DEBUG/MainProcess] | Consumer: Starting Connection
+[2024-07-18 09:08:23,408: WARNING/MainProcess] /home/trainboxai/backend/rippo/venv/lib/python3.10/site-packages/celery/worker/consumer/consumer.py:508: CPendingDeprecationWarning: The broker_connection_retry configuration setting will no longer determine
+whether broker connection retries are made during startup in Celery 6.0 and above.
+If you wish to retain the existing behavior for retrying connections on startup,
+you should set broker_connection_retry_on_startup to True.
+  warnings.warn(
+
+[2024-07-18 09:08:23,412: INFO/MainProcess] Connected to redis://localhost:6379/0
+[2024-07-18 09:08:23,412: DEBUG/MainProcess] ^-- substep ok
+[2024-07-18 09:08:23,412: DEBUG/MainProcess] | Consumer: Starting Events
+[2024-07-18 09:08:23,412: WARNING/MainProcess] /home/trainboxai/backend/rippo/venv/lib/python3.10/site-packages/celery/worker/consumer/consumer.py:508: CPendingDeprecationWarning: The broker_connection_retry configuration setting will no longer determine
+whether broker connection retries are made during startup in Celery 6.0 and above.
+If you wish to retain the existing behavior for retrying connections on startup,
+you should set broker_connection_retry_on_startup to True.
+  warnings.warn(
+
+[2024-07-18 09:08:23,414: DEBUG/MainProcess] ^-- substep ok
+[2024-07-18 09:08:23,414: DEBUG/MainProcess] | Consumer: Starting Mingle
+[2024-07-18 09:08:23,414: INFO/MainProcess] mingle: searching for neighbors
+[2024-07-18 09:08:23,418: DEBUG/MainProcess] pidbox received method hello(from_node='celery@rippo-backend-vm', revoked={}) [reply_to:{'exchange': 'reply.celery.pidbox', 'routing_key': '4ad655a3-7d1b-3125-a6c8-79f83163ab4b'} ticket:bdd245bc-ee3c-4ec4-adb2-4bd2335bc758]
+[2024-07-18 09:08:23,418: DEBUG/MainProcess] pidbox received method hello(from_node='celery@rippo-backend-vm', revoked={}) [reply_to:{'exchange': 'reply.celery.pidbox', 'routing_key': '4ad655a3-7d1b-3125-a6c8-79f83163ab4b'} ticket:bdd245bc-ee3c-4ec4-adb2-4bd2335bc758]
+[2024-07-18 09:08:23,419: DEBUG/MainProcess] pidbox received method hello(from_node='celery@rippo-backend-vm', revoked={}) [reply_to:{'exchange': 'reply.celery.pidbox', 'routing_key': '4ad655a3-7d1b-3125-a6c8-79f83163ab4b'} ticket:bdd245bc-ee3c-4ec4-adb2-4bd2335bc758]
+[2024-07-18 09:08:23,419: DEBUG/MainProcess] pidbox received method hello(from_node='celery@rippo-backend-vm', revoked={}) [reply_to:{'exchange': 'reply.celery.pidbox', 'routing_key': '4ad655a3-7d1b-3125-a6c8-79f83163ab4b'} ticket:bdd245bc-ee3c-4ec4-adb2-4bd2335bc758]
+[2024-07-18 09:08:24,423: WARNING/MainProcess] /home/trainboxai/backend/rippo/venv/lib/python3.10/site-packages/celery/app/control.py:56: DuplicateNodenameWarning: Received multiple replies from node name: celery@rippo-backend-vm.
+Please make sure you give each node a unique nodename using
+the celery worker `-n` option.
+  warnings.warn(DuplicateNodenameWarning(
+
+[2024-07-18 09:08:24,423: INFO/MainProcess] mingle: all alone
+[2024-07-18 09:08:24,423: DEBUG/MainProcess] ^-- substep ok
+[2024-07-18 09:08:24,423: DEBUG/MainProcess] | Consumer: Starting Tasks
+[2024-07-18 09:08:24,425: DEBUG/MainProcess] ^-- substep ok
+[2024-07-18 09:08:24,426: DEBUG/MainProcess] | Consumer: Starting Control
+[2024-07-18 09:08:24,428: DEBUG/MainProcess] ^-- substep ok
+[2024-07-18 09:08:24,428: DEBUG/MainProcess] | Consumer: Starting Gossip
+[2024-07-18 09:08:24,430: DEBUG/MainProcess] ^-- substep ok
+[2024-07-18 09:08:24,430: DEBUG/MainProcess] | Consumer: Starting Heart
+[2024-07-18 09:08:24,431: DEBUG/MainProcess] ^-- substep ok
+[2024-07-18 09:08:24,431: DEBUG/MainProcess] | Consumer: Starting event loop
+[2024-07-18 09:08:24,431: DEBUG/MainProcess] | Worker: Hub.register Pool...
+[2024-07-18 09:08:24,432: INFO/MainProcess] celery@rippo-backend-vm ready.
+[2024-07-18 09:08:24,432: DEBUG/MainProcess] basic.qos: prefetch_count->16
+[2024-07-18 09:09:11,958: DEBUG/MainProcess] | Worker: Closing Hub...
+[2024-07-18 09:09:11,958: DEBUG/MainProcess] | Worker: Closing Pool...
+[2024-07-18 09:09:11,958: DEBUG/MainProcess] | Worker: Closing Consumer...
+[2024-07-18 09:09:11,958: DEBUG/MainProcess] | Worker: Stopping Consumer...
+[2024-07-18 09:09:11,958: DEBUG/MainProcess] | Consumer: Closing Connection...
+[2024-07-18 09:09:11,958: DEBUG/MainProcess] | Consumer: Closing Events...
+[2024-07-18 09:09:11,958: DEBUG/MainProcess] | Consumer: Closing Mingle...
+[2024-07-18 09:09:11,958: DEBUG/MainProcess] | Consumer: Closing Tasks...
+[2024-07-18 09:09:11,958: DEBUG/MainProcess] | Consumer: Closing Control...
+[2024-07-18 09:09:11,958: DEBUG/MainProcess] | Consumer: Closing Gossip...
+[2024-07-18 09:09:11,959: DEBUG/MainProcess] | Consumer: Closing Heart...
+[2024-07-18 09:09:11,959: DEBUG/MainProcess] | Consumer: Closing event loop...
+[2024-07-18 09:09:11,959: DEBUG/MainProcess] | Consumer: Stopping event loop...
+[2024-07-18 09:09:11,959: DEBUG/MainProcess] | Consumer: Stopping Heart...
+[2024-07-18 09:09:11,959: DEBUG/MainProcess] | Consumer: Stopping Gossip...
+[2024-07-18 09:09:11,961: DEBUG/MainProcess] | Consumer: Stopping Control...
+[2024-07-18 09:09:11,962: DEBUG/MainProcess] | Consumer: Stopping Tasks...
+[2024-07-18 09:09:11,962: DEBUG/MainProcess] Canceling task consumer...
+[2024-07-18 09:09:11,962: DEBUG/MainProcess] | Consumer: Stopping Mingle...
+[2024-07-18 09:09:11,962: DEBUG/MainProcess] | Consumer: Stopping Events...
+[2024-07-18 09:09:11,962: DEBUG/MainProcess] | Consumer: Stopping Connection...
+[2024-07-18 09:09:11,962: DEBUG/MainProcess] | Worker: Stopping Pool...
+[2024-07-18 09:09:12,973: DEBUG/MainProcess] | Worker: Stopping Hub...
+[2024-07-18 09:09:12,973: DEBUG/MainProcess] | Consumer: Shutdown Heart...
+[2024-07-18 09:09:12,973: DEBUG/MainProcess] | Consumer: Shutdown Gossip...
+[2024-07-18 09:09:12,973: DEBUG/MainProcess] | Consumer: Shutdown Control...
+[2024-07-18 09:09:12,973: DEBUG/MainProcess] | Consumer: Shutdown Tasks...
+[2024-07-18 09:09:12,973: DEBUG/MainProcess] Canceling task consumer...
+[2024-07-18 09:09:12,973: DEBUG/MainProcess] Closing consumer channel...
+[2024-07-18 09:09:12,973: DEBUG/MainProcess] | Consumer: Shutdown Events...
+[2024-07-18 09:09:12,974: DEBUG/MainProcess] | Consumer: Shutdown Connection...
+[2024-07-18 09:09:12,974: DEBUG/MainProcess] removing tasks from inqueue until task handler finished
+[2024-07-18 09:09:15,028: DEBUG/MainProcess] | Worker: Preparing bootsteps.
+[2024-07-18 09:09:15,029: DEBUG/MainProcess] | Worker: Building graph...
+[2024-07-18 09:09:15,029: DEBUG/MainProcess] | Worker: New boot order: {Timer, Hub, Pool, Autoscaler, StateDB, Beat, Consumer}
+[2024-07-18 09:09:15,032: DEBUG/MainProcess] | Consumer: Preparing bootsteps.
+[2024-07-18 09:09:15,032: DEBUG/MainProcess] | Consumer: Building graph...
+[2024-07-18 09:09:15,038: DEBUG/MainProcess] | Consumer: New boot order: {Connection, Events, Mingle, Gossip, Heart, Tasks, Control, Agent, event loop}
+[2024-07-18 09:09:15,048: DEBUG/MainProcess] | Worker: Starting Hub
+[2024-07-18 09:09:15,048: DEBUG/MainProcess] ^-- substep ok
+[2024-07-18 09:09:15,048: DEBUG/MainProcess] | Worker: Starting Pool
+[2024-07-18 09:09:15,258: DEBUG/MainProcess] ^-- substep ok
+[2024-07-18 09:09:15,259: DEBUG/MainProcess] | Worker: Starting Consumer
+[2024-07-18 09:09:15,259: DEBUG/MainProcess] | Consumer: Starting Connection
+[2024-07-18 09:09:15,261: WARNING/MainProcess] /home/trainboxai/backend/rippo/venv/lib/python3.10/site-packages/celery/worker/consumer/consumer.py:508: CPendingDeprecationWarning: The broker_connection_retry configuration setting will no longer determine
+whether broker connection retries are made during startup in Celery 6.0 and above.
+If you wish to retain the existing behavior for retrying connections on startup,
+you should set broker_connection_retry_on_startup to True.
+  warnings.warn(
+
+[2024-07-18 09:09:15,265: INFO/MainProcess] Connected to redis://localhost:6379/0
+[2024-07-18 09:09:15,265: DEBUG/MainProcess] ^-- substep ok
+[2024-07-18 09:09:15,265: DEBUG/MainProcess] | Consumer: Starting Events
+[2024-07-18 09:09:15,266: WARNING/MainProcess] /home/trainboxai/backend/rippo/venv/lib/python3.10/site-packages/celery/worker/consumer/consumer.py:508: CPendingDeprecationWarning: The broker_connection_retry configuration setting will no longer determine
+whether broker connection retries are made during startup in Celery 6.0 and above.
+If you wish to retain the existing behavior for retrying connections on startup,
+you should set broker_connection_retry_on_startup to True.
+  warnings.warn(
+
+[2024-07-18 09:09:15,267: DEBUG/MainProcess] ^-- substep ok
+[2024-07-18 09:09:15,267: DEBUG/MainProcess] | Consumer: Starting Mingle
+[2024-07-18 09:09:15,267: INFO/MainProcess] mingle: searching for neighbors
+[2024-07-18 09:09:15,272: DEBUG/MainProcess] pidbox received method hello(from_node='celery@rippo-backend-vm', revoked={}) [reply_to:{'exchange': 'reply.celery.pidbox', 'routing_key': 'aab1e9eb-3775-3533-ad39-5355b8f70916'} ticket:d6fc4870-38d7-4cfd-8bdb-09d9754692c3]
+[2024-07-18 09:09:15,272: DEBUG/MainProcess] pidbox received method hello(from_node='celery@rippo-backend-vm', revoked={}) [reply_to:{'exchange': 'reply.celery.pidbox', 'routing_key': 'aab1e9eb-3775-3533-ad39-5355b8f70916'} ticket:d6fc4870-38d7-4cfd-8bdb-09d9754692c3]
+[2024-07-18 09:09:15,273: DEBUG/MainProcess] pidbox received method hello(from_node='celery@rippo-backend-vm', revoked={}) [reply_to:{'exchange': 'reply.celery.pidbox', 'routing_key': 'aab1e9eb-3775-3533-ad39-5355b8f70916'} ticket:d6fc4870-38d7-4cfd-8bdb-09d9754692c3]
+[2024-07-18 09:09:15,273: DEBUG/MainProcess] pidbox received method hello(from_node='celery@rippo-backend-vm', revoked={}) [reply_to:{'exchange': 'reply.celery.pidbox', 'routing_key': 'aab1e9eb-3775-3533-ad39-5355b8f70916'} ticket:d6fc4870-38d7-4cfd-8bdb-09d9754692c3]
+[2024-07-18 09:09:16,278: WARNING/MainProcess] /home/trainboxai/backend/rippo/venv/lib/python3.10/site-packages/celery/app/control.py:56: DuplicateNodenameWarning: Received multiple replies from node name: celery@rippo-backend-vm.
+Please make sure you give each node a unique nodename using
+the celery worker `-n` option.
+  warnings.warn(DuplicateNodenameWarning(
+
+[2024-07-18 09:09:16,278: INFO/MainProcess] mingle: all alone
+[2024-07-18 09:09:16,278: DEBUG/MainProcess] ^-- substep ok
+[2024-07-18 09:09:16,278: DEBUG/MainProcess] | Consumer: Starting Gossip
+[2024-07-18 09:09:16,281: DEBUG/MainProcess] ^-- substep ok
+[2024-07-18 09:09:16,281: DEBUG/MainProcess] | Consumer: Starting Heart
+[2024-07-18 09:09:16,282: DEBUG/MainProcess] ^-- substep ok
+[2024-07-18 09:09:16,282: DEBUG/MainProcess] | Consumer: Starting Tasks
+[2024-07-18 09:09:16,284: DEBUG/MainProcess] ^-- substep ok
+[2024-07-18 09:09:16,284: DEBUG/MainProcess] | Consumer: Starting Control
+[2024-07-18 09:09:16,286: DEBUG/MainProcess] ^-- substep ok
+[2024-07-18 09:09:16,286: DEBUG/MainProcess] | Consumer: Starting event loop
+[2024-07-18 09:09:16,286: DEBUG/MainProcess] | Worker: Hub.register Pool...
+[2024-07-18 09:09:16,287: INFO/MainProcess] celery@rippo-backend-vm ready.
+[2024-07-18 09:09:16,287: DEBUG/MainProcess] basic.qos: prefetch_count->16
+[2024-07-18 09:09:41,248: INFO/MainProcess] Task celery_app.generate_report[01b0dd7c-9c65-46c9-8f3d-7c4e1c5a8990] received
+[2024-07-18 09:09:41,248: DEBUG/MainProcess] TaskPool: Apply <function fast_trace_task at 0x7dcb73dd7130> (args:('celery_app.generate_report', '01b0dd7c-9c65-46c9-8f3d-7c4e1c5a8990', {'lang': 'py', 'task': 'celery_app.generate_report', 'id': '01b0dd7c-9c65-46c9-8f3d-7c4e1c5a8990', 'shadow': None, 'eta': None, 'expires': None, 'group': None, 'group_index': None, 'retries': 0, 'timelimit': [None, None], 'root_id': '01b0dd7c-9c65-46c9-8f3d-7c4e1c5a8990', 'parent_id': None, 'argsrepr': "('https://github.com/trainboxai/trainbox-company-site.git', 'trainboxai:trainbox-company-site', 'XmtfC0', 'TFUaoW4iBPUe297vr3vk36Mvp2p2', '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')", 'kwargsrepr': '{}', 'origin': 'gen116351@rippo-backend-vm', 'ignore_result': False, 'replaced_task_nesting': 0, 'stamped_headers': None, 'stamps': {}, 'properties': {'correlation_id': '01b0dd7c-9c65-46c9-8f3d-7c4e1c5a8990', 'reply_to': '85b7e14f-2f0b-3263-bfed-017ec6504947', 'delivery_mode': 2, 'delivery_info': {'exchange': '', 'routing_key': 'celery'}, 'priority': 0, 'body_encoding': 'base64', 'delivery_tag': '13fe315d-89cb-4b04-bd3b-17978c961ce8'},... kwargs:{})
+[2024-07-18 09:09:41,249: WARNING/ForkPoolWorker-2] [32mGet flattened file and extract contents . . .[0m
+[2024-07-18 09:09:41,250: WARNING/ForkPoolWorker-2] [35mGathering search results . . .[0m
+[2024-07-18 09:09:41,252: DEBUG/ForkPoolWorker-2] Popen(['git', 'clone', '-v', '--', 'https://*****@github.com/trainboxai/trainbox-company-site.git', '/tmp/tmpi36wqj57'], cwd=/home/trainboxai/backend/rippo/prod, stdin=None, shell=False, universal_newlines=True)
+[2024-07-18 09:09:42,283: DEBUG/ForkPoolWorker-2] Cmd(['git', 'clone', '-v', '--', 'https://*****@github.com/trainboxai/trainbox-company-site.git', '/tmp/tmpi36wqj57'])'s unused stdout: 
+[2024-07-18 09:09:42,302: WARNING/ForkPoolWorker-2] [32mAnalyse and extract list of dependancies . . . .[0m
+[2024-07-18 09:10:42,315: WARNING/ForkPoolWorker-2] Request timed out. Retrying in 1.3955051621209744 seconds...
+[2024-07-18 09:11:43,713: WARNING/ForkPoolWorker-2] Request timed out. Retrying in 2.978203876128272 seconds...
+[2024-07-18 09:12:46,695: WARNING/ForkPoolWorker-2] Request timed out. Retrying in 4.848872165119088 seconds...
+[2024-07-18 09:13:13,921: WARNING/ForkPoolWorker-2] {"dependancy","version"
+"@leafac/rehype-shiki","^2.2.1",
+"@mdx-js/loader","^3.0.0",
+"@mdx-js/react","^3.0.0",
+"@next/mdx","^14.0.4",
+"@types/mdx","^2.0.7",
+"@types/node","^20.10.8",
+"@types/react","^18.2.47",
+"@types/react-dom","^18.2.18",
+"@vercel/analytics","^1.2.2",
+"acorn","^8.10.0",
+"acorn-jsx","^5.3.2",
+"autoprefixer","^10.4.7",
+"clsx","^2.1.0",
+"escape-string-regexp","^5.0.0",
+"fast-glob","^3.2.12",
+"framer-motion","^10.15.2",
+"next","^14.0.4",
+"react","^18.2.0",
+"react-dom","^18.2.0",
+"recma-import-images","0.0.3",
+"remark-gfm","^4.0.0",
+"remark-rehype-wrap","0.0.3",
+"remark-unwrap-images","^4.0.0",
+"shiki","^0.11.1",
+"tailwindcss","^3.4.1",
+"typescript","^5.3.3",
+"unified-conditional","0.0.2",
+"eslint","^8.56.0",
+"eslint-config-next","^14.0.4",
+"prettier","^3.1.1",
+"prettier-plugin-tailwindcss","^0.5.11",
+"sharp","0.33.1",
+"tailwindcss/nesting","unknown",
+"next/image","unknown",
+"next/link","unknown",
+"next/head","unknown",
+"next/navigation","unknown"
+}
+[2024-07-18 09:13:13,921: WARNING/ForkPoolWorker-2] {"dependancy","version"
+"@leafac/rehype-shiki","^2.2.1",
+"@mdx-js/loader","^3.0.0",
+"@mdx-js/react","^3.0.0",
+"@next/mdx","^14.0.4",
+"@types/mdx","^2.0.7",
+"@types/node","^20.10.8",
+"@types/react","^18.2.47",
+"@types/react-dom","^18.2.18",
+"@vercel/analytics","^1.2.2",
+"acorn","^8.10.0",
+"acorn-jsx","^5.3.2",
+"autoprefixer","^10.4.7",
+"clsx","^2.1.0",
+"escape-string-regexp","^5.0.0",
+"fast-glob","^3.2.12",
+"framer-motion","^10.15.2",
+"next","^14.0.4",
+"react","^18.2.0",
+"react-dom","^18.2.0",
+"recma-import-images","0.0.3",
+"remark-gfm","^4.0.0",
+"remark-rehype-wrap","0.0.3",
+"remark-unwrap-images","^4.0.0",
+"shiki","^0.11.1",
+"tailwindcss","^3.4.1",
+"typescript","^5.3.3",
+"unified-conditional","0.0.2",
+"eslint","^8.56.0",
+"eslint-config-next","^14.0.4",
+"prettier","^3.1.1",
+"prettier-plugin-tailwindcss","^0.5.11",
+"sharp","0.33.1",
+"tailwindcss/nesting","unknown",
+"next/image","unknown",
+"next/link","unknown",
+"next/head","unknown",
+"next/navigation","unknown"
+}
+[2024-07-18 09:13:13,921: WARNING/ForkPoolWorker-2] [32mStarting searching for known Vulnerabilities . . . . .[0m
+[2024-07-18 09:13:13,923: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.googleapis.com:443
+[2024-07-18 09:13:14,160: DEBUG/ForkPoolWorker-2] https://www.googleapis.com:443 "GET /customsearch/v1?key=AIzaSyAQjSPQoMFEWJGCGVjQsg1IMp328NNPy_c&cx=f2954b6edb52b40c7&q=@leafac/rehype-shiki%20%5E2.2.1&num=10&start=1&fields=items(link,snippet,htmlFormattedUrl) HTTP/1.1" 200 None
+[2024-07-18 09:13:14,162: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
+[2024-07-18 09:13:14,340: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /package/npm/%40leafac%2Frehype-shiki/2.1.2 HTTP/1.1" 200 16693
+[2024-07-18 09:13:14,357: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.googleapis.com:443
+[2024-07-18 09:13:14,604: DEBUG/ForkPoolWorker-2] https://www.googleapis.com:443 "GET /customsearch/v1?key=AIzaSyAQjSPQoMFEWJGCGVjQsg1IMp328NNPy_c&cx=f2954b6edb52b40c7&q=@mdx-js/loader%20%5E3.0.0&num=10&start=1&fields=items(link,snippet,htmlFormattedUrl) HTTP/1.1" 200 None
+[2024-07-18 09:13:14,606: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
+[2024-07-18 09:13:14,871: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /package/npm/%40bevry%2Fmdx/3.0.0 HTTP/1.1" 200 None
+[2024-07-18 09:13:14,894: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.googleapis.com:443
+[2024-07-18 09:13:15,699: DEBUG/ForkPoolWorker-2] https://www.googleapis.com:443 "GET /customsearch/v1?key=AIzaSyAQjSPQoMFEWJGCGVjQsg1IMp328NNPy_c&cx=f2954b6edb52b40c7&q=@mdx-js/react%20%5E3.0.0&num=10&start=1&fields=items(link,snippet,htmlFormattedUrl) HTTP/1.1" 200 None
+[2024-07-18 09:13:15,701: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
+[2024-07-18 09:13:15,849: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /package/npm/%40mdx-js%2Freact/3.0.0 HTTP/1.1" 200 None
+[2024-07-18 09:13:15,872: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
+[2024-07-18 09:13:16,046: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /vuln/SNYK-JS-GATSBYPLUGINMDX-2405699 HTTP/1.1" 200 23972
+[2024-07-18 09:13:16,077: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
+[2024-07-18 09:13:16,287: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /package/npm/gatsby-plugin-mdx/3.15.0 HTTP/1.1" 200 21066
+[2024-07-18 09:13:16,312: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.cvedetails.com:443
+[2024-07-18 09:13:16,419: DEBUG/ForkPoolWorker-2] https://www.cvedetails.com:443 "GET /vulnerability-list/assigner-96/security-advisories-github.com.html?page=1&cvssscoremin=3&year=2022&month=8&order=1&trc=47&sha=a0fb6fb0ddbcde38e29aabc03cb4171735a40243 HTTP/1.1" 403 None
+[2024-07-18 09:13:16,424: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.cvedetails.com:443
+[2024-07-18 09:13:16,500: DEBUG/ForkPoolWorker-2] https://www.cvedetails.com:443 "GET /vulnerability-list/year-2022/month-6/June.html?page=1&cvssscoremin=1&cweid=502&order=3&trc=8&sha=af4b9cff2a7c3872caf9d6906a8332d4bfc89a3a HTTP/1.1" 403 None
+[2024-07-18 09:13:16,504: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.cvedetails.com:443
+[2024-07-18 09:13:16,573: DEBUG/ForkPoolWorker-2] https://www.cvedetails.com:443 "GET /vulnerability-list/vendor_id-45/product_id-61855/Apache-Xerces-c-.html?page=362&cvssscoremin=9&order=1&trc=41831&sha=ccb9439c770ec1d155dbf65c8636fd2cfc9b904d HTTP/1.1" 403 None
+[2024-07-18 09:13:16,577: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.cvedetails.com:443
+[2024-07-18 09:13:16,649: DEBUG/ForkPoolWorker-2] https://www.cvedetails.com:443 "GET /vulnerability-list/cvssscoremin-9/cvssscoremax-10/vulnerabilities.html?page=332&cvssscoremin=9&cvssscoremax=10&order=1&trc=41081&sha=2958b3df7d96412274fc8cc8f59e685eb6debe4e HTTP/1.1" 403 None
+[2024-07-18 09:13:16,654: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.cvedetails.com:443
+[2024-07-18 09:13:16,743: DEBUG/ForkPoolWorker-2] https://www.cvedetails.com:443 "GET /vulnerability-list/year-2022/vulnerabilities.html?page=434&cvssscoremin=6&order=7&trc=19157&sha=b4ad9b888e0d0972dbb43d0573142a0813643ed7 HTTP/1.1" 403 None
+[2024-07-18 09:13:16,748: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.googleapis.com:443
+[2024-07-18 09:13:16,933: DEBUG/ForkPoolWorker-2] https://www.googleapis.com:443 "GET /customsearch/v1?key=AIzaSyAQjSPQoMFEWJGCGVjQsg1IMp328NNPy_c&cx=f2954b6edb52b40c7&q=@next/mdx%20%5E14.0.4&num=10&start=1&fields=items(link,snippet,htmlFormattedUrl) HTTP/1.1" 200 None
+[2024-07-18 09:13:16,936: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
+[2024-07-18 09:13:17,154: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /package/npm/%40next%2Fmdx/14.0.4-canary.40 HTTP/1.1" 200 17904
+[2024-07-18 09:13:17,170: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.googleapis.com:443
+[2024-07-18 09:13:17,422: DEBUG/ForkPoolWorker-2] https://www.googleapis.com:443 "GET /customsearch/v1?key=AIzaSyAQjSPQoMFEWJGCGVjQsg1IMp328NNPy_c&cx=f2954b6edb52b40c7&q=@types/mdx%20%5E2.0.7&num=10&start=1&fields=items(link,snippet,htmlFormattedUrl) HTTP/1.1" 200 None
+[2024-07-18 09:13:17,424: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
+[2024-07-18 09:13:17,576: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /package/npm/%40types%2Fmdx HTTP/1.1" 200 None
+[2024-07-18 09:13:17,606: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.exploit-db.com:443
+[2024-07-18 09:13:17,868: DEBUG/ForkPoolWorker-2] https://www.exploit-db.com:443 "GET /exploits/13156 HTTP/1.1" 403 None
+[2024-07-18 09:13:17,873: DEBUG/ForkPoolWorker-2] Encoding detection: ascii is most likely the one.
+[2024-07-18 09:13:17,877: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.googleapis.com:443
+[2024-07-18 09:13:18,075: DEBUG/ForkPoolWorker-2] https://www.googleapis.com:443 "GET /customsearch/v1?key=AIzaSyAQjSPQoMFEWJGCGVjQsg1IMp328NNPy_c&cx=f2954b6edb52b40c7&q=@types/node%20%5E20.10.8&num=10&start=1&fields=items(link,snippet,htmlFormattedUrl) HTTP/1.1" 200 None
+[2024-07-18 09:13:18,077: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
+[2024-07-18 09:13:18,284: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /package/npm/%40types%2Fnode HTTP/1.1" 200 None
+[2024-07-18 09:13:18,412: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.cvedetails.com:443
+[2024-07-18 09:13:18,485: DEBUG/ForkPoolWorker-2] https://www.cvedetails.com:443 "GET /vulnerability-list/vendor_id-13534/product_id-28125/Docker-Docker.html HTTP/1.1" 403 None
+[2024-07-18 09:13:18,490: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.googleapis.com:443
+[2024-07-18 09:13:18,703: DEBUG/ForkPoolWorker-2] https://www.googleapis.com:443 "GET /customsearch/v1?key=AIzaSyAQjSPQoMFEWJGCGVjQsg1IMp328NNPy_c&cx=f2954b6edb52b40c7&q=@types/react%20%5E18.2.47&num=10&start=1&fields=items(link,snippet,htmlFormattedUrl) HTTP/1.1" 200 None
+[2024-07-18 09:13:18,706: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
+[2024-07-18 09:13:18,883: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /package/npm/%40types%2Freact HTTP/1.1" 200 None
+[2024-07-18 09:13:19,010: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.googleapis.com:443
+[2024-07-18 09:13:19,191: DEBUG/ForkPoolWorker-2] https://www.googleapis.com:443 "GET /customsearch/v1?key=AIzaSyAQjSPQoMFEWJGCGVjQsg1IMp328NNPy_c&cx=f2954b6edb52b40c7&q=@types/react-dom%20%5E18.2.18&num=10&start=1&fields=items(link,snippet,htmlFormattedUrl) HTTP/1.1" 200 None
+[2024-07-18 09:13:19,194: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
+[2024-07-18 09:13:19,426: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /package/npm/%40types%2Freact-dom HTTP/1.1" 200 24025
+[2024-07-18 09:13:19,597: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.googleapis.com:443
+[2024-07-18 09:13:19,823: DEBUG/ForkPoolWorker-2] https://www.googleapis.com:443 "GET /customsearch/v1?key=AIzaSyAQjSPQoMFEWJGCGVjQsg1IMp328NNPy_c&cx=f2954b6edb52b40c7&q=@vercel/analytics%20%5E1.2.2&num=10&start=1&fields=items(link,snippet,htmlFormattedUrl) HTTP/1.1" 200 None
+[2024-07-18 09:13:19,825: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
+[2024-07-18 09:13:19,997: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /package/npm/%40vercel%2Fanalytics HTTP/1.1" 200 None
+[2024-07-18 09:13:20,072: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.googleapis.com:443
+[2024-07-18 09:13:20,298: DEBUG/ForkPoolWorker-2] https://www.googleapis.com:443 "GET /customsearch/v1?key=AIzaSyAQjSPQoMFEWJGCGVjQsg1IMp328NNPy_c&cx=f2954b6edb52b40c7&q=acorn%20%5E8.10.0&num=10&start=1&fields=items(link,snippet,htmlFormattedUrl) HTTP/1.1" 200 None
+[2024-07-18 09:13:20,300: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
+[2024-07-18 09:13:20,472: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /package/npm/acorn HTTP/1.1" 200 24671
+[2024-07-18 09:13:20,601: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.googleapis.com:443
+[2024-07-18 09:13:20,991: DEBUG/ForkPoolWorker-2] https://www.googleapis.com:443 "GET /customsearch/v1?key=AIzaSyAQjSPQoMFEWJGCGVjQsg1IMp328NNPy_c&cx=f2954b6edb52b40c7&q=acorn-jsx%20%5E5.3.2&num=10&start=1&fields=items(link,snippet,htmlFormattedUrl) HTTP/1.1" 200 None
+[2024-07-18 09:13:20,993: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
+[2024-07-18 09:13:21,207: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /package/npm/acorn-jsx/5.3.2 HTTP/1.1" 200 17088
+[2024-07-18 09:13:21,224: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.googleapis.com:443
+[2024-07-18 09:13:21,495: DEBUG/ForkPoolWorker-2] https://www.googleapis.com:443 "GET /customsearch/v1?key=AIzaSyAQjSPQoMFEWJGCGVjQsg1IMp328NNPy_c&cx=f2954b6edb52b40c7&q=autoprefixer%20%5E10.4.7&num=10&start=1&fields=items(link,snippet,htmlFormattedUrl) HTTP/1.1" 200 None
+[2024-07-18 09:13:21,498: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
+[2024-07-18 09:13:21,641: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /package/npm/autoprefixer/10.4.7 HTTP/1.1" 200 None
+[2024-07-18 09:13:21,657: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.googleapis.com:443
+[2024-07-18 09:13:21,901: DEBUG/ForkPoolWorker-2] https://www.googleapis.com:443 "GET /customsearch/v1?key=AIzaSyAQjSPQoMFEWJGCGVjQsg1IMp328NNPy_c&cx=f2954b6edb52b40c7&q=clsx%20%5E2.1.0&num=10&start=1&fields=items(link,snippet,htmlFormattedUrl) HTTP/1.1" 200 None
+[2024-07-18 09:13:21,904: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
+[2024-07-18 09:13:22,082: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /package/npm/clsx/2.1.0 HTTP/1.1" 200 None
+[2024-07-18 09:13:22,105: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.googleapis.com:443
+[2024-07-18 09:13:22,471: DEBUG/ForkPoolWorker-2] https://www.googleapis.com:443 "GET /customsearch/v1?key=AIzaSyAQjSPQoMFEWJGCGVjQsg1IMp328NNPy_c&cx=f2954b6edb52b40c7&q=escape-string-regexp%20%5E5.0.0&num=10&start=1&fields=items(link,snippet,htmlFormattedUrl) HTTP/1.1" 200 None
+[2024-07-18 09:13:22,473: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
+[2024-07-18 09:13:22,641: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /package/npm/%40esm2cjs%2Fescape-string-regexp/5.0.0 HTTP/1.1" 200 16544
+[2024-07-18 09:13:22,656: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
+[2024-07-18 09:13:22,814: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /package/npm/escape-string-regexp/1.0.5 HTTP/1.1" 200 16633
+[2024-07-18 09:13:22,829: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.googleapis.com:443
+[2024-07-18 09:13:23,022: DEBUG/ForkPoolWorker-2] https://www.googleapis.com:443 "GET /customsearch/v1?key=AIzaSyAQjSPQoMFEWJGCGVjQsg1IMp328NNPy_c&cx=f2954b6edb52b40c7&q=fast-glob%20%5E3.2.12&num=10&start=1&fields=items(link,snippet,htmlFormattedUrl) HTTP/1.1" 200 None
+[2024-07-18 09:13:23,025: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
+[2024-07-18 09:13:23,186: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /package/npm/fast-glob/3.2.12 HTTP/1.1" 200 17160
+[2024-07-18 09:13:23,202: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.googleapis.com:443
+[2024-07-18 09:13:23,365: DEBUG/ForkPoolWorker-2] https://www.googleapis.com:443 "GET /customsearch/v1?key=AIzaSyAQjSPQoMFEWJGCGVjQsg1IMp328NNPy_c&cx=f2954b6edb52b40c7&q=framer-motion%20%5E10.15.2&num=10&start=1&fields=items(link,snippet,htmlFormattedUrl) HTTP/1.1" 200 None
+[2024-07-18 09:13:23,367: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.googleapis.com:443
+[2024-07-18 09:13:23,615: DEBUG/ForkPoolWorker-2] https://www.googleapis.com:443 "GET /customsearch/v1?key=AIzaSyAQjSPQoMFEWJGCGVjQsg1IMp328NNPy_c&cx=f2954b6edb52b40c7&q=next%20%5E14.0.4&num=10&start=1&fields=items(link,snippet,htmlFormattedUrl) HTTP/1.1" 200 None
+[2024-07-18 09:13:23,618: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
+[2024-07-18 09:13:23,793: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /package/npm/next/14.0.4 HTTP/1.1" 200 None
+[2024-07-18 09:13:23,817: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
+[2024-07-18 09:13:23,988: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /package/npm/%40next%2Feslint-plugin-next/14.0.4-canary.16 HTTP/1.1" 200 None
+[2024-07-18 09:13:24,011: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
+[2024-07-18 09:13:24,220: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /package/npm/next HTTP/1.1" 200 None
+[2024-07-18 09:13:24,421: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
+[2024-07-18 09:13:24,571: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /package/npm/%40next%2Fthird-parties/14.0.4 HTTP/1.1" 200 None
+[2024-07-18 09:13:24,587: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
+[2024-07-18 09:13:24,779: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /package/npm/%40angular%2Fcommon/versions?page=3 HTTP/1.1" 200 None
+[2024-07-18 09:13:24,898: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
+[2024-07-18 09:13:25,073: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /package/npm/ng-packagr HTTP/1.1" 200 24542
+[2024-07-18 09:13:25,201: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.cvedetails.com:443
+[2024-07-18 09:13:25,278: DEBUG/ForkPoolWorker-2] https://www.cvedetails.com:443 "GET /vulnerability-list/vendor_id-23551/product_id-87327/Vercel-Next.js.html?page=1&order=1&trc=11&sha=a6f054a3e9f2705851b9866dec112589c106a41a HTTP/1.1" 403 None
+[2024-07-18 09:13:25,283: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
+[2024-07-18 09:13:25,458: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /package/npm/next/12.0.4 HTTP/1.1" 200 21284
+[2024-07-18 09:13:25,484: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.cvedetails.com:443
+[2024-07-18 09:13:25,556: DEBUG/ForkPoolWorker-2] https://www.cvedetails.com:443 "GET /cve/CVE-2020-8122/ HTTP/1.1" 403 None
+[2024-07-18 09:13:25,560: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.cvedetails.com:443
+[2024-07-18 09:13:25,632: DEBUG/ForkPoolWorker-2] https://www.cvedetails.com:443 "GET /vulnerability-list/vendor_id-23551/product_id-87327/Vercel-Next.js.html?page=1&year=2021&order=1&trc=3&sha=554ccf5396ca4880911d6f442d946b9126e09327 HTTP/1.1" 403 None
+[2024-07-18 09:13:25,636: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.googleapis.com:443
+[2024-07-18 09:13:25,866: DEBUG/ForkPoolWorker-2] https://www.googleapis.com:443 "GET /customsearch/v1?key=AIzaSyAQjSPQoMFEWJGCGVjQsg1IMp328NNPy_c&cx=f2954b6edb52b40c7&q=react%20%5E18.2.0&num=10&start=1&fields=items(link,snippet,htmlFormattedUrl) HTTP/1.1" 200 None
+[2024-07-18 09:13:25,869: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
+[2024-07-18 09:13:25,938: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /package/npm/react/18.2.0 HTTP/1.1" 200 18746
+[2024-07-18 09:13:25,955: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
+[2024-07-18 09:13:26,228: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /package/npm/react-dom HTTP/1.1" 200 None
+[2024-07-18 09:13:26,350: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
+[2024-07-18 09:13:26,429: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /package/maven/org.webjars.npm%3Areact-dom HTTP/1.1" 200 24066
+[2024-07-18 09:13:26,597: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
+[2024-07-18 09:13:26,784: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /package/npm/react-art/18.2.0 HTTP/1.1" 200 None
+[2024-07-18 09:13:26,806: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
+[2024-07-18 09:13:26,875: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /package/maven/org.webjars.npm%3Areact-dom/16.1.0 HTTP/1.1" 200 21610
+[2024-07-18 09:13:26,898: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
+[2024-07-18 09:13:27,104: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /package/npm/react/0.13.2 HTTP/1.1" 200 None
+[2024-07-18 09:13:27,128: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
+[2024-07-18 09:13:27,640: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /package/npm/%40react-native-firebase%2Fapp HTTP/1.1" 200 None
+[2024-07-18 09:13:27,765: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
+[2024-07-18 09:13:28,043: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /package/npm/%40nrwl%2Freact-native HTTP/1.1" 200 None
+[2024-07-18 09:13:28,164: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
+[2024-07-18 09:13:28,355: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /package/npm/%40react-native-firebase%2Ffirestore HTTP/1.1" 200 None
+[2024-07-18 09:13:28,479: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
+[2024-07-18 09:13:28,651: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /package/npm/%40react-native-firebase%2Fstorage HTTP/1.1" 200 None
+[2024-07-18 09:13:28,830: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.googleapis.com:443
+[2024-07-18 09:13:28,999: DEBUG/ForkPoolWorker-2] https://www.googleapis.com:443 "GET /customsearch/v1?key=AIzaSyAQjSPQoMFEWJGCGVjQsg1IMp328NNPy_c&cx=f2954b6edb52b40c7&q=react-dom%20%5E18.2.0&num=10&start=1&fields=items(link,snippet,htmlFormattedUrl) HTTP/1.1" 200 None
+[2024-07-18 09:13:29,001: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
+[2024-07-18 09:13:29,234: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /package/npm/react-dom/18.2.0 HTTP/1.1" 200 None
+[2024-07-18 09:13:29,257: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
+[2024-07-18 09:13:29,323: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /package/npm/react-dom HTTP/1.1" 200 26376
+[2024-07-18 09:13:29,448: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
+[2024-07-18 09:13:29,517: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /package/npm/%40types%2Freact-dom HTTP/1.1" 200 24025
+[2024-07-18 09:13:29,638: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
+[2024-07-18 09:13:29,706: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /package/maven/org.webjars.npm%3Areact-dom/16.1.0 HTTP/1.1" 200 21610
+[2024-07-18 09:13:29,730: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
+[2024-07-18 09:13:29,797: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /package/maven/org.webjars.npm%3Areact-dom HTTP/1.1" 200 24066
+[2024-07-18 09:13:29,962: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.cvedetails.com:443
+[2024-07-18 09:13:30,034: DEBUG/ForkPoolWorker-2] https://www.cvedetails.com:443 "GET /cve/CVE-2018-6341/ HTTP/1.1" 403 None
+[2024-07-18 09:13:30,038: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.googleapis.com:443
+[2024-07-18 09:13:30,266: DEBUG/ForkPoolWorker-2] https://www.googleapis.com:443 "GET /customsearch/v1?key=AIzaSyAQjSPQoMFEWJGCGVjQsg1IMp328NNPy_c&cx=f2954b6edb52b40c7&q=recma-import-images%200.0.3&num=10&start=1&fields=items(link,snippet,htmlFormattedUrl) HTTP/1.1" 200 None
+[2024-07-18 09:13:30,268: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
+[2024-07-18 09:13:30,335: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /package/npm/recma-import-images/0.0.1 HTTP/1.1" 200 16489
+[2024-07-18 09:13:30,354: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.googleapis.com:443
+[2024-07-18 09:13:30,610: DEBUG/ForkPoolWorker-2] https://www.googleapis.com:443 "GET /customsearch/v1?key=AIzaSyAQjSPQoMFEWJGCGVjQsg1IMp328NNPy_c&cx=f2954b6edb52b40c7&q=remark-gfm%20%5E4.0.0&num=10&start=1&fields=items(link,snippet,htmlFormattedUrl) HTTP/1.1" 200 None
+[2024-07-18 09:13:30,613: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
+[2024-07-18 09:13:30,684: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /package/npm/remark-gfm/2.0.0 HTTP/1.1" 200 16565
+[2024-07-18 09:13:30,702: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.googleapis.com:443
+[2024-07-18 09:13:30,864: DEBUG/ForkPoolWorker-2] https://www.googleapis.com:443 "GET /customsearch/v1?key=AIzaSyAQjSPQoMFEWJGCGVjQsg1IMp328NNPy_c&cx=f2954b6edb52b40c7&q=remark-rehype-wrap%200.0.3&num=10&start=1&fields=items(link,snippet,htmlFormattedUrl) HTTP/1.1" 200 None
+[2024-07-18 09:13:30,867: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.googleapis.com:443
+[2024-07-18 09:13:31,112: DEBUG/ForkPoolWorker-2] https://www.googleapis.com:443 "GET /customsearch/v1?key=AIzaSyAQjSPQoMFEWJGCGVjQsg1IMp328NNPy_c&cx=f2954b6edb52b40c7&q=remark-unwrap-images%20%5E4.0.0&num=10&start=1&fields=items(link,snippet,htmlFormattedUrl) HTTP/1.1" 200 None
+[2024-07-18 09:13:31,114: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
+[2024-07-18 09:13:31,187: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /package/npm/remark-unwrap-images HTTP/1.1" 200 18684
+[2024-07-18 09:13:31,217: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.googleapis.com:443
+[2024-07-18 09:13:31,407: DEBUG/ForkPoolWorker-2] https://www.googleapis.com:443 "GET /customsearch/v1?key=AIzaSyAQjSPQoMFEWJGCGVjQsg1IMp328NNPy_c&cx=f2954b6edb52b40c7&q=shiki%20%5E0.11.1&num=10&start=1&fields=items(link,snippet,htmlFormattedUrl) HTTP/1.1" 200 None
+[2024-07-18 09:13:31,409: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
+[2024-07-18 09:13:31,477: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /package/npm/shiki/0.11.1 HTTP/1.1" 200 17965
+[2024-07-18 09:13:31,497: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.googleapis.com:443
+[2024-07-18 09:13:31,772: DEBUG/ForkPoolWorker-2] https://www.googleapis.com:443 "GET /customsearch/v1?key=AIzaSyAQjSPQoMFEWJGCGVjQsg1IMp328NNPy_c&cx=f2954b6edb52b40c7&q=tailwindcss%20%5E3.4.1&num=10&start=1&fields=items(link,snippet,htmlFormattedUrl) HTTP/1.1" 200 None
+[2024-07-18 09:13:31,775: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
+[2024-07-18 09:13:31,841: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /package/npm/tailwindcss HTTP/1.1" 200 24011
+[2024-07-18 09:13:31,966: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
+[2024-07-18 09:13:32,033: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /package/npm/%40toptal%2Fdavinci-graphql-codegen HTTP/1.1" 200 26921
+[2024-07-18 09:13:32,162: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.googleapis.com:443
+[2024-07-18 09:13:32,341: DEBUG/ForkPoolWorker-2] https://www.googleapis.com:443 "GET /customsearch/v1?key=AIzaSyAQjSPQoMFEWJGCGVjQsg1IMp328NNPy_c&cx=f2954b6edb52b40c7&q=typescript%20%5E5.3.3&num=10&start=1&fields=items(link,snippet,htmlFormattedUrl) HTTP/1.1" 200 None
+[2024-07-18 09:13:32,343: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
+[2024-07-18 09:13:32,430: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /package/npm/plugin-typescript/5.3.3 HTTP/1.1" 200 17211
+[2024-07-18 09:13:32,448: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
+[2024-07-18 09:13:32,518: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /package/npm/typescript HTTP/1.1" 200 23773
+[2024-07-18 09:13:32,640: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.exploit-db.com:443
+[2024-07-18 09:13:32,757: DEBUG/ForkPoolWorker-2] https://www.exploit-db.com:443 "GET /exploits/15431 HTTP/1.1" 403 None
+[2024-07-18 09:13:32,760: DEBUG/ForkPoolWorker-2] Encoding detection: ascii is most likely the one.
+[2024-07-18 09:13:32,764: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.exploit-db.com:443
+[2024-07-18 09:13:32,831: DEBUG/ForkPoolWorker-2] https://www.exploit-db.com:443 "GET /exploits/29290 HTTP/1.1" 403 None
+[2024-07-18 09:13:32,834: DEBUG/ForkPoolWorker-2] Encoding detection: ascii is most likely the one.
+[2024-07-18 09:13:32,838: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.exploit-db.com:443
+[2024-07-18 09:13:32,906: DEBUG/ForkPoolWorker-2] https://www.exploit-db.com:443 "GET /exploits/50211 HTTP/1.1" 403 None
+[2024-07-18 09:13:32,909: DEBUG/ForkPoolWorker-2] Encoding detection: ascii is most likely the one.
+[2024-07-18 09:13:32,913: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.exploit-db.com:443
+[2024-07-18 09:13:32,979: DEBUG/ForkPoolWorker-2] https://www.exploit-db.com:443 "GET /exploits/42535 HTTP/1.1" 403 None
+[2024-07-18 09:13:32,982: DEBUG/ForkPoolWorker-2] Encoding detection: ascii is most likely the one.
+[2024-07-18 09:13:32,985: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.exploit-db.com:443
+[2024-07-18 09:13:33,051: DEBUG/ForkPoolWorker-2] https://www.exploit-db.com:443 "GET /exploits/24201 HTTP/1.1" 403 None
+[2024-07-18 09:13:33,054: DEBUG/ForkPoolWorker-2] Encoding detection: ascii is most likely the one.
+[2024-07-18 09:13:33,058: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.exploit-db.com:443
+[2024-07-18 09:13:33,174: DEBUG/ForkPoolWorker-2] https://www.exploit-db.com:443 "GET /exploits/29316 HTTP/1.1" 403 None
+[2024-07-18 09:13:33,177: DEBUG/ForkPoolWorker-2] Encoding detection: ascii is most likely the one.
+[2024-07-18 09:13:33,181: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
+[2024-07-18 09:13:33,249: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /package/npm/gd-sprest-bs/versions?page=8 HTTP/1.1" 200 21089
+[2024-07-18 09:13:33,438: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.exploit-db.com:443
+[2024-07-18 09:13:33,508: DEBUG/ForkPoolWorker-2] https://www.exploit-db.com:443 "GET /exploits/22302 HTTP/1.1" 403 None
+[2024-07-18 09:13:33,511: DEBUG/ForkPoolWorker-2] Encoding detection: ascii is most likely the one.
+[2024-07-18 09:13:33,515: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.googleapis.com:443
+[2024-07-18 09:13:33,836: DEBUG/ForkPoolWorker-2] https://www.googleapis.com:443 "GET /customsearch/v1?key=AIzaSyAQjSPQoMFEWJGCGVjQsg1IMp328NNPy_c&cx=f2954b6edb52b40c7&q=unified-conditional%200.0.2&num=10&start=1&fields=items(link,snippet,htmlFormattedUrl) HTTP/1.1" 200 None
+[2024-07-18 09:13:33,840: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.googleapis.com:443
+[2024-07-18 09:13:34,143: DEBUG/ForkPoolWorker-2] https://www.googleapis.com:443 "GET /customsearch/v1?key=AIzaSyAQjSPQoMFEWJGCGVjQsg1IMp328NNPy_c&cx=f2954b6edb52b40c7&q=eslint%20%5E8.56.0&num=10&start=1&fields=items(link,snippet,htmlFormattedUrl) HTTP/1.1" 200 None
+[2024-07-18 09:13:34,146: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
+[2024-07-18 09:13:34,213: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /package/npm/eslint HTTP/1.1" 200 24645
+[2024-07-18 09:13:34,336: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
+[2024-07-18 09:13:34,635: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /package/npm/eslint-plugin-instructure-ui/5.35.0-rc.24 HTTP/1.1" 200 17975
+[2024-07-18 09:13:34,653: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.googleapis.com:443
+[2024-07-18 09:13:34,871: DEBUG/ForkPoolWorker-2] https://www.googleapis.com:443 "GET /customsearch/v1?key=AIzaSyAQjSPQoMFEWJGCGVjQsg1IMp328NNPy_c&cx=f2954b6edb52b40c7&q=eslint-config-next%20%5E14.0.4&num=10&start=1&fields=items(link,snippet,htmlFormattedUrl) HTTP/1.1" 200 None
+[2024-07-18 09:13:34,874: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
+[2024-07-18 09:13:35,091: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /package/npm/eslint-config-next/14.0.4-canary.18 HTTP/1.1" 200 17881
+[2024-07-18 09:13:35,109: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.googleapis.com:443
+[2024-07-18 09:13:35,442: DEBUG/ForkPoolWorker-2] https://www.googleapis.com:443 "GET /customsearch/v1?key=AIzaSyAQjSPQoMFEWJGCGVjQsg1IMp328NNPy_c&cx=f2954b6edb52b40c7&q=prettier%20%5E3.1.1&num=10&start=1&fields=items(link,snippet,htmlFormattedUrl) HTTP/1.1" 200 None
+[2024-07-18 09:13:35,444: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
+[2024-07-18 09:13:35,750: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /package/npm/prettier HTTP/1.1" 200 24093
+[2024-07-18 09:13:35,889: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
+[2024-07-18 09:13:36,293: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /package/npm/eslint-config-wesbos/3.1.1 HTTP/1.1" 200 None
+[2024-07-18 09:13:36,311: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.exploit-db.com:443
+[2024-07-18 09:13:36,376: DEBUG/ForkPoolWorker-2] https://www.exploit-db.com:443 "GET /exploits/42912 HTTP/1.1" 403 None
+[2024-07-18 09:13:36,380: DEBUG/ForkPoolWorker-2] Encoding detection: ascii is most likely the one.
+[2024-07-18 09:13:36,383: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.googleapis.com:443
+[2024-07-18 09:13:36,585: DEBUG/ForkPoolWorker-2] https://www.googleapis.com:443 "GET /customsearch/v1?key=AIzaSyAQjSPQoMFEWJGCGVjQsg1IMp328NNPy_c&cx=f2954b6edb52b40c7&q=prettier-plugin-tailwindcss%20%5E0.5.11&num=10&start=1&fields=items(link,snippet,htmlFormattedUrl) HTTP/1.1" 200 None
+[2024-07-18 09:13:36,587: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
+[2024-07-18 09:13:36,815: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /package/npm/prettier-plugin-tailwindcss/0.5.11 HTTP/1.1" 200 18171
+[2024-07-18 09:13:36,835: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.googleapis.com:443
+[2024-07-18 09:13:37,060: DEBUG/ForkPoolWorker-2] https://www.googleapis.com:443 "GET /customsearch/v1?key=AIzaSyAQjSPQoMFEWJGCGVjQsg1IMp328NNPy_c&cx=f2954b6edb52b40c7&q=sharp%200.33.1&num=10&start=1&fields=items(link,snippet,htmlFormattedUrl) HTTP/1.1" 200 None
+[2024-07-18 09:13:37,063: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
+[2024-07-18 09:13:37,294: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /package/npm/sharp HTTP/1.1" 200 25089
+[2024-07-18 09:13:37,493: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
+[2024-07-18 09:13:37,732: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /package/npm/sharp/0.33.1 HTTP/1.1" 200 None
+[2024-07-18 09:13:37,769: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.googleapis.com:443
+[2024-07-18 09:13:38,028: DEBUG/ForkPoolWorker-2] https://www.googleapis.com:443 "GET /customsearch/v1?key=AIzaSyAQjSPQoMFEWJGCGVjQsg1IMp328NNPy_c&cx=f2954b6edb52b40c7&q=tailwindcss/nesting%20unknown&num=10&start=1&fields=items(link,snippet,htmlFormattedUrl) HTTP/1.1" 200 None
+[2024-07-18 09:13:38,031: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.googleapis.com:443
+[2024-07-18 09:13:38,223: DEBUG/ForkPoolWorker-2] https://www.googleapis.com:443 "GET /customsearch/v1?key=AIzaSyAQjSPQoMFEWJGCGVjQsg1IMp328NNPy_c&cx=f2954b6edb52b40c7&q=next/image%20unknown&num=10&start=1&fields=items(link,snippet,htmlFormattedUrl) HTTP/1.1" 200 None
+[2024-07-18 09:13:38,225: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
+[2024-07-18 09:13:38,421: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /vuln/SNYK-JS-NEXT-1577139 HTTP/1.1" 200 None
+[2024-07-18 09:13:38,470: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
+[2024-07-18 09:13:38,862: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /vuln/SNYK-JS-NEXT-2405694 HTTP/1.1" 200 23454
+[2024-07-18 09:13:38,906: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
+[2024-07-18 09:13:39,098: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /vuln/SNYK-JS-NEXT-561584 HTTP/1.1" 200 24841
+[2024-07-18 09:13:39,146: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
+[2024-07-18 09:13:39,376: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /package/npm/strapi/3.3.4 HTTP/1.1" 200 24261
+[2024-07-18 09:13:39,420: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.exploit-db.com:443
+[2024-07-18 09:13:39,488: DEBUG/ForkPoolWorker-2] https://www.exploit-db.com:443 "GET /exploits/47970 HTTP/1.1" 403 None
+[2024-07-18 09:13:39,491: DEBUG/ForkPoolWorker-2] Encoding detection: ascii is most likely the one.
+[2024-07-18 09:13:39,495: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.cvedetails.com:443
+[2024-07-18 09:13:39,573: DEBUG/ForkPoolWorker-2] https://www.cvedetails.com:443 "GET /cve/CVE-2018-25067/ HTTP/1.1" 403 None
+[2024-07-18 09:13:39,577: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.exploit-db.com:443
+[2024-07-18 09:13:39,692: DEBUG/ForkPoolWorker-2] https://www.exploit-db.com:443 "GET /exploits/34264 HTTP/1.1" 403 None
+[2024-07-18 09:13:39,695: DEBUG/ForkPoolWorker-2] Encoding detection: ascii is most likely the one.
+[2024-07-18 09:13:39,699: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.cvedetails.com:443
+[2024-07-18 09:13:39,776: DEBUG/ForkPoolWorker-2] https://www.cvedetails.com:443 "GET /cve/CVE-2012-4874/ HTTP/1.1" 403 None
+[2024-07-18 09:13:39,782: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.cvedetails.com:443
+[2024-07-18 09:13:39,856: DEBUG/ForkPoolWorker-2] https://www.cvedetails.com:443 "GET /vulnerability-list/vendor_id-2224/year-2006/Libtiff.html HTTP/1.1" 403 None
+[2024-07-18 09:13:39,860: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): nvd.nist.gov:443
+[2024-07-18 09:13:41,214: DEBUG/ForkPoolWorker-2] https://nvd.nist.gov:443 "GET /vuln/search/results?isCpeNameSearch=true&query=cpe%3A2.3%3Aa%3Agoogle%3Achrome%3A6.0.478.0%3A&startIndex=2120 HTTP/1.1" 200 66148
+[2024-07-18 09:13:41,274: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.googleapis.com:443
+[2024-07-18 09:13:41,458: DEBUG/ForkPoolWorker-2] https://www.googleapis.com:443 "GET /customsearch/v1?key=AIzaSyAQjSPQoMFEWJGCGVjQsg1IMp328NNPy_c&cx=f2954b6edb52b40c7&q=next/link%20unknown&num=10&start=1&fields=items(link,snippet,htmlFormattedUrl) HTTP/1.1" 200 None
+[2024-07-18 09:13:41,461: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.exploit-db.com:443
+[2024-07-18 09:13:41,576: DEBUG/ForkPoolWorker-2] https://www.exploit-db.com:443 "GET /exploits/17823 HTTP/1.1" 403 None
+[2024-07-18 09:13:41,579: DEBUG/ForkPoolWorker-2] Encoding detection: ascii is most likely the one.
+[2024-07-18 09:13:41,585: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.exploit-db.com:443
+[2024-07-18 09:13:41,651: DEBUG/ForkPoolWorker-2] https://www.exploit-db.com:443 "GET /exploits/26737 HTTP/1.1" 403 None
+[2024-07-18 09:13:41,655: DEBUG/ForkPoolWorker-2] Encoding detection: ascii is most likely the one.
+[2024-07-18 09:13:41,658: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.exploit-db.com:443
+[2024-07-18 09:13:41,774: DEBUG/ForkPoolWorker-2] https://www.exploit-db.com:443 "GET /exploits/41927 HTTP/1.1" 403 None
+[2024-07-18 09:13:41,777: DEBUG/ForkPoolWorker-2] Encoding detection: ascii is most likely the one.
+[2024-07-18 09:13:41,781: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
+[2024-07-18 09:13:41,890: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /vuln/SNYK-JS-NEXT-1577139 HTTP/1.1" 200 25712
+[2024-07-18 09:13:41,937: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
+[2024-07-18 09:13:42,046: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /vuln/SNYK-JS-NEXT-561584 HTTP/1.1" 200 24841
+[2024-07-18 09:13:42,094: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.exploit-db.com:443
+[2024-07-18 09:13:42,207: DEBUG/ForkPoolWorker-2] https://www.exploit-db.com:443 "GET /exploits/28558 HTTP/1.1" 403 None
+[2024-07-18 09:13:42,211: DEBUG/ForkPoolWorker-2] Encoding detection: ascii is most likely the one.
+[2024-07-18 09:13:42,214: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.exploit-db.com:443
+[2024-07-18 09:13:42,280: DEBUG/ForkPoolWorker-2] https://www.exploit-db.com:443 "GET /exploits/42282 HTTP/1.1" 403 None
+[2024-07-18 09:13:42,283: DEBUG/ForkPoolWorker-2] Encoding detection: ascii is most likely the one.
+[2024-07-18 09:13:42,287: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.exploit-db.com:443
+[2024-07-18 09:13:42,403: DEBUG/ForkPoolWorker-2] https://www.exploit-db.com:443 "GET /exploits/45506 HTTP/1.1" 403 None
+[2024-07-18 09:13:42,406: DEBUG/ForkPoolWorker-2] Encoding detection: ascii is most likely the one.
+[2024-07-18 09:13:42,411: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.exploit-db.com:443
+[2024-07-18 09:13:42,526: DEBUG/ForkPoolWorker-2] https://www.exploit-db.com:443 "GET /exploits/45005 HTTP/1.1" 403 None
+[2024-07-18 09:13:42,530: DEBUG/ForkPoolWorker-2] Encoding detection: ascii is most likely the one.
+[2024-07-18 09:13:42,534: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.cvedetails.com:443
+[2024-07-18 09:13:42,607: DEBUG/ForkPoolWorker-2] https://www.cvedetails.com:443 "GET /cve/CVE-2008-3143/ HTTP/1.1" 403 None
+[2024-07-18 09:13:42,612: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.googleapis.com:443
+[2024-07-18 09:13:42,831: DEBUG/ForkPoolWorker-2] https://www.googleapis.com:443 "GET /customsearch/v1?key=AIzaSyAQjSPQoMFEWJGCGVjQsg1IMp328NNPy_c&cx=f2954b6edb52b40c7&q=next/head%20unknown&num=10&start=1&fields=items(link,snippet,htmlFormattedUrl) HTTP/1.1" 200 None
+[2024-07-18 09:13:42,833: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.exploit-db.com:443
+[2024-07-18 09:13:43,011: DEBUG/ForkPoolWorker-2] https://www.exploit-db.com:443 "GET /exploits/26737 HTTP/1.1" 403 None
+[2024-07-18 09:13:43,014: DEBUG/ForkPoolWorker-2] Encoding detection: ascii is most likely the one.
+[2024-07-18 09:13:43,018: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.exploit-db.com:443
+[2024-07-18 09:15:57,786: WARNING/ForkPoolWorker-2] Request failed, retrying in 2.25 seconds...
+[2024-07-18 09:16:00,040: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.exploit-db.com:443
+[2024-07-18 09:16:05,108: WARNING/ForkPoolWorker-2] Request failed, retrying in 4.46 seconds...
+[2024-07-18 09:16:09,575: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.exploit-db.com:443
+[2024-07-18 09:16:14,582: WARNING/ForkPoolWorker-2] Request failed, retrying in 8.87 seconds...
+[2024-07-18 09:16:23,456: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.exploit-db.com:443
+[2024-07-18 09:16:28,462: WARNING/ForkPoolWorker-2] Request failed, retrying in 16.97 seconds...
+[2024-07-18 09:16:45,439: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.exploit-db.com:443
+[2024-07-18 09:16:50,521: WARNING/ForkPoolWorker-2] Request failed, retrying in 32.23 seconds...
+[2024-07-18 09:17:22,782: WARNING/ForkPoolWorker-2] Failed to fetch results for next/head unknown after 5 retries.
+[2024-07-18 09:17:22,783: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.googleapis.com:443
+[2024-07-18 09:17:22,970: DEBUG/ForkPoolWorker-2] https://www.googleapis.com:443 "GET /customsearch/v1?key=AIzaSyAQjSPQoMFEWJGCGVjQsg1IMp328NNPy_c&cx=f2954b6edb52b40c7&q=next/navigation%20unknown&num=10&start=1&fields=items(link,snippet,htmlFormattedUrl) HTTP/1.1" 200 None
+[2024-07-18 09:17:22,972: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): nvd.nist.gov:443
+[2024-07-18 09:17:23,192: DEBUG/ForkPoolWorker-2] https://nvd.nist.gov:443 "GET /vuln/search/results?isCpeNameSearch=true&query=cpe%3A2.3%3Aa%3Agoogle%3Achrome%3A6.0.478.0%3A&startIndex=2120 HTTP/1.1" 200 66148
+[2024-07-18 09:17:23,252: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.cvedetails.com:443
+[2024-07-18 09:17:23,326: DEBUG/ForkPoolWorker-2] https://www.cvedetails.com:443 "GET /cve/CVE-2023-5827/ HTTP/1.1" 403 None
+[2024-07-18 09:17:23,330: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.exploit-db.com:443
+[2024-07-18 09:19:36,926: WARNING/ForkPoolWorker-2] Request failed, retrying in 2.82 seconds...
+[2024-07-18 09:19:39,746: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.exploit-db.com:443
+[2024-07-18 09:19:44,814: WARNING/ForkPoolWorker-2] Request failed, retrying in 4.77 seconds...
+[2024-07-18 09:19:49,587: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.exploit-db.com:443
+[2024-07-18 09:19:54,594: WARNING/ForkPoolWorker-2] Request failed, retrying in 8.24 seconds...
+[2024-07-18 09:20:02,840: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.exploit-db.com:443
+[2024-07-18 09:20:07,847: WARNING/ForkPoolWorker-2] Request failed, retrying in 16.84 seconds...
+[2024-07-18 09:20:24,702: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.exploit-db.com:443
+[2024-07-18 09:20:29,714: WARNING/ForkPoolWorker-2] Request failed, retrying in 32.35 seconds...
+[2024-07-18 09:21:02,082: WARNING/ForkPoolWorker-2] Failed to fetch results for next/navigation unknown after 5 retries.
+[2024-07-18 09:21:02,082: WARNING/ForkPoolWorker-2] [32mCompleted searching for known Vulnerabilities . . . . .[0m
+[2024-07-18 09:21:02,084: WARNING/ForkPoolWorker-2] [35mGetting code audit report . . . . . .[0m
+[2024-07-18 09:21:02,084: WARNING/ForkPoolWorker-2] [91mTrying code audit, attempt 1 [0m
+[2024-07-18 09:21:19,909: WARNING/ForkPoolWorker-2] [35mGetting vulnerability report . . . . . . .[0m
+[2024-07-18 09:21:19,909: WARNING/ForkPoolWorker-2] [91mTrying Vuln Report, attempt 1 [0m
+[2024-07-18 09:21:56,860: WARNING/ForkPoolWorker-2] {
+  "vulnerability_report": [
+    {
+      "dependency": "@mdx-js/react",
+      "version": "^3.0.0",
+      "description": "Affected versions of this package are vulnerable to Deserialization of Untrusted Data when passing input through to the package, due to its default configurations that are missing input sanitization.",
+      "source": "https://www.cvedetails.com/vulnerability-list/year-2022/vulnerabilities.html?page=434&cvssscoremin=6&order=7&trc=19157&sha=b4ad9b888e0d0972dbb43d0573142a0813643ed7"
+    },
+    {
+      "dependency": "acorn",
+      "version": "^8.10.0",
+      "description": "This package has known vulnerabilities, please check the source for details and affected versions.",
+      "source": "https://security.snyk.io/package/npm/acorn"
+    },
+    {
+      "dependency": "next",
+      "version": "^14.0.4",
+      "description": "Affected versions of this package are vulnerable to Server-Side Request Forgery (SSRF) through the next: static generation.",
+      "source": "https://www.cvedetails.com/vulnerability-list/vendor_id-23551/product_id-87327/Vercel-Next.js.html?page=1&year=2021&order=1&trc=3&sha=554ccf5396ca4880911d6f442d946b9126e09327"
+    },
+    {
+      "dependency": "next",
+      "version": "^12.0.4",
+      "description": "This package has multiple known vulnerabilities, including Resource Exhaustion, UI Misrepresentation, and Denial of Service. Please check the source for details and affected versions.",
+      "source": "https://www.cvedetails.com/vulnerability-list/vendor_id-23551/product_id-87327/Vercel-Next.js.html?page=1&year=2021&order=1&trc=3&sha=554ccf5396ca4880911d6f442d946b9126e09327"
+    },
+    {
+      "dependency": "react-dom",
+      "version": "16.1.0",
+      "description": "Affected versions of this package are vulnerable to Cross-site Scripting (XSS) when dangerouslySetInnerHTML is used.",
+      "source": "https://www.cvedetails.com/cve/CVE-2018-6341/"
+    },
+    {
+      "dependency": "react",
+      "version": "0.13.2",
+      "description": "Affected versions of the package are vulnerable to Cross-site Scripting (XSS) due to the use of innerHTML in the renderComponent function.",
+      "source": "https://security.snyk.io/package/npm/%40react-native-firebase%2Fstorage"
+    },
+    {
+      "dependency": "eslint",
+      "version": "^8.56.0",
+      "description": "This package has known vulnerabilities, please check the source for details and affected versions.",
+      "source": "https://security.snyk.io/package/npm/eslint-plugin-instructure-ui/5.35.0-rc.24"
+    },
+    {
+      "dependency": "sharp",
+      "version": "0.33.1",
+      "description": "This package has known vulnerabilities, please check the source for details and affected versions.",
+      "source": "https://security.snyk.io/package/npm/sharp/0.33.1"
+    }
+  ]
+}
+[2024-07-18 09:21:56,861: WARNING/ForkPoolWorker-2] [35mGetting quality report . . . . . . .[0m
+[2024-07-18 09:21:56,861: WARNING/ForkPoolWorker-2] [91mTrying Quality Report, attempt 1 [0m
+[2024-07-18 09:23:05,612: WARNING/ForkPoolWorker-2] - Finding: Unused variable: 'logoHovered' is declared in 'Header' component but never used.  This adds unnecessary complexity.
+Issue: The 'logoHovered' state variable and its setter function 'setLogoHovered' are passed to the 'Header' component but are not used within the component.
+Refactoring Approach: 
+    1. Remove the 'logoHovered' state variable and 'setLogoHovered' function from the 'RootLayout' component.
+    2. Remove the 'RootLayoutContext' and its associated provider.
+    3. Remove the 'logoHovered' and 'setLogoHovered' props from the 'Header' component definition.
+Example:
+// Before:
+```tsx
+// src/components/RootLayout.tsx
+const RootLayoutContext = createContext<{
+  logoHovered: boolean
+  setLogoHovered: React.Dispatch<React.SetStateAction<boolean>>
+} | null>(null)
+
+function RootLayout({ children }: { children: React.ReactNode }) {
+  // ...
+  let [logoHovered, setLogoHovered] = useState(false)
+
+  return (
+    <RootLayoutContext.Provider value={{ logoHovered, setLogoHovered }}>
+      // ...
+    </RootLayoutContext.Provider>
+  )
+}
+
+// src/components/Header.tsx
+function Header({
+  // ...
+  invert = false,
+}: {
+  // ...
+  invert?: boolean
+}) {
+  let { logoHovered, setLogoHovered } = useContext(RootLayoutContext)!
+
+  return (
+    // ...
+  )
+}
+```
+
+// After:
+```tsx
+// src/components/RootLayout.tsx
+// ... RootLayout component without logoHovered state and context
+
+// src/components/Header.tsx
+function Header({
+  // ...
+  invert = false,
+}: {
+  // ...
+  invert?: boolean
+}) {
+  return (
+    // ...
+  )
+}
+```
+
+Relevant Files: src/components/RootLayout.tsx, src/components/Header.tsx
+
+- Finding: Hardcoded value: The screen size for styling changes in 'pre code' is hardcoded in file src/styles/typography.css. Consider using a Tailwind breakpoint for better maintainability.
+Issue: The media query in the 'pre code' styling uses a hardcoded screen size (sm), reducing maintainability if breakpoints are adjusted.
+Refactoring Approach: Replace the hardcoded screen size with the corresponding Tailwind breakpoint.
+Example:
+// Before:
+```css
+/* Code blocks */
+:where(pre code) {
+  // ...
+  @screen sm {
+    padding: theme(spacing.10);
+  }
+}
+```
+
+// After:
+```css
+/* Code blocks */
+:where(pre code) {
+  // ...
+  @media (min-width: theme('screens.sm')) {
+    padding: theme(spacing.10);
+  }
+}
+```
+
+Relevant Files: src/styles/typography.css
+
+- Finding: Hardcoded value: The image aspect ratio is hardcoded in 'img' component of 'MDXComponents'. This limits flexibility for different image sizes.
+Issue: The 'img' component in 'MDXComponents' enforces a fixed aspect ratio (16/10), potentially causing layout issues with images of different proportions.
+Refactoring Approach: Remove the hardcoded aspect ratio and allow the image to maintain its natural aspect ratio.
+Example:
+// Before:
+```tsx
+// src/components/MDXComponents.tsx
+img: function Img({
+  className,
+  ...props
+}: React.ComponentPropsWithoutRef<typeof GrayscaleTransitionImage>) {
+  return (
+    // ...
+      <GrayscaleTransitionImage
+        {...props}
+        sizes="(min-width: 768px) 42rem, 100vw"
+        className="aspect-[16/10] w-full object-cover"
+      />
+    // ...
+  )
+}
+```
+
+// After:
+```tsx
+// src/components/MDXComponents.tsx
+img: function Img({
+  className,
+  ...props
+}: React.ComponentPropsWithoutRef<typeof GrayscaleTransitionImage>) {
+  return (
+    // ...
+      <GrayscaleTransitionImage
+        {...props}
+        sizes="(min-width: 768px) 42rem, 100vw"
+        className="w-full object-cover"
+      />
+    // ...
+  )
+}
+```
+
+Relevant Files: src/components/MDXComponents.tsx
+
+- Finding: Hardcoded value:  Social media links in 'navigation' array point to '#' in 'Footer' component. Replace these with actual profile URLs.
+Issue: The social media links in the 'Footer' component's 'navigation' array use '#' as placeholders, resulting in broken links.
+Refactoring Approach: Replace the '#' placeholders with the actual URLs of the respective social media profiles.
+Example:
+// Before:
+```tsx
+// src/components/Footer.tsx
+const navigation = [
+  // ...
+  {
+    name: 'Facebook',
+    href: '#',
+    // ...
+  },
+  // ...
+]
+```
+
+// After:
+```tsx
+// src/components/Footer.tsx
+const navigation = [
+  // ...
+  {
+    name: 'Facebook',
+    href: 'https://www.facebook.com/your-facebook-page', // Replace with actual URL
+    // ...
+  },
+  // ...
+]
+```
+
+Relevant Files: src/components/Footer.tsx
+[2024-07-18 09:23:05,624: WARNING/ForkPoolWorker-2]  JSON files have now been rendered to html
+[2024-07-18 09:24:05,625: WARNING/ForkPoolWorker-2] Request timed out. Retrying in 1.4588752370625513 seconds...
+[2024-07-18 09:25:07,087: WARNING/ForkPoolWorker-2] Request timed out. Retrying in 5.003154425827038 seconds...
+[2024-07-18 09:26:12,095: WARNING/ForkPoolWorker-2] Request timed out. Retrying in 25.251871250470284 seconds...
+[2024-07-18 09:27:30,862: DEBUG/ForkPoolWorker-2] Making request: POST https://oauth2.googleapis.com/token
+[2024-07-18 09:27:30,863: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): oauth2.googleapis.com:443
+[2024-07-18 09:27:30,915: DEBUG/ForkPoolWorker-2] https://oauth2.googleapis.com:443 "POST /token HTTP/1.1" 200 None
+[2024-07-18 09:27:30,977: WARNING/ForkPoolWorker-2] Uploading HTML to:
+[2024-07-18 09:27:30,977: WARNING/ForkPoolWorker-2]  
+[2024-07-18 09:27:30,977: WARNING/ForkPoolWorker-2] projects/TFUaoW4iBPUe297vr3vk36Mvp2p2/trainboxai:trainbox-company-site/XmtfC0
+[2024-07-18 09:27:30,979: DEBUG/ForkPoolWorker-2] Resetting dropped connection: storage.googleapis.com
+[2024-07-18 09:27:31,060: DEBUG/ForkPoolWorker-2] https://storage.googleapis.com:443 "POST /upload/storage/v1/b/rippo-777.appspot.com/o?uploadType=resumable HTTP/1.1" 200 0
+[2024-07-18 09:27:31,211: DEBUG/ForkPoolWorker-2] https://storage.googleapis.com:443 "PUT /upload/storage/v1/b/rippo-777.appspot.com/o?uploadType=resumable&upload_id=ACJd0NoyLmEGWhQ8DxIhHHbwiMDaaZvoMktEATHqV3pfy5oP8rrxyBsg3rDR5JsOmMM1lbhgvCwqLjBUk_c3KIWBgWW0wpbdvKd9COCz6OlAen9d7w HTTP/1.1" 200 1099
+[2024-07-18 09:27:31,212: WARNING/ForkPoolWorker-2] Uploaded XmtfC0.html to projects/TFUaoW4iBPUe297vr3vk36Mvp2p2/trainboxai:trainbox-company-site/XmtfC0/XmtfC0.html
+[2024-07-18 09:27:31,212: WARNING/ForkPoolWorker-2] Updating report status
+[2024-07-18 09:27:31,432: WARNING/ForkPoolWorker-2] Project status updated to Completed for:
+[2024-07-18 09:27:31,432: WARNING/ForkPoolWorker-2]  
+[2024-07-18 09:27:31,433: WARNING/ForkPoolWorker-2] XmtfC0
+[2024-07-18 09:27:31,433: WARNING/ForkPoolWorker-2] Report status updated
+[2024-07-18 09:27:31,433: WARNING/ForkPoolWorker-2] Checking Dashboard Stats
+[2024-07-18 09:27:31,433: WARNING/ForkPoolWorker-2] Document path: users/TFUaoW4iBPUe297vr3vk36Mvp2p2/projects/trainboxai:trainbox-company-site
+[2024-07-18 09:27:31,469: WARNING/ForkPoolWorker-2] Project trainboxai:trainbox-company-site found
+[2024-07-18 09:27:31,570: WARNING/ForkPoolWorker-2] Total reports executed so far: 7
+[2024-07-18 09:27:31,819: WARNING/ForkPoolWorker-2] Usage data added for user TFUaoW4iBPUe297vr3vk36Mvp2p2: {'projectName': 'trainboxai:trainbox-company-site', 'reportID': 'XmtfC0', 'date': datetime.datetime(2024, 7, 18, 9, 27, 31, 683714), 'creditsUsed': 10}
+[2024-07-18 09:27:31,819: WARNING/ForkPoolWorker-2] User TFUaoW4iBPUe297vr3vk36Mvp2p2 credits updated to 490
+[2024-07-18 09:27:31,819: WARNING/ForkPoolWorker-2] Deleted: /home/trainboxai/backend/rippo/reports/code_audit_XmtfC0.json
+[2024-07-18 09:27:31,819: WARNING/ForkPoolWorker-2] Deleted: /home/trainboxai/backend/rippo/reports/vuln_report_XmtfC0.json
+[2024-07-18 09:27:31,820: WARNING/ForkPoolWorker-2] Deleted: /home/trainboxai/backend/rippo/reports/quality_report_XmtfC0.json
+[2024-07-18 09:27:31,820: WARNING/ForkPoolWorker-2] Deleted: /home/trainboxai/backend/rippo/outputs/final_XmtfC0.md
+[2024-07-18 09:27:31,820: WARNING/ForkPoolWorker-2] Deleted: /home/trainboxai/backend/rippo/outputs/vuln_search_results_XmtfC0.json
+[2024-07-18 09:27:31,820: WARNING/ForkPoolWorker-2] Deleted: /home/trainboxai/backend/rippo/reports/refactor_XmtfC0.html
+[2024-07-18 09:27:31,820: WARNING/ForkPoolWorker-2] Deleted: /home/trainboxai/backend/rippo/reports/report_XmtfC0.html
+[2024-07-18 09:27:31,820: WARNING/ForkPoolWorker-2] Deleted: /home/trainboxai/backend/rippo/reports/refactor_guide_XmtfC0.md
+[2024-07-18 09:27:31,820: WARNING/ForkPoolWorker-2] Deleted: /home/trainboxai/backend/rippo/reports/XmtfC0.html
+[2024-07-18 09:27:31,821: INFO/ForkPoolWorker-2] Task celery_app.generate_report[01b0dd7c-9c65-46c9-8f3d-7c4e1c5a8990] succeeded in 1070.5713501879945s: None

@@ -1,1 +1,9 @@
-2024-07-16 06:36:14  ·  Event ID:101  ·  Source:/initialize  ·  Details:Initialization completed for new report EW_m9v. Repos found = 3  ·  Level:INFO
+2024-07-18 09:09:36  ·  Event ID:101  ·  Source:/initialize  ·  Details:Initialization completed for new report XmtfC0. Repos found = 3  ·  Level:INFO
+2024-07-18 09:09:41  ·  Event ID:102  ·  Source:/master  ·  Details:New docs creted for user: TFUaoW4iBPUe297vr3vk36Mvp2p2 and project:XmtfC0 in master initialisation phase  ·  Level:INFO
+2024-07-18 09:09:42  ·  Event ID:103  ·  Source:flattener.py/extract_and_write_to_markdown  ·  Details:Markdown file created final_XmtfC0.md.  ·  Level:INFO
+2024-07-18 09:13:13  ·  Event ID:104  ·  Source:analyser.py/get_dependancy_list  ·  Details:Analysed and extracted list of dependancies  ·  Level:INFO
+2024-07-18 09:21:02  ·  Event ID:105  ·  Source:search.py/search_vulnerabilities  ·  Details:Google searched dor known vulnerabilities  ·  Level:INFO
+2024-07-18 09:21:19  ·  Event ID:106  ·  Source:reporter.py/code_audit_report_with_backoff  ·  Details:Code audit completed  ·  Level:INFO
+2024-07-18 09:21:56  ·  Event ID:107  ·  Source:reporter.py/vulnerability_report_with_backoff  ·  Details:Vulnerability report completed  ·  Level:INFO
+2024-07-18 09:22:11  ·  Event ID:108  ·  Source:reporter.py/quality_report_with_backoff  ·  Details:Code Quality report completed  ·  Level:INFO
+2024-07-18 09:23:05  ·  Event ID:108  ·  Source:reporter.py/generate_refactor_plan_with_backoff  ·  Details:Code Refactor Plan completed  ·  Level:INFO

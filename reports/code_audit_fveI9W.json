@@ -1,0 +1,35 @@
+{
+  "High": [],
+  "Medium": [
+    {
+      "finding": "Unused variable: The 'logoHovered' state variable is set but never used in the 'Header' component.",
+      "files": [
+        "src/components/RootLayout.tsx"
+      ],
+      "impact": "Unnecessary state management, potentially causing confusion and minor performance overhead."
+    }
+  ],
+  "Low": [
+    {
+      "finding": "Hardcoded value: The shape path data in 'StylizedImage' is hardcoded. Consider using a separate file or configuration for better organization.",
+      "files": [
+        "src/components/StylizedImage.tsx"
+      ],
+      "impact": "Reduced flexibility for managing image shapes and potential code clutter."
+    },
+    {
+      "finding": "Hardcoded values: Social media links in 'Footer' are placeholders ('#'). Replace with actual URLs for proper functionality.",
+      "files": [
+        "src/components/Footer.tsx"
+      ],
+      "impact": "Broken links, hindering user experience and potentially affecting SEO."
+    },
+    {
+      "finding": "Hardcoded value: The API endpoint URL in the 'fetchData' function. This limits flexibility for deploying to different environments.",
+      "files": [
+        "src/components/SocialMedia.tsx"
+      ],
+      "impact": "Broken links and limited adaptability for social media integration."
+    }
+  ]
+}

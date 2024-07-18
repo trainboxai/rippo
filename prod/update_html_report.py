@@ -22,7 +22,7 @@ def update_html_with_json(template_path, code_audit_path, vuln_report_path, qual
         quality_report=quality_report
     )
 
-    print(rendered_html)
+    print(" JSON files have now been rendered to html")
     return rendered_html
 
 """
