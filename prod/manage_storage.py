@@ -24,8 +24,8 @@ def upload_to_storage(user_id, report_id, repo_name):
                     with open(os.path.join(reports_dir, file_name), 'rb') as file_data:
                         blob.upload_from_file(file_data, content_type='application/octet-stream')
                         print(f"Uploaded {file_name} to {project_path}/{file_name}")
-                break
-        
+                return True
+    return False
 
 def upload_html(user_id, report_id, repo_name):
     # fetch project path
@@ -51,3 +51,5 @@ def upload_html(user_id, report_id, repo_name):
                 with open(combined_html, 'rb') as file_data:
                     blob.upload_from_file(file_data, content_type='text/html')
                     print(f"Uploaded {report_id}.html to {project_path}/{report_id}.html")
+                return True
+    return False

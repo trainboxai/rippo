@@ -3,6 +3,7 @@ from celery.schedules import crontab
 from celery.utils.log import get_task_logger
 import os
 import json
+import time
 from pathlib import Path
 from manage_storage import upload_to_storage, upload_html
 from flattener import extract_and_write_to_markdown
@@ -61,6 +62,7 @@ def generate_report(repo_url, repo_name, report_id, user_id, oauth_token):
     deps_list = get_dependancy_list_with_backoff(markdown_file)
     print(deps_list)
     write_event_log(event_id=104, source='analyser.py/get_dependancy_list', details='Analysed and extracted list of dependancies', level='INFO', log_path=log_path )
+    time.sleep(5)
  
 
    
@@ -68,6 +70,7 @@ def generate_report(repo_url, repo_name, report_id, user_id, oauth_token):
     #deps_list = json.loads(deps_list) 
     search_vulnerabilities(deps_list,uniqueId)
     write_event_log(event_id=105, source='search.py/search_vulnerabilities', details='Google searched dor known vulnerabilities', level='INFO', log_path=log_path )
+    time.sleep(5)
     
 
     # 4. Create reports for Audit, Quality and Vulns
@@ -75,6 +78,7 @@ def generate_report(repo_url, repo_name, report_id, user_id, oauth_token):
     print(Fore.MAGENTA + "Getting code audit report . . . . . ." + Style.RESET_ALL) 
     code_audit_report_with_backoff(markdown_file,uniqueId)
     write_event_log(event_id=106, source='reporter.py/code_audit_report_with_backoff', details='Code audit completed', level='INFO', log_path=log_path )
+    time.sleep(5)
 
         # get vuln report
         # Vulnerability search results
@@ -83,6 +87,7 @@ def generate_report(repo_url, repo_name, report_id, user_id, oauth_token):
     print(Fore.MAGENTA + "Getting vulnerability report . . . . . . ." + Style.RESET_ALL)     
     vulnerability_report_with_backoff(vulnerability_search_results,uniqueId)
     write_event_log(event_id=107, source='reporter.py/vulnerability_report_with_backoff', details='Vulnerability report completed', level='INFO', log_path=log_path )
+    time.sleep(5)
 
         # get quality report
     code_audit_path = Path(os.path.join(reports_dir ,f'code_audit_{uniqueId}.json'))
@@ -100,11 +105,12 @@ def generate_report(repo_url, repo_name, report_id, user_id, oauth_token):
     print(Fore.MAGENTA + "Getting quality report . . . . . . ." + Style.RESET_ALL)    
     quality_report_with_backoff(combined_input,uniqueId)
     write_event_log(event_id=108, source='reporter.py/quality_report_with_backoff', details='Code Quality report completed', level='INFO', log_path=log_path )
+    time.sleep(5)
 
 
 
     # 5. Recommender - generate code refactoring recomendation
-    generate_refactor_plan_with_backoff(combined_input,uniqueId) 
+    generate_refactor_plan_with_backoff(combined_input,reports_dir,uniqueId) 
     write_event_log(event_id=108, source='reporter.py/generate_refactor_plan_with_backoff', details='Code Refactor Plan completed', level='INFO', log_path=log_path ) 
 
     # 6.1 Create the HTML report
@@ -116,7 +122,7 @@ def generate_report(repo_url, repo_name, report_id, user_id, oauth_token):
     htmlReport = update_html_with_json(template_path, code_audit_path, vuln_report_path, quality_report_path)
     with open(os.path.join(reports_dir, f"report_{uniqueId}.html"), "w") as file:
         file.write(htmlReport)
-    #print(htmlReport)
+    time.sleep(5)
 
     # 6.2 Convert refactor guide from MD to HTML
         # Default value for the refactor guide in case of failure
@@ -149,12 +155,16 @@ def generate_report(repo_url, repo_name, report_id, user_id, oauth_token):
     findings_count = count_findings(code_audit_path)
     vulnerabilities_count = count_vulnerabilities(vuln_report_path)
 
+    print("Updating dashboard status")
     update_dashboard_stats(user_id, repo_name, findings_count, vulnerabilities_count)
+    print("Dashboard status updated")
 
 
     # 10. Update usage and credits
     credits_used = 10 #TODO: REMOVE THIS DEFAULT VALUE ONCE WE CAN DO MORE THAN 25MB
+    print("Updating credits and usage")
     update_usage(user_id, repo_name, report_id, credits_used)
+    print("Credits and usage done")
 
 
     # 11. Cleanup local files

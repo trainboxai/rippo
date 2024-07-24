@@ -4,8 +4,15 @@ CELERY_APP="celery_app"
 LOGFILE="celery.log"
 PIDFILE="celery_worker.pid"
 
+flush_redis() {
+    echo "Flushing Redis..."
+    redis-cli flushall
+    echo "Redis flushed."
+}
+
 start_celery() {
     echo "Starting Celery worker..."
+    flush_redis
     celery -A $CELERY_APP worker --loglevel=debug --logfile=$LOGFILE --pidfile=$PIDFILE &
     echo "Celery worker started."
 }
@@ -15,6 +22,7 @@ stop_celery() {
         echo "Stopping Celery worker..."
         kill -TERM $(cat $PIDFILE)
         rm -f $PIDFILE
+        flush_redis
         echo "Celery worker stopped."
     else
         echo "No PID file found. Celery worker might not be running."

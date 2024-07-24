@@ -24,52 +24,61 @@ def count_vulnerabilities(file_path):
         vulnerabilities = len(data.get("vulnerability_report", []))
         return vulnerabilities
 
-# Function to update the dashboard stats
 def update_dashboard_stats(user_id, repo_name, findings_count, vulnerabilities_count):
-    print("Checking Dashboard Stats")
-    user_doc_ref = db.collection('users').document(user_id).collection('projects').document(repo_name)
-    print(f"Document path: users/{user_id}/projects/{repo_name}")
-    user_doc = user_doc_ref.get()
-    
-    if user_doc.exists:
-        print(f"Project {repo_name} found")
-        project_paths = user_doc.to_dict().get('project_paths', [])
+    try:
+        print("Checking Dashboard Stats")
+        user_doc_ref = db.collection('users').document(user_id).collection('projects').document(repo_name)
+        print(f"Document path: users/{user_id}/projects/{repo_name}")
+        user_doc = user_doc_ref.get()
         
-        if len(project_paths) < 2:
-            stats_ref = db.collection('users').document(user_id).collection('stats').document('statsDoc')
-            stats_doc = stats_ref.get()
+        if user_doc.exists:
+            print(f"Project {repo_name} found")
+            project_paths = user_doc.to_dict().get('project_paths', [])
             
-            if stats_doc.exists:
-                current_data = stats_doc.to_dict()
-                current_bugs = current_data.get('bugs', 0)
-                current_vulnerabilities = current_data.get('vulnerabilities', 0)
+            if len(project_paths) < 2:
+                stats_ref = db.collection('users').document(user_id).collection('stats').document('statsDoc')
+                stats_doc = stats_ref.get()
                 
-                stats_ref.update({
-                    'bugs': current_bugs + findings_count,
-                    'vulnerabilities': current_vulnerabilities + vulnerabilities_count
-                })
-            else:
-                stats_ref.set({
-                    'bugs': findings_count,
-                    'vulnerabilities': vulnerabilities_count
-                })
-    else:
-        print(f"ERROR: Project {repo_name} NOT found!!")
+                if stats_doc.exists:
+                    current_data = stats_doc.to_dict()
+                    current_bugs = current_data.get('bugs', 0)
+                    current_vulnerabilities = current_data.get('vulnerabilities', 0)
+                    
+                    stats_ref.update({
+                        'bugs': current_bugs + findings_count,
+                        'vulnerabilities': current_vulnerabilities + vulnerabilities_count
+                    })
+                else:
+                    stats_ref.set({
+                        'bugs': findings_count,
+                        'vulnerabilities': vulnerabilities_count
+                    })
+        else:
+            print(f"ERROR: Project {repo_name} NOT found!!")
 
-    # Compute the total number of reports executed
-    total_reports = 0
-    projects_ref = db.collection('users').document(user_id).collection('projects')
-    projects = projects_ref.get()
+        # Compute the total number of reports executed
+        total_reports = 0
+        projects_ref = db.collection('users').document(user_id).collection('projects')
+        projects = projects_ref.get()
 
-    for project in projects:
-        project_paths = project.to_dict().get('project_paths', [])
-        total_reports += len(project_paths)
+        for project in projects:
+            project_paths = project.to_dict().get('project_paths', [])
+            total_reports += len(project_paths)
 
-    print(f"Total reports executed so far: {total_reports}")
-    stats_ref = db.collection('users').document(user_id).collection('stats').document('statsDoc')
-    stats_ref.update({
-        'reviews': total_reports
-    })
+        print(f"Total reports executed so far: {total_reports}")
+        stats_ref = db.collection('users').document(user_id).collection('stats').document('statsDoc')
+        stats_ref.update({
+            'reviews': total_reports
+        })
+        return True
+    except Exception as error:
+        print(f"Failed to update dashboard stats because of {error}")
+        return False
+
+
+
+
+
 
 """
  ## EXAMPLE USAGE       

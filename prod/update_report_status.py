@@ -20,8 +20,10 @@ def update_report_status(user_id, report_id, repo_name):
                     break
             user_doc_ref.update({'project_paths': project_paths})
             print("Project status updated to Completed for:", report_id)
+            return True
     except Exception as error:
         print(f"Failed to update {report_id} because of {error}")
+        return False
 
 
 """

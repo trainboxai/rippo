@@ -172,7 +172,7 @@ def quality_report(input_file,unique_id=0):
     with open(os.path.join(reports_dir, f'quality_report_{unique_id}.json'), 'w') as file:
         file.write(cleaned_text)
         
-    return response.text
+    return cleaned_text
 
 # Bakcoff and Jitter implementaion
 def code_audit_report_with_backoff(md_file, unique_id=0, max_retries=5):
@@ -219,6 +219,39 @@ def quality_report_with_backoff(input_files, unique_id=0, max_retries=5):
             time.sleep(sleep_duration)
     print(f"Quality Report failed after {max_retries} retries.")
     return json.dumps({"error": f"Quality Report failed after {max_retries} retries."})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

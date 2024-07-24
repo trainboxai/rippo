@@ -33,10 +33,13 @@ def update_usage(user_id, repo_name, report_id, credits_used):
 
             print(f"Usage data added for user {user_id}: {usage_data}")
             print(f"User {user_id} credits updated to {new_credits}")
+            return True
         else:
             print(f"ERROR: User {user_id} does not have enough credits!")
+            return False
     else:
         print(f"ERROR: User {user_id} does not exist!")
+        return False
 
 """
 # Example usage

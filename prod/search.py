@@ -34,7 +34,7 @@ def search_vulnerabilities(csv_data, unique_id=0):
         url = f"https://www.googleapis.com/customsearch/v1?key={search_api_key}&cx={search_engine_id}&q={search_query}&num=10&start=1&fields=items(link,snippet,htmlFormattedUrl)" 
 
         retries = 0
-        max_retries = 5
+        max_retries = 3
         while retries < max_retries:
             try:
                 response = requests.get(url, timeout=5)

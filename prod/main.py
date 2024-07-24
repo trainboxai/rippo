@@ -255,6 +255,49 @@ async def get_usage(user_id: str = Depends(get_current_user)):
     return {"usage": usage_data}
 
 
+@app.post("/update_user_credits")
+def update_user_credits(user_id: str = Depends(get_current_user)):
+    # Firestore query for payments with status "succeeded" and shipping "null"
+    payments_ref = db.collection("users").document(user_id).collection("payments")
+    query_ref = payments_ref.where("status", "==", "succeeded").where("shipping", "==", None)
+    docs = query_ref.stream()
+
+    new_credits = 0
+    for doc in docs:
+        payment_data = doc.to_dict()
+        # Get the amount received from payment so we can add that to credits balance
+        amount_received = payment_data.get("amount_received", 0)
+
+        # Get the user doc so we can update credits
+        user_doc_ref = db.collection("users").document(user_id)
+        user_doc = user_doc_ref.get()
+        if user_doc.exists:
+            user_data = user_doc.to_dict()
+            current_credits = user_data.get("credits", 0)
+            new_credits = current_credits + amount_received
+            user_doc_ref.update({"credits": new_credits})
+
+        # Update shipping status
+        doc.reference.update({"shipping": "done"})
+
+    return {"credits": new_credits}
+
+
+
+@app.post("/accept_terms")
+def accept_terms(user_id: str = Depends(get_current_user)):
+    try:
+        user_doc_ref = db.collection("users").document(user_id)
+        user_doc = user_doc_ref.get()
+        if user_doc.exists:
+            user_doc_ref.update({"termsAccepted": True})
+            return {"message": "Terms accepted successfully"}
+        else:
+            raise HTTPException(status_code=404, detail="User not found")
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+
+
 @app.post("/master")
 async def master(repo_url: RepoUrl, repo_name: RepoName,report_id: ReportId,  user_id: str = Depends(get_current_user)):
   
