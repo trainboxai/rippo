@@ -1,1465 +1,237 @@
-[2024-07-20 10:37:36,559: DEBUG/MainProcess] | Worker: Preparing bootsteps.
-[2024-07-20 10:37:36,561: DEBUG/MainProcess] | Worker: Building graph...
-[2024-07-20 10:37:36,562: DEBUG/MainProcess] | Worker: New boot order: {Beat, Timer, Hub, Pool, Autoscaler, StateDB, Consumer}
-[2024-07-20 10:37:36,566: DEBUG/MainProcess] | Consumer: Preparing bootsteps.
-[2024-07-20 10:37:36,566: DEBUG/MainProcess] | Consumer: Building graph...
-[2024-07-20 10:37:36,574: DEBUG/MainProcess] | Consumer: New boot order: {Connection, Agent, Events, Mingle, Tasks, Control, Gossip, Heart, event loop}
-[2024-07-20 10:37:36,586: DEBUG/MainProcess] | Worker: Starting Hub
-[2024-07-20 10:37:36,586: DEBUG/MainProcess] ^-- substep ok
-[2024-07-20 10:37:36,586: DEBUG/MainProcess] | Worker: Starting Pool
-[2024-07-20 10:37:37,047: DEBUG/MainProcess] ^-- substep ok
-[2024-07-20 10:37:37,048: DEBUG/MainProcess] | Worker: Starting Consumer
-[2024-07-20 10:37:37,048: DEBUG/MainProcess] | Consumer: Starting Connection
-[2024-07-20 10:37:37,050: WARNING/MainProcess] /home/trainboxai/backend/rippo/venv/lib/python3.10/site-packages/celery/worker/consumer/consumer.py:508: CPendingDeprecationWarning: The broker_connection_retry configuration setting will no longer determine
+[2024-07-24 11:58:26,827: DEBUG/MainProcess] | Worker: Preparing bootsteps.
+[2024-07-24 11:58:26,830: DEBUG/MainProcess] | Worker: Building graph...
+[2024-07-24 11:58:26,830: DEBUG/MainProcess] | Worker: New boot order: {Beat, Timer, Hub, Pool, Autoscaler, StateDB, Consumer}
+[2024-07-24 11:58:26,839: DEBUG/MainProcess] | Consumer: Preparing bootsteps.
+[2024-07-24 11:58:26,839: DEBUG/MainProcess] | Consumer: Building graph...
+[2024-07-24 11:58:26,848: DEBUG/MainProcess] | Consumer: New boot order: {Connection, Agent, Events, Mingle, Gossip, Tasks, Control, Heart, event loop}
+[2024-07-24 11:58:26,855: DEBUG/MainProcess] | Worker: Starting Hub
+[2024-07-24 11:58:26,855: DEBUG/MainProcess] ^-- substep ok
+[2024-07-24 11:58:26,855: DEBUG/MainProcess] | Worker: Starting Pool
+[2024-07-24 11:58:27,187: DEBUG/MainProcess] ^-- substep ok
+[2024-07-24 11:58:27,188: DEBUG/MainProcess] | Worker: Starting Consumer
+[2024-07-24 11:58:27,188: DEBUG/MainProcess] | Consumer: Starting Connection
+[2024-07-24 11:58:27,191: WARNING/MainProcess] /home/trainboxai/backend/rippo/venv/lib/python3.10/site-packages/celery/worker/consumer/consumer.py:508: CPendingDeprecationWarning: The broker_connection_retry configuration setting will no longer determine
 whether broker connection retries are made during startup in Celery 6.0 and above.
 If you wish to retain the existing behavior for retrying connections on startup,
 you should set broker_connection_retry_on_startup to True.
   warnings.warn(
 
-[2024-07-20 10:37:37,057: INFO/MainProcess] Connected to redis://localhost:6379/0
-[2024-07-20 10:37:37,057: DEBUG/MainProcess] ^-- substep ok
-[2024-07-20 10:37:37,057: DEBUG/MainProcess] | Consumer: Starting Events
-[2024-07-20 10:37:37,058: WARNING/MainProcess] /home/trainboxai/backend/rippo/venv/lib/python3.10/site-packages/celery/worker/consumer/consumer.py:508: CPendingDeprecationWarning: The broker_connection_retry configuration setting will no longer determine
+[2024-07-24 11:58:27,268: INFO/MainProcess] Connected to redis://localhost:6379/0
+[2024-07-24 11:58:27,268: DEBUG/MainProcess] ^-- substep ok
+[2024-07-24 11:58:27,268: DEBUG/MainProcess] | Consumer: Starting Events
+[2024-07-24 11:58:27,268: WARNING/MainProcess] /home/trainboxai/backend/rippo/venv/lib/python3.10/site-packages/celery/worker/consumer/consumer.py:508: CPendingDeprecationWarning: The broker_connection_retry configuration setting will no longer determine
 whether broker connection retries are made during startup in Celery 6.0 and above.
 If you wish to retain the existing behavior for retrying connections on startup,
 you should set broker_connection_retry_on_startup to True.
   warnings.warn(
 
-[2024-07-20 10:37:37,060: DEBUG/MainProcess] ^-- substep ok
-[2024-07-20 10:37:37,060: DEBUG/MainProcess] | Consumer: Starting Mingle
-[2024-07-20 10:37:37,060: INFO/MainProcess] mingle: searching for neighbors
-[2024-07-20 10:37:38,070: INFO/MainProcess] mingle: all alone
-[2024-07-20 10:37:38,070: DEBUG/MainProcess] ^-- substep ok
-[2024-07-20 10:37:38,070: DEBUG/MainProcess] | Consumer: Starting Tasks
-[2024-07-20 10:37:38,073: DEBUG/MainProcess] ^-- substep ok
-[2024-07-20 10:37:38,073: DEBUG/MainProcess] | Consumer: Starting Control
-[2024-07-20 10:37:38,076: DEBUG/MainProcess] ^-- substep ok
-[2024-07-20 10:37:38,077: DEBUG/MainProcess] | Consumer: Starting Gossip
-[2024-07-20 10:37:38,080: DEBUG/MainProcess] ^-- substep ok
-[2024-07-20 10:37:38,080: DEBUG/MainProcess] | Consumer: Starting Heart
-[2024-07-20 10:37:38,081: DEBUG/MainProcess] ^-- substep ok
-[2024-07-20 10:37:38,081: DEBUG/MainProcess] | Consumer: Starting event loop
-[2024-07-20 10:37:38,082: DEBUG/MainProcess] | Worker: Hub.register Pool...
-[2024-07-20 10:37:38,082: INFO/MainProcess] celery@rippo-backend-vm ready.
-[2024-07-20 10:37:38,082: DEBUG/MainProcess] basic.qos: prefetch_count->16
-[2024-07-20 10:41:28,310: INFO/MainProcess] Task celery_app.generate_report[bcab662d-9c60-4334-b51c-5d3906632a38] received
-[2024-07-20 10:41:28,310: DEBUG/MainProcess] TaskPool: Apply <function fast_trace_task at 0x7c90a7bc31c0> (args:('celery_app.generate_report', 'bcab662d-9c60-4334-b51c-5d3906632a38', {'lang': 'py', 'task': 'celery_app.generate_report', 'id': 'bcab662d-9c60-4334-b51c-5d3906632a38', 'shadow': None, 'eta': None, 'expires': None, 'group': None, 'group_index': None, 'retries': 0, 'timelimit': [None, None], 'root_id': 'bcab662d-9c60-4334-b51c-5d3906632a38', 'parent_id': None, 'argsrepr': "('https://github.com/trainboxai/rippo.git', 'trainboxai:rippo', 'IJHjm-', 'TFUaoW4iBPUe297vr3vk36Mvp2p2', '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')", 'kwargsrepr': '{}', 'origin': 'gen3228@rippo-backend-vm', 'ignore_result': False, 'replaced_task_nesting': 0, 'stamped_headers': None, 'stamps': {}, 'properties': {'correlation_id': 'bcab662d-9c60-4334-b51c-5d3906632a38', 'reply_to': 'a4e902f4-4339-39f1-b0c1-89a4d1c20bdb', 'delivery_mode': 2, 'delivery_info': {'exchange': '', 'routing_key': 'celery'}, 'priority': 0, 'body_encoding': 'base64', 'delivery_tag': '645d34e7-b86c-4ebf-a725-d63c7a2d9194'}, 'reply_to':... kwargs:{})
-[2024-07-20 10:41:28,312: WARNING/ForkPoolWorker-2] [32mGet flattened file and extract contents . . .[0m
-[2024-07-20 10:41:28,312: WARNING/ForkPoolWorker-2] [35mGathering search results . . .[0m
-[2024-07-20 10:41:28,315: DEBUG/ForkPoolWorker-2] Popen(['git', 'clone', '-v', '--', 'https://*****@github.com/trainboxai/rippo.git', '/tmp/tmpywzap9vy'], cwd=/home/trainboxai/backend/rippo/prod, stdin=None, shell=False, universal_newlines=True)
-[2024-07-20 10:41:28,937: DEBUG/ForkPoolWorker-2] Cmd(['git', 'clone', '-v', '--', 'https://*****@github.com/trainboxai/rippo.git', '/tmp/tmpywzap9vy'])'s unused stdout: 
-[2024-07-20 10:41:28,945: WARNING/ForkPoolWorker-2] Skipping file: /tmp/tmpywzap9vy/prod/__pycache__/search.cpython-310.pyc (not a valid UTF-8 text file)
-[2024-07-20 10:41:28,945: WARNING/ForkPoolWorker-2] Skipping file: /tmp/tmpywzap9vy/prod/__pycache__/update_credits_usage.cpython-310.pyc (not a valid UTF-8 text file)
-[2024-07-20 10:41:28,946: WARNING/ForkPoolWorker-2] Skipping file: /tmp/tmpywzap9vy/prod/__pycache__/scrapper.cpython-310.pyc (not a valid UTF-8 text file)
-[2024-07-20 10:41:28,946: WARNING/ForkPoolWorker-2] Skipping file: /tmp/tmpywzap9vy/prod/__pycache__/reporter.cpython-310.pyc (not a valid UTF-8 text file)
-[2024-07-20 10:41:28,946: WARNING/ForkPoolWorker-2] Skipping file: /tmp/tmpywzap9vy/prod/__pycache__/main.cpython-310.pyc (not a valid UTF-8 text file)
-[2024-07-20 10:41:28,946: WARNING/ForkPoolWorker-2] Skipping file: /tmp/tmpywzap9vy/prod/__pycache__/manage_storage.cpython-310.pyc (not a valid UTF-8 text file)
-[2024-07-20 10:41:28,946: WARNING/ForkPoolWorker-2] Skipping file: /tmp/tmpywzap9vy/prod/__pycache__/celery_app.cpython-310.pyc (not a valid UTF-8 text file)
-[2024-07-20 10:41:28,947: WARNING/ForkPoolWorker-2] Skipping file: /tmp/tmpywzap9vy/prod/__pycache__/update_html_report.cpython-310.pyc (not a valid UTF-8 text file)
-[2024-07-20 10:41:28,947: WARNING/ForkPoolWorker-2] Skipping file: /tmp/tmpywzap9vy/prod/__pycache__/flattener.cpython-310.pyc (not a valid UTF-8 text file)
-[2024-07-20 10:41:28,947: WARNING/ForkPoolWorker-2] Skipping file: /tmp/tmpywzap9vy/prod/__pycache__/get_refactor_guide.cpython-310.pyc (not a valid UTF-8 text file)
-[2024-07-20 10:41:28,947: WARNING/ForkPoolWorker-2] Skipping file: /tmp/tmpywzap9vy/prod/__pycache__/storage.cpython-310.pyc (not a valid UTF-8 text file)
-[2024-07-20 10:41:28,947: WARNING/ForkPoolWorker-2] Skipping file: /tmp/tmpywzap9vy/prod/__pycache__/analyser.cpython-310.pyc (not a valid UTF-8 text file)
-[2024-07-20 10:41:28,947: WARNING/ForkPoolWorker-2] Skipping file: /tmp/tmpywzap9vy/prod/__pycache__/shared_resources.cpython-310.pyc (not a valid UTF-8 text file)
-[2024-07-20 10:41:28,948: WARNING/ForkPoolWorker-2] Skipping file: /tmp/tmpywzap9vy/prod/__pycache__/update_dash_stats.cpython-310.pyc (not a valid UTF-8 text file)
-[2024-07-20 10:41:28,948: WARNING/ForkPoolWorker-2] Skipping file: /tmp/tmpywzap9vy/prod/__pycache__/update_report_status.cpython-310.pyc (not a valid UTF-8 text file)
-[2024-07-20 10:41:28,948: WARNING/ForkPoolWorker-2] Skipping file: /tmp/tmpywzap9vy/prod/__pycache__/list_repos.cpython-310.pyc (not a valid UTF-8 text file)
-[2024-07-20 10:41:28,948: WARNING/ForkPoolWorker-2] Skipping file: /tmp/tmpywzap9vy/prod/__pycache__/event_logger.cpython-310.pyc (not a valid UTF-8 text file)
-[2024-07-20 10:41:28,948: WARNING/ForkPoolWorker-2] Skipping file: /tmp/tmpywzap9vy/prod/__pycache__/clean_up_report_files.cpython-310.pyc (not a valid UTF-8 text file)
-[2024-07-20 10:41:28,948: WARNING/ForkPoolWorker-2] Skipping file: /tmp/tmpywzap9vy/prod/__pycache__/recomender.cpython-310.pyc (not a valid UTF-8 text file)
-[2024-07-20 10:41:28,956: WARNING/ForkPoolWorker-2] [32mAnalyse and extract list of dependancies . . . .[0m
-[2024-07-20 10:41:41,062: WARNING/ForkPoolWorker-2] {"result": "NO DEPS FOUND"}
-[2024-07-20 10:41:41,063: WARNING/ForkPoolWorker-2] {"result": "NO DEPS FOUND"}
-[2024-07-20 10:41:46,068: WARNING/ForkPoolWorker-2] [32mStarting searching for known Vulnerabilities . . . . .[0m
-[2024-07-20 10:41:46,069: WARNING/ForkPoolWorker-2] [32mCompleted searching for known Vulnerabilities . . . . .[0m
-[2024-07-20 10:41:51,074: WARNING/ForkPoolWorker-2] [35mGetting code audit report . . . . . .[0m
-[2024-07-20 10:41:51,075: WARNING/ForkPoolWorker-2] [91mTrying code audit, attempt 1 [0m
-[2024-07-20 10:42:51,079: WARNING/ForkPoolWorker-2] Request timed out. Retrying in 1.817619458458785 seconds...
-[2024-07-20 10:42:52,899: WARNING/ForkPoolWorker-2] [91mTrying code audit, attempt 2 [0m
-[2024-07-20 10:43:52,904: WARNING/ForkPoolWorker-2] Request timed out. Retrying in 2.4915683822879315 seconds...
-[2024-07-20 10:43:55,398: WARNING/ForkPoolWorker-2] [91mTrying code audit, attempt 3 [0m
-[2024-07-20 10:44:54,203: WARNING/ForkPoolWorker-2] [35mGetting vulnerability report . . . . . . .[0m
-[2024-07-20 10:44:54,203: WARNING/ForkPoolWorker-2] [91mTrying Vuln Report, attempt 1 [0m
-[2024-07-20 10:44:54,982: WARNING/ForkPoolWorker-2] {
+[2024-07-24 11:58:27,270: DEBUG/MainProcess] ^-- substep ok
+[2024-07-24 11:58:27,270: DEBUG/MainProcess] | Consumer: Starting Mingle
+[2024-07-24 11:58:27,270: INFO/MainProcess] mingle: searching for neighbors
+[2024-07-24 11:58:28,278: INFO/MainProcess] mingle: all alone
+[2024-07-24 11:58:28,278: DEBUG/MainProcess] ^-- substep ok
+[2024-07-24 11:58:28,278: DEBUG/MainProcess] | Consumer: Starting Gossip
+[2024-07-24 11:58:28,280: DEBUG/MainProcess] ^-- substep ok
+[2024-07-24 11:58:28,281: DEBUG/MainProcess] | Consumer: Starting Tasks
+[2024-07-24 11:58:28,283: DEBUG/MainProcess] ^-- substep ok
+[2024-07-24 11:58:28,283: DEBUG/MainProcess] | Consumer: Starting Control
+[2024-07-24 11:58:28,285: DEBUG/MainProcess] ^-- substep ok
+[2024-07-24 11:58:28,286: DEBUG/MainProcess] | Consumer: Starting Heart
+[2024-07-24 11:58:28,286: DEBUG/MainProcess] ^-- substep ok
+[2024-07-24 11:58:28,287: DEBUG/MainProcess] | Consumer: Starting event loop
+[2024-07-24 11:58:28,287: DEBUG/MainProcess] | Worker: Hub.register Pool...
+[2024-07-24 11:58:28,287: INFO/MainProcess] celery@rippo-backend-vm ready.
+[2024-07-24 11:58:28,287: DEBUG/MainProcess] basic.qos: prefetch_count->16
+[2024-07-24 12:00:09,357: INFO/MainProcess] Task celery_app.generate_report[d584bee0-8b58-4613-80d9-1d93d509a8da] received
+[2024-07-24 12:00:09,357: DEBUG/MainProcess] TaskPool: Apply <function fast_trace_task at 0x7f3f768c71c0> (args:('celery_app.generate_report', 'd584bee0-8b58-4613-80d9-1d93d509a8da', {'lang': 'py', 'task': 'celery_app.generate_report', 'id': 'd584bee0-8b58-4613-80d9-1d93d509a8da', 'shadow': None, 'eta': None, 'expires': None, 'group': None, 'group_index': None, 'retries': 0, 'timelimit': [None, None], 'root_id': 'd584bee0-8b58-4613-80d9-1d93d509a8da', 'parent_id': None, 'argsrepr': "('https://github.com/jerrydav1s/shonglish.git', 'jerrydav1s:shonglish', '_Nik0b', 'qKtISirBQbftY20mLxK0hWXsD053', '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')", 'kwargsrepr': '{}', 'origin': 'gen21261@rippo-backend-vm', 'ignore_result': False, 'replaced_task_nesting': 0, 'stamped_headers': None, 'stamps': {}, 'properties': {'correlation_id': 'd584bee0-8b58-4613-80d9-1d93d509a8da', 'reply_to': '08749c3f-69dc-3a01-8a20-4d66a5d160ba', 'delivery_mode': 2, 'delivery_info': {'exchange': '', 'routing_key': 'celery'}, 'priority': 0, 'body_encoding': 'base64', 'delivery_tag': 'a99af621-8ba7-4cdb-8366-cd758e178650'}, 'reply_to':... kwargs:{})
+[2024-07-24 12:00:09,358: WARNING/ForkPoolWorker-2] [32mGet flattened file and extract contents . . .[0m
+[2024-07-24 12:00:09,358: WARNING/ForkPoolWorker-2] [35mGathering search results . . .[0m
+[2024-07-24 12:00:09,361: DEBUG/ForkPoolWorker-2] Popen(['git', 'clone', '-v', '--', 'https://*****@github.com/jerrydav1s/shonglish.git', '/tmp/tmpb1q7lt8f'], cwd=/home/trainboxai/backend/rippo/prod, stdin=None, shell=False, universal_newlines=True)
+[2024-07-24 12:00:09,938: DEBUG/ForkPoolWorker-2] Cmd(['git', 'clone', '-v', '--', 'https://*****@github.com/jerrydav1s/shonglish.git', '/tmp/tmpb1q7lt8f'])'s unused stdout: 
+[2024-07-24 12:00:09,945: WARNING/ForkPoolWorker-2] [32mAnalyse and extract list of dependancies . . . .[0m
+[2024-07-24 12:00:14,238: WARNING/ForkPoolWorker-2] {"result": "\"dependancy\",\"version\"\n\"@headlessui/vue\",\"1.7.19\"\n\"@heroicons/vue\",\"2.1.3\"\n\"@tailwindcss/forms\",\"0.5.7\"\n\"axios\",\"1.6.8\"\n\"autoprefixer\",\"^10.4.17\"\n\"nuxt\",\"^3.9.3\"\n\"postcss\",\"^8.4.33\"\n\"tailwindcss\",\"^3.4.1\"\n\"tailwindcss-text-fill-stroke\",\"1.1.2\"\n\"vue\",\"^3.4.14\"\n\"vue-router\",\"^4.2.5\""}
+[2024-07-24 12:00:14,238: WARNING/ForkPoolWorker-2] {"result": "\"dependancy\",\"version\"\n\"@headlessui/vue\",\"1.7.19\"\n\"@heroicons/vue\",\"2.1.3\"\n\"@tailwindcss/forms\",\"0.5.7\"\n\"axios\",\"1.6.8\"\n\"autoprefixer\",\"^10.4.17\"\n\"nuxt\",\"^3.9.3\"\n\"postcss\",\"^8.4.33\"\n\"tailwindcss\",\"^3.4.1\"\n\"tailwindcss-text-fill-stroke\",\"1.1.2\"\n\"vue\",\"^3.4.14\"\n\"vue-router\",\"^4.2.5\""}
+[2024-07-24 12:00:19,241: WARNING/ForkPoolWorker-2] [32mStarting searching for known Vulnerabilities . . . . .[0m
+[2024-07-24 12:00:19,241: WARNING/ForkPoolWorker-2] [32mCompleted searching for known Vulnerabilities . . . . .[0m
+[2024-07-24 12:00:24,247: WARNING/ForkPoolWorker-2] [35mGetting code audit report . . . . . .[0m
+[2024-07-24 12:00:24,247: WARNING/ForkPoolWorker-2] [91mTrying code audit, attempt 1 [0m
+[2024-07-24 12:00:35,181: WARNING/ForkPoolWorker-2] [35mGetting vulnerability report . . . . . . .[0m
+[2024-07-24 12:00:35,181: WARNING/ForkPoolWorker-2] [91mTrying Vuln Report, attempt 1 [0m
+[2024-07-24 12:00:35,184: DEBUG/ForkPoolWorker-2] Request options: {'method': 'post', 'url': '/openai/v1/chat/completions', 'files': None, 'json_data': {'messages': [{'role': 'system', 'content': 'You will be provided with a JSON file containing search results for vulnerabilities related to various software dependencies. Each dependency entry includes its name, version, a list of text results from vulnerability databases, and the source of the information.\n\nYour task is to analyze these search results and generate a vulnerability report in JSON format. For each dependency, determine if a vulnerability exists based on the provided text results.\n\nYou must be certain that the vulnerability mentioned in the results affects the specified version. If a vulnerability is identified, create a report entry with the following structure:\n\n```json\n{\n  "vulnerability_report": [\n    {\n      "dependency": "dependency_name",\n      "version": "dependency_version",\n      "description": "Concise description of the vulnerability (under 100 words).",\n      "source": "URL of the source where the vulnerability information was found"\n    },\n    {\n      "dependency": "another_dependency",\n      "version": "another_dependency_version",\n      "description": "Concise description of this vulnerability (under 100 words).",\n      "source": "URL of the source for this vulnerability information"\n    }\n    // ... more vulnerability entries as needed\n  ]\n}\n```\n\nIf no vulnerabilities are found, return an empty "vulnerability_report" array:\n\n```json\n{\n  "vulnerability_report": []\n}\n```\n\nKey Considerations:\n* Conciseness: Keep the vulnerability descriptions brief and informative.\n* Source Attribution: Always include the source URL for each reported vulnerability.\n* Clarity: Structure the JSON output clearly for easy parsing and use.\n\nYou must return only the JSON content and nothing else. No explanations.'}, {'role': 'user', 'content': '[]'}], 'model': 'llama-3.1-70b-versatile', 'max_tokens': 7777, 'stop': None, 'stream': False, 'temperature': 0.34, 'top_p': 1}}
+[2024-07-24 12:00:35,185: DEBUG/ForkPoolWorker-2] close.started
+[2024-07-24 12:00:35,186: DEBUG/ForkPoolWorker-2] close.complete
+[2024-07-24 12:00:35,186: DEBUG/ForkPoolWorker-2] connect_tcp.started host='api.groq.com' port=443 local_address=None timeout=5.0 socket_options=None
+[2024-07-24 12:00:35,201: DEBUG/ForkPoolWorker-2] connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x7f3f71a63730>
+[2024-07-24 12:00:35,201: DEBUG/ForkPoolWorker-2] start_tls.started ssl_context=<ssl.SSLContext object at 0x7f3f5a3197c0> server_hostname='api.groq.com' timeout=5.0
+[2024-07-24 12:00:35,218: DEBUG/ForkPoolWorker-2] start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x7f3f71a63430>
+[2024-07-24 12:00:35,218: DEBUG/ForkPoolWorker-2] send_request_headers.started request=<Request [b'POST']>
+[2024-07-24 12:00:35,219: DEBUG/ForkPoolWorker-2] send_request_headers.complete
+[2024-07-24 12:00:35,219: DEBUG/ForkPoolWorker-2] send_request_body.started request=<Request [b'POST']>
+[2024-07-24 12:00:35,219: DEBUG/ForkPoolWorker-2] send_request_body.complete
+[2024-07-24 12:00:35,219: DEBUG/ForkPoolWorker-2] receive_response_headers.started request=<Request [b'POST']>
+[2024-07-24 12:00:36,451: DEBUG/ForkPoolWorker-2] receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Wed, 24 Jul 2024 12:00:36 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'Cache-Control', b'private, max-age=0, no-store, no-cache, must-revalidate'), (b'vary', b'Origin'), (b'x-ratelimit-limit-requests', b'14400'), (b'x-ratelimit-limit-tokens', b'131072'), (b'x-ratelimit-remaining-requests', b'14399'), (b'x-ratelimit-remaining-tokens', b'130637'), (b'x-ratelimit-reset-requests', b'6s'), (b'x-ratelimit-reset-tokens', b'199.127197ms'), (b'x-request-id', b'req_01j3j9tnyce8mtykb4c607zn2t'), (b'via', b'1.1 google'), (b'alt-svc', b'h3=":443"; ma=86400'), (b'CF-Cache-Status', b'DYNAMIC'), (b'Server', b'cloudflare'), (b'CF-RAY', b'8a83c02c284b615f-ORD'), (b'Content-Encoding', b'gzip')])
+[2024-07-24 12:00:36,452: INFO/ForkPoolWorker-2] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+[2024-07-24 12:00:36,452: DEBUG/ForkPoolWorker-2] receive_response_body.started request=<Request [b'POST']>
+[2024-07-24 12:00:36,452: DEBUG/ForkPoolWorker-2] receive_response_body.complete
+[2024-07-24 12:00:36,452: DEBUG/ForkPoolWorker-2] response_closed.started
+[2024-07-24 12:00:36,452: DEBUG/ForkPoolWorker-2] response_closed.complete
+[2024-07-24 12:00:36,452: DEBUG/ForkPoolWorker-2] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "200 OK"
+[2024-07-24 12:00:36,455: WARNING/ForkPoolWorker-2] ```json
+{
   "vulnerability_report": []
 }
-[2024-07-20 10:44:59,990: WARNING/ForkPoolWorker-2] [35mGetting quality report . . . . . . .[0m
-[2024-07-20 10:44:59,990: WARNING/ForkPoolWorker-2] [91mTrying Quality Report, attempt 1 [0m
-[2024-07-20 10:47:24,790: WARNING/ForkPoolWorker-2] - Finding: Hardcoded values: Absolute file paths are used throughout the project for accessing files and directories.  This limits portability and could cause issues when deploying to different environments.
-Issue: Hardcoded file paths reduce the application's portability and make it difficult to deploy to different environments.
-Refactoring Approach: Replace absolute file paths with relative paths or use environment variables to define file locations. This allows for greater flexibility and easier configuration for different environments.
-Example:
-// Before:
-const filePath = "/home/trainboxai/backend/rippo/reports/code_audit.json";
-
-// After:
-const reportsDir = process.env.REPORTS_DIR || "reports";
-const filePath = `${reportsDir}/code_audit.json`;
-
-Relevant Files: prod/commands.txt, prod/manage_storage.py, prod/reporter.py, prod/update_html_report.py, prod/search.py, prod/recomender.py, prod/clean_up_report_files.py, prod/check_md_file_size.py, prod/generic_tests.py, prod/event_logger.py, prod/update_report_status.py, prod/celery_app.py, prod/flattener.py, prod/clearlogs.sh
-
-- Finding: Hardcoded value: In 'celery_app.py', the credits used for a report are hardcoded to 10. This should be calculated dynamically based on actual usage or resource consumption.
-Issue: Hardcoding the credits used for a report limits flexibility and accuracy in billing.
-Refactoring Approach: Implement a mechanism to calculate credits dynamically based on factors like the size of the codebase, the number of dependencies analyzed, or the time taken to generate the report.
-Example:
-// Before:
-credits_used = 10;
-
-// After:
-const creditMultiplier = 0.05; // Example: 0.05 credits per MB
-const codebaseSizeMB = getFileSize(codebasePath);
-credits_used = creditMultiplier * codebaseSizeMB;
-
-Relevant Files: prod/celery_app.py
-
-- Finding: Hardcoded value:  In 'get_refactor_guide.py', there is a default refactor guide HTML that is returned if the refactoring process fails. This default message should provide more context and guidance to the user.
-Issue: A generic error message for refactoring failures does not provide helpful information to the user.
-Refactoring Approach: Improve the default refactor guide HTML to include more specific information about the failure, such as the reason for the failure and potential steps the user can take to resolve the issue.
-Example:
-// Before:
-<div class="mb-32 mt-12 border-t-2">
-<p class="mt-2">Refactor guide not available</p>
-</div>
-
-// After:
-<div class="mb-32 mt-12 border-t-2">
-<p class="mt-2">The refactoring guide could not be generated. This might be due to a timeout or an error in processing the codebase. Please try again later or contact support for assistance.</p>
-</div>
-
-Relevant Files: prod/get_refactor_guide.py
-
-- Finding: Hardcoded value: The port number in the 'start_flower.sh' script is hardcoded. This could conflict with other services running on the same port.
-Issue: Hardcoding the port number for Flower could lead to conflicts with other services.
-Refactoring Approach: Allow the port number to be configurable, either through an environment variable or a command-line argument.
-Example:
-// Before:
-celery -A celery_app flower --port=5555
-
-// After:
-FLOWER_PORT=${FLOWER_PORT:-5555}
-celery -A celery_app flower --port=${FLOWER_PORT}
-
-Relevant Files: prod/start_flower.sh
-
-- Finding: Hardcoded values:  The FastAPI server configuration in 'fast_api_server.sh' (host, port, SSL key file, SSL cert file) is hardcoded.  Using environment variables would enhance flexibility and security.
-Issue: Hardcoding server configuration in the script reduces flexibility and exposes sensitive information.
-Refactoring Approach: Use environment variables to define the host, port, SSL key file path, and SSL cert file path. This allows for easy configuration changes and avoids hardcoding sensitive information in the script.
-Example:
-// Before:
-HOST="0.0.0.0"
-PORT="443"
-SSL_KEYFILE="/home/trainboxai/backend/rippo/certs/privkey.pem"
-SSL_CERTFILE="/home/trainboxai/backend/rippo/certs/fullchain.pem"
-
-// After:
-HOST=${HOST:-"0.0.0.0"}
-PORT=${PORT:-"443"}
-SSL_KEYFILE=${SSL_KEYFILE:-"/path/to/privkey.pem"}
-SSL_CERTFILE=${SSL_CERTFILE:-"/path/to/fullchain.pem"}
-
-Relevant Files: prod/fast_api_server.sh
-
-- Finding: Hardcoded value: The search API key and engine ID in 'search.py' are hardcoded, making it difficult to change them without modifying the code.
-Issue: Hardcoding API keys and engine IDs reduces flexibility and poses security risks.
-Refactoring Approach: Store the search API key and engine ID in environment variables. This allows for easy configuration changes and improves security by avoiding hardcoding sensitive information in the code.
-Example:
-// Before:
-search_api_key = "your_api_key";
-search_engine_id = "your_engine_id";
-
-// After:
-search_api_key = process.env.SEARCH_API_KEY;
-search_engine_id = process.env.SEARCH_ENGINE_ID;
-
-Relevant Files: prod/search.py
-
-- Finding: Hardcoded value: The system instruction in 'recomender.py' is lengthy and could benefit from being moved to a separate configuration file for better readability and maintainability.
-Issue: A lengthy system instruction embedded in the code reduces readability and maintainability.
-Refactoring Approach: Move the system instruction to a separate configuration file (e.g., a JSON or YAML file). Load the instruction from the file in 'recomender.py'. This improves code readability and makes it easier to update the instruction without modifying the code.
-Example:
-// Before:
-system_instruction = "Your lengthy system instruction here...";
-
-// After:
-const systemInstructionPath = "config/system_instruction.json";
-const systemInstruction = JSON.parse(fs.readFileSync(systemInstructionPath, 'utf-8'));
-
-Relevant Files: prod/recomender.py
-[2024-07-20 10:47:24,805: WARNING/ForkPoolWorker-2]  JSON files have now been rendered to html
-[2024-07-20 10:47:29,816: DEBUG/ForkPoolWorker-2] Request options: {'method': 'post', 'url': '/v1/messages', 'timeout': 600, 'files': None, 'json_data': {'max_tokens': 4096, 'messages': [{'role': 'user', 'content': [{'type': 'text', 'text': '- Finding: Hardcoded values: Absolute file paths are used throughout the project for accessing files and directories.  This limits portability and could cause issues when deploying to different environments.\nIssue: Hardcoded file paths reduce the application\'s portability and make it difficult to deploy to different environments.\nRefactoring Approach: Replace absolute file paths with relative paths or use environment variables to define file locations. This allows for greater flexibility and easier configuration for different environments.\nExample:\n// Before:\nconst filePath = "/home/trainboxai/backend/rippo/reports/code_audit.json";\n\n// After:\nconst reportsDir = process.env.REPORTS_DIR || "reports";\nconst filePath = `${reportsDir}/code_audit.json`;\n\nRelevant Files: prod/commands.txt, prod/manage_storage.py, prod/reporter.py, prod/update_html_report.py, prod/search.py, prod/recomender.py, prod/clean_up_report_files.py, prod/check_md_file_size.py, prod/generic_tests.py, prod/event_logger.py, prod/update_report_status.py, prod/celery_app.py, prod/flattener.py, prod/clearlogs.sh\n\n- Finding: Hardcoded value: In \'celery_app.py\', the credits used for a report are hardcoded to 10. This should be calculated dynamically based on actual usage or resource consumption.\nIssue: Hardcoding the credits used for a report limits flexibility and accuracy in billing.\nRefactoring Approach: Implement a mechanism to calculate credits dynamically based on factors like the size of the codebase, the number of dependencies analyzed, or the time taken to generate the report.\nExample:\n// Before:\ncredits_used = 10;\n\n// After:\nconst creditMultiplier = 0.05; // Example: 0.05 credits per MB\nconst codebaseSizeMB = getFileSize(codebasePath);\ncredits_used = creditMultiplier * codebaseSizeMB;\n\nRelevant Files: prod/celery_app.py\n\n- Finding: Hardcoded value:  In \'get_refactor_guide.py\', there is a default refactor guide HTML that is returned if the refactoring process fails. This default message should provide more context and guidance to the user.\nIssue: A generic error message for refactoring failures does not provide helpful information to the user.\nRefactoring Approach: Improve the default refactor guide HTML to include more specific information about the failure, such as the reason for the failure and potential steps the user can take to resolve the issue.\nExample:\n// Before:\n<div class="mb-32 mt-12 border-t-2">\n<p class="mt-2">Refactor guide not available</p>\n</div>\n\n// After:\n<div class="mb-32 mt-12 border-t-2">\n<p class="mt-2">The refactoring guide could not be generated. This might be due to a timeout or an error in processing the codebase. Please try again later or contact support for assistance.</p>\n</div>\n\nRelevant Files: prod/get_refactor_guide.py\n\n- Finding: Hardcoded value: The port number in the \'start_flower.sh\' script is hardcoded. This could conflict with other services running on the same port.\nIssue: Hardcoding the port number for Flower could lead to conflicts with other services.\nRefactoring Approach: Allow the port number to be configurable, either through an environment variable or a command-line argument.\nExample:\n// Before:\ncelery -A celery_app flower --port=5555\n\n// After:\nFLOWER_PORT=${FLOWER_PORT:-5555}\ncelery -A celery_app flower --port=${FLOWER_PORT}\n\nRelevant Files: prod/start_flower.sh\n\n- Finding: Hardcoded values:  The FastAPI server configuration in \'fast_api_server.sh\' (host, port, SSL key file, SSL cert file) is hardcoded.  Using environment variables would enhance flexibility and security.\nIssue: Hardcoding server configuration in the script reduces flexibility and exposes sensitive information.\nRefactoring Approach: Use environment variables to define the host, port, SSL key file path, and SSL cert file path. This allows for easy configuration changes and avoids hardcoding sensitive information in the script.\nExample:\n// Before:\nHOST="0.0.0.0"\nPORT="443"\nSSL_KEYFILE="/home/trainboxai/backend/rippo/certs/privkey.pem"\nSSL_CERTFILE="/home/trainboxai/backend/rippo/certs/fullchain.pem"\n\n// After:\nHOST=${HOST:-"0.0.0.0"}\nPORT=${PORT:-"443"}\nSSL_KEYFILE=${SSL_KEYFILE:-"/path/to/privkey.pem"}\nSSL_CERTFILE=${SSL_CERTFILE:-"/path/to/fullchain.pem"}\n\nRelevant Files: prod/fast_api_server.sh\n\n- Finding: Hardcoded value: The search API key and engine ID in \'search.py\' are hardcoded, making it difficult to change them without modifying the code.\nIssue: Hardcoding API keys and engine IDs reduces flexibility and poses security risks.\nRefactoring Approach: Store the search API key and engine ID in environment variables. This allows for easy configuration changes and improves security by avoiding hardcoding sensitive information in the code.\nExample:\n// Before:\nsearch_api_key = "your_api_key";\nsearch_engine_id = "your_engine_id";\n\n// After:\nsearch_api_key = process.env.SEARCH_API_KEY;\nsearch_engine_id = process.env.SEARCH_ENGINE_ID;\n\nRelevant Files: prod/search.py\n\n- Finding: Hardcoded value: The system instruction in \'recomender.py\' is lengthy and could benefit from being moved to a separate configuration file for better readability and maintainability.\nIssue: A lengthy system instruction embedded in the code reduces readability and maintainability.\nRefactoring Approach: Move the system instruction to a separate configuration file (e.g., a JSON or YAML file). Load the instruction from the file in \'recomender.py\'. This improves code readability and makes it easier to update the instruction without modifying the code.\nExample:\n// Before:\nsystem_instruction = "Your lengthy system instruction here...";\n\n// After:\nconst systemInstructionPath = "config/system_instruction.json";\nconst systemInstruction = JSON.parse(fs.readFileSync(systemInstructionPath, \'utf-8\'));\n\nRelevant Files: prod/recomender.py\n'}]}], 'model': 'claude-3-5-sonnet-20240620', 'system': 'You will be provided with text from a markdown file and your task is to convert this text into a blog/guide in HTML. However, do not add any information that is not in the original file.\n\nSTYLING RULES:\n- You must use Tailwind CSS classes and the only colours allowed are white and any shade of gray.\n- The main or highest most DIV must have the following classes: <div class="bg-white p-4 rounded-md shadow-md">\n- Only the top level header must be "text-xl" the rest of the text and sub-headers need no special font size\n- All headers and sub headers must be "text-gray-900"\n- All paragraphs must have class "<p class="text-gray-700 mb-2">"\n- All sub-headers must have class "<h3 class="font-bold text-gray-900 mb-2">"\n- All code must be wrapped around in a <code> element\n- Each topic or Finding must be separated with a top border line e.g.: <h3 class="border-t font-bold text-gray-900 mb-2">Finding:</h3>\n\nHere is a very short example:\nPROVIDED MARKDOWN TEXT:\n## Refactoring Plan\n\n**Finding:** Code duplication: The header and navigation components are duplicated in \'pages/index.vue\' and \'pages/about_me.vue\'. This could be refactored into a shared layout component for better maintainability.\n**Issue:** Increased maintenance effort and potential for inconsistencies between pages.\n**Refactoring Approach:**\n1. Create a new layout component, e.g., `layouts/default.vue`.\n2. Move the duplicated header and navigation code from `pages/index.vue` and `pages/about_me.vue` into `layouts/default.vue`.\n3. Replace the duplicated code in both pages with `<NuxtLayout>` component.\n\n\n\nHTML GENERATED:\n            <div class="bg-white p-4 rounded-md shadow-md">\n              <h2 class="text-2xl font-bold text-gray-900 mb-4">\n                Refactoring Plan\n              </h2>\n              <h3 class="border-t font-bold text-gray-900 mb-2">Finding:</h3>\n              <p class="text-gray-700 mb-8">\n                Code duplication: The header and navigation components are\n                duplicated in \'pages/index.vue\' and \'pages/about_me.vue\'. This\n                could be refactored into a shared layout component for better\n                maintainability.\n              </p>\n              <h3 class="font-bold text-gray-900 mb-2">Issue:</h3>\n              <p class="text-gray-700 mb-8">\n                Increased maintenance effort and potential for inconsistencies\n                between pages.\n              </p>\n              <h3 class="font-bold text-gray-900 mb-2">\n                Refactoring Approach:\n              </h3>\n              <ol class="list-decimal list-inside text-gray-700 mb-8">\n                <li>\n                  Create a new layout component, e.g.,\n                  <code>layouts/default.vue</code>.\n                </li>\n                <li>\n                  Move the duplicated header and navigation code from\n                  <code>pages/index.vue</code> and\n                  <code>pages/about_me.vue</code> into\n                  <code>layouts/default.vue</code>.\n                </li>\n                <li>\n                  Replace the duplicated code in both pages with\n                  <code>&lt;NuxtLayout&gt;</code> component.\n                </li>\n              </ol>\n  </div>\n\n\nYou must return only the pure html with no explanation or commentary.', 'temperature': 0.1}}
-[2024-07-20 10:47:29,835: DEBUG/ForkPoolWorker-2] Sending HTTP Request: POST https://api.anthropic.com/v1/messages
-[2024-07-20 10:47:29,836: DEBUG/ForkPoolWorker-2] connect_tcp.started host='api.anthropic.com' port=443 local_address=None timeout=600 socket_options=None
-[2024-07-20 10:47:29,878: DEBUG/ForkPoolWorker-2] connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x7c90a34fb3d0>
-[2024-07-20 10:47:29,878: DEBUG/ForkPoolWorker-2] start_tls.started ssl_context=<ssl.SSLContext object at 0x7c90a37362c0> server_hostname='api.anthropic.com' timeout=600
-[2024-07-20 10:47:29,897: DEBUG/ForkPoolWorker-2] start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x7c90a34fb670>
-[2024-07-20 10:47:29,897: DEBUG/ForkPoolWorker-2] send_request_headers.started request=<Request [b'POST']>
-[2024-07-20 10:47:29,898: DEBUG/ForkPoolWorker-2] send_request_headers.complete
-[2024-07-20 10:47:29,898: DEBUG/ForkPoolWorker-2] send_request_body.started request=<Request [b'POST']>
-[2024-07-20 10:47:29,899: DEBUG/ForkPoolWorker-2] send_request_body.complete
-[2024-07-20 10:47:29,899: DEBUG/ForkPoolWorker-2] receive_response_headers.started request=<Request [b'POST']>
-[2024-07-20 10:48:05,693: DEBUG/ForkPoolWorker-2] receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Sat, 20 Jul 2024 10:48:05 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'anthropic-ratelimit-requests-limit', b'50'), (b'anthropic-ratelimit-requests-remaining', b'50'), (b'anthropic-ratelimit-requests-reset', b'2024-07-20T10:48:46Z'), (b'anthropic-ratelimit-tokens-limit', b'40000'), (b'anthropic-ratelimit-tokens-remaining', b'40000'), (b'anthropic-ratelimit-tokens-reset', b'2024-07-20T10:48:05Z'), (b'request-id', b'req_01QUoQX3358bKEdRgy647EqZ'), (b'x-cloud-trace-context', b'2e3bb8d9aaefcfad1c835345f6216642'), (b'via', b'1.1 google'), (b'CF-Cache-Status', b'DYNAMIC'), (b'Server', b'cloudflare'), (b'CF-RAY', b'8a625f9bed17e24a-ORD'), (b'Content-Encoding', b'gzip')])
-[2024-07-20 10:48:05,695: INFO/ForkPoolWorker-2] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
-[2024-07-20 10:48:05,695: DEBUG/ForkPoolWorker-2] receive_response_body.started request=<Request [b'POST']>
-[2024-07-20 10:48:05,696: DEBUG/ForkPoolWorker-2] receive_response_body.complete
-[2024-07-20 10:48:05,696: DEBUG/ForkPoolWorker-2] response_closed.started
-[2024-07-20 10:48:05,696: DEBUG/ForkPoolWorker-2] response_closed.complete
-[2024-07-20 10:48:05,696: DEBUG/ForkPoolWorker-2] HTTP Response: POST https://api.anthropic.com/v1/messages "200 OK" Headers({'date': 'Sat, 20 Jul 2024 10:48:05 GMT', 'content-type': 'application/json', 'transfer-encoding': 'chunked', 'connection': 'keep-alive', 'anthropic-ratelimit-requests-limit': '50', 'anthropic-ratelimit-requests-remaining': '50', 'anthropic-ratelimit-requests-reset': '2024-07-20T10:48:46Z', 'anthropic-ratelimit-tokens-limit': '40000', 'anthropic-ratelimit-tokens-remaining': '40000', 'anthropic-ratelimit-tokens-reset': '2024-07-20T10:48:05Z', 'request-id': 'req_01QUoQX3358bKEdRgy647EqZ', 'x-cloud-trace-context': '2e3bb8d9aaefcfad1c835345f6216642', 'via': '1.1 google', 'cf-cache-status': 'DYNAMIC', 'server': 'cloudflare', 'cf-ray': '8a625f9bed17e24a-ORD', 'content-encoding': 'gzip'})
-[2024-07-20 10:48:05,702: WARNING/ForkPoolWorker-2] <div class="bg-white p-4 rounded-md shadow-md">
-  <h3 class="border-t font-bold text-gray-900 mb-2">Finding:</h3>
-  <p class="text-gray-700 mb-2">Hardcoded values: Absolute file paths are used throughout the project for accessing files and directories. This limits portability and could cause issues when deploying to different environments.</p>
-
-  <h3 class="font-bold text-gray-900 mb-2">Issue:</h3>
-  <p class="text-gray-700 mb-2">Hardcoded file paths reduce the application's portability and make it difficult to deploy to different environments.</p>
-
-  <h3 class="font-bold text-gray-900 mb-2">Refactoring Approach:</h3>
-  <p class="text-gray-700 mb-2">Replace absolute file paths with relative paths or use environment variables to define file locations. This allows for greater flexibility and easier configuration for different environments.</p>
-
-  <h3 class="font-bold text-gray-900 mb-2">Example:</h3>
-  <p class="text-gray-700 mb-2">// Before:</p>
-  <code>const filePath = "/home/trainboxai/backend/rippo/reports/code_audit.json";</code>
-
-  <p class="text-gray-700 mb-2">// After:</p>
-  <code>const reportsDir = process.env.REPORTS_DIR || "reports";<br>
-  const filePath = `${reportsDir}/code_audit.json`;</code>
-
-  <h3 class="font-bold text-gray-900 mb-2">Relevant Files:</h3>
-  <p class="text-gray-700 mb-2">prod/commands.txt, prod/manage_storage.py, prod/reporter.py, prod/update_html_report.py, prod/search.py, prod/recomender.py, prod/clean_up_report_files.py, prod/check_md_file_size.py, prod/generic_tests.py, prod/event_logger.py, prod/update_report_status.py, prod/celery_app.py, prod/flattener.py, prod/clearlogs.sh</p>
-
-  <h3 class="border-t font-bold text-gray-900 mb-2">Finding:</h3>
-  <p class="text-gray-700 mb-2">Hardcoded value: In 'celery_app.py', the credits used for a report are hardcoded to 10. This should be calculated dynamically based on actual usage or resource consumption.</p>
-
-  <h3 class="font-bold text-gray-900 mb-2">Issue:</h3>
-  <p class="text-gray-700 mb-2">Hardcoding the credits used for a report limits flexibility and accuracy in billing.</p>
-
-  <h3 class="font-bold text-gray-900 mb-2">Refactoring Approach:</h3>
-  <p class="text-gray-700 mb-2">Implement a mechanism to calculate credits dynamically based on factors like the size of the codebase, the number of dependencies analyzed, or the time taken to generate the report.</p>
-
-  <h3 class="font-bold text-gray-900 mb-2">Example:</h3>
-  <p class="text-gray-700 mb-2">// Before:</p>
-  <code>credits_used = 10;</code>
-
-  <p class="text-gray-700 mb-2">// After:</p>
-  <code>const creditMultiplier = 0.05; // Example: 0.05 credits per MB<br>
-  const codebaseSizeMB = getFileSize(codebasePath);<br>
-  credits_used = creditMultiplier * codebaseSizeMB;</code>
-
-  <h3 class="font-bold text-gray-900 mb-2">Relevant Files:</h3>
-  <p class="text-gray-700 mb-2">prod/celery_app.py</p>
-
-  <h3 class="border-t font-bold text-gray-900 mb-2">Finding:</h3>
-  <p class="text-gray-700 mb-2">Hardcoded value: In 'get_refactor_guide.py', there is a default refactor guide HTML that is returned if the refactoring process fails. This default message should provide more context and guidance to the user.</p>
-
-  <h3 class="font-bold text-gray-900 mb-2">Issue:</h3>
-  <p class="text-gray-700 mb-2">A generic error message for refactoring failures does not provide helpful information to the user.</p>
-
-  <h3 class="font-bold text-gray-900 mb-2">Refactoring Approach:</h3>
-  <p class="text-gray-700 mb-2">Improve the default refactor guide HTML to include more specific information about the failure, such as the reason for the failure and potential steps the user can take to resolve the issue.</p>
-
-  <h3 class="font-bold text-gray-900 mb-2">Example:</h3>
-  <p class="text-gray-700 mb-2">// Before:</p>
-  <code>&lt;div class="mb-32 mt-12 border-t-2"&gt;<br>
-  &lt;p class="mt-2"&gt;Refactor guide not available&lt;/p&gt;<br>
-  &lt;/div&gt;</code>
-
-  <p class="text-gray-700 mb-2">// After:</p>
-  <code>&lt;div class="mb-32 mt-12 border-t-2"&gt;<br>
-  &lt;p class="mt-2"&gt;The refactoring guide could not be generated. This might be due to a timeout or an error in processing the codebase. Please try again later or contact support for assistance.&lt;/p&gt;<br>
-  &lt;/div&gt;</code>
-
-  <h3 class="font-bold text-gray-900 mb-2">Relevant Files:</h3>
-  <p class="text-gray-700 mb-2">prod/get_refactor_guide.py</p>
-
-  <h3 class="border-t font-bold text-gray-900 mb-2">Finding:</h3>
-  <p class="text-gray-700 mb-2">Hardcoded value: The port number in the 'start_flower.sh' script is hardcoded. This could conflict with other services running on the same port.</p>
-
-  <h3 class="font-bold text-gray-900 mb-2">Issue:</h3>
-  <p class="text-gray-700 mb-2">Hardcoding the port number for Flower could lead to conflicts with other services.</p>
-
-  <h3 class="font-bold text-gray-900 mb-2">Refactoring Approach:</h3>
-  <p class="text-gray-700 mb-2">Allow the port number to be configurable, either through an environment variable or a command-line argument.</p>
-
-  <h3 class="font-bold text-gray-900 mb-2">Example:</h3>
-  <p class="text-gray-700 mb-2">// Before:</p>
-  <code>celery -A celery_app flower --port=5555</code>
-
-  <p class="text-gray-700 mb-2">// After:</p>
-  <code>FLOWER_PORT=${FLOWER_PORT:-5555}<br>
-  celery -A celery_app flower --port=${FLOWER_PORT}</code>
-
-  <h3 class="font-bold text-gray-900 mb-2">Relevant Files:</h3>
-  <p class="text-gray-700 mb-2">prod/start_flower.sh</p>
-
-  <h3 class="border-t font-bold text-gray-900 mb-2">Finding:</h3>
-  <p class="text-gray-700 mb-2">Hardcoded values: The FastAPI server configuration in 'fast_api_server.sh' (host, port, SSL key file, SSL cert file) is hardcoded. Using environment variables would enhance flexibility and security.</p>
-
-  <h3 class="font-bold text-gray-900 mb-2">Issue:</h3>
-  <p class="text-gray-700 mb-2">Hardcoding server configuration in the script reduces flexibility and exposes sensitive information.</p>
-
-  <h3 class="font-bold text-gray-900 mb-2">Refactoring Approach:</h3>
-  <p class="text-gray-700 mb-2">Use environment variables to define the host, port, SSL key file path, and SSL cert file path. This allows for easy configuration changes and avoids hardcoding sensitive information in the script.</p>
-
-  <h3 class="font-bold text-gray-900 mb-2">Example:</h3>
-  <p class="text-gray-700 mb-2">// Before:</p>
-  <code>HOST="0.0.0.0"<br>
-  PORT="443"<br>
-  SSL_KEYFILE="/home/trainboxai/backend/rippo/certs/privkey.pem"<br>
-  SSL_CERTFILE="/home/trainboxai/backend/rippo/certs/fullchain.pem"</code>
-
-  <p class="text-gray-700 mb-2">// After:</p>
-  <code>HOST=${HOST:-"0.0.0.0"}<br>
-  PORT=${PORT:-"443"}<br>
-  SSL_KEYFILE=${SSL_KEYFILE:-"/path/to/privkey.pem"}<br>
-  SSL_CERTFILE=${SSL_CERTFILE:-"/path/to/fullchain.pem"}</code>
-
-  <h3 class="font-bold text-gray-900 mb-2">Relevant Files:</h3>
-  <p class="text-gray-700 mb-2">prod/fast_api_server.sh</p>
-
-  <h3 class="border-t font-bold text-gray-900 mb-2">Finding:</h3>
-  <p class="text-gray-700 mb-2">Hardcoded value: The search API key and engine ID in 'search.py' are hardcoded, making it difficult to change them without modifying the code.</p>
-
-  <h3 class="font-bold text-gray-900 mb-2">Issue:</h3>
-  <p class="text-gray-700 mb-2">Hardcoding API keys and engine IDs reduces flexibility and poses security risks.</p>
-
-  <h3 class="font-bold text-gray-900 mb-2">Refactoring Approach:</h3>
-  <p class="text-gray-700 mb-2">Store the search API key and engine ID in environment variables. This allows for easy configuration changes and improves security by avoiding hardcoding sensitive information in the code.</p>
-
-  <h3 class="font-bold text-gray-900 mb-2">Example:</h3>
-  <p class="text-gray-700 mb-2">// Before:</p>
-  <code>search_api_key = "your_api_key";<br>
-  search_engine_id = "your_engine_id";</code>
-
-  <p class="text-gray-700 mb-2">// After:</p>
-  <code>search_api_key = process.env.SEARCH_API_KEY;<br>
-  search_engine_id = process.env.SEARCH_ENGINE_ID;</code>
-
-  <h3 class="font-bold text-gray-900 mb-2">Relevant Files:</h3>
-  <p class="text-gray-700 mb-2">prod/search.py</p>
-
-  <h3 class="border-t font-bold text-gray-900 mb-2">Finding:</h3>
-  <p class="text-gray-700 mb-2">Hardcoded value: The system instruction in 'recomender.py' is lengthy and could benefit from being moved to a separate configuration file for better readability and maintainability.</p>
-
-  <h3 class="font-bold text-gray-900 mb-2">Issue:</h3>
-  <p class="text-gray-700 mb-2">A lengthy system instruction embedded in the code reduces readability and maintainability.</p>
-
-  <h3 class="font-bold text-gray-900 mb-2">Refactoring Approach:</h3>
-  <p class="text-gray-700 mb-2">Move the system instruction to a separate configuration file (e.g., a JSON or YAML file). Load the instruction from the file in 'recomender.py'. This improves code readability and makes it easier to update the instruction without modifying the code.</p>
-
-  <h3 class="font-bold text-gray-900 mb-2">Example:</h3>
-  <p class="text-gray-700 mb-2">// Before:</p>
-  <code>system_instruction = "Your lengthy system instruction here...";</code>
-
-  <p class="text-gray-700 mb-2">// After:</p>
-  <code>const systemInstructionPath = "config/system_instruction.json";<br>
-  const systemInstruction = JSON.parse(fs.readFileSync(systemInstructionPath, 'utf-8'));</code>
-
-  <h3 class="font-bold text-gray-900 mb-2">Relevant Files:</h3>
-  <p class="text-gray-700 mb-2">prod/recomender.py</p>
-</div>
-[2024-07-20 10:48:05,717: DEBUG/ForkPoolWorker-2] Making request: POST https://oauth2.googleapis.com/token
-[2024-07-20 10:48:05,719: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): oauth2.googleapis.com:443
-[2024-07-20 10:48:05,796: DEBUG/ForkPoolWorker-2] https://oauth2.googleapis.com:443 "POST /token HTTP/1.1" 200 None
-[2024-07-20 10:48:05,936: WARNING/ForkPoolWorker-2] Uploading HTML to:
-[2024-07-20 10:48:05,936: WARNING/ForkPoolWorker-2]  
-[2024-07-20 10:48:05,936: WARNING/ForkPoolWorker-2] projects/TFUaoW4iBPUe297vr3vk36Mvp2p2/trainboxai:rippo/IJHjm-
-[2024-07-20 10:48:05,939: DEBUG/ForkPoolWorker-2] Resetting dropped connection: storage.googleapis.com
-[2024-07-20 10:48:06,058: DEBUG/ForkPoolWorker-2] https://storage.googleapis.com:443 "POST /upload/storage/v1/b/rippo-777.appspot.com/o?uploadType=resumable HTTP/1.1" 200 0
-[2024-07-20 10:48:06,227: DEBUG/ForkPoolWorker-2] https://storage.googleapis.com:443 "PUT /upload/storage/v1/b/rippo-777.appspot.com/o?uploadType=resumable&upload_id=ACJd0Nol2kgDS0bQCo46mSufRFeAd3L2sV1Mx7iPxD4hQhScbIKl9168j4sz1lNe-sGgyFfNbnb0c0vBAYWxx17NwomX8a2VYStUtKL9uzaxlhJJ HTTP/1.1" 200 1035
-[2024-07-20 10:48:06,228: WARNING/ForkPoolWorker-2] Uploaded IJHjm-.html to projects/TFUaoW4iBPUe297vr3vk36Mvp2p2/trainboxai:rippo/IJHjm-/IJHjm-.html
-[2024-07-20 10:48:06,228: WARNING/ForkPoolWorker-2] Updating report status
-[2024-07-20 10:48:06,337: WARNING/ForkPoolWorker-2] Project status updated to Completed for:
-[2024-07-20 10:48:06,337: WARNING/ForkPoolWorker-2]  
-[2024-07-20 10:48:06,337: WARNING/ForkPoolWorker-2] IJHjm-
-[2024-07-20 10:48:06,338: WARNING/ForkPoolWorker-2] Report status updated
-[2024-07-20 10:48:06,338: WARNING/ForkPoolWorker-2] Updating dashboard status
-[2024-07-20 10:48:06,338: WARNING/ForkPoolWorker-2] Checking Dashboard Stats
-[2024-07-20 10:48:06,338: WARNING/ForkPoolWorker-2] Document path: users/TFUaoW4iBPUe297vr3vk36Mvp2p2/projects/trainboxai:rippo
-[2024-07-20 10:48:06,381: WARNING/ForkPoolWorker-2] Project trainboxai:rippo found
-[2024-07-20 10:48:06,503: WARNING/ForkPoolWorker-2] Total reports executed so far: 2
-[2024-07-20 10:48:06,556: WARNING/ForkPoolWorker-2] Dashboard status updated
-[2024-07-20 10:48:06,556: WARNING/ForkPoolWorker-2] Updating credits and usage
-[2024-07-20 10:48:06,693: WARNING/ForkPoolWorker-2] Usage data added for user TFUaoW4iBPUe297vr3vk36Mvp2p2: {'projectName': 'trainboxai:rippo', 'reportID': 'IJHjm-', 'date': datetime.datetime(2024, 7, 20, 10, 48, 6, 588593), 'creditsUsed': 10}
-[2024-07-20 10:48:06,694: WARNING/ForkPoolWorker-2] User TFUaoW4iBPUe297vr3vk36Mvp2p2 credits updated to 470
-[2024-07-20 10:48:06,694: WARNING/ForkPoolWorker-2] Credits and usage done
-[2024-07-20 10:48:06,694: WARNING/ForkPoolWorker-2] Deleted: /home/trainboxai/backend/rippo/reports/code_audit_IJHjm-.json
-[2024-07-20 10:48:06,694: WARNING/ForkPoolWorker-2] Deleted: /home/trainboxai/backend/rippo/reports/vuln_report_IJHjm-.json
-[2024-07-20 10:48:06,694: WARNING/ForkPoolWorker-2] Deleted: /home/trainboxai/backend/rippo/reports/quality_report_IJHjm-.json
-[2024-07-20 10:48:06,695: WARNING/ForkPoolWorker-2] Deleted: /home/trainboxai/backend/rippo/outputs/final_IJHjm-.md
-[2024-07-20 10:48:06,695: WARNING/ForkPoolWorker-2] Deleted: /home/trainboxai/backend/rippo/outputs/vuln_search_results_IJHjm-.json
-[2024-07-20 10:48:06,695: WARNING/ForkPoolWorker-2] Deleted: /home/trainboxai/backend/rippo/reports/refactor_IJHjm-.html
-[2024-07-20 10:48:06,695: WARNING/ForkPoolWorker-2] Deleted: /home/trainboxai/backend/rippo/reports/report_IJHjm-.html
-[2024-07-20 10:48:06,695: WARNING/ForkPoolWorker-2] Deleted: /home/trainboxai/backend/rippo/reports/refactor_guide_IJHjm-.md
-[2024-07-20 10:48:06,695: WARNING/ForkPoolWorker-2] Deleted: /home/trainboxai/backend/rippo/reports/IJHjm-.html
-[2024-07-20 10:48:06,696: INFO/ForkPoolWorker-2] Task celery_app.generate_report[bcab662d-9c60-4334-b51c-5d3906632a38] succeeded in 398.3845006659999s: None
-[2024-07-20 11:59:53,302: INFO/MainProcess] Task celery_app.generate_report[9a69db5a-07b7-43d4-b607-5a97337c8ff6] received
-[2024-07-20 11:59:53,302: DEBUG/MainProcess] TaskPool: Apply <function fast_trace_task at 0x7c90a7bc31c0> (args:('celery_app.generate_report', '9a69db5a-07b7-43d4-b607-5a97337c8ff6', {'lang': 'py', 'task': 'celery_app.generate_report', 'id': '9a69db5a-07b7-43d4-b607-5a97337c8ff6', 'shadow': None, 'eta': None, 'expires': None, 'group': None, 'group_index': None, 'retries': 0, 'timelimit': [None, None], 'root_id': '9a69db5a-07b7-43d4-b607-5a97337c8ff6', 'parent_id': None, 'argsrepr': "('https://github.com/trainboxai/rippo-frontend.git', 'trainboxai:rippo-frontend', 'ZsdnUd', 'TFUaoW4iBPUe297vr3vk36Mvp2p2', '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')", 'kwargsrepr': '{}', 'origin': 'gen3228@rippo-backend-vm', 'ignore_result': False, 'replaced_task_nesting': 0, 'stamped_headers': None, 'stamps': {}, 'properties': {'correlation_id': '9a69db5a-07b7-43d4-b607-5a97337c8ff6', 'reply_to': 'a4e902f4-4339-39f1-b0c1-89a4d1c20bdb', 'delivery_mode': 2, 'delivery_info': {'exchange': '', 'routing_key': 'celery'}, 'priority': 0, 'body_encoding': 'base64', 'delivery_tag': '1be31427-d0c2-4821-a7da-85e2224ba46a'}, 'reply_to':... kwargs:{})
-[2024-07-20 11:59:53,304: WARNING/ForkPoolWorker-2] [32mGet flattened file and extract contents . . .[0m
-[2024-07-20 11:59:53,304: WARNING/ForkPoolWorker-2] [35mGathering search results . . .[0m
-[2024-07-20 11:59:53,305: DEBUG/ForkPoolWorker-2] Popen(['git', 'clone', '-v', '--', 'https://*****@github.com/trainboxai/rippo-frontend.git', '/tmp/tmpxxbi5n78'], cwd=/home/trainboxai/backend/rippo/prod, stdin=None, shell=False, universal_newlines=True)
-[2024-07-20 11:59:53,843: DEBUG/ForkPoolWorker-2] Cmd(['git', 'clone', '-v', '--', 'https://*****@github.com/trainboxai/rippo-frontend.git', '/tmp/tmpxxbi5n78'])'s unused stdout: 
-[2024-07-20 11:59:53,852: WARNING/ForkPoolWorker-2] [32mAnalyse and extract list of dependancies . . . .[0m
-[2024-07-20 11:59:59,231: WARNING/ForkPoolWorker-2] {"dependancy","version"
-"@headlessui/vue","^1.7.22"
-"@heroicons/vue","^2.1.3"
-"@pinia/nuxt","^0.5.1"
-"@tailwindcss/forms","^0.5.7"
-"autoprefixer","^10.4.19"
-"firebase","^10.12.0"
-"nuxt","^3.11.2"
-"postcss","^8.4.38"
-"tailwindcss","^3.4.3"
-"vue","^3.4.27"
-"vue-router","^4.3.2"
-"firebase/app","unknown"
-"firebase/auth","unknown"
-"firebase/firestore","unknown"
-"pinia","unknown"
-[2024-07-20 11:59:59,231: WARNING/ForkPoolWorker-2] {"dependancy","version"
-"@headlessui/vue","^1.7.22"
-"@heroicons/vue","^2.1.3"
-"@pinia/nuxt","^0.5.1"
-"@tailwindcss/forms","^0.5.7"
-"autoprefixer","^10.4.19"
-"firebase","^10.12.0"
-"nuxt","^3.11.2"
-"postcss","^8.4.38"
-"tailwindcss","^3.4.3"
-"vue","^3.4.27"
-"vue-router","^4.3.2"
-"firebase/app","unknown"
-"firebase/auth","unknown"
-"firebase/firestore","unknown"
-"pinia","unknown"
-[2024-07-20 12:00:04,238: WARNING/ForkPoolWorker-2] [32mStarting searching for known Vulnerabilities . . . . .[0m
-[2024-07-20 12:00:04,240: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.googleapis.com:443
-[2024-07-20 12:00:04,475: DEBUG/ForkPoolWorker-2] https://www.googleapis.com:443 "GET /customsearch/v1?key=AIzaSyAQjSPQoMFEWJGCGVjQsg1IMp328NNPy_c&cx=f2954b6edb52b40c7&q=@headlessui/vue%20%5E1.7.22&num=10&start=1&fields=items(link,snippet,htmlFormattedUrl) HTTP/1.1" 200 None
-[2024-07-20 12:00:04,477: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.googleapis.com:443
-[2024-07-20 12:00:04,718: DEBUG/ForkPoolWorker-2] https://www.googleapis.com:443 "GET /customsearch/v1?key=AIzaSyAQjSPQoMFEWJGCGVjQsg1IMp328NNPy_c&cx=f2954b6edb52b40c7&q=@heroicons/vue%20%5E2.1.3&num=10&start=1&fields=items(link,snippet,htmlFormattedUrl) HTTP/1.1" 200 None
-[2024-07-20 12:00:04,721: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.googleapis.com:443
-[2024-07-20 12:00:04,955: DEBUG/ForkPoolWorker-2] https://www.googleapis.com:443 "GET /customsearch/v1?key=AIzaSyAQjSPQoMFEWJGCGVjQsg1IMp328NNPy_c&cx=f2954b6edb52b40c7&q=@pinia/nuxt%20%5E0.5.1&num=10&start=1&fields=items(link,snippet,htmlFormattedUrl) HTTP/1.1" 200 None
-[2024-07-20 12:00:04,958: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
-[2024-07-20 12:00:11,683: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /package/npm/%40pinia%2Fnuxt HTTP/1.1" 200 None
-[2024-07-20 12:00:11,773: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.googleapis.com:443
-[2024-07-20 12:00:14,483: DEBUG/ForkPoolWorker-2] https://www.googleapis.com:443 "GET /customsearch/v1?key=AIzaSyAQjSPQoMFEWJGCGVjQsg1IMp328NNPy_c&cx=f2954b6edb52b40c7&q=@tailwindcss/forms%20%5E0.5.7&num=10&start=1&fields=items(link,snippet,htmlFormattedUrl) HTTP/1.1" 200 None
-[2024-07-20 12:00:14,486: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
-[2024-07-20 12:00:17,303: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /package/npm/%40tailwindcss%2Fforms/0.1.4 HTTP/1.1" 200 17660
-[2024-07-20 12:00:17,327: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.googleapis.com:443
-[2024-07-20 12:00:17,740: DEBUG/ForkPoolWorker-2] https://www.googleapis.com:443 "GET /customsearch/v1?key=AIzaSyAQjSPQoMFEWJGCGVjQsg1IMp328NNPy_c&cx=f2954b6edb52b40c7&q=autoprefixer%20%5E10.4.19&num=10&start=1&fields=items(link,snippet,htmlFormattedUrl) HTTP/1.1" 200 None
-[2024-07-20 12:00:17,743: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
-[2024-07-20 12:00:17,968: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /package/npm/autoprefixer/10.4.15 HTTP/1.1" 200 None
-[2024-07-20 12:00:18,004: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.googleapis.com:443
-[2024-07-20 12:00:18,457: DEBUG/ForkPoolWorker-2] https://www.googleapis.com:443 "GET /customsearch/v1?key=AIzaSyAQjSPQoMFEWJGCGVjQsg1IMp328NNPy_c&cx=f2954b6edb52b40c7&q=firebase%20%5E10.12.0&num=10&start=1&fields=items(link,snippet,htmlFormattedUrl) HTTP/1.1" 200 None
-[2024-07-20 12:00:18,460: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
-[2024-07-20 12:00:18,795: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /package/npm/firebase HTTP/1.1" 200 None
-[2024-07-20 12:00:18,971: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
-[2024-07-20 12:00:19,220: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /package/npm/firebase/9.14.0-canary.37dd6f6f4 HTTP/1.1" 200 None
-[2024-07-20 12:00:19,269: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.cvedetails.com:443
-[2024-07-20 12:00:19,414: DEBUG/ForkPoolWorker-2] https://www.cvedetails.com:443 "GET /vulnerability-list/cvssscoremin-6/cvssscoremax-6.99/vulnerabilities.html HTTP/1.1" 403 None
-[2024-07-20 12:00:19,421: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.googleapis.com:443
-[2024-07-20 12:00:19,660: DEBUG/ForkPoolWorker-2] https://www.googleapis.com:443 "GET /customsearch/v1?key=AIzaSyAQjSPQoMFEWJGCGVjQsg1IMp328NNPy_c&cx=f2954b6edb52b40c7&q=nuxt%20%5E3.11.2&num=10&start=1&fields=items(link,snippet,htmlFormattedUrl) HTTP/1.1" 200 None
-[2024-07-20 12:00:19,663: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
-[2024-07-20 12:00:19,889: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /package/npm/nuxt HTTP/1.1" 200 None
-[2024-07-20 12:00:20,070: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
-[2024-07-20 12:00:20,941: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /package/npm/%40nuxt%2Fschema/3.8.2 HTTP/1.1" 200 17534
-[2024-07-20 12:00:20,965: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
-[2024-07-20 12:00:21,197: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /package/npm/nuxt/3.4.1 HTTP/1.1" 200 19839
-[2024-07-20 12:00:21,227: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.exploit-db.com:443
-[2024-07-20 12:00:21,557: DEBUG/ForkPoolWorker-2] https://www.exploit-db.com:443 "GET /exploits/45048 HTTP/1.1" 403 None
-[2024-07-20 12:00:21,568: DEBUG/ForkPoolWorker-2] Encoding detection: ascii is most likely the one.
-[2024-07-20 12:00:21,574: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.googleapis.com:443
-[2024-07-20 12:00:22,022: DEBUG/ForkPoolWorker-2] https://www.googleapis.com:443 "GET /customsearch/v1?key=AIzaSyAQjSPQoMFEWJGCGVjQsg1IMp328NNPy_c&cx=f2954b6edb52b40c7&q=postcss%20%5E8.4.38&num=10&start=1&fields=items(link,snippet,htmlFormattedUrl) HTTP/1.1" 200 None
-[2024-07-20 12:00:22,025: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
-[2024-07-20 12:00:22,324: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /package/npm/postcss HTTP/1.1" 200 None
-[2024-07-20 12:00:22,614: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
-[2024-07-20 12:00:22,798: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /package/npm/postcss/8.4.21 HTTP/1.1" 200 None
-[2024-07-20 12:00:22,829: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
-[2024-07-20 12:00:23,023: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /package/npm/postcss/8.4.33 HTTP/1.1" 200 18004
-[2024-07-20 12:00:23,047: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
-[2024-07-20 12:00:23,265: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /package/npm/postcss/8.2.8 HTTP/1.1" 200 None
-[2024-07-20 12:00:23,299: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.googleapis.com:443
-[2024-07-20 12:00:23,562: DEBUG/ForkPoolWorker-2] https://www.googleapis.com:443 "GET /customsearch/v1?key=AIzaSyAQjSPQoMFEWJGCGVjQsg1IMp328NNPy_c&cx=f2954b6edb52b40c7&q=tailwindcss%20%5E3.4.3&num=10&start=1&fields=items(link,snippet,htmlFormattedUrl) HTTP/1.1" 200 None
-[2024-07-20 12:00:23,566: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
-[2024-07-20 12:00:23,794: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /package/npm/tailwindcss/3.4.3 HTTP/1.1" 200 18065
-[2024-07-20 12:00:23,818: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.googleapis.com:443
-[2024-07-20 12:00:24,108: DEBUG/ForkPoolWorker-2] https://www.googleapis.com:443 "GET /customsearch/v1?key=AIzaSyAQjSPQoMFEWJGCGVjQsg1IMp328NNPy_c&cx=f2954b6edb52b40c7&q=vue%20%5E3.4.27&num=10&start=1&fields=items(link,snippet,htmlFormattedUrl) HTTP/1.1" 200 None
-[2024-07-20 12:00:24,112: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
-[2024-07-20 12:00:24,328: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /package/npm/vue HTTP/1.1" 200 24670
-[2024-07-20 12:00:24,511: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
-[2024-07-20 12:00:24,700: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /package/npm/vue/3.4.18 HTTP/1.1" 200 18051
-[2024-07-20 12:00:24,724: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
-[2024-07-20 12:00:24,941: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /package/npm/vue/1.0.28-csp HTTP/1.1" 200 24339
-[2024-07-20 12:00:24,974: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
-[2024-07-20 12:00:25,281: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /package/maven/org.webjars.npm%3Avue/2.6.12 HTTP/1.1" 200 17786
-[2024-07-20 12:00:25,305: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
-[2024-07-20 12:00:25,509: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /package/npm/vue/2.5.15 HTTP/1.1" 200 None
-[2024-07-20 12:00:25,548: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
-[2024-07-20 12:00:25,765: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /package/npm/vue/0.10.1 HTTP/1.1" 200 24332
-[2024-07-20 12:00:25,801: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
-[2024-07-20 12:00:26,867: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /package/npm/%40vue%2Fserver-renderer/3.1.0 HTTP/1.1" 200 None
-[2024-07-20 12:00:26,895: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
-[2024-07-20 12:00:27,881: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /package/npm/%40nuskin%2Fns-app-elements/versions?page=6 HTTP/1.1" 200 None
-[2024-07-20 12:00:28,052: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.googleapis.com:443
-[2024-07-20 12:00:28,370: DEBUG/ForkPoolWorker-2] https://www.googleapis.com:443 "GET /customsearch/v1?key=AIzaSyAQjSPQoMFEWJGCGVjQsg1IMp328NNPy_c&cx=f2954b6edb52b40c7&q=vue-router%20%5E4.3.2&num=10&start=1&fields=items(link,snippet,htmlFormattedUrl) HTTP/1.1" 200 None
-[2024-07-20 12:00:28,373: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
-[2024-07-20 12:00:28,592: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /package/npm/vue-router HTTP/1.1" 200 24186
-[2024-07-20 12:00:28,878: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.exploit-db.com:443
-[2024-07-20 12:00:29,027: DEBUG/ForkPoolWorker-2] https://www.exploit-db.com:443 "GET /exploits/42871 HTTP/1.1" 403 None
-[2024-07-20 12:00:29,032: DEBUG/ForkPoolWorker-2] Encoding detection: ascii is most likely the one.
-[2024-07-20 12:00:29,038: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.googleapis.com:443
-[2024-07-20 12:00:29,436: DEBUG/ForkPoolWorker-2] https://www.googleapis.com:443 "GET /customsearch/v1?key=AIzaSyAQjSPQoMFEWJGCGVjQsg1IMp328NNPy_c&cx=f2954b6edb52b40c7&q=firebase/app%20unknown&num=10&start=1&fields=items(link,snippet,htmlFormattedUrl) HTTP/1.1" 200 None
-[2024-07-20 12:00:29,439: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
-[2024-07-20 12:00:29,619: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /vuln/SNYK-JS-FIREBASETOOLS-6808836 HTTP/1.1" 200 23074
-[2024-07-20 12:00:29,656: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): nvd.nist.gov:443
-[2024-07-20 12:00:30,414: DEBUG/ForkPoolWorker-2] https://nvd.nist.gov:443 "GET /vuln/search/results?query=Android&search_type=all&startIndex=0 HTTP/1.1" 200 58256
-[2024-07-20 12:00:30,489: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): nvd.nist.gov:443
-[2024-07-20 12:00:32,278: DEBUG/ForkPoolWorker-2] https://nvd.nist.gov:443 "GET /vuln/search/results?cvss_v3_severity=CRITICAL&cvss_version=3&search_type=all&startIndex=8740 HTTP/1.1" 200 66579
-[2024-07-20 12:00:32,351: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.cvedetails.com:443
-[2024-07-20 12:00:32,459: DEBUG/ForkPoolWorker-2] https://www.cvedetails.com:443 "GET /vulnerability-list/published_since-2023-02-08/?page=534&cvssscoremin=6&order=5&trc=28499&sha=9cd33876dbf8b7462dd91e07729cc9a0845984bc HTTP/1.1" 403 None
-[2024-07-20 12:00:32,466: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.cvedetails.com:443
-[2024-07-20 12:00:32,574: DEBUG/ForkPoolWorker-2] https://www.cvedetails.com:443 "GET /vulnerability-list/published_since-2023-02-01/?page=547&cvssscoremin=2&order=5&trc=35775&sha=738357e7c3debb6dd2ac53d1d13783c4fd2e77fa HTTP/1.1" 403 None
-[2024-07-20 12:00:32,580: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.cvedetails.com:443
-[2024-07-20 12:00:32,687: DEBUG/ForkPoolWorker-2] https://www.cvedetails.com:443 "GET /vulnerability-list/year-2024/vulnerabilities.html?page=64&cvssscoremin=6&order=5&trc=6041&sha=17dd391f91a1dec585311a3d1c47b116f9970efe HTTP/1.1" 403 None
-[2024-07-20 12:00:32,693: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.cvedetails.com:443
-[2024-07-20 12:00:32,803: DEBUG/ForkPoolWorker-2] https://www.cvedetails.com:443 "GET /vulnerability-list/published_since-2023-02-09/?page=1455&cvssscoremin=1&order=1&trc=43112&sha=00a73560ea43f81b8c170d037b26c5c394373ecb HTTP/1.1" 403 None
-[2024-07-20 12:00:32,810: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.cvedetails.com:443
-[2024-07-20 12:00:32,916: DEBUG/ForkPoolWorker-2] https://www.cvedetails.com:443 "GET /vulnerability-list/published_since-2023-02-01/?page=526&cvssscoremin=5&order=5&trc=32378&sha=655e28f6ebb39b9b66d498cd117ac622ca1d4679 HTTP/1.1" 403 None
-[2024-07-20 12:00:32,922: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.cvedetails.com:443
-[2024-07-20 12:00:33,034: DEBUG/ForkPoolWorker-2] https://www.cvedetails.com:443 "GET /vulnerability-list/published_since-2022-10-20/?page=1481&cvssscoremin=3&order=1&trc=50797&sha=53197dbd10ff5ceb971ff82158b898e21b8d8ef8 HTTP/1.1" 403 None
-[2024-07-20 12:00:33,041: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): nvd.nist.gov:443
-[2024-07-20 12:00:34,582: DEBUG/ForkPoolWorker-2] https://nvd.nist.gov:443 "GET /vuln/search/results?search_type=all&startIndex=58520 HTTP/1.1" 200 63448
-[2024-07-20 12:00:34,653: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.googleapis.com:443
-[2024-07-20 12:00:35,034: DEBUG/ForkPoolWorker-2] https://www.googleapis.com:443 "GET /customsearch/v1?key=AIzaSyAQjSPQoMFEWJGCGVjQsg1IMp328NNPy_c&cx=f2954b6edb52b40c7&q=firebase/auth%20unknown&num=10&start=1&fields=items(link,snippet,htmlFormattedUrl) HTTP/1.1" 200 None
-[2024-07-20 12:00:35,037: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
-[2024-07-20 12:00:35,218: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /vuln/SNYK-PHP-KREAITFIREBASEPHP-72122 HTTP/1.1" 200 None
-[2024-07-20 12:00:35,265: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
-[2024-07-20 12:00:35,443: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /vuln/SNYK-PHP-FIREBASEPHPJWT-70097 HTTP/1.1" 200 None
-[2024-07-20 12:00:35,482: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.cvedetails.com:443
-[2024-07-20 12:00:35,586: DEBUG/ForkPoolWorker-2] https://www.cvedetails.com:443 "GET /vulnerability-list/year-2024/vulnerabilities.html?page=64&cvssscoremin=6&order=5&trc=6041&sha=17dd391f91a1dec585311a3d1c47b116f9970efe HTTP/1.1" 403 None
-[2024-07-20 12:00:35,593: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.cvedetails.com:443
-[2024-07-20 12:00:35,696: DEBUG/ForkPoolWorker-2] https://www.cvedetails.com:443 "GET /vulnerability-list/year-2024/vulnerabilities.html?page=71&cvssscoremin=3&order=5&trc=8917&sha=b78a289bfb0cd9e5166f62742bd1d2485cf91fa7 HTTP/1.1" 403 None
-[2024-07-20 12:00:35,702: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.cvedetails.com:443
-[2024-07-20 12:00:35,807: DEBUG/ForkPoolWorker-2] https://www.cvedetails.com:443 "GET /vulnerability-list/year-2024/vulnerabilities.html?page=27&cvssscoremax=10&order=7&trc=11647&sha=5221e8cdd33493809b1029ddc67029a3c2cba80b HTTP/1.1" 403 None
-[2024-07-20 12:00:35,814: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.cvedetails.com:443
-[2024-07-20 12:00:35,923: DEBUG/ForkPoolWorker-2] https://www.cvedetails.com:443 "GET /vulnerability-list/year-2024/month-4/April.html?page=7&cvssscoremax=5.99&order=8&trc=1941&sha=9d6e56cd84580a95424310c75401e13aeb23a7f1 HTTP/1.1" 403 None
-[2024-07-20 12:00:35,930: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.googleapis.com:443
-[2024-07-20 12:00:36,204: DEBUG/ForkPoolWorker-2] https://www.googleapis.com:443 "GET /customsearch/v1?key=AIzaSyAQjSPQoMFEWJGCGVjQsg1IMp328NNPy_c&cx=f2954b6edb52b40c7&q=firebase/firestore%20unknown&num=10&start=1&fields=items(link,snippet,htmlFormattedUrl) HTTP/1.1" 200 None
-[2024-07-20 12:00:36,207: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
-[2024-07-20 12:00:36,723: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /package/npm/firebase-security-testing HTTP/1.1" 200 None
-[2024-07-20 12:00:36,763: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.googleapis.com:443
-[2024-07-20 12:00:36,973: DEBUG/ForkPoolWorker-2] https://www.googleapis.com:443 "GET /customsearch/v1?key=AIzaSyAQjSPQoMFEWJGCGVjQsg1IMp328NNPy_c&cx=f2954b6edb52b40c7&q=pinia%20unknown&num=10&start=1&fields=items(link,snippet,htmlFormattedUrl) HTTP/1.1" 200 None
-[2024-07-20 12:00:36,977: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
-[2024-07-20 12:00:37,491: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /package/npm/feathers-pinia/0.23.1 HTTP/1.1" 200 None
-[2024-07-20 12:00:37,514: WARNING/ForkPoolWorker-2] [32mCompleted searching for known Vulnerabilities . . . . .[0m
-[2024-07-20 12:00:42,523: WARNING/ForkPoolWorker-2] [35mGetting code audit report . . . . . .[0m
-[2024-07-20 12:00:42,523: WARNING/ForkPoolWorker-2] [91mTrying code audit, attempt 1 [0m
-[2024-07-20 12:00:57,695: WARNING/ForkPoolWorker-2] [35mGetting vulnerability report . . . . . . .[0m
-[2024-07-20 12:00:57,695: WARNING/ForkPoolWorker-2] [91mTrying Vuln Report, attempt 1 [0m
-[2024-07-20 12:00:59,335: WARNING/ForkPoolWorker-2] {
-  "vulnerability_report": []
-}
-[2024-07-20 12:01:04,341: WARNING/ForkPoolWorker-2] [35mGetting quality report . . . . . . .[0m
-[2024-07-20 12:01:04,342: WARNING/ForkPoolWorker-2] [91mTrying Quality Report, attempt 1 [0m
-[2024-07-20 12:02:44,252: WARNING/ForkPoolWorker-2] ## Refactoring Plan
-
-**Finding:** The 'commit-push.sh' script includes hardcoded SSH key paths and user-specific configurations, posing potential security risks and limiting script portability.
-**Issue:** Unauthorized access if keys are compromised; Reduced script reusability across different environments or users.
-**Refactoring Approach:**
-1. **Remove hardcoded key paths:** Instead of specifying the key path directly, use the `ssh-add -K` option to add the SSH key to the agent securely, prompting the user for the passphrase if needed.
-2. **Parameterize configurations:** Use environment variables or command-line arguments to pass user-specific configurations like the remote repository URL or branch name.
-**Example:**
-```bash
-#!/bin/bash
-
-# ... (rest of the script)
-
-# Add SSH key to the agent securely
-ssh-add -K ~/.ssh/id_ed25519
-
-# Get remote repository URL and branch from environment variables
-REMOTE_REPO="${REMOTE_REPO:-git@github.com:username/repo.git}"
-BRANCH="${BRANCH:-main}"
-
-# ... (rest of the script using $REMOTE_REPO and $BRANCH)
 ```
-**Relevant Files:** commit-push.sh
+[2024-07-24 12:00:41,461: WARNING/ForkPoolWorker-2] [35mGetting quality report . . . . . . .[0m
+[2024-07-24 12:00:41,461: WARNING/ForkPoolWorker-2] [91mTrying Quality Report, attempt 1 [0m
+[2024-07-24 12:02:08,065: WARNING/ForkPoolWorker-2] Refactoring Plan
+- Finding: Hardcoded IP Address: The API endpoint URL uses a hardcoded IP address in both 'ai-writer.vue' and 'index.vue'. This hinders flexibility when deploying to different environments or if the API's IP changes.
+    - Issue: Hardcoded IP addresses reduce deployment flexibility and can cause breakage if the IP changes.
+    - Refactoring Approach:
+        1. Define an environment variable to store the API base URL.
+        2. Replace the hardcoded IP address with the environment variable.
+    - Example:
+        ```javascript
+        // Before:
+        const response = await $fetch('https://34.147.200.146:8888/translate', {
+          // ...
+        });
 
-**Finding:** Firebase API keys and configuration data are directly exposed in 'firebaseConfig.js'. This sensitive information should be stored and accessed securely.
-**Issue:** Severe security vulnerability; Potential for unauthorized access, data breaches if keys are compromised.
-**Refactoring Approach:**
-1. **Do not store API keys directly in the codebase:** Use environment variables to store sensitive Firebase configuration data.
-2. **Access environment variables securely:** Utilize a server-side environment or a secure configuration management system to store and retrieve environment variables.
-**Example:**
-```javascript
-// firebaseConfig.js
-import { initializeApp } from "firebase/app";
+        // After:
+        const apiBaseUrl = process.env.API_BASE_URL || 'https://34.147.200.146:8888'; // Provide a default if needed
+        const response = await $fetch(`${apiBaseUrl}/translate`, {
+          // ...
+        });
+        ```
+    - Relevant Files: pages/ai-writer.vue, pages/index.vue
+- Finding: Hardcoded Character Limit: The character limit (400) in 'index.vue' is hardcoded in multiple places. Consider replacing it with a constant variable for easier adjustment and better code readability.
+    - Issue: Using magic numbers for the character limit reduces code readability and maintainability.
+    - Refactoring Approach:
+        1. Define a constant variable for the character limit.
+        2. Replace the hardcoded values with the constant.
+    - Example:
+        ```javascript
+        // Before:
+        maxlength="400"
+        // ...
+        return 400 - this.sourceText.length;
 
-// Access Firebase config from environment variables
-const firebaseConfig = {
-  apiKey: process.env.FIREBASE_API_KEY,
-  authDomain: process.env.FIREBASE_AUTH_DOMAIN,
-  // ... other config values
-};
-
-const app = initializeApp(firebaseConfig);
-
-export default app;
-```
-**Relevant Files:** firebaseConfig.js
-
-**Finding:** Numerous magic numbers present in the codebase, like '25000' for repository size. Replacing these with named constants would improve readability and maintainability.
-**Refactoring Approach:**
-1. **Define named constants:** Create a dedicated file (e.g., `constants.js`) or use an existing configuration file to define meaningful constants for magic numbers.
-2. **Replace magic numbers with constants:** Update the code to use these named constants instead of raw numeric values.
-**Example:**
-```javascript
-// constants.js
-export const MAX_REPO_SIZE_BYTES = 25000;
-
-// pages/console.vue
-import { MAX_REPO_SIZE_BYTES } from "@/path/to/constants";
-
-// ...
-
-:disabled="selectedRepo && selectedRepo.Size > MAX_REPO_SIZE_BYTES"
-
-// ...
-
-<p v-if="selectedRepo && selectedRepo.Size > MAX_REPO_SIZE_BYTES">
-  Oops! This repo exceeds the maximum size of 25MB. Support for larger repositories is coming soon.
-</p>
-
-```
-**Relevant Files:** pages/console.vue, (new file: constants.js or update existing config file)
-
-**Finding:** Default user image URL is hardcoded in multiple components. Consider extracting this to a shared constant or configuration file for easier updates.
-**Refactoring Approach:**
-1. **Create a shared constant:** Define a constant for the default user image URL in a dedicated file (e.g., `constants.js`) or a suitable configuration file.
-2. **Use the constant in components:** Update all component templates to use this shared constant instead of the hardcoded URL.
-**Example:**
-```javascript
-// constants.js
-export const DEFAULT_USER_IMAGE_URL =
-  "https://firebasestorage.googleapis.com/v0/b/rippo-777.appspot.com/o/images%2Fuser-profile-default.png?alt=media&token=0552c9f3-2735-4e11-b4a3-48e6c8fb187f";
-
-// pages/console.vue (and other relevant components)
-import { DEFAULT_USER_IMAGE_URL } from "@/path/to/constants";
-
-// ...
-
-:src="userPhotoUrl || DEFAULT_USER_IMAGE_URL"
-
-```
-**Relevant Files:** pages/console.vue, pages/detailed:[report_ID].vue, pages/reports:[projectName].vue, pages/credits.vue, pages/projects.vue, (new file: constants.js or update existing config file)
-[2024-07-20 12:02:44,266: WARNING/ForkPoolWorker-2]  JSON files have now been rendered to html
-[2024-07-20 12:02:49,275: DEBUG/ForkPoolWorker-2] Request options: {'method': 'post', 'url': '/v1/messages', 'timeout': 600, 'files': None, 'json_data': {'max_tokens': 4096, 'messages': [{'role': 'user', 'content': [{'type': 'text', 'text': '## Refactoring Plan\n\n**Finding:** The \'commit-push.sh\' script includes hardcoded SSH key paths and user-specific configurations, posing potential security risks and limiting script portability.\n**Issue:** Unauthorized access if keys are compromised; Reduced script reusability across different environments or users.\n**Refactoring Approach:**\n1. **Remove hardcoded key paths:** Instead of specifying the key path directly, use the `ssh-add -K` option to add the SSH key to the agent securely, prompting the user for the passphrase if needed.\n2. **Parameterize configurations:** Use environment variables or command-line arguments to pass user-specific configurations like the remote repository URL or branch name.\n**Example:**\n```bash\n#!/bin/bash\n\n# ... (rest of the script)\n\n# Add SSH key to the agent securely\nssh-add -K ~/.ssh/id_ed25519\n\n# Get remote repository URL and branch from environment variables\nREMOTE_REPO="${REMOTE_REPO:-git@github.com:username/repo.git}"\nBRANCH="${BRANCH:-main}"\n\n# ... (rest of the script using $REMOTE_REPO and $BRANCH)\n```\n**Relevant Files:** commit-push.sh\n\n**Finding:** Firebase API keys and configuration data are directly exposed in \'firebaseConfig.js\'. This sensitive information should be stored and accessed securely.\n**Issue:** Severe security vulnerability; Potential for unauthorized access, data breaches if keys are compromised.\n**Refactoring Approach:**\n1. **Do not store API keys directly in the codebase:** Use environment variables to store sensitive Firebase configuration data.\n2. **Access environment variables securely:** Utilize a server-side environment or a secure configuration management system to store and retrieve environment variables.\n**Example:**\n```javascript\n// firebaseConfig.js\nimport { initializeApp } from "firebase/app";\n\n// Access Firebase config from environment variables\nconst firebaseConfig = {\n  apiKey: process.env.FIREBASE_API_KEY,\n  authDomain: process.env.FIREBASE_AUTH_DOMAIN,\n  // ... other config values\n};\n\nconst app = initializeApp(firebaseConfig);\n\nexport default app;\n```\n**Relevant Files:** firebaseConfig.js\n\n**Finding:** Numerous magic numbers present in the codebase, like \'25000\' for repository size. Replacing these with named constants would improve readability and maintainability.\n**Refactoring Approach:**\n1. **Define named constants:** Create a dedicated file (e.g., `constants.js`) or use an existing configuration file to define meaningful constants for magic numbers.\n2. **Replace magic numbers with constants:** Update the code to use these named constants instead of raw numeric values.\n**Example:**\n```javascript\n// constants.js\nexport const MAX_REPO_SIZE_BYTES = 25000;\n\n// pages/console.vue\nimport { MAX_REPO_SIZE_BYTES } from "@/path/to/constants";\n\n// ...\n\n:disabled="selectedRepo && selectedRepo.Size > MAX_REPO_SIZE_BYTES"\n\n// ...\n\n<p v-if="selectedRepo && selectedRepo.Size > MAX_REPO_SIZE_BYTES">\n  Oops! This repo exceeds the maximum size of 25MB. Support for larger repositories is coming soon.\n</p>\n\n```\n**Relevant Files:** pages/console.vue, (new file: constants.js or update existing config file)\n\n**Finding:** Default user image URL is hardcoded in multiple components. Consider extracting this to a shared constant or configuration file for easier updates.\n**Refactoring Approach:**\n1. **Create a shared constant:** Define a constant for the default user image URL in a dedicated file (e.g., `constants.js`) or a suitable configuration file.\n2. **Use the constant in components:** Update all component templates to use this shared constant instead of the hardcoded URL.\n**Example:**\n```javascript\n// constants.js\nexport const DEFAULT_USER_IMAGE_URL =\n  "https://firebasestorage.googleapis.com/v0/b/rippo-777.appspot.com/o/images%2Fuser-profile-default.png?alt=media&token=0552c9f3-2735-4e11-b4a3-48e6c8fb187f";\n\n// pages/console.vue (and other relevant components)\nimport { DEFAULT_USER_IMAGE_URL } from "@/path/to/constants";\n\n// ...\n\n:src="userPhotoUrl || DEFAULT_USER_IMAGE_URL"\n\n```\n**Relevant Files:** pages/console.vue, pages/detailed:[report_ID].vue, pages/reports:[projectName].vue, pages/credits.vue, pages/projects.vue, (new file: constants.js or update existing config file)\n'}]}], 'model': 'claude-3-5-sonnet-20240620', 'system': 'You will be provided with text from a markdown file and your task is to convert this text into a blog/guide in HTML. However, do not add any information that is not in the original file.\n\nSTYLING RULES:\n- You must use Tailwind CSS classes and the only colours allowed are white and any shade of gray.\n- The main or highest most DIV must have the following classes: <div class="bg-white p-4 rounded-md shadow-md">\n- Only the top level header must be "text-xl" the rest of the text and sub-headers need no special font size\n- All headers and sub headers must be "text-gray-900"\n- All paragraphs must have class "<p class="text-gray-700 mb-2">"\n- All sub-headers must have class "<h3 class="font-bold text-gray-900 mb-2">"\n- All code must be wrapped around in a <code> element\n- Each topic or Finding must be separated with a top border line e.g.: <h3 class="border-t font-bold text-gray-900 mb-2">Finding:</h3>\n\nHere is a very short example:\nPROVIDED MARKDOWN TEXT:\n## Refactoring Plan\n\n**Finding:** Code duplication: The header and navigation components are duplicated in \'pages/index.vue\' and \'pages/about_me.vue\'. This could be refactored into a shared layout component for better maintainability.\n**Issue:** Increased maintenance effort and potential for inconsistencies between pages.\n**Refactoring Approach:**\n1. Create a new layout component, e.g., `layouts/default.vue`.\n2. Move the duplicated header and navigation code from `pages/index.vue` and `pages/about_me.vue` into `layouts/default.vue`.\n3. Replace the duplicated code in both pages with `<NuxtLayout>` component.\n\n\n\nHTML GENERATED:\n            <div class="bg-white p-4 rounded-md shadow-md">\n              <h2 class="text-2xl font-bold text-gray-900 mb-4">\n                Refactoring Plan\n              </h2>\n              <h3 class="border-t font-bold text-gray-900 mb-2">Finding:</h3>\n              <p class="text-gray-700 mb-8">\n                Code duplication: The header and navigation components are\n                duplicated in \'pages/index.vue\' and \'pages/about_me.vue\'. This\n                could be refactored into a shared layout component for better\n                maintainability.\n              </p>\n              <h3 class="font-bold text-gray-900 mb-2">Issue:</h3>\n              <p class="text-gray-700 mb-8">\n                Increased maintenance effort and potential for inconsistencies\n                between pages.\n              </p>\n              <h3 class="font-bold text-gray-900 mb-2">\n                Refactoring Approach:\n              </h3>\n              <ol class="list-decimal list-inside text-gray-700 mb-8">\n                <li>\n                  Create a new layout component, e.g.,\n                  <code>layouts/default.vue</code>.\n                </li>\n                <li>\n                  Move the duplicated header and navigation code from\n                  <code>pages/index.vue</code> and\n                  <code>pages/about_me.vue</code> into\n                  <code>layouts/default.vue</code>.\n                </li>\n                <li>\n                  Replace the duplicated code in both pages with\n                  <code>&lt;NuxtLayout&gt;</code> component.\n                </li>\n              </ol>\n  </div>\n\n\nYou must return only the pure html with no explanation or commentary.', 'temperature': 0.1}}
-[2024-07-20 12:02:49,276: DEBUG/ForkPoolWorker-2] Sending HTTP Request: POST https://api.anthropic.com/v1/messages
-[2024-07-20 12:02:49,277: DEBUG/ForkPoolWorker-2] close.started
-[2024-07-20 12:02:49,277: DEBUG/ForkPoolWorker-2] close.complete
-[2024-07-20 12:02:49,277: DEBUG/ForkPoolWorker-2] connect_tcp.started host='api.anthropic.com' port=443 local_address=None timeout=600 socket_options=None
-[2024-07-20 12:02:49,353: DEBUG/ForkPoolWorker-2] connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x7c90a3121e10>
-[2024-07-20 12:02:49,354: DEBUG/ForkPoolWorker-2] start_tls.started ssl_context=<ssl.SSLContext object at 0x7c90a37362c0> server_hostname='api.anthropic.com' timeout=600
-[2024-07-20 12:02:49,371: DEBUG/ForkPoolWorker-2] start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x7c90a3122500>
-[2024-07-20 12:02:49,372: DEBUG/ForkPoolWorker-2] send_request_headers.started request=<Request [b'POST']>
-[2024-07-20 12:02:49,372: DEBUG/ForkPoolWorker-2] send_request_headers.complete
-[2024-07-20 12:02:49,372: DEBUG/ForkPoolWorker-2] send_request_body.started request=<Request [b'POST']>
-[2024-07-20 12:02:49,373: DEBUG/ForkPoolWorker-2] send_request_body.complete
-[2024-07-20 12:02:49,373: DEBUG/ForkPoolWorker-2] receive_response_headers.started request=<Request [b'POST']>
-[2024-07-20 12:03:10,410: DEBUG/ForkPoolWorker-2] receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Sat, 20 Jul 2024 12:03:10 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'anthropic-ratelimit-requests-limit', b'50'), (b'anthropic-ratelimit-requests-remaining', b'49'), (b'anthropic-ratelimit-requests-reset', b'2024-07-20T12:03:46Z'), (b'anthropic-ratelimit-tokens-limit', b'40000'), (b'anthropic-ratelimit-tokens-remaining', b'40000'), (b'anthropic-ratelimit-tokens-reset', b'2024-07-20T12:03:10Z'), (b'request-id', b'req_01Hq31QThLtTtohg2PKXJxUQ'), (b'x-cloud-trace-context', b'ae5556ff6dbc8da4430786a209270bc3'), (b'via', b'1.1 google'), (b'CF-Cache-Status', b'DYNAMIC'), (b'Server', b'cloudflare'), (b'CF-RAY', b'8a62cdf29a1b60b3-ORD'), (b'Content-Encoding', b'gzip')])
-[2024-07-20 12:03:10,410: INFO/ForkPoolWorker-2] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
-[2024-07-20 12:03:10,411: DEBUG/ForkPoolWorker-2] receive_response_body.started request=<Request [b'POST']>
-[2024-07-20 12:03:10,411: DEBUG/ForkPoolWorker-2] receive_response_body.complete
-[2024-07-20 12:03:10,411: DEBUG/ForkPoolWorker-2] response_closed.started
-[2024-07-20 12:03:10,411: DEBUG/ForkPoolWorker-2] response_closed.complete
-[2024-07-20 12:03:10,412: DEBUG/ForkPoolWorker-2] HTTP Response: POST https://api.anthropic.com/v1/messages "200 OK" Headers({'date': 'Sat, 20 Jul 2024 12:03:10 GMT', 'content-type': 'application/json', 'transfer-encoding': 'chunked', 'connection': 'keep-alive', 'anthropic-ratelimit-requests-limit': '50', 'anthropic-ratelimit-requests-remaining': '49', 'anthropic-ratelimit-requests-reset': '2024-07-20T12:03:46Z', 'anthropic-ratelimit-tokens-limit': '40000', 'anthropic-ratelimit-tokens-remaining': '40000', 'anthropic-ratelimit-tokens-reset': '2024-07-20T12:03:10Z', 'request-id': 'req_01Hq31QThLtTtohg2PKXJxUQ', 'x-cloud-trace-context': 'ae5556ff6dbc8da4430786a209270bc3', 'via': '1.1 google', 'cf-cache-status': 'DYNAMIC', 'server': 'cloudflare', 'cf-ray': '8a62cdf29a1b60b3-ORD', 'content-encoding': 'gzip'})
-[2024-07-20 12:03:10,413: WARNING/ForkPoolWorker-2] <div class="bg-white p-4 rounded-md shadow-md">
+        // After:
+        const MAX_CHARACTERS = 400;
+        // ...
+        maxlength="MAX_CHARACTERS"
+        // ...
+        return MAX_CHARACTERS - this.sourceText.length;
+        ```
+    - Relevant Files: pages/index.vue
+[2024-07-24 12:02:08,075: WARNING/ForkPoolWorker-2]  JSON files have now been rendered to html
+[2024-07-24 12:02:13,084: DEBUG/ForkPoolWorker-2] Request options: {'method': 'post', 'url': '/v1/messages', 'timeout': 600, 'files': None, 'json_data': {'max_tokens': 4096, 'messages': [{'role': 'user', 'content': [{'type': 'text', 'text': 'Refactoring Plan\n- Finding: Hardcoded IP Address: The API endpoint URL uses a hardcoded IP address in both \'ai-writer.vue\' and \'index.vue\'. This hinders flexibility when deploying to different environments or if the API\'s IP changes.\n    - Issue: Hardcoded IP addresses reduce deployment flexibility and can cause breakage if the IP changes.\n    - Refactoring Approach:\n        1. Define an environment variable to store the API base URL.\n        2. Replace the hardcoded IP address with the environment variable.\n    - Example:\n        ```javascript\n        // Before:\n        const response = await $fetch(\'https://34.147.200.146:8888/translate\', {\n          // ...\n        });\n\n        // After:\n        const apiBaseUrl = process.env.API_BASE_URL || \'https://34.147.200.146:8888\'; // Provide a default if needed\n        const response = await $fetch(`${apiBaseUrl}/translate`, {\n          // ...\n        });\n        ```\n    - Relevant Files: pages/ai-writer.vue, pages/index.vue\n- Finding: Hardcoded Character Limit: The character limit (400) in \'index.vue\' is hardcoded in multiple places. Consider replacing it with a constant variable for easier adjustment and better code readability.\n    - Issue: Using magic numbers for the character limit reduces code readability and maintainability.\n    - Refactoring Approach:\n        1. Define a constant variable for the character limit.\n        2. Replace the hardcoded values with the constant.\n    - Example:\n        ```javascript\n        // Before:\n        maxlength="400"\n        // ...\n        return 400 - this.sourceText.length;\n\n        // After:\n        const MAX_CHARACTERS = 400;\n        // ...\n        maxlength="MAX_CHARACTERS"\n        // ...\n        return MAX_CHARACTERS - this.sourceText.length;\n        ```\n    - Relevant Files: pages/index.vue\n\n'}]}], 'model': 'claude-3-5-sonnet-20240620', 'system': 'You will be provided with text from a markdown file and your task is to convert this text into a blog/guide in HTML. However, do not add any information that is not in the original file.\n\nSTYLING RULES:\n- You must use Tailwind CSS classes and the only colours allowed are white and any shade of gray.\n- The main or highest most DIV must have the following classes: <div class="bg-white p-4 rounded-md shadow-md">\n- Only the top level header must be "text-xl" the rest of the text and sub-headers need no special font size\n- All headers and sub headers must be "text-gray-900"\n- All paragraphs must have class "<p class="text-gray-700 mb-2">"\n- All sub-headers must have class "<h3 class="font-bold text-gray-900 mb-2">"\n- All code must be wrapped around in a <code> element\n- Each topic or Finding must be separated with a top border line e.g.: <h3 class="border-t font-bold text-gray-900 mb-2">Finding:</h3>\n\nHere is a very short example:\nPROVIDED MARKDOWN TEXT:\n## Refactoring Plan\n\n**Finding:** Code duplication: The header and navigation components are duplicated in \'pages/index.vue\' and \'pages/about_me.vue\'. This could be refactored into a shared layout component for better maintainability.\n**Issue:** Increased maintenance effort and potential for inconsistencies between pages.\n**Refactoring Approach:**\n1. Create a new layout component, e.g., `layouts/default.vue`.\n2. Move the duplicated header and navigation code from `pages/index.vue` and `pages/about_me.vue` into `layouts/default.vue`.\n3. Replace the duplicated code in both pages with `<NuxtLayout>` component.\n\n\n\nHTML GENERATED:\n            <div class="bg-white p-4 rounded-md shadow-md">\n              <h2 class="text-2xl font-bold text-gray-900 mb-4">\n                Refactoring Plan\n              </h2>\n              <h3 class="border-t font-bold text-gray-900 mb-2">Finding:</h3>\n              <p class="text-gray-700 mb-8">\n                Code duplication: The header and navigation components are\n                duplicated in \'pages/index.vue\' and \'pages/about_me.vue\'. This\n                could be refactored into a shared layout component for better\n                maintainability.\n              </p>\n              <h3 class="font-bold text-gray-900 mb-2">Issue:</h3>\n              <p class="text-gray-700 mb-8">\n                Increased maintenance effort and potential for inconsistencies\n                between pages.\n              </p>\n              <h3 class="font-bold text-gray-900 mb-2">\n                Refactoring Approach:\n              </h3>\n              <ol class="list-decimal list-inside text-gray-700 mb-8">\n                <li>\n                  Create a new layout component, e.g.,\n                  <code>layouts/default.vue</code>.\n                </li>\n                <li>\n                  Move the duplicated header and navigation code from\n                  <code>pages/index.vue</code> and\n                  <code>pages/about_me.vue</code> into\n                  <code>layouts/default.vue</code>.\n                </li>\n                <li>\n                  Replace the duplicated code in both pages with\n                  <code>&lt;NuxtLayout&gt;</code> component.\n                </li>\n              </ol>\n  </div>\n\n\nYou must return only the pure html with no explanation or commentary.', 'temperature': 0.1}}
+[2024-07-24 12:02:13,088: DEBUG/ForkPoolWorker-2] Sending HTTP Request: POST https://api.anthropic.com/v1/messages
+[2024-07-24 12:02:13,088: DEBUG/ForkPoolWorker-2] connect_tcp.started host='api.anthropic.com' port=443 local_address=None timeout=600 socket_options=None
+[2024-07-24 12:02:13,131: DEBUG/ForkPoolWorker-2] connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x7f3f718c9fc0>
+[2024-07-24 12:02:13,132: DEBUG/ForkPoolWorker-2] start_tls.started ssl_context=<ssl.SSLContext object at 0x7f3f71cf65c0> server_hostname='api.anthropic.com' timeout=600
+[2024-07-24 12:02:13,148: DEBUG/ForkPoolWorker-2] start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x7f3f718c9ff0>
+[2024-07-24 12:02:13,149: DEBUG/ForkPoolWorker-2] send_request_headers.started request=<Request [b'POST']>
+[2024-07-24 12:02:13,149: DEBUG/ForkPoolWorker-2] send_request_headers.complete
+[2024-07-24 12:02:13,149: DEBUG/ForkPoolWorker-2] send_request_body.started request=<Request [b'POST']>
+[2024-07-24 12:02:13,149: DEBUG/ForkPoolWorker-2] send_request_body.complete
+[2024-07-24 12:02:13,149: DEBUG/ForkPoolWorker-2] receive_response_headers.started request=<Request [b'POST']>
+[2024-07-24 12:02:22,156: DEBUG/ForkPoolWorker-2] receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Wed, 24 Jul 2024 12:02:22 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'anthropic-ratelimit-requests-limit', b'50'), (b'anthropic-ratelimit-requests-remaining', b'49'), (b'anthropic-ratelimit-requests-reset', b'2024-07-24T12:02:46Z'), (b'anthropic-ratelimit-tokens-limit', b'40000'), (b'anthropic-ratelimit-tokens-remaining', b'40000'), (b'anthropic-ratelimit-tokens-reset', b'2024-07-24T12:02:22Z'), (b'request-id', b'req_01Fwh7dWegZMcLnKPpUvoBXC'), (b'x-cloud-trace-context', b'17aa9f17e5341e9a6ba5117ed6c60958'), (b'via', b'1.1 google'), (b'CF-Cache-Status', b'DYNAMIC'), (b'Server', b'cloudflare'), (b'CF-RAY', b'8a83c2903bb8e261-ORD'), (b'Content-Encoding', b'gzip')])
+[2024-07-24 12:02:22,156: INFO/ForkPoolWorker-2] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+[2024-07-24 12:02:22,156: DEBUG/ForkPoolWorker-2] receive_response_body.started request=<Request [b'POST']>
+[2024-07-24 12:02:22,157: DEBUG/ForkPoolWorker-2] receive_response_body.complete
+[2024-07-24 12:02:22,157: DEBUG/ForkPoolWorker-2] response_closed.started
+[2024-07-24 12:02:22,157: DEBUG/ForkPoolWorker-2] response_closed.complete
+[2024-07-24 12:02:22,157: DEBUG/ForkPoolWorker-2] HTTP Response: POST https://api.anthropic.com/v1/messages "200 OK" Headers({'date': 'Wed, 24 Jul 2024 12:02:22 GMT', 'content-type': 'application/json', 'transfer-encoding': 'chunked', 'connection': 'keep-alive', 'anthropic-ratelimit-requests-limit': '50', 'anthropic-ratelimit-requests-remaining': '49', 'anthropic-ratelimit-requests-reset': '2024-07-24T12:02:46Z', 'anthropic-ratelimit-tokens-limit': '40000', 'anthropic-ratelimit-tokens-remaining': '40000', 'anthropic-ratelimit-tokens-reset': '2024-07-24T12:02:22Z', 'request-id': 'req_01Fwh7dWegZMcLnKPpUvoBXC', 'x-cloud-trace-context': '17aa9f17e5341e9a6ba5117ed6c60958', 'via': '1.1 google', 'cf-cache-status': 'DYNAMIC', 'server': 'cloudflare', 'cf-ray': '8a83c2903bb8e261-ORD', 'content-encoding': 'gzip'})
+[2024-07-24 12:02:22,160: WARNING/ForkPoolWorker-2] <div class="bg-white p-4 rounded-md shadow-md">
   <h2 class="text-xl font-bold text-gray-900 mb-4">Refactoring Plan</h2>
 
   <h3 class="border-t font-bold text-gray-900 mb-2">Finding:</h3>
-  <p class="text-gray-700 mb-2">The 'commit-push.sh' script includes hardcoded SSH key paths and user-specific configurations, posing potential security risks and limiting script portability.</p>
+  <p class="text-gray-700 mb-2">Hardcoded IP Address: The API endpoint URL uses a hardcoded IP address in both 'ai-writer.vue' and 'index.vue'. This hinders flexibility when deploying to different environments or if the API's IP changes.</p>
 
   <h3 class="font-bold text-gray-900 mb-2">Issue:</h3>
-  <p class="text-gray-700 mb-2">Unauthorized access if keys are compromised; Reduced script reusability across different environments or users.</p>
+  <p class="text-gray-700 mb-2">Hardcoded IP addresses reduce deployment flexibility and can cause breakage if the IP changes.</p>
 
   <h3 class="font-bold text-gray-900 mb-2">Refactoring Approach:</h3>
   <ol class="list-decimal list-inside text-gray-700 mb-2">
-    <li>Remove hardcoded key paths: Instead of specifying the key path directly, use the <code>ssh-add -K</code> option to add the SSH key to the agent securely, prompting the user for the passphrase if needed.</li>
-    <li>Parameterize configurations: Use environment variables or command-line arguments to pass user-specific configurations like the remote repository URL or branch name.</li>
+    <li>Define an environment variable to store the API base URL.</li>
+    <li>Replace the hardcoded IP address with the environment variable.</li>
   </ol>
 
   <h3 class="font-bold text-gray-900 mb-2">Example:</h3>
-  <pre class="bg-gray-100 p-2 rounded-md mb-2"><code>#!/bin/bash
+  <pre class="bg-gray-100 p-2 rounded-md mb-2"><code>// Before:
+const response = await $fetch('https://34.147.200.146:8888/translate', {
+  // ...
+});
 
-# ... (rest of the script)
-
-# Add SSH key to the agent securely
-ssh-add -K ~/.ssh/id_ed25519
-
-# Get remote repository URL and branch from environment variables
-REMOTE_REPO="${REMOTE_REPO:-git@github.com:username/repo.git}"
-BRANCH="${BRANCH:-main}"
-
-# ... (rest of the script using $REMOTE_REPO and $BRANCH)</code></pre>
+// After:
+const apiBaseUrl = process.env.API_BASE_URL || 'https://34.147.200.146:8888'; // Provide a default if needed
+const response = await $fetch(`${apiBaseUrl}/translate`, {
+  // ...
+});</code></pre>
 
   <h3 class="font-bold text-gray-900 mb-2">Relevant Files:</h3>
-  <p class="text-gray-700 mb-2">commit-push.sh</p>
+  <p class="text-gray-700 mb-2">pages/ai-writer.vue, pages/index.vue</p>
 
   <h3 class="border-t font-bold text-gray-900 mb-2">Finding:</h3>
-  <p class="text-gray-700 mb-2">Firebase API keys and configuration data are directly exposed in 'firebaseConfig.js'. This sensitive information should be stored and accessed securely.</p>
+  <p class="text-gray-700 mb-2">Hardcoded Character Limit: The character limit (400) in 'index.vue' is hardcoded in multiple places. Consider replacing it with a constant variable for easier adjustment and better code readability.</p>
 
   <h3 class="font-bold text-gray-900 mb-2">Issue:</h3>
-  <p class="text-gray-700 mb-2">Severe security vulnerability; Potential for unauthorized access, data breaches if keys are compromised.</p>
+  <p class="text-gray-700 mb-2">Using magic numbers for the character limit reduces code readability and maintainability.</p>
 
   <h3 class="font-bold text-gray-900 mb-2">Refactoring Approach:</h3>
   <ol class="list-decimal list-inside text-gray-700 mb-2">
-    <li>Do not store API keys directly in the codebase: Use environment variables to store sensitive Firebase configuration data.</li>
-    <li>Access environment variables securely: Utilize a server-side environment or a secure configuration management system to store and retrieve environment variables.</li>
+    <li>Define a constant variable for the character limit.</li>
+    <li>Replace the hardcoded values with the constant.</li>
   </ol>
 
   <h3 class="font-bold text-gray-900 mb-2">Example:</h3>
-  <pre class="bg-gray-100 p-2 rounded-md mb-2"><code>// firebaseConfig.js
-import { initializeApp } from "firebase/app";
+  <pre class="bg-gray-100 p-2 rounded-md mb-2"><code>// Before:
+maxlength="400"
+// ...
+return 400 - this.sourceText.length;
 
-// Access Firebase config from environment variables
-const firebaseConfig = {
-  apiKey: process.env.FIREBASE_API_KEY,
-  authDomain: process.env.FIREBASE_AUTH_DOMAIN,
-  // ... other config values
-};
-
-const app = initializeApp(firebaseConfig);
-
-export default app;</code></pre>
+// After:
+const MAX_CHARACTERS = 400;
+// ...
+maxlength="MAX_CHARACTERS"
+// ...
+return MAX_CHARACTERS - this.sourceText.length;</code></pre>
 
   <h3 class="font-bold text-gray-900 mb-2">Relevant Files:</h3>
-  <p class="text-gray-700 mb-2">firebaseConfig.js</p>
-
-  <h3 class="border-t font-bold text-gray-900 mb-2">Finding:</h3>
-  <p class="text-gray-700 mb-2">Numerous magic numbers present in the codebase, like '25000' for repository size. Replacing these with named constants would improve readability and maintainability.</p>
-
-  <h3 class="font-bold text-gray-900 mb-2">Refactoring Approach:</h3>
-  <ol class="list-decimal list-inside text-gray-700 mb-2">
-    <li>Define named constants: Create a dedicated file (e.g., <code>constants.js</code>) or use an existing configuration file to define meaningful constants for magic numbers.</li>
-    <li>Replace magic numbers with constants: Update the code to use these named constants instead of raw numeric values.</li>
-  </ol>
-
-  <h3 class="font-bold text-gray-900 mb-2">Example:</h3>
-  <pre class="bg-gray-100 p-2 rounded-md mb-2"><code>// constants.js
-export const MAX_REPO_SIZE_BYTES = 25000;
-
-// pages/console.vue
-import { MAX_REPO_SIZE_BYTES } from "@/path/to/constants";
-
-// ...
-
-:disabled="selectedRepo && selectedRepo.Size > MAX_REPO_SIZE_BYTES"
-
-// ...
-
-&lt;p v-if="selectedRepo && selectedRepo.Size > MAX_REPO_SIZE_BYTES"&gt;
-  Oops! This repo exceeds the maximum size of 25MB. Support for larger repositories is coming soon.
-&lt;/p&gt;</code></pre>
-
-  <h3 class="font-bold text-gray-900 mb-2">Relevant Files:</h3>
-  <p class="text-gray-700 mb-2">pages/console.vue, (new file: constants.js or update existing config file)</p>
-
-  <h3 class="border-t font-bold text-gray-900 mb-2">Finding:</h3>
-  <p class="text-gray-700 mb-2">Default user image URL is hardcoded in multiple components. Consider extracting this to a shared constant or configuration file for easier updates.</p>
-
-  <h3 class="font-bold text-gray-900 mb-2">Refactoring Approach:</h3>
-  <ol class="list-decimal list-inside text-gray-700 mb-2">
-    <li>Create a shared constant: Define a constant for the default user image URL in a dedicated file (e.g., <code>constants.js</code>) or a suitable configuration file.</li>
-    <li>Use the constant in components: Update all component templates to use this shared constant instead of the hardcoded URL.</li>
-  </ol>
-
-  <h3 class="font-bold text-gray-900 mb-2">Example:</h3>
-  <pre class="bg-gray-100 p-2 rounded-md mb-2"><code>// constants.js
-export const DEFAULT_USER_IMAGE_URL =
-  "https://firebasestorage.googleapis.com/v0/b/rippo-777.appspot.com/o/images%2Fuser-profile-default.png?alt=media&token=0552c9f3-2735-4e11-b4a3-48e6c8fb187f";
-
-// pages/console.vue (and other relevant components)
-import { DEFAULT_USER_IMAGE_URL } from "@/path/to/constants";
-
-// ...
-
-:src="userPhotoUrl || DEFAULT_USER_IMAGE_URL"</code></pre>
-
-  <h3 class="font-bold text-gray-900 mb-2">Relevant Files:</h3>
-  <p class="text-gray-700 mb-2">pages/console.vue, pages/detailed:[report_ID].vue, pages/reports:[projectName].vue, pages/credits.vue, pages/projects.vue, (new file: constants.js or update existing config file)</p>
+  <p class="text-gray-700 mb-2">pages/index.vue</p>
 </div>
-[2024-07-20 12:03:10,425: DEBUG/ForkPoolWorker-2] Making request: POST https://oauth2.googleapis.com/token
-[2024-07-20 12:03:10,426: DEBUG/ForkPoolWorker-2] Resetting dropped connection: oauth2.googleapis.com
-[2024-07-20 12:03:10,505: DEBUG/ForkPoolWorker-2] https://oauth2.googleapis.com:443 "POST /token HTTP/1.1" 200 None
-[2024-07-20 12:03:10,551: WARNING/ForkPoolWorker-2] Uploading HTML to:
-[2024-07-20 12:03:10,552: WARNING/ForkPoolWorker-2]  
-[2024-07-20 12:03:10,552: WARNING/ForkPoolWorker-2] projects/TFUaoW4iBPUe297vr3vk36Mvp2p2/trainboxai:rippo-frontend/ZsdnUd
-[2024-07-20 12:03:10,554: DEBUG/ForkPoolWorker-2] Making request: POST https://oauth2.googleapis.com/token
-[2024-07-20 12:03:10,555: DEBUG/ForkPoolWorker-2] Resetting dropped connection: oauth2.googleapis.com
-[2024-07-20 12:03:10,639: DEBUG/ForkPoolWorker-2] https://oauth2.googleapis.com:443 "POST /token HTTP/1.1" 200 None
-[2024-07-20 12:03:10,640: DEBUG/ForkPoolWorker-2] Resetting dropped connection: storage.googleapis.com
-[2024-07-20 12:03:10,758: DEBUG/ForkPoolWorker-2] https://storage.googleapis.com:443 "POST /upload/storage/v1/b/rippo-777.appspot.com/o?uploadType=resumable HTTP/1.1" 200 0
-[2024-07-20 12:03:10,936: DEBUG/ForkPoolWorker-2] https://storage.googleapis.com:443 "PUT /upload/storage/v1/b/rippo-777.appspot.com/o?uploadType=resumable&upload_id=ACJd0Nr0I5Z1n4OppXH1drR9cD7aLdsf_jeGlcMTPzwrRISaH6CvQimPPM146FPliVfDM5P39vsqNeHO5-4fFbdU-y8qPgUnb6H-p8uHpNTcuC7S HTTP/1.1" 200 1071
-[2024-07-20 12:03:10,937: WARNING/ForkPoolWorker-2] Uploaded ZsdnUd.html to projects/TFUaoW4iBPUe297vr3vk36Mvp2p2/trainboxai:rippo-frontend/ZsdnUd/ZsdnUd.html
-[2024-07-20 12:03:10,937: WARNING/ForkPoolWorker-2] Updating report status
-[2024-07-20 12:03:11,045: WARNING/ForkPoolWorker-2] Project status updated to Completed for:
-[2024-07-20 12:03:11,045: WARNING/ForkPoolWorker-2]  
-[2024-07-20 12:03:11,045: WARNING/ForkPoolWorker-2] ZsdnUd
-[2024-07-20 12:03:11,045: WARNING/ForkPoolWorker-2] Report status updated
-[2024-07-20 12:03:11,046: WARNING/ForkPoolWorker-2] Updating dashboard status
-[2024-07-20 12:03:11,046: WARNING/ForkPoolWorker-2] Checking Dashboard Stats
-[2024-07-20 12:03:11,046: WARNING/ForkPoolWorker-2] Document path: users/TFUaoW4iBPUe297vr3vk36Mvp2p2/projects/trainboxai:rippo-frontend
-[2024-07-20 12:03:11,083: WARNING/ForkPoolWorker-2] Project trainboxai:rippo-frontend found
-[2024-07-20 12:03:11,217: WARNING/ForkPoolWorker-2] Total reports executed so far: 3
-[2024-07-20 12:03:11,280: WARNING/ForkPoolWorker-2] Dashboard status updated
-[2024-07-20 12:03:11,280: WARNING/ForkPoolWorker-2] Updating credits and usage
-[2024-07-20 12:03:11,420: WARNING/ForkPoolWorker-2] Usage data added for user TFUaoW4iBPUe297vr3vk36Mvp2p2: {'projectName': 'trainboxai:rippo-frontend', 'reportID': 'ZsdnUd', 'date': datetime.datetime(2024, 7, 20, 12, 3, 11, 313017), 'creditsUsed': 10}
-[2024-07-20 12:03:11,421: WARNING/ForkPoolWorker-2] User TFUaoW4iBPUe297vr3vk36Mvp2p2 credits updated to 460
-[2024-07-20 12:03:11,421: WARNING/ForkPoolWorker-2] Credits and usage done
-[2024-07-20 12:03:11,421: WARNING/ForkPoolWorker-2] Deleted: /home/trainboxai/backend/rippo/reports/code_audit_ZsdnUd.json
-[2024-07-20 12:03:11,421: WARNING/ForkPoolWorker-2] Deleted: /home/trainboxai/backend/rippo/reports/vuln_report_ZsdnUd.json
-[2024-07-20 12:03:11,421: WARNING/ForkPoolWorker-2] Deleted: /home/trainboxai/backend/rippo/reports/quality_report_ZsdnUd.json
-[2024-07-20 12:03:11,422: WARNING/ForkPoolWorker-2] Deleted: /home/trainboxai/backend/rippo/outputs/final_ZsdnUd.md
-[2024-07-20 12:03:11,422: WARNING/ForkPoolWorker-2] Deleted: /home/trainboxai/backend/rippo/outputs/vuln_search_results_ZsdnUd.json
-[2024-07-20 12:03:11,422: WARNING/ForkPoolWorker-2] Deleted: /home/trainboxai/backend/rippo/reports/refactor_ZsdnUd.html
-[2024-07-20 12:03:11,422: WARNING/ForkPoolWorker-2] Deleted: /home/trainboxai/backend/rippo/reports/report_ZsdnUd.html
-[2024-07-20 12:03:11,422: WARNING/ForkPoolWorker-2] Deleted: /home/trainboxai/backend/rippo/reports/refactor_guide_ZsdnUd.md
-[2024-07-20 12:03:11,422: WARNING/ForkPoolWorker-2] Deleted: /home/trainboxai/backend/rippo/reports/ZsdnUd.html
-[2024-07-20 12:03:11,422: INFO/ForkPoolWorker-2] Task celery_app.generate_report[9a69db5a-07b7-43d4-b607-5a97337c8ff6] succeeded in 198.11898936299986s: None
-[2024-07-22 13:15:12,905: WARNING/MainProcess] consumer: Connection to broker lost. Trying to re-establish the connection...
-Traceback (most recent call last):
-  File "/home/trainboxai/backend/rippo/venv/lib/python3.10/site-packages/celery/worker/consumer/consumer.py", line 340, in start
-    blueprint.start(self)
-  File "/home/trainboxai/backend/rippo/venv/lib/python3.10/site-packages/celery/bootsteps.py", line 116, in start
-    step.start(parent)
-  File "/home/trainboxai/backend/rippo/venv/lib/python3.10/site-packages/celery/worker/consumer/consumer.py", line 746, in start
-    c.loop(*c.loop_args())
-  File "/home/trainboxai/backend/rippo/venv/lib/python3.10/site-packages/celery/worker/loops.py", line 97, in asynloop
-    next(loop)
-  File "/home/trainboxai/backend/rippo/venv/lib/python3.10/site-packages/kombu/asynchronous/hub.py", line 317, in create_loop
-    events = poll(poll_timeout)
-  File "/home/trainboxai/backend/rippo/venv/lib/python3.10/site-packages/kombu/utils/eventio.py", line 83, in poll
-    return self._epoll.poll(timeout if timeout is not None else -1)
-  File "/home/trainboxai/backend/rippo/venv/lib/python3.10/site-packages/celery/apps/worker.py", line 289, in _handle_request
-    safe_say(f'worker: {how} shutdown (MainProcess)', sys.__stdout__)
-  File "/home/trainboxai/backend/rippo/venv/lib/python3.10/site-packages/celery/apps/worker.py", line 81, in safe_say
-    print(f'\n{msg}', file=f, flush=True)
-OSError: [Errno 5] Input/output error
-[2024-07-22 13:15:13,222: WARNING/MainProcess] /home/trainboxai/backend/rippo/venv/lib/python3.10/site-packages/celery/worker/consumer/consumer.py:391: CPendingDeprecationWarning: 
-In Celery 5.1 we introduced an optional breaking change which
-on connection loss cancels all currently executed tasks with late acknowledgement enabled.
-These tasks cannot be acknowledged as the connection is gone, and the tasks are automatically redelivered
-back to the queue. You can enable this behavior using the worker_cancel_long_running_tasks_on_connection_loss
-setting. In Celery 5.1 it is set to False by default. The setting will be set to True by default in Celery 6.0.
-
-  warnings.warn(CANCEL_TASKS_BY_DEFAULT, CPendingDeprecationWarning)
-
-[2024-07-22 13:15:13,223: DEBUG/MainProcess] | Consumer: Restarting event loop...
-[2024-07-22 13:15:13,223: DEBUG/MainProcess] | Consumer: Restarting Heart...
-[2024-07-22 13:15:13,224: DEBUG/MainProcess] | Consumer: Restarting Gossip...
-[2024-07-22 13:15:13,224: DEBUG/MainProcess] | Consumer: Restarting Control...
-[2024-07-22 13:15:13,224: DEBUG/MainProcess] | Consumer: Restarting Tasks...
-[2024-07-22 13:15:13,224: DEBUG/MainProcess] Canceling task consumer...
-[2024-07-22 13:15:13,224: DEBUG/MainProcess] | Consumer: Restarting Mingle...
-[2024-07-22 13:15:13,224: DEBUG/MainProcess] | Consumer: Restarting Events...
-[2024-07-22 13:15:13,225: DEBUG/MainProcess] | Consumer: Restarting Connection...
-[2024-07-22 13:15:13,225: DEBUG/MainProcess] | Consumer: Starting Connection
-[2024-07-22 13:15:13,225: WARNING/MainProcess] /home/trainboxai/backend/rippo/venv/lib/python3.10/site-packages/celery/worker/consumer/consumer.py:508: CPendingDeprecationWarning: The broker_connection_retry configuration setting will no longer determine
-whether broker connection retries are made during startup in Celery 6.0 and above.
-If you wish to retain the existing behavior for retrying connections on startup,
-you should set broker_connection_retry_on_startup to True.
-  warnings.warn(
-
-[2024-07-22 13:15:13,229: INFO/MainProcess] Connected to redis://localhost:6379/0
-[2024-07-22 13:15:13,229: DEBUG/MainProcess] ^-- substep ok
-[2024-07-22 13:15:13,229: DEBUG/MainProcess] | Consumer: Starting Events
-[2024-07-22 13:15:13,229: WARNING/MainProcess] /home/trainboxai/backend/rippo/venv/lib/python3.10/site-packages/celery/worker/consumer/consumer.py:508: CPendingDeprecationWarning: The broker_connection_retry configuration setting will no longer determine
-whether broker connection retries are made during startup in Celery 6.0 and above.
-If you wish to retain the existing behavior for retrying connections on startup,
-you should set broker_connection_retry_on_startup to True.
-  warnings.warn(
-
-[2024-07-22 13:15:13,231: DEBUG/MainProcess] ^-- substep ok
-[2024-07-22 13:15:13,231: DEBUG/MainProcess] | Consumer: Starting Mingle
-[2024-07-22 13:15:13,231: INFO/MainProcess] mingle: searching for neighbors
-[2024-07-22 13:15:14,236: INFO/MainProcess] mingle: all alone
-[2024-07-22 13:15:14,236: DEBUG/MainProcess] ^-- substep ok
-[2024-07-22 13:15:14,236: DEBUG/MainProcess] | Consumer: Starting Tasks
-[2024-07-22 13:15:14,239: DEBUG/MainProcess] ^-- substep ok
-[2024-07-22 13:15:14,239: DEBUG/MainProcess] | Consumer: Starting Control
-[2024-07-22 13:15:14,242: DEBUG/MainProcess] ^-- substep ok
-[2024-07-22 13:15:14,242: DEBUG/MainProcess] | Consumer: Starting Gossip
-[2024-07-22 13:15:14,245: DEBUG/MainProcess] ^-- substep ok
-[2024-07-22 13:15:14,246: DEBUG/MainProcess] | Consumer: Starting Heart
-[2024-07-22 13:15:14,247: DEBUG/MainProcess] ^-- substep ok
-[2024-07-22 13:15:14,247: DEBUG/MainProcess] | Consumer: Starting event loop
-[2024-07-22 13:15:14,247: DEBUG/MainProcess] | Worker: Hub.register Pool...
-[2024-07-22 13:15:14,248: DEBUG/MainProcess] basic.qos: prefetch_count->16
-[2024-07-22 13:15:39,177: DEBUG/MainProcess] | Worker: Preparing bootsteps.
-[2024-07-22 13:15:39,180: DEBUG/MainProcess] | Worker: Building graph...
-[2024-07-22 13:15:39,180: DEBUG/MainProcess] | Worker: New boot order: {StateDB, Timer, Hub, Pool, Autoscaler, Beat, Consumer}
-[2024-07-22 13:15:39,184: DEBUG/MainProcess] | Consumer: Preparing bootsteps.
-[2024-07-22 13:15:39,185: DEBUG/MainProcess] | Consumer: Building graph...
-[2024-07-22 13:15:39,193: DEBUG/MainProcess] | Consumer: New boot order: {Connection, Events, Mingle, Tasks, Control, Agent, Heart, Gossip, event loop}
-[2024-07-22 13:15:39,206: DEBUG/MainProcess] | Worker: Starting Hub
-[2024-07-22 13:15:39,206: DEBUG/MainProcess] ^-- substep ok
-[2024-07-22 13:15:39,206: DEBUG/MainProcess] | Worker: Starting Pool
-[2024-07-22 13:15:39,703: DEBUG/MainProcess] ^-- substep ok
-[2024-07-22 13:15:39,703: DEBUG/MainProcess] | Worker: Starting Consumer
-[2024-07-22 13:15:39,704: DEBUG/MainProcess] | Consumer: Starting Connection
-[2024-07-22 13:15:39,706: WARNING/MainProcess] /home/trainboxai/backend/rippo/venv/lib/python3.10/site-packages/celery/worker/consumer/consumer.py:508: CPendingDeprecationWarning: The broker_connection_retry configuration setting will no longer determine
-whether broker connection retries are made during startup in Celery 6.0 and above.
-If you wish to retain the existing behavior for retrying connections on startup,
-you should set broker_connection_retry_on_startup to True.
-  warnings.warn(
-
-[2024-07-22 13:15:39,713: INFO/MainProcess] Connected to redis://localhost:6379/0
-[2024-07-22 13:15:39,714: DEBUG/MainProcess] ^-- substep ok
-[2024-07-22 13:15:39,714: DEBUG/MainProcess] | Consumer: Starting Events
-[2024-07-22 13:15:39,714: WARNING/MainProcess] /home/trainboxai/backend/rippo/venv/lib/python3.10/site-packages/celery/worker/consumer/consumer.py:508: CPendingDeprecationWarning: The broker_connection_retry configuration setting will no longer determine
-whether broker connection retries are made during startup in Celery 6.0 and above.
-If you wish to retain the existing behavior for retrying connections on startup,
-you should set broker_connection_retry_on_startup to True.
-  warnings.warn(
-
-[2024-07-22 13:15:39,716: DEBUG/MainProcess] ^-- substep ok
-[2024-07-22 13:15:39,717: DEBUG/MainProcess] | Consumer: Starting Mingle
-[2024-07-22 13:15:39,717: INFO/MainProcess] mingle: searching for neighbors
-[2024-07-22 13:15:39,723: DEBUG/MainProcess] pidbox received method hello(from_node='celery@rippo-backend-vm', revoked={}) [reply_to:{'exchange': 'reply.celery.pidbox', 'routing_key': 'e62e6ff0-538a-36e5-bfad-9eb7b889e049'} ticket:acdcb947-7312-4ceb-b409-14e8268d7eec]
-[2024-07-22 13:15:40,728: INFO/MainProcess] mingle: all alone
-[2024-07-22 13:15:40,728: DEBUG/MainProcess] ^-- substep ok
-[2024-07-22 13:15:40,728: DEBUG/MainProcess] | Consumer: Starting Tasks
-[2024-07-22 13:15:40,731: DEBUG/MainProcess] ^-- substep ok
-[2024-07-22 13:15:40,732: DEBUG/MainProcess] | Consumer: Starting Control
-[2024-07-22 13:15:40,734: DEBUG/MainProcess] ^-- substep ok
-[2024-07-22 13:15:40,735: DEBUG/MainProcess] | Consumer: Starting Heart
-[2024-07-22 13:15:40,736: DEBUG/MainProcess] ^-- substep ok
-[2024-07-22 13:15:40,736: DEBUG/MainProcess] | Consumer: Starting Gossip
-[2024-07-22 13:15:40,740: DEBUG/MainProcess] ^-- substep ok
-[2024-07-22 13:15:40,740: DEBUG/MainProcess] | Consumer: Starting event loop
-[2024-07-22 13:15:40,740: DEBUG/MainProcess] | Worker: Hub.register Pool...
-[2024-07-22 13:15:40,740: INFO/MainProcess] celery@rippo-backend-vm ready.
-[2024-07-22 13:15:40,741: DEBUG/MainProcess] basic.qos: prefetch_count->16
-[2024-07-22 13:21:28,680: DEBUG/MainProcess] | Worker: Closing Hub...
-[2024-07-22 13:21:28,681: DEBUG/MainProcess] | Worker: Closing Pool...
-[2024-07-22 13:21:28,681: DEBUG/MainProcess] | Worker: Closing Consumer...
-[2024-07-22 13:21:28,681: DEBUG/MainProcess] | Worker: Stopping Consumer...
-[2024-07-22 13:21:28,681: DEBUG/MainProcess] | Consumer: Closing Connection...
-[2024-07-22 13:21:28,681: DEBUG/MainProcess] | Consumer: Closing Events...
-[2024-07-22 13:21:28,681: DEBUG/MainProcess] | Consumer: Closing Mingle...
-[2024-07-22 13:21:28,681: DEBUG/MainProcess] | Consumer: Closing Tasks...
-[2024-07-22 13:21:28,681: DEBUG/MainProcess] | Consumer: Closing Control...
-[2024-07-22 13:21:28,681: DEBUG/MainProcess] | Consumer: Closing Heart...
-[2024-07-22 13:21:28,681: DEBUG/MainProcess] | Consumer: Closing Gossip...
-[2024-07-22 13:21:28,681: DEBUG/MainProcess] | Consumer: Closing event loop...
-[2024-07-22 13:21:28,682: DEBUG/MainProcess] | Consumer: Stopping event loop...
-[2024-07-22 13:21:28,682: DEBUG/MainProcess] | Consumer: Stopping Gossip...
-[2024-07-22 13:21:28,683: DEBUG/MainProcess] | Consumer: Stopping Heart...
-[2024-07-22 13:21:28,684: DEBUG/MainProcess] | Consumer: Stopping Control...
-[2024-07-22 13:21:28,685: DEBUG/MainProcess] | Consumer: Stopping Tasks...
-[2024-07-22 13:21:28,686: DEBUG/MainProcess] Canceling task consumer...
-[2024-07-22 13:21:28,686: DEBUG/MainProcess] | Consumer: Stopping Mingle...
-[2024-07-22 13:21:28,686: DEBUG/MainProcess] | Consumer: Stopping Events...
-[2024-07-22 13:21:28,686: DEBUG/MainProcess] | Consumer: Stopping Connection...
-[2024-07-22 13:21:28,686: DEBUG/MainProcess] | Worker: Stopping Pool...
-[2024-07-22 13:21:29,699: DEBUG/MainProcess] | Worker: Stopping Hub...
-[2024-07-22 13:21:29,699: DEBUG/MainProcess] | Consumer: Shutdown Gossip...
-[2024-07-22 13:21:29,699: DEBUG/MainProcess] | Consumer: Shutdown Heart...
-[2024-07-22 13:21:29,699: DEBUG/MainProcess] | Consumer: Shutdown Control...
-[2024-07-22 13:21:29,699: DEBUG/MainProcess] | Consumer: Shutdown Tasks...
-[2024-07-22 13:21:29,699: DEBUG/MainProcess] Canceling task consumer...
-[2024-07-22 13:21:29,699: DEBUG/MainProcess] Closing consumer channel...
-[2024-07-22 13:21:29,700: DEBUG/MainProcess] | Consumer: Shutdown Events...
-[2024-07-22 13:21:29,700: DEBUG/MainProcess] | Consumer: Shutdown Connection...
-[2024-07-22 13:21:29,701: DEBUG/MainProcess] removing tasks from inqueue until task handler finished
-[2024-07-22 13:21:47,586: DEBUG/MainProcess] | Worker: Preparing bootsteps.
-[2024-07-22 13:21:47,589: DEBUG/MainProcess] | Worker: Building graph...
-[2024-07-22 13:21:47,589: DEBUG/MainProcess] | Worker: New boot order: {StateDB, Beat, Timer, Hub, Pool, Autoscaler, Consumer}
-[2024-07-22 13:21:47,594: DEBUG/MainProcess] | Consumer: Preparing bootsteps.
-[2024-07-22 13:21:47,594: DEBUG/MainProcess] | Consumer: Building graph...
-[2024-07-22 13:21:47,602: DEBUG/MainProcess] | Consumer: New boot order: {Connection, Events, Mingle, Tasks, Control, Gossip, Agent, Heart, event loop}
-[2024-07-22 13:21:47,614: DEBUG/MainProcess] | Worker: Starting Hub
-[2024-07-22 13:21:47,614: DEBUG/MainProcess] ^-- substep ok
-[2024-07-22 13:21:47,615: DEBUG/MainProcess] | Worker: Starting Pool
-[2024-07-22 13:21:48,100: DEBUG/MainProcess] ^-- substep ok
-[2024-07-22 13:21:48,100: DEBUG/MainProcess] | Worker: Starting Consumer
-[2024-07-22 13:21:48,101: DEBUG/MainProcess] | Consumer: Starting Connection
-[2024-07-22 13:21:48,103: WARNING/MainProcess] /home/trainboxai/backend/rippo/venv/lib/python3.10/site-packages/celery/worker/consumer/consumer.py:508: CPendingDeprecationWarning: The broker_connection_retry configuration setting will no longer determine
-whether broker connection retries are made during startup in Celery 6.0 and above.
-If you wish to retain the existing behavior for retrying connections on startup,
-you should set broker_connection_retry_on_startup to True.
-  warnings.warn(
-
-[2024-07-22 13:21:48,110: INFO/MainProcess] Connected to redis://localhost:6379/0
-[2024-07-22 13:21:48,110: DEBUG/MainProcess] ^-- substep ok
-[2024-07-22 13:21:48,111: DEBUG/MainProcess] | Consumer: Starting Events
-[2024-07-22 13:21:48,111: WARNING/MainProcess] /home/trainboxai/backend/rippo/venv/lib/python3.10/site-packages/celery/worker/consumer/consumer.py:508: CPendingDeprecationWarning: The broker_connection_retry configuration setting will no longer determine
-whether broker connection retries are made during startup in Celery 6.0 and above.
-If you wish to retain the existing behavior for retrying connections on startup,
-you should set broker_connection_retry_on_startup to True.
-  warnings.warn(
-
-[2024-07-22 13:21:48,113: DEBUG/MainProcess] ^-- substep ok
-[2024-07-22 13:21:48,113: DEBUG/MainProcess] | Consumer: Starting Mingle
-[2024-07-22 13:21:48,113: INFO/MainProcess] mingle: searching for neighbors
-[2024-07-22 13:21:48,120: DEBUG/MainProcess] pidbox received method hello(from_node='celery@rippo-backend-vm', revoked={}) [reply_to:{'exchange': 'reply.celery.pidbox', 'routing_key': '40de1876-4316-3123-bf45-a7da39654f80'} ticket:d54cc52a-8552-4472-b68f-cab3c9fb6ff6]
-[2024-07-22 13:21:49,125: INFO/MainProcess] mingle: all alone
-[2024-07-22 13:21:49,125: DEBUG/MainProcess] ^-- substep ok
-[2024-07-22 13:21:49,125: DEBUG/MainProcess] | Consumer: Starting Tasks
-[2024-07-22 13:21:49,128: DEBUG/MainProcess] ^-- substep ok
-[2024-07-22 13:21:49,129: DEBUG/MainProcess] | Consumer: Starting Control
-[2024-07-22 13:21:49,132: DEBUG/MainProcess] ^-- substep ok
-[2024-07-22 13:21:49,132: DEBUG/MainProcess] | Consumer: Starting Gossip
-[2024-07-22 13:21:49,135: DEBUG/MainProcess] ^-- substep ok
-[2024-07-22 13:21:49,135: DEBUG/MainProcess] | Consumer: Starting Heart
-[2024-07-22 13:21:49,137: DEBUG/MainProcess] ^-- substep ok
-[2024-07-22 13:21:49,137: DEBUG/MainProcess] | Consumer: Starting event loop
-[2024-07-22 13:21:49,137: DEBUG/MainProcess] | Worker: Hub.register Pool...
-[2024-07-22 13:21:49,138: INFO/MainProcess] celery@rippo-backend-vm ready.
-[2024-07-22 13:21:49,138: DEBUG/MainProcess] basic.qos: prefetch_count->16
-[2024-07-23 13:40:29,907: WARNING/MainProcess] consumer: Connection to broker lost. Trying to re-establish the connection...
-Traceback (most recent call last):
-  File "/home/trainboxai/backend/rippo/venv/lib/python3.10/site-packages/celery/worker/consumer/consumer.py", line 340, in start
-    blueprint.start(self)
-  File "/home/trainboxai/backend/rippo/venv/lib/python3.10/site-packages/celery/bootsteps.py", line 116, in start
-    step.start(parent)
-  File "/home/trainboxai/backend/rippo/venv/lib/python3.10/site-packages/celery/worker/consumer/consumer.py", line 746, in start
-    c.loop(*c.loop_args())
-  File "/home/trainboxai/backend/rippo/venv/lib/python3.10/site-packages/celery/worker/loops.py", line 97, in asynloop
-    next(loop)
-  File "/home/trainboxai/backend/rippo/venv/lib/python3.10/site-packages/kombu/asynchronous/hub.py", line 317, in create_loop
-    events = poll(poll_timeout)
-  File "/home/trainboxai/backend/rippo/venv/lib/python3.10/site-packages/kombu/utils/eventio.py", line 83, in poll
-    return self._epoll.poll(timeout if timeout is not None else -1)
-  File "/home/trainboxai/backend/rippo/venv/lib/python3.10/site-packages/celery/apps/worker.py", line 289, in _handle_request
-    safe_say(f'worker: {how} shutdown (MainProcess)', sys.__stdout__)
-  File "/home/trainboxai/backend/rippo/venv/lib/python3.10/site-packages/celery/apps/worker.py", line 81, in safe_say
-    print(f'\n{msg}', file=f, flush=True)
-OSError: [Errno 5] Input/output error
-[2024-07-23 13:40:30,499: WARNING/MainProcess] /home/trainboxai/backend/rippo/venv/lib/python3.10/site-packages/celery/worker/consumer/consumer.py:391: CPendingDeprecationWarning: 
-In Celery 5.1 we introduced an optional breaking change which
-on connection loss cancels all currently executed tasks with late acknowledgement enabled.
-These tasks cannot be acknowledged as the connection is gone, and the tasks are automatically redelivered
-back to the queue. You can enable this behavior using the worker_cancel_long_running_tasks_on_connection_loss
-setting. In Celery 5.1 it is set to False by default. The setting will be set to True by default in Celery 6.0.
-
-  warnings.warn(CANCEL_TASKS_BY_DEFAULT, CPendingDeprecationWarning)
-
-[2024-07-23 13:40:30,499: DEBUG/MainProcess] | Consumer: Restarting event loop...
-[2024-07-23 13:40:30,500: DEBUG/MainProcess] | Consumer: Restarting Heart...
-[2024-07-23 13:40:30,500: DEBUG/MainProcess] | Consumer: Restarting Gossip...
-[2024-07-23 13:40:30,501: DEBUG/MainProcess] | Consumer: Restarting Control...
-[2024-07-23 13:40:30,501: DEBUG/MainProcess] | Consumer: Restarting Tasks...
-[2024-07-23 13:40:30,501: DEBUG/MainProcess] Canceling task consumer...
-[2024-07-23 13:40:30,501: DEBUG/MainProcess] | Consumer: Restarting Mingle...
-[2024-07-23 13:40:30,501: DEBUG/MainProcess] | Consumer: Restarting Events...
-[2024-07-23 13:40:30,501: DEBUG/MainProcess] | Consumer: Restarting Connection...
-[2024-07-23 13:40:30,501: DEBUG/MainProcess] | Consumer: Starting Connection
-[2024-07-23 13:40:30,502: WARNING/MainProcess] /home/trainboxai/backend/rippo/venv/lib/python3.10/site-packages/celery/worker/consumer/consumer.py:508: CPendingDeprecationWarning: The broker_connection_retry configuration setting will no longer determine
-whether broker connection retries are made during startup in Celery 6.0 and above.
-If you wish to retain the existing behavior for retrying connections on startup,
-you should set broker_connection_retry_on_startup to True.
-  warnings.warn(
-
-[2024-07-23 13:40:30,505: INFO/MainProcess] Connected to redis://localhost:6379/0
-[2024-07-23 13:40:30,505: DEBUG/MainProcess] ^-- substep ok
-[2024-07-23 13:40:30,505: DEBUG/MainProcess] | Consumer: Starting Events
-[2024-07-23 13:40:30,506: WARNING/MainProcess] /home/trainboxai/backend/rippo/venv/lib/python3.10/site-packages/celery/worker/consumer/consumer.py:508: CPendingDeprecationWarning: The broker_connection_retry configuration setting will no longer determine
-whether broker connection retries are made during startup in Celery 6.0 and above.
-If you wish to retain the existing behavior for retrying connections on startup,
-you should set broker_connection_retry_on_startup to True.
-  warnings.warn(
-
-[2024-07-23 13:40:30,508: DEBUG/MainProcess] ^-- substep ok
-[2024-07-23 13:40:30,508: DEBUG/MainProcess] | Consumer: Starting Mingle
-[2024-07-23 13:40:30,508: INFO/MainProcess] mingle: searching for neighbors
-[2024-07-23 13:40:30,510: DEBUG/MainProcess] pidbox received method hello(from_node='celery@rippo-backend-vm', revoked={}) [reply_to:{'exchange': 'reply.celery.pidbox', 'routing_key': '2532a115-34e7-35e2-ba49-486e8d2adace'} ticket:56eda395-1697-4c8c-9654-15d6e06d8847]
-[2024-07-23 13:40:31,515: INFO/MainProcess] mingle: all alone
-[2024-07-23 13:40:31,515: DEBUG/MainProcess] ^-- substep ok
-[2024-07-23 13:40:31,515: DEBUG/MainProcess] | Consumer: Starting Tasks
-[2024-07-23 13:40:31,518: DEBUG/MainProcess] ^-- substep ok
-[2024-07-23 13:40:31,518: DEBUG/MainProcess] | Consumer: Starting Control
-[2024-07-23 13:40:31,521: DEBUG/MainProcess] ^-- substep ok
-[2024-07-23 13:40:31,521: DEBUG/MainProcess] | Consumer: Starting Gossip
-[2024-07-23 13:40:31,525: DEBUG/MainProcess] ^-- substep ok
-[2024-07-23 13:40:31,525: DEBUG/MainProcess] | Consumer: Starting Heart
-[2024-07-23 13:40:31,526: DEBUG/MainProcess] ^-- substep ok
-[2024-07-23 13:40:31,526: DEBUG/MainProcess] | Consumer: Starting event loop
-[2024-07-23 13:40:31,526: DEBUG/MainProcess] | Worker: Hub.register Pool...
-[2024-07-23 13:40:31,527: DEBUG/MainProcess] basic.qos: prefetch_count->16
-[2024-07-23 13:41:04,352: DEBUG/MainProcess] | Worker: Preparing bootsteps.
-[2024-07-23 13:41:04,354: DEBUG/MainProcess] | Worker: Building graph...
-[2024-07-23 13:41:04,355: DEBUG/MainProcess] | Worker: New boot order: {Timer, Hub, Pool, Autoscaler, Beat, StateDB, Consumer}
-[2024-07-23 13:41:04,359: DEBUG/MainProcess] | Consumer: Preparing bootsteps.
-[2024-07-23 13:41:04,359: DEBUG/MainProcess] | Consumer: Building graph...
-[2024-07-23 13:41:04,367: DEBUG/MainProcess] | Consumer: New boot order: {Connection, Agent, Events, Mingle, Gossip, Tasks, Control, Heart, event loop}
-[2024-07-23 13:41:04,382: DEBUG/MainProcess] | Worker: Starting Hub
-[2024-07-23 13:41:04,382: DEBUG/MainProcess] ^-- substep ok
-[2024-07-23 13:41:04,382: DEBUG/MainProcess] | Worker: Starting Pool
-[2024-07-23 13:41:04,879: DEBUG/MainProcess] ^-- substep ok
-[2024-07-23 13:41:04,880: DEBUG/MainProcess] | Worker: Starting Consumer
-[2024-07-23 13:41:04,881: DEBUG/MainProcess] | Consumer: Starting Connection
-[2024-07-23 13:41:04,883: WARNING/MainProcess] /home/trainboxai/backend/rippo/venv/lib/python3.10/site-packages/celery/worker/consumer/consumer.py:508: CPendingDeprecationWarning: The broker_connection_retry configuration setting will no longer determine
-whether broker connection retries are made during startup in Celery 6.0 and above.
-If you wish to retain the existing behavior for retrying connections on startup,
-you should set broker_connection_retry_on_startup to True.
-  warnings.warn(
-
-[2024-07-23 13:41:04,890: INFO/MainProcess] Connected to redis://localhost:6379/0
-[2024-07-23 13:41:04,891: DEBUG/MainProcess] ^-- substep ok
-[2024-07-23 13:41:04,891: DEBUG/MainProcess] | Consumer: Starting Events
-[2024-07-23 13:41:04,891: WARNING/MainProcess] /home/trainboxai/backend/rippo/venv/lib/python3.10/site-packages/celery/worker/consumer/consumer.py:508: CPendingDeprecationWarning: The broker_connection_retry configuration setting will no longer determine
-whether broker connection retries are made during startup in Celery 6.0 and above.
-If you wish to retain the existing behavior for retrying connections on startup,
-you should set broker_connection_retry_on_startup to True.
-  warnings.warn(
-
-[2024-07-23 13:41:04,893: DEBUG/MainProcess] ^-- substep ok
-[2024-07-23 13:41:04,893: DEBUG/MainProcess] | Consumer: Starting Mingle
-[2024-07-23 13:41:04,893: INFO/MainProcess] mingle: searching for neighbors
-[2024-07-23 13:41:04,901: DEBUG/MainProcess] pidbox received method hello(from_node='celery@rippo-backend-vm', revoked={}) [reply_to:{'exchange': 'reply.celery.pidbox', 'routing_key': 'aaa58d82-7a03-3b39-b6d8-441568084968'} ticket:ac21f50c-9258-42c5-aee6-d681c3a7dfd7]
-[2024-07-23 13:41:04,902: DEBUG/MainProcess] pidbox received method hello(from_node='celery@rippo-backend-vm', revoked={}) [reply_to:{'exchange': 'reply.celery.pidbox', 'routing_key': 'aaa58d82-7a03-3b39-b6d8-441568084968'} ticket:ac21f50c-9258-42c5-aee6-d681c3a7dfd7]
-[2024-07-23 13:41:05,909: WARNING/MainProcess] /home/trainboxai/backend/rippo/venv/lib/python3.10/site-packages/celery/app/control.py:56: DuplicateNodenameWarning: Received multiple replies from node name: celery@rippo-backend-vm.
-Please make sure you give each node a unique nodename using
-the celery worker `-n` option.
-  warnings.warn(DuplicateNodenameWarning(
-
-[2024-07-23 13:41:05,909: INFO/MainProcess] mingle: all alone
-[2024-07-23 13:41:05,909: DEBUG/MainProcess] ^-- substep ok
-[2024-07-23 13:41:05,909: DEBUG/MainProcess] | Consumer: Starting Gossip
-[2024-07-23 13:41:05,913: DEBUG/MainProcess] ^-- substep ok
-[2024-07-23 13:41:05,914: DEBUG/MainProcess] | Consumer: Starting Tasks
-[2024-07-23 13:41:05,917: DEBUG/MainProcess] ^-- substep ok
-[2024-07-23 13:41:05,917: DEBUG/MainProcess] | Consumer: Starting Control
-[2024-07-23 13:41:05,920: DEBUG/MainProcess] ^-- substep ok
-[2024-07-23 13:41:05,920: DEBUG/MainProcess] | Consumer: Starting Heart
-[2024-07-23 13:41:05,922: DEBUG/MainProcess] ^-- substep ok
-[2024-07-23 13:41:05,922: DEBUG/MainProcess] | Consumer: Starting event loop
-[2024-07-23 13:41:05,922: DEBUG/MainProcess] | Worker: Hub.register Pool...
-[2024-07-23 13:41:05,923: INFO/MainProcess] celery@rippo-backend-vm ready.
-[2024-07-23 13:41:05,923: DEBUG/MainProcess] basic.qos: prefetch_count->16
-[2024-07-23 13:44:27,618: INFO/MainProcess] Task celery_app.generate_report[8f03695f-aba4-4663-ab3b-aa0009565fd5] received
-[2024-07-23 13:44:27,618: DEBUG/MainProcess] TaskPool: Apply <function fast_trace_task at 0x7ca0083d32e0> (args:('celery_app.generate_report', '8f03695f-aba4-4663-ab3b-aa0009565fd5', {'lang': 'py', 'task': 'celery_app.generate_report', 'id': '8f03695f-aba4-4663-ab3b-aa0009565fd5', 'shadow': None, 'eta': None, 'expires': None, 'group': None, 'group_index': None, 'retries': 0, 'timelimit': [None, None], 'root_id': '8f03695f-aba4-4663-ab3b-aa0009565fd5', 'parent_id': None, 'argsrepr': "('https://github.com/jerrydav1s/ml-tinkering-blog.git', 'jerrydav1s:ml-tinkering-blog', 'SjbNd5', 'qKtISirBQbftY20mLxK0hWXsD053', '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')", 'kwargsrepr': '{}', 'origin': 'gen38472@rippo-backend-vm', 'ignore_result': False, 'replaced_task_nesting': 0, 'stamped_headers': None, 'stamps': {}, 'properties': {'correlation_id': '8f03695f-aba4-4663-ab3b-aa0009565fd5', 'reply_to': '5a2bd7d0-e585-3740-b5e2-e18b33a4a779', 'delivery_mode': 2, 'delivery_info': {'exchange': '', 'routing_key': 'celery'}, 'priority': 0, 'body_encoding': 'base64', 'delivery_tag': '41394314-b756-421b-9a20-ae831019f716'}, 'reply_to':... kwargs:{})
-[2024-07-23 13:44:27,620: WARNING/ForkPoolWorker-2] [32mGet flattened file and extract contents . . .[0m
-[2024-07-23 13:44:27,621: WARNING/ForkPoolWorker-2] [35mGathering search results . . .[0m
-[2024-07-23 13:44:27,624: DEBUG/ForkPoolWorker-2] Popen(['git', 'clone', '-v', '--', 'https://*****@github.com/jerrydav1s/ml-tinkering-blog.git', '/tmp/tmpghslx09o'], cwd=/home/trainboxai/backend/rippo/prod, stdin=None, shell=False, universal_newlines=True)
-[2024-07-23 13:44:28,509: DEBUG/ForkPoolWorker-2] Cmd(['git', 'clone', '-v', '--', 'https://*****@github.com/jerrydav1s/ml-tinkering-blog.git', '/tmp/tmpghslx09o'])'s unused stdout: 
-[2024-07-23 13:44:28,525: WARNING/ForkPoolWorker-2] [32mAnalyse and extract list of dependancies . . . .[0m
-[2024-07-23 13:44:38,075: WARNING/ForkPoolWorker-2] "dependancy","version"
-"@headlessui/react","^1.7.13"
-"@mapbox/rehype-prism","^0.9.0"
-"@mdx-js/loader","^3.0.0"
-"@mdx-js/react","^3.0.0"
-"@next/mdx","^14.0.4"
-"@tailwindcss/typography","^0.5.4"
-"@types/node","^20.10.8"
-"@types/react","^18.2.47"
-"@types/react-dom","^18.2.18"
-"@types/webpack-env","^1.18.1"
-"@vercel/analytics","^1.2.2"
-"autoprefixer","^10.4.12"
-"cheerio","^1.0.0-rc.12"
-"clsx","^2.1.0"
-"fast-glob","^3.2.11"
-"feed","^4.2.2"
-"next","^14.0.4"
-"next-themes","^0.2.1"
-"react","^18.2.0"
-"react-dom","^18.2.0"
-"remark-gfm","^4.0.0"
-"tailwindcss","^3.4.1"
-"typescript","^5.3.3"
-"eslint","^8.56.0"
-"eslint-config-next","^14.0.4"
-"prettier","^3.1.1"
-"prettier-plugin-tailwindcss","^0.5.11"
-"sharp","0.33.1"
-[2024-07-23 13:44:38,076: WARNING/ForkPoolWorker-2] "dependancy","version"
-"@headlessui/react","^1.7.13"
-"@mapbox/rehype-prism","^0.9.0"
-"@mdx-js/loader","^3.0.0"
-"@mdx-js/react","^3.0.0"
-"@next/mdx","^14.0.4"
-"@tailwindcss/typography","^0.5.4"
-"@types/node","^20.10.8"
-"@types/react","^18.2.47"
-"@types/react-dom","^18.2.18"
-"@types/webpack-env","^1.18.1"
-"@vercel/analytics","^1.2.2"
-"autoprefixer","^10.4.12"
-"cheerio","^1.0.0-rc.12"
-"clsx","^2.1.0"
-"fast-glob","^3.2.11"
-"feed","^4.2.2"
-"next","^14.0.4"
-"next-themes","^0.2.1"
-"react","^18.2.0"
-"react-dom","^18.2.0"
-"remark-gfm","^4.0.0"
-"tailwindcss","^3.4.1"
-"typescript","^5.3.3"
-"eslint","^8.56.0"
-"eslint-config-next","^14.0.4"
-"prettier","^3.1.1"
-"prettier-plugin-tailwindcss","^0.5.11"
-"sharp","0.33.1"
-[2024-07-23 13:44:43,081: WARNING/ForkPoolWorker-2] [32mStarting searching for known Vulnerabilities . . . . .[0m
-[2024-07-23 13:44:43,084: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.googleapis.com:443
-[2024-07-23 13:44:43,870: DEBUG/ForkPoolWorker-2] https://www.googleapis.com:443 "GET /customsearch/v1?key=AIzaSyAQjSPQoMFEWJGCGVjQsg1IMp328NNPy_c&cx=f2954b6edb52b40c7&q=@headlessui/react%20%5E1.7.13&num=10&start=1&fields=items(link,snippet,htmlFormattedUrl) HTTP/1.1" 200 None
-[2024-07-23 13:44:43,872: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
-[2024-07-23 13:44:44,160: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /package/npm/%40headlessui%2Freact HTTP/1.1" 200 24600
-[2024-07-23 13:44:44,355: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.googleapis.com:443
-[2024-07-23 13:44:44,829: DEBUG/ForkPoolWorker-2] https://www.googleapis.com:443 "GET /customsearch/v1?key=AIzaSyAQjSPQoMFEWJGCGVjQsg1IMp328NNPy_c&cx=f2954b6edb52b40c7&q=@mapbox/rehype-prism%20%5E0.9.0&num=10&start=1&fields=items(link,snippet,htmlFormattedUrl) HTTP/1.1" 200 None
-[2024-07-23 13:44:44,833: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.googleapis.com:443
-[2024-07-23 13:44:45,181: DEBUG/ForkPoolWorker-2] https://www.googleapis.com:443 "GET /customsearch/v1?key=AIzaSyAQjSPQoMFEWJGCGVjQsg1IMp328NNPy_c&cx=f2954b6edb52b40c7&q=@mdx-js/loader%20%5E3.0.0&num=10&start=1&fields=items(link,snippet,htmlFormattedUrl) HTTP/1.1" 200 None
-[2024-07-23 13:44:45,184: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
-[2024-07-23 13:44:46,094: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /package/npm/%40bevry%2Fmdx/3.0.0 HTTP/1.1" 200 20186
-[2024-07-23 13:44:46,122: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.googleapis.com:443
-[2024-07-23 13:44:46,559: DEBUG/ForkPoolWorker-2] https://www.googleapis.com:443 "GET /customsearch/v1?key=AIzaSyAQjSPQoMFEWJGCGVjQsg1IMp328NNPy_c&cx=f2954b6edb52b40c7&q=@mdx-js/react%20%5E3.0.0&num=10&start=1&fields=items(link,snippet,htmlFormattedUrl) HTTP/1.1" 200 None
-[2024-07-23 13:44:46,563: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
-[2024-07-23 13:44:46,767: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /vuln/SNYK-JS-GATSBYPLUGINMDX-2405699 HTTP/1.1" 200 23971
-[2024-07-23 13:44:46,806: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): nvd.nist.gov:443
-[2024-07-23 13:44:47,447: DEBUG/ForkPoolWorker-2] https://nvd.nist.gov:443 "GET /vuln/detail/CVE-2022-25863 HTTP/1.1" 200 70769
-[2024-07-23 13:44:47,519: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): nvd.nist.gov:443
-[2024-07-23 13:44:50,176: DEBUG/ForkPoolWorker-2] https://nvd.nist.gov:443 "GET /vuln/search/results?startIndex=52640 HTTP/1.1" 200 60723
-[2024-07-23 13:44:50,251: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): nvd.nist.gov:443
-[2024-07-23 13:44:52,670: DEBUG/ForkPoolWorker-2] https://nvd.nist.gov:443 "GET /vuln/search/results?startIndex=52340 HTTP/1.1" 200 57296
-[2024-07-23 13:44:52,745: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
-[2024-07-23 13:44:52,997: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /package/npm/gatsby-plugin-mdx/3.15.0 HTTP/1.1" 200 21065
-[2024-07-23 13:44:53,029: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.cvedetails.com:443
-[2024-07-23 13:44:53,175: DEBUG/ForkPoolWorker-2] https://www.cvedetails.com:443 "GET /vulnerability-list/assigner-96/security-advisories-github.com.html?page=1&cvssscoremin=3&year=2022&month=8&order=1&trc=47&sha=a0fb6fb0ddbcde38e29aabc03cb4171735a40243 HTTP/1.1" 403 None
-[2024-07-23 13:44:53,182: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.cvedetails.com:443
-[2024-07-23 13:44:53,289: DEBUG/ForkPoolWorker-2] https://www.cvedetails.com:443 "GET /vulnerability-list/year-2022/month-6/June.html?page=1&cvssscoremin=1&cweid=502&order=3&trc=8&sha=af4b9cff2a7c3872caf9d6906a8332d4bfc89a3a HTTP/1.1" 403 None
-[2024-07-23 13:44:53,296: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.cvedetails.com:443
-[2024-07-23 13:44:53,409: DEBUG/ForkPoolWorker-2] https://www.cvedetails.com:443 "GET /vulnerability-list/vendor_id-45/product_id-61855/Apache-Xerces-c-.html?page=362&cvssscoremin=9&order=1&trc=41831&sha=ccb9439c770ec1d155dbf65c8636fd2cfc9b904d HTTP/1.1" 403 None
-[2024-07-23 13:44:53,415: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.cvedetails.com:443
-[2024-07-23 13:44:53,529: DEBUG/ForkPoolWorker-2] https://www.cvedetails.com:443 "GET /vulnerability-list/cvssscoremin-9/cvssscoremax-10/vulnerabilities.html?page=332&cvssscoremin=9&cvssscoremax=10&order=1&trc=41081&sha=2958b3df7d96412274fc8cc8f59e685eb6debe4e HTTP/1.1" 403 None
-[2024-07-23 13:44:53,535: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.cvedetails.com:443
-[2024-07-23 13:44:53,664: DEBUG/ForkPoolWorker-2] https://www.cvedetails.com:443 "GET /vulnerability-list/year-2022/vulnerabilities.html?page=434&cvssscoremin=6&order=7&trc=19157&sha=b4ad9b888e0d0972dbb43d0573142a0813643ed7 HTTP/1.1" 403 None
-[2024-07-23 13:44:53,671: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.googleapis.com:443
-[2024-07-23 13:44:54,183: DEBUG/ForkPoolWorker-2] https://www.googleapis.com:443 "GET /customsearch/v1?key=AIzaSyAQjSPQoMFEWJGCGVjQsg1IMp328NNPy_c&cx=f2954b6edb52b40c7&q=@next/mdx%20%5E14.0.4&num=10&start=1&fields=items(link,snippet,htmlFormattedUrl) HTTP/1.1" 200 None
-[2024-07-23 13:44:54,186: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.googleapis.com:443
-[2024-07-23 13:44:54,502: DEBUG/ForkPoolWorker-2] https://www.googleapis.com:443 "GET /customsearch/v1?key=AIzaSyAQjSPQoMFEWJGCGVjQsg1IMp328NNPy_c&cx=f2954b6edb52b40c7&q=@tailwindcss/typography%20%5E0.5.4&num=10&start=1&fields=items(link,snippet,htmlFormattedUrl) HTTP/1.1" 200 None
-[2024-07-23 13:44:54,506: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
-[2024-07-23 13:44:54,740: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /package/npm/%40tailwindcss%2Ftypography HTTP/1.1" 200 None
-[2024-07-23 13:44:54,915: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.googleapis.com:443
-[2024-07-23 13:44:55,235: DEBUG/ForkPoolWorker-2] https://www.googleapis.com:443 "GET /customsearch/v1?key=AIzaSyAQjSPQoMFEWJGCGVjQsg1IMp328NNPy_c&cx=f2954b6edb52b40c7&q=@types/node%20%5E20.10.8&num=10&start=1&fields=items(link,snippet,htmlFormattedUrl) HTTP/1.1" 200 None
-[2024-07-23 13:44:55,238: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
-[2024-07-23 13:44:55,464: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /package/npm/%40types%2Fnode HTTP/1.1" 200 23695
-[2024-07-23 13:44:55,761: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): nvd.nist.gov:443
-[2024-07-23 13:44:56,695: DEBUG/ForkPoolWorker-2] https://nvd.nist.gov:443 "GET /vuln/search/results?form_type=Basic&results_type=overview&query=Mirantis+Container+Runtime&search_type=all&isCpeNameSearch=false HTTP/1.1" 200 41987
-[2024-07-23 13:44:56,753: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.cvedetails.com:443
-[2024-07-23 13:44:56,863: DEBUG/ForkPoolWorker-2] https://www.cvedetails.com:443 "GET /vulnerability-list/vendor_id-13534/product_id-28125/Docker-Docker.html HTTP/1.1" 403 None
-[2024-07-23 13:44:56,870: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.googleapis.com:443
-[2024-07-23 13:44:57,276: DEBUG/ForkPoolWorker-2] https://www.googleapis.com:443 "GET /customsearch/v1?key=AIzaSyAQjSPQoMFEWJGCGVjQsg1IMp328NNPy_c&cx=f2954b6edb52b40c7&q=@types/react%20%5E18.2.47&num=10&start=1&fields=items(link,snippet,htmlFormattedUrl) HTTP/1.1" 200 None
-[2024-07-23 13:44:57,280: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
-[2024-07-23 13:44:57,481: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /package/npm/%40types%2Freact HTTP/1.1" 200 23770
-[2024-07-23 13:44:57,652: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.googleapis.com:443
-[2024-07-23 13:44:57,968: DEBUG/ForkPoolWorker-2] https://www.googleapis.com:443 "GET /customsearch/v1?key=AIzaSyAQjSPQoMFEWJGCGVjQsg1IMp328NNPy_c&cx=f2954b6edb52b40c7&q=@types/react-dom%20%5E18.2.18&num=10&start=1&fields=items(link,snippet,htmlFormattedUrl) HTTP/1.1" 200 None
-[2024-07-23 13:44:57,971: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
-[2024-07-23 13:44:58,243: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /package/npm/%40types%2Freact-dom HTTP/1.1" 200 24025
-[2024-07-23 13:44:58,412: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.googleapis.com:443
-[2024-07-23 13:44:58,694: DEBUG/ForkPoolWorker-2] https://www.googleapis.com:443 "GET /customsearch/v1?key=AIzaSyAQjSPQoMFEWJGCGVjQsg1IMp328NNPy_c&cx=f2954b6edb52b40c7&q=@types/webpack-env%20%5E1.18.1&num=10&start=1&fields=items(link,snippet,htmlFormattedUrl) HTTP/1.1" 200 None
-[2024-07-23 13:44:58,698: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
-[2024-07-23 13:44:58,946: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /package/npm/%40types%2Fwebpack-env HTTP/1.1" 200 20062
-[2024-07-23 13:44:59,018: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.googleapis.com:443
-[2024-07-23 13:44:59,463: DEBUG/ForkPoolWorker-2] https://www.googleapis.com:443 "GET /customsearch/v1?key=AIzaSyAQjSPQoMFEWJGCGVjQsg1IMp328NNPy_c&cx=f2954b6edb52b40c7&q=@vercel/analytics%20%5E1.2.2&num=10&start=1&fields=items(link,snippet,htmlFormattedUrl) HTTP/1.1" 200 None
-[2024-07-23 13:44:59,467: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.googleapis.com:443
-[2024-07-23 13:44:59,971: DEBUG/ForkPoolWorker-2] https://www.googleapis.com:443 "GET /customsearch/v1?key=AIzaSyAQjSPQoMFEWJGCGVjQsg1IMp328NNPy_c&cx=f2954b6edb52b40c7&q=autoprefixer%20%5E10.4.12&num=10&start=1&fields=items(link,snippet,htmlFormattedUrl) HTTP/1.1" 200 None
-[2024-07-23 13:44:59,974: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
-[2024-07-23 13:45:00,227: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /package/npm/autoprefixer HTTP/1.1" 200 24265
-[2024-07-23 13:45:00,515: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.googleapis.com:443
-[2024-07-23 13:45:00,912: DEBUG/ForkPoolWorker-2] https://www.googleapis.com:443 "GET /customsearch/v1?key=AIzaSyAQjSPQoMFEWJGCGVjQsg1IMp328NNPy_c&cx=f2954b6edb52b40c7&q=cheerio%20%5E1.0.0-rc.12&num=10&start=1&fields=items(link,snippet,htmlFormattedUrl) HTTP/1.1" 200 None
-[2024-07-23 13:45:00,916: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
-[2024-07-23 13:45:01,124: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /package/npm/cheerio/1.0.0-rc.12 HTTP/1.1" 200 None
-[2024-07-23 13:45:01,151: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
-[2024-07-23 13:45:01,446: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /package/npm/cheerio HTTP/1.1" 200 None
-[2024-07-23 13:45:01,586: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.googleapis.com:443
-[2024-07-23 13:45:01,854: DEBUG/ForkPoolWorker-2] https://www.googleapis.com:443 "GET /customsearch/v1?key=AIzaSyAQjSPQoMFEWJGCGVjQsg1IMp328NNPy_c&cx=f2954b6edb52b40c7&q=clsx%20%5E2.1.0&num=10&start=1&fields=items(link,snippet,htmlFormattedUrl) HTTP/1.1" 200 None
-[2024-07-23 13:45:01,858: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
-[2024-07-23 13:45:02,146: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /package/npm/clsx/2.1.0 HTTP/1.1" 200 16714
-[2024-07-23 13:45:02,169: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.googleapis.com:443
-[2024-07-23 13:45:02,570: DEBUG/ForkPoolWorker-2] https://www.googleapis.com:443 "GET /customsearch/v1?key=AIzaSyAQjSPQoMFEWJGCGVjQsg1IMp328NNPy_c&cx=f2954b6edb52b40c7&q=fast-glob%20%5E3.2.11&num=10&start=1&fields=items(link,snippet,htmlFormattedUrl) HTTP/1.1" 200 None
-[2024-07-23 13:45:02,573: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
-[2024-07-23 13:45:02,797: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /package/npm/fast-glob HTTP/1.1" 200 20763
-[2024-07-23 13:45:02,889: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.googleapis.com:443
-[2024-07-23 13:45:03,358: DEBUG/ForkPoolWorker-2] https://www.googleapis.com:443 "GET /customsearch/v1?key=AIzaSyAQjSPQoMFEWJGCGVjQsg1IMp328NNPy_c&cx=f2954b6edb52b40c7&q=feed%20%5E4.2.2&num=10&start=1&fields=items(link,snippet,htmlFormattedUrl) HTTP/1.1" 200 None
-[2024-07-23 13:45:03,361: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
-[2024-07-23 13:45:03,542: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /package/npm/feed/4.2.2 HTTP/1.1" 200 16984
-[2024-07-23 13:45:03,565: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): nvd.nist.gov:443
-[2024-07-23 13:45:04,612: DEBUG/ForkPoolWorker-2] https://nvd.nist.gov:443 "GET /vuln/detail/CVE-2015-1464 HTTP/1.1" 200 74733
-[2024-07-23 13:45:04,684: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.exploit-db.com:443
-[2024-07-23 13:45:04,860: DEBUG/ForkPoolWorker-2] https://www.exploit-db.com:443 "GET /exploits/40920 HTTP/1.1" 403 None
-[2024-07-23 13:45:04,866: DEBUG/ForkPoolWorker-2] Encoding detection: ascii is most likely the one.
-[2024-07-23 13:45:04,872: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): nvd.nist.gov:443
-[2024-07-23 13:45:05,123: DEBUG/ForkPoolWorker-2] https://nvd.nist.gov:443 "GET /vuln/detail/CVE-2015-1165 HTTP/1.1" 200 101355
-[2024-07-23 13:45:05,220: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
-[2024-07-23 13:45:05,478: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /package/npm/feed HTTP/1.1" 200 None
-[2024-07-23 13:45:05,550: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): nvd.nist.gov:443
-[2024-07-23 13:45:05,812: DEBUG/ForkPoolWorker-2] https://nvd.nist.gov:443 "GET /vuln/detail/CVE-2016-9565 HTTP/1.1" 200 84888
-[2024-07-23 13:45:05,895: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): nvd.nist.gov:443
-[2024-07-23 13:45:06,858: DEBUG/ForkPoolWorker-2] https://nvd.nist.gov:443 "GET /vuln/detail/CVE-2012-5506 HTTP/1.1" 200 105843
-[2024-07-23 13:45:06,955: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): nvd.nist.gov:443
-[2024-07-23 13:45:09,170: DEBUG/ForkPoolWorker-2] https://nvd.nist.gov:443 "GET /vuln/detail/CVE-2009-1467 HTTP/1.1" 200 198860
-[2024-07-23 13:45:09,309: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): nvd.nist.gov:443
-[2024-07-23 13:45:10,111: DEBUG/ForkPoolWorker-2] https://nvd.nist.gov:443 "GET /vuln/detail/CVE-2024-3209 HTTP/1.1" 200 71941
-[2024-07-23 13:45:10,302: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): nvd.nist.gov:443
-[2024-07-23 13:45:11,221: DEBUG/ForkPoolWorker-2] https://nvd.nist.gov:443 "GET /vuln/detail/CVE-2014-2022 HTTP/1.1" 200 57701
-[2024-07-23 13:45:11,287: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.googleapis.com:443
-[2024-07-23 13:45:11,582: DEBUG/ForkPoolWorker-2] https://www.googleapis.com:443 "GET /customsearch/v1?key=AIzaSyAQjSPQoMFEWJGCGVjQsg1IMp328NNPy_c&cx=f2954b6edb52b40c7&q=next%20%5E14.0.4&num=10&start=1&fields=items(link,snippet,htmlFormattedUrl) HTTP/1.1" 200 None
-[2024-07-23 13:45:11,586: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
-[2024-07-23 13:45:11,813: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /package/npm/next/14.0.4 HTTP/1.1" 200 None
-[2024-07-23 13:45:11,846: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
-[2024-07-23 13:45:12,127: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /package/npm/%40next%2Feslint-plugin-next/14.0.4-canary.16 HTTP/1.1" 200 17917
-[2024-07-23 13:45:12,151: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
-[2024-07-23 13:45:12,432: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /package/npm/next HTTP/1.1" 200 25337
-[2024-07-23 13:45:12,623: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
-[2024-07-23 13:45:13,146: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /package/npm/%40next%2Fthird-parties/14.0.4 HTTP/1.1" 200 17956
-[2024-07-23 13:45:13,170: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
-[2024-07-23 13:45:14,443: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /package/npm/%40next%2Fplugin-storybook/versions?page=5 HTTP/1.1" 200 20932
-[2024-07-23 13:45:14,627: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
-[2024-07-23 13:45:14,935: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /package/npm/%40angular%2Fcommon/versions?page=3 HTTP/1.1" 200 None
-[2024-07-23 13:45:15,103: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
-[2024-07-23 13:45:15,543: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /package/npm/ng-packagr HTTP/1.1" 200 24543
-[2024-07-23 13:45:15,830: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.cvedetails.com:443
-[2024-07-23 13:45:15,946: DEBUG/ForkPoolWorker-2] https://www.cvedetails.com:443 "GET /vulnerability-list/vendor_id-23551/product_id-87327/Vercel-Next.js.html?page=1&order=1&trc=11&sha=a6f054a3e9f2705851b9866dec112589c106a41a HTTP/1.1" 403 None
-[2024-07-23 13:45:15,952: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
-[2024-07-23 13:45:16,216: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /package/npm/next/12.0.4 HTTP/1.1" 200 21274
-[2024-07-23 13:45:16,249: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): nvd.nist.gov:443
-[2024-07-23 13:45:16,497: DEBUG/ForkPoolWorker-2] https://nvd.nist.gov:443 "GET /vuln/detail/CVE-2022-36046 HTTP/1.1" 200 58930
-[2024-07-23 13:45:16,564: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.googleapis.com:443
-[2024-07-23 13:45:17,002: DEBUG/ForkPoolWorker-2] https://www.googleapis.com:443 "GET /customsearch/v1?key=AIzaSyAQjSPQoMFEWJGCGVjQsg1IMp328NNPy_c&cx=f2954b6edb52b40c7&q=next-themes%20%5E0.2.1&num=10&start=1&fields=items(link,snippet,htmlFormattedUrl) HTTP/1.1" 200 None
-[2024-07-23 13:45:17,006: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.cvedetails.com:443
-[2024-07-23 13:45:17,127: DEBUG/ForkPoolWorker-2] https://www.cvedetails.com:443 "GET /cve/CVE-2010-2275/ HTTP/1.1" 403 None
-[2024-07-23 13:45:17,134: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.exploit-db.com:443
-[2024-07-23 13:45:17,236: DEBUG/ForkPoolWorker-2] https://www.exploit-db.com:443 "GET /exploits/13156 HTTP/1.1" 403 None
-[2024-07-23 13:45:17,241: DEBUG/ForkPoolWorker-2] Encoding detection: ascii is most likely the one.
-[2024-07-23 13:45:17,247: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.exploit-db.com:443
-[2024-07-23 13:45:17,477: DEBUG/ForkPoolWorker-2] https://www.exploit-db.com:443 "GET /ezines/kr5hou2zh4qtebqk.onion/ZF0/zf0%205.txt HTTP/1.1" 200 None
-[2024-07-23 13:45:22,910: DEBUG/ForkPoolWorker-2] Encoding detection: Found cp775 as plausible (best-candidate) for content. With 35 alternatives.
-[2024-07-23 13:45:22,999: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.googleapis.com:443
-[2024-07-23 13:45:23,475: DEBUG/ForkPoolWorker-2] https://www.googleapis.com:443 "GET /customsearch/v1?key=AIzaSyAQjSPQoMFEWJGCGVjQsg1IMp328NNPy_c&cx=f2954b6edb52b40c7&q=react%20%5E18.2.0&num=10&start=1&fields=items(link,snippet,htmlFormattedUrl) HTTP/1.1" 200 None
-[2024-07-23 13:45:23,478: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
-[2024-07-23 13:45:23,624: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /package/npm/react/18.2.0 HTTP/1.1" 200 18749
-[2024-07-23 13:45:23,647: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
-[2024-07-23 13:45:24,137: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /package/npm/%40nx%2Freact/18.2.0-beta.2 HTTP/1.1" 200 18409
-[2024-07-23 13:45:24,162: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
-[2024-07-23 13:45:24,484: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /package/npm/react-dom HTTP/1.1" 200 26369
-[2024-07-23 13:45:24,657: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
-[2024-07-23 13:45:24,960: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /package/maven/org.webjars.npm%3Areact-dom HTTP/1.1" 200 24066
-[2024-07-23 13:45:25,224: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
-[2024-07-23 13:45:25,501: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /package/npm/react-art/18.2.0 HTTP/1.1" 200 18848
-[2024-07-23 13:45:25,525: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
-[2024-07-23 13:45:25,798: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /package/maven/org.webjars.npm%3Areact-dom/16.1.0 HTTP/1.1" 200 21608
-[2024-07-23 13:45:25,827: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
-[2024-07-23 13:45:26,059: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /package/npm/%40react-native-firebase%2Fapp HTTP/1.1" 200 24496
-[2024-07-23 13:45:26,234: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
-[2024-07-23 13:45:27,139: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /package/npm/%40nrwl%2Freact-native HTTP/1.1" 200 24862
-[2024-07-23 13:45:27,306: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
-[2024-07-23 13:45:27,534: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /package/maven/org.webjars.npm%3Areact-dom/15.2.1 HTTP/1.1" 200 17712
-[2024-07-23 13:45:27,558: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
-[2024-07-23 13:45:28,409: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /package/npm/%40react-native-firebase%2Ffirestore HTTP/1.1" 200 24446
-[2024-07-23 13:45:28,582: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.googleapis.com:443
-[2024-07-23 13:45:28,832: DEBUG/ForkPoolWorker-2] https://www.googleapis.com:443 "GET /customsearch/v1?key=AIzaSyAQjSPQoMFEWJGCGVjQsg1IMp328NNPy_c&cx=f2954b6edb52b40c7&q=react-dom%20%5E18.2.0&num=10&start=1&fields=items(link,snippet,htmlFormattedUrl) HTTP/1.1" 200 None
-[2024-07-23 13:45:28,836: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
-[2024-07-23 13:45:29,063: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /package/npm/react-dom/18.2.0 HTTP/1.1" 200 None
-[2024-07-23 13:45:29,087: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
-[2024-07-23 13:45:29,192: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /package/npm/react-dom HTTP/1.1" 200 26369
-[2024-07-23 13:45:29,500: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
-[2024-07-23 13:45:29,602: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /package/npm/%40types%2Freact-dom HTTP/1.1" 200 24025
-[2024-07-23 13:45:29,775: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
-[2024-07-23 13:45:29,876: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /package/maven/org.webjars.npm%3Areact-dom/16.1.0 HTTP/1.1" 200 21608
-[2024-07-23 13:45:29,906: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
-[2024-07-23 13:45:30,009: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /package/maven/org.webjars.npm%3Areact-dom HTTP/1.1" 200 24066
-[2024-07-23 13:45:30,166: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
-[2024-07-23 13:45:30,267: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /package/maven/org.webjars.npm%3Areact-dom/15.2.1 HTTP/1.1" 200 17712
-[2024-07-23 13:45:30,292: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): nvd.nist.gov:443
-[2024-07-23 13:45:31,458: DEBUG/ForkPoolWorker-2] https://nvd.nist.gov:443 "GET /vuln/detail/cve-2018-6341 HTTP/1.1" 200 64596
-[2024-07-23 13:45:31,528: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.cvedetails.com:443
-[2024-07-23 13:45:31,658: DEBUG/ForkPoolWorker-2] https://www.cvedetails.com:443 "GET /cve/CVE-2018-6341/ HTTP/1.1" 403 None
-[2024-07-23 13:45:31,665: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): nvd.nist.gov:443
-[2024-07-23 13:45:32,094: DEBUG/ForkPoolWorker-2] https://nvd.nist.gov:443 "GET /vuln/detail/CVE-2023-25572 HTTP/1.1" 200 69692
-[2024-07-23 13:45:32,165: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.googleapis.com:443
-[2024-07-23 13:45:32,405: DEBUG/ForkPoolWorker-2] https://www.googleapis.com:443 "GET /customsearch/v1?key=AIzaSyAQjSPQoMFEWJGCGVjQsg1IMp328NNPy_c&cx=f2954b6edb52b40c7&q=remark-gfm%20%5E4.0.0&num=10&start=1&fields=items(link,snippet,htmlFormattedUrl) HTTP/1.1" 200 None
-[2024-07-23 13:45:32,409: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
-[2024-07-23 13:45:32,650: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /package/npm/remark-gfm/4.0.0 HTTP/1.1" 200 16557
-[2024-07-23 13:45:32,676: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.googleapis.com:443
-[2024-07-23 13:45:33,169: DEBUG/ForkPoolWorker-2] https://www.googleapis.com:443 "GET /customsearch/v1?key=AIzaSyAQjSPQoMFEWJGCGVjQsg1IMp328NNPy_c&cx=f2954b6edb52b40c7&q=tailwindcss%20%5E3.4.1&num=10&start=1&fields=items(link,snippet,htmlFormattedUrl) HTTP/1.1" 200 None
-[2024-07-23 13:45:33,172: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
-[2024-07-23 13:45:33,435: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /package/npm/tailwindcss HTTP/1.1" 200 24010
-[2024-07-23 13:45:33,727: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.googleapis.com:443
-[2024-07-23 13:45:34,144: DEBUG/ForkPoolWorker-2] https://www.googleapis.com:443 "GET /customsearch/v1?key=AIzaSyAQjSPQoMFEWJGCGVjQsg1IMp328NNPy_c&cx=f2954b6edb52b40c7&q=typescript%20%5E5.3.3&num=10&start=1&fields=items(link,snippet,htmlFormattedUrl) HTTP/1.1" 200 None
-[2024-07-23 13:45:34,148: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
-[2024-07-23 13:45:34,637: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /package/npm/plugin-typescript/5.3.3 HTTP/1.1" 200 17209
-[2024-07-23 13:45:34,664: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
-[2024-07-23 13:45:35,050: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /package/npm/typescript HTTP/1.1" 200 23749
-[2024-07-23 13:45:35,222: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.exploit-db.com:443
-[2024-07-23 13:45:35,550: DEBUG/ForkPoolWorker-2] https://www.exploit-db.com:443 "GET /exploits/15431 HTTP/1.1" 403 None
-[2024-07-23 13:45:35,554: DEBUG/ForkPoolWorker-2] Encoding detection: ascii is most likely the one.
-[2024-07-23 13:45:35,562: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.exploit-db.com:443
-[2024-07-23 13:45:35,662: DEBUG/ForkPoolWorker-2] https://www.exploit-db.com:443 "GET /exploits/29290 HTTP/1.1" 403 None
-[2024-07-23 13:45:35,667: DEBUG/ForkPoolWorker-2] Encoding detection: ascii is most likely the one.
-[2024-07-23 13:45:35,673: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.exploit-db.com:443
-[2024-07-23 13:45:35,773: DEBUG/ForkPoolWorker-2] https://www.exploit-db.com:443 "GET /exploits/50211 HTTP/1.1" 403 None
-[2024-07-23 13:45:35,778: DEBUG/ForkPoolWorker-2] Encoding detection: ascii is most likely the one.
-[2024-07-23 13:45:35,785: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.exploit-db.com:443
-[2024-07-23 13:45:35,934: DEBUG/ForkPoolWorker-2] https://www.exploit-db.com:443 "GET /exploits/48833 HTTP/1.1" 403 None
-[2024-07-23 13:45:35,939: DEBUG/ForkPoolWorker-2] Encoding detection: ascii is most likely the one.
-[2024-07-23 13:45:35,945: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.exploit-db.com:443
-[2024-07-23 13:45:36,044: DEBUG/ForkPoolWorker-2] https://www.exploit-db.com:443 "GET /exploits/35164 HTTP/1.1" 403 None
-[2024-07-23 13:45:36,049: DEBUG/ForkPoolWorker-2] Encoding detection: ascii is most likely the one.
-[2024-07-23 13:45:36,056: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.exploit-db.com:443
-[2024-07-23 13:45:36,155: DEBUG/ForkPoolWorker-2] https://www.exploit-db.com:443 "GET /exploits/24201 HTTP/1.1" 403 None
-[2024-07-23 13:45:36,161: DEBUG/ForkPoolWorker-2] Encoding detection: ascii is most likely the one.
-[2024-07-23 13:45:36,167: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.exploit-db.com:443
-[2024-07-23 13:45:36,269: DEBUG/ForkPoolWorker-2] https://www.exploit-db.com:443 "GET /exploits/17318 HTTP/1.1" 403 None
-[2024-07-23 13:45:36,275: DEBUG/ForkPoolWorker-2] Encoding detection: ascii is most likely the one.
-[2024-07-23 13:45:36,281: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.exploit-db.com:443
-[2024-07-23 13:45:36,380: DEBUG/ForkPoolWorker-2] https://www.exploit-db.com:443 "GET /exploits/29316 HTTP/1.1" 403 None
-[2024-07-23 13:45:36,385: DEBUG/ForkPoolWorker-2] Encoding detection: ascii is most likely the one.
-[2024-07-23 13:45:36,391: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.googleapis.com:443
-[2024-07-23 13:45:36,834: DEBUG/ForkPoolWorker-2] https://www.googleapis.com:443 "GET /customsearch/v1?key=AIzaSyAQjSPQoMFEWJGCGVjQsg1IMp328NNPy_c&cx=f2954b6edb52b40c7&q=eslint%20%5E8.56.0&num=10&start=1&fields=items(link,snippet,htmlFormattedUrl) HTTP/1.1" 200 None
-[2024-07-23 13:45:36,838: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
-[2024-07-23 13:45:37,056: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /package/npm/eslint HTTP/1.1" 200 24643
-[2024-07-23 13:45:37,228: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
-[2024-07-23 13:45:37,890: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /package/npm/eslint-plugin-instructure-ui/5.42.0-jstern.2 HTTP/1.1" 200 17979
-[2024-07-23 13:45:37,914: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.googleapis.com:443
-[2024-07-23 13:45:38,234: DEBUG/ForkPoolWorker-2] https://www.googleapis.com:443 "GET /customsearch/v1?key=AIzaSyAQjSPQoMFEWJGCGVjQsg1IMp328NNPy_c&cx=f2954b6edb52b40c7&q=eslint-config-next%20%5E14.0.4&num=10&start=1&fields=items(link,snippet,htmlFormattedUrl) HTTP/1.1" 200 None
-[2024-07-23 13:45:38,238: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.googleapis.com:443
-[2024-07-23 13:45:38,942: DEBUG/ForkPoolWorker-2] https://www.googleapis.com:443 "GET /customsearch/v1?key=AIzaSyAQjSPQoMFEWJGCGVjQsg1IMp328NNPy_c&cx=f2954b6edb52b40c7&q=prettier%20%5E3.1.1&num=10&start=1&fields=items(link,snippet,htmlFormattedUrl) HTTP/1.1" 200 None
-[2024-07-23 13:45:38,946: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
-[2024-07-23 13:45:39,428: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /package/npm/prettier-plugin-organize-imports/3.1.1 HTTP/1.1" 200 None
-[2024-07-23 13:45:39,472: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
-[2024-07-23 13:45:39,693: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /package/npm/prettier HTTP/1.1" 200 None
-[2024-07-23 13:45:39,863: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
-[2024-07-23 13:45:40,402: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /package/npm/eslint-config-wesbos/3.1.1 HTTP/1.1" 200 17379
-[2024-07-23 13:45:40,426: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.exploit-db.com:443
-[2024-07-23 13:45:40,524: DEBUG/ForkPoolWorker-2] https://www.exploit-db.com:443 "GET /exploits/42912 HTTP/1.1" 403 None
-[2024-07-23 13:45:40,529: DEBUG/ForkPoolWorker-2] Encoding detection: ascii is most likely the one.
-[2024-07-23 13:45:40,535: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.googleapis.com:443
-[2024-07-23 13:45:40,744: DEBUG/ForkPoolWorker-2] https://www.googleapis.com:443 "GET /customsearch/v1?key=AIzaSyAQjSPQoMFEWJGCGVjQsg1IMp328NNPy_c&cx=f2954b6edb52b40c7&q=prettier-plugin-tailwindcss%20%5E0.5.11&num=10&start=1&fields=items(link,snippet,htmlFormattedUrl) HTTP/1.1" 200 None
-[2024-07-23 13:45:40,748: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): www.googleapis.com:443
-[2024-07-23 13:45:40,997: DEBUG/ForkPoolWorker-2] https://www.googleapis.com:443 "GET /customsearch/v1?key=AIzaSyAQjSPQoMFEWJGCGVjQsg1IMp328NNPy_c&cx=f2954b6edb52b40c7&q=sharp%200.33.1&num=10&start=1&fields=items(link,snippet,htmlFormattedUrl) HTTP/1.1" 200 None
-[2024-07-23 13:45:41,000: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): security.snyk.io:443
-[2024-07-23 13:45:41,236: DEBUG/ForkPoolWorker-2] https://security.snyk.io:443 "GET /package/npm/sharp HTTP/1.1" 200 None
-[2024-07-23 13:45:41,534: WARNING/ForkPoolWorker-2] [32mCompleted searching for known Vulnerabilities . . . . .[0m
-[2024-07-23 13:45:46,546: WARNING/ForkPoolWorker-2] [35mGetting code audit report . . . . . .[0m
-[2024-07-23 13:45:46,547: WARNING/ForkPoolWorker-2] [91mTrying code audit, attempt 1 [0m
-[2024-07-23 13:45:55,732: WARNING/ForkPoolWorker-2] [35mGetting vulnerability report . . . . . . .[0m
-[2024-07-23 13:45:55,732: WARNING/ForkPoolWorker-2] [91mTrying Vuln Report, attempt 1 [0m
-[2024-07-23 13:45:57,931: ERROR/ForkPoolWorker-2] Task celery_app.generate_report[8f03695f-aba4-4663-ab3b-aa0009565fd5] raised unexpected: BlockedPromptException(block_reason: OTHER
-)
-Traceback (most recent call last):
-  File "/home/trainboxai/backend/rippo/venv/lib/python3.10/site-packages/celery/app/trace.py", line 453, in trace_task
-    R = retval = fun(*args, **kwargs)
-  File "/home/trainboxai/backend/rippo/venv/lib/python3.10/site-packages/celery/app/trace.py", line 736, in __protected_call__
-    return self.run(*args, **kwargs)
-  File "/home/trainboxai/backend/rippo/prod/celery_app.py", line 88, in generate_report
-    vulnerability_report_with_backoff(vulnerability_search_results,uniqueId)
-  File "/home/trainboxai/backend/rippo/prod/reporter.py", line 194, in vulnerability_report_with_backoff
-    return vulnerability_report(input_file, unique_id)
-  File "/home/trainboxai/backend/rippo/prod/reporter.py", line 111, in vulnerability_report
-    response = chat_session.send_message(input_file)
-  File "/home/trainboxai/backend/rippo/venv/lib/python3.10/site-packages/google/generativeai/generative_models.py", line 505, in send_message
-    self._check_response(response=response, stream=stream)
-  File "/home/trainboxai/backend/rippo/venv/lib/python3.10/site-packages/google/generativeai/generative_models.py", line 524, in _check_response
-    raise generation_types.BlockedPromptException(response.prompt_feedback)
-google.generativeai.types.generation_types.BlockedPromptException: block_reason: OTHER
-
+[2024-07-24 12:02:22,175: DEBUG/ForkPoolWorker-2] Making request: POST https://oauth2.googleapis.com/token
+[2024-07-24 12:02:22,177: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): oauth2.googleapis.com:443
+[2024-07-24 12:02:22,218: DEBUG/ForkPoolWorker-2] https://oauth2.googleapis.com:443 "POST /token HTTP/1.1" 200 None
+[2024-07-24 12:02:22,264: WARNING/ForkPoolWorker-2] Uploading HTML to:
+[2024-07-24 12:02:22,265: WARNING/ForkPoolWorker-2]  
+[2024-07-24 12:02:22,265: WARNING/ForkPoolWorker-2] projects/qKtISirBQbftY20mLxK0hWXsD053/jerrydav1s:shonglish/_Nik0b
+[2024-07-24 12:02:22,266: DEBUG/ForkPoolWorker-2] Resetting dropped connection: storage.googleapis.com
+[2024-07-24 12:02:22,342: DEBUG/ForkPoolWorker-2] https://storage.googleapis.com:443 "POST /upload/storage/v1/b/rippo-777.appspot.com/o?uploadType=resumable HTTP/1.1" 200 0
+[2024-07-24 12:02:22,498: DEBUG/ForkPoolWorker-2] https://storage.googleapis.com:443 "PUT /upload/storage/v1/b/rippo-777.appspot.com/o?uploadType=resumable&upload_id=AHxI1nMfS3ZK4lTX-VKmOA_RBlBJFgKIpMGoKf2T-oE0mIvGPSdUOYc0NBuhhPG_5Svvf-ZT6Zvd7QR-LqHepBMecZLmivQmTPiEWKQoTkZCaAOQ HTTP/1.1" 200 1050
+[2024-07-24 12:02:22,498: WARNING/ForkPoolWorker-2] Uploaded _Nik0b.html to projects/qKtISirBQbftY20mLxK0hWXsD053/jerrydav1s:shonglish/_Nik0b/_Nik0b.html
+[2024-07-24 12:02:22,498: WARNING/ForkPoolWorker-2] Updating report status
+[2024-07-24 12:02:22,667: WARNING/ForkPoolWorker-2] Project status updated to Completed for:
+[2024-07-24 12:02:22,667: WARNING/ForkPoolWorker-2]  
+[2024-07-24 12:02:22,667: WARNING/ForkPoolWorker-2] _Nik0b
+[2024-07-24 12:02:22,667: WARNING/ForkPoolWorker-2] Report status updated
+[2024-07-24 12:02:22,668: WARNING/ForkPoolWorker-2] Updating dashboard status
+[2024-07-24 12:02:22,668: WARNING/ForkPoolWorker-2] Checking Dashboard Stats
+[2024-07-24 12:02:22,668: WARNING/ForkPoolWorker-2] Document path: users/qKtISirBQbftY20mLxK0hWXsD053/projects/jerrydav1s:shonglish
+[2024-07-24 12:02:22,739: WARNING/ForkPoolWorker-2] Project jerrydav1s:shonglish found
+[2024-07-24 12:02:22,783: WARNING/ForkPoolWorker-2] Total reports executed so far: 5
+[2024-07-24 12:02:22,837: WARNING/ForkPoolWorker-2] Dashboard status updated
+[2024-07-24 12:02:22,837: WARNING/ForkPoolWorker-2] Updating credits and usage
+[2024-07-24 12:02:22,986: WARNING/ForkPoolWorker-2] Usage data added for user qKtISirBQbftY20mLxK0hWXsD053: {'projectName': 'jerrydav1s:shonglish', 'reportID': '_Nik0b', 'date': datetime.datetime(2024, 7, 24, 12, 2, 22, 870926), 'creditsUsed': 10}
+[2024-07-24 12:02:22,986: WARNING/ForkPoolWorker-2] User qKtISirBQbftY20mLxK0hWXsD053 credits updated to 1570
+[2024-07-24 12:02:22,986: WARNING/ForkPoolWorker-2] Credits and usage done
+[2024-07-24 12:02:22,986: WARNING/ForkPoolWorker-2] Deleted: /home/trainboxai/backend/rippo/reports/code_audit__Nik0b.json
+[2024-07-24 12:02:22,986: WARNING/ForkPoolWorker-2] Deleted: /home/trainboxai/backend/rippo/reports/vuln_report__Nik0b.json
+[2024-07-24 12:02:22,986: WARNING/ForkPoolWorker-2] Deleted: /home/trainboxai/backend/rippo/reports/quality_report__Nik0b.json
+[2024-07-24 12:02:22,987: WARNING/ForkPoolWorker-2] Deleted: /home/trainboxai/backend/rippo/outputs/final__Nik0b.md
+[2024-07-24 12:02:22,987: WARNING/ForkPoolWorker-2] Deleted: /home/trainboxai/backend/rippo/outputs/vuln_search_results__Nik0b.json
+[2024-07-24 12:02:22,987: WARNING/ForkPoolWorker-2] Deleted: /home/trainboxai/backend/rippo/reports/refactor__Nik0b.html
+[2024-07-24 12:02:22,987: WARNING/ForkPoolWorker-2] Deleted: /home/trainboxai/backend/rippo/reports/report__Nik0b.html
+[2024-07-24 12:02:22,987: WARNING/ForkPoolWorker-2] Deleted: /home/trainboxai/backend/rippo/reports/refactor_guide__Nik0b.md
+[2024-07-24 12:02:22,987: WARNING/ForkPoolWorker-2] Deleted: /home/trainboxai/backend/rippo/reports/_Nik0b.html
+[2024-07-24 12:02:22,987: INFO/ForkPoolWorker-2] Task celery_app.generate_report[d584bee0-8b58-4613-80d9-1d93d509a8da] succeeded in 133.62971807400027s: None

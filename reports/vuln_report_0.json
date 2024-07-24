@@ -1,0 +1,160 @@
+{
+  "vulnerability_report": [
+    {
+      "dependency": "next",
+      "version": "14.0.4",
+      "description": "Affected versions of this package are vulnerable to Server-Side Request Forgery (SSRF) through the `fetch` function. By exploiting this vulnerability, an attacker can generate clicks and revenue or initiate a Distributed Denial of Service (DDoS) attack without the victims' knowledge or consent by sending a message that triggers a fetch request to an arbitrary URL.",
+      "source": "https://nvd.nist.gov/vuln/detail/CVE-2022-36046"
+    },
+    {
+      "dependency": "next",
+      "version": "14.0.4",
+      "description": "Affected versions of this package are vulnerable to Resource Exhaustion via the `fetch` function. An attacker can exploit this vulnerability by sending a specially crafted request that triggers inefficient regular expression evaluation, leading to excessive consumption of CPU resources.",
+      "source": "https://nvd.nist.gov/vuln/detail/CVE-2022-36046"
+    },
+    {
+      "dependency": "next",
+      "version": "14.0.4",
+      "description": "Affected versions of this package are vulnerable to User Interface (UI) Misrepresentation of Critical Information due to improper CSP (content security policy).",
+      "source": "https://nvd.nist.gov/vuln/detail/CVE-2022-36046"
+    },
+    {
+      "dependency": "next",
+      "version": "14.0.4",
+      "description": "Affected versions of this package are vulnerable to Denial of Service (DoS) when a static asset is requested with a locale prefix.",
+      "source": "https://nvd.nist.gov/vuln/detail/CVE-2022-36046"
+    },
+    {
+      "dependency": "next",
+      "version": "14.0.4",
+      "description": "Affected versions of this package are vulnerable to Denial of Service (DoS) due to mishandling of invalid URLs.",
+      "source": "https://nvd.nist.gov/vuln/detail/CVE-2022-36046"
+    },
+    {
+      "dependency": "nodemailer",
+      "version": "^6.9.13",
+      "description": "Affected versions of this package are vulnerable to Regular Expression Denial of Service (ReDoS) via the `content-type` parameter or when parsing attachments with an embedded file. An attacker can exploit this vulnerability by sending a specially crafted email that triggers inefficient regular expression evaluation, leading to excessive consumption of CPU resources.",
+      "source": "https://www.cvedetails.com/vulnerability-list/vendor_id-1749/Imagemagick.html"
+    },
+    {
+      "dependency": "nodemailer",
+      "version": "^6.9.13",
+      "description": "Affected versions of this package are vulnerable to HTTP Header Injection if unsanitized user input that may contain newlines and carriage returns is passed into an address object.",
+      "source": "https://www.cvedetails.com/vulnerability-list/vendor_id-1749/Imagemagick.html"
+    },
+    {
+      "dependency": "nodemailer",
+      "version": "^6.9.13",
+      "description": "Affected versions of this package are vulnerable to Command Injection. Use of crafted recipient email addresses may result in arbitrary command flag injection in sendmail transport for sending mails.",
+      "source": "https://www.cvedetails.com/vulnerability-list/vendor_id-1749/Imagemagick.html"
+    },
+    {
+      "dependency": "clsx",
+      "version": "^2.0.0",
+      "description": "This vulnerability has been modified and is currently undergoing reanalysis. Please check back soon to view the updated vulnerability summary.",
+      "source": "https://nvd.nist.gov/vuln/detail/CVE-2023-42282"
+    },
+    {
+      "dependency": "react-svg",
+      "version": "1.1.1",
+      "description": "Affected versions of this package are vulnerable to Cross-site Scripting (XSS). The documentation mentioned that the default value for evalScripts is true.",
+      "source": "https://security.snyk.io/package/npm/react-svg/1.1.1"
+    },
+    {
+      "dependency": "react-svg",
+      "version": "1.1.1",
+      "description": "Injecting malicious code is the most prevalent manner by which XSS is exploited; for this reason, escaping characters in order to prevent this manipulation is the top method for securing code against this vulnerability.",
+      "source": "https://security.snyk.io/package/npm/react-svg/1.1.1"
+    },
+    {
+      "dependency": "react-svg",
+      "version": "1.1.1",
+      "description": "The attacker delivers a malicious link externally from the vulnerable web site application to a user. When clicked, malicious code is sent to the vulnerable web site, which reflects the attack back to the user's browser.",
+      "source": "https://security.snyk.io/package/npm/react-svg/1.1.1"
+    },
+    {
+      "dependency": "postcss",
+      "version": "^8.4.32",
+      "description": "Affected versions of this package are vulnerable to Regular Expression Denial of Service (ReDoS) via the `regex` function.",
+      "source": "https://security.snyk.io/vuln/SNYK-JS-POSTCSS-1255640"
+    },
+    {
+      "dependency": "postcss",
+      "version": "^8.4.32",
+      "description": "The vulnerable regexes are caused mainly by the sub-pattern `\\s+`.",
+      "source": "https://security.snyk.io/vuln/SNYK-JS-POSTCSS-1255640"
+    },
+    {
+      "dependency": "next/image",
+      "version": "unknown",
+      "description": "Affected versions of this package are vulnerable to Cross-site Scripting (XSS) via the Image Optimization API.",
+      "source": "https://www.exploit-db.com/exploits/34264"
+    },
+    {
+      "dependency": "next/image",
+      "version": "unknown",
+      "description": "Injecting malicious code is the most prevalent manner by which XSS is exploited; for this reason, escaping characters in order to prevent this manipulation is the top method for securing code against this vulnerability.",
+      "source": "https://www.exploit-db.com/exploits/34264"
+    },
+    {
+      "dependency": "next/image",
+      "version": "unknown",
+      "description": "The attacker delivers a malicious link externally from the vulnerable web site application to a user. When clicked, malicious code is sent to the vulnerable web site, which reflects the attack back to the user's browser.",
+      "source": "https://www.exploit-db.com/exploits/34264"
+    },
+    {
+      "dependency": "next/image",
+      "version": "unknown",
+      "description": "Affected versions of this package are vulnerable to Path Traversal.",
+      "source": "https://www.exploit-db.com/exploits/34264"
+    },
+    {
+      "dependency": "next/image",
+      "version": "unknown",
+      "description": "Directory Traversal vulnerabilities can be generally divided into two types:",
+      "source": "https://www.exploit-db.com/exploits/34264"
+    },
+    {
+      "dependency": "next/image",
+      "version": "unknown",
+      "description": "vulnerability of this type: Allows the attacker to create or replace existing files. This type of vulnerability is also known as",
+      "source": "https://www.exploit-db.com/exploits/34264"
+    },
+    {
+      "dependency": "next/link",
+      "version": "unknown",
+      "description": "Affected versions of this package are vulnerable to Cross-site Scripting (XSS) via the Image Optimization API.",
+      "source": "https://www.exploit-db.com/exploits/28653"
+    },
+    {
+      "dependency": "next/link",
+      "version": "unknown",
+      "description": "Injecting malicious code is the most prevalent manner by which XSS is exploited; for this reason, escaping characters in order to prevent this manipulation is the top method for securing code against this vulnerability.",
+      "source": "https://www.exploit-db.com/exploits/28653"
+    },
+    {
+      "dependency": "next/link",
+      "version": "unknown",
+      "description": "The attacker delivers a malicious link externally from the vulnerable web site application to a user. When clicked, malicious code is sent to the vulnerable web site, which reflects the attack back to the user's browser.",
+      "source": "https://www.exploit-db.com/exploits/28653"
+    },
+    {
+      "dependency": "next/link",
+      "version": "unknown",
+      "description": "Affected versions of this package are vulnerable to Path Traversal.",
+      "source": "https://www.exploit-db.com/exploits/28653"
+    },
+    {
+      "dependency": "next/link",
+      "version": "unknown",
+      "description": "Directory Traversal vulnerabilities can be generally divided into two types:",
+      "source": "https://www.exploit-db.com/exploits/28653"
+    },
+    {
+      "dependency": "next/link",
+      "version": "unknown",
+      "description": "vulnerability of this type: Allows the attacker to create or replace existing files. This type of vulnerability is also known as",
+      "source": "https://www.exploit-db.com/exploits/28653"
+    }
+  ]
+}

@@ -64,7 +64,7 @@ def generate_report(repo_url, repo_name, report_id, user_id, oauth_token):
     write_event_log(event_id=104, source='analyser.py/get_dependancy_list', details='Analysed and extracted list of dependancies', level='INFO', log_path=log_path )
     time.sleep(5)
  
-
+    ### MULTI AGENT STEP HERE CONSOLIDATE ALL DEPS
    
     # 3. Search for know Vulnerabilities
     #deps_list = json.loads(deps_list) 

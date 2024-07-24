@@ -81,25 +81,52 @@ def search_vulnerabilities(csv_data, unique_id=0):
 
 
 
-""" #/
+""" /
 # Example usage
 """ # /
 #dependencies = """
 "dependancy","version"
-"autoprefixer","^10.4.17",
-"@headlessui/vue","^1.7.19",
-"@heroicons/vue","^2.1.3",
-"@tailwindcss/forms","^0.5.7",
-"axios","^1.6.8",
-"nuxt","^3.9.3",
-"postcss","^8.4.33",
-"tailwindcss","^3.4.1",
-"tailwindcss-text-fill-stroke","^1.1.2",
-"vue","^3.4.14",
-"vue-router","^4.2.5"
-
+"@headlessui/react","^1.7.17"
+"@headlessui/tailwindcss","^0.2.0"
+"@leafac/rehype-shiki","^2.2.1"
+"@mdx-js/loader","^3.0.0"
+"@next/mdx","^14.0.4"
+"@tailwindcss/forms","^0.5.7"
+"@vercel/analytics","^1.1.1"
+"acorn","^8.11.2"
+"acorn-jsx","^5.3.2"
+"clsx","^2.0.0"
+"escape-string-regexp","^5.0.0"
+"framer-motion","^10.16.16"
+"next","14.0.4"
+"nodemailer","^6.9.13"
+"path","^0.12.7"
+"react","^18"
+"react-dom","^18"
+"recma-import-images","^0.0.3"
+"remark-gfm","^4.0.0"
+"remark-rehype-wrap","^0.0.3"
+"remark-unwrap-images","^4.0.0"
+"shiki","^0.14.6"
+"unified-conditional","^0.0.2"
+"@types/node","^20"
+"@types/react","^18"
+"@types/react-dom","^18"
+"autoprefixer","^10.4.16"
+"eslint","^8"
+"eslint-config-next","14.0.4"
+"postcss","^8.4.32"
+"tailwindcss","^3.3.6"
+"typescript","^5"
+"tailwindcss","unknown"
+"tailwindcss/defaultTheme","unknown"
+"next","unknown"
+"next/image","unknown"
+"next/link","unknown"
+"next/navigation","unknown"
+"fast-glob","unknown"
 """
 vulnerability_results = search_vulnerabilities(dependencies)
 print(vulnerability_results)
 
-""" #/
+#""" #/

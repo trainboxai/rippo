@@ -3,6 +3,7 @@ import os
 import json
 import time
 import random
+from groq import Groq
 import google.generativeai as genai
 from google.api_core.exceptions import DeadlineExceeded
 from pathlib import Path
@@ -10,11 +11,44 @@ from colorama import Fore, Style
 import re
 
  # AUTH
-load_dotenv
+load_dotenv()
+groq_client = Groq(api_key=os.environ["GROQ_API_KEY"])
 genai.configure(api_key=os.environ["GEMINI_API_KEY"])
 
 
 # FUNCTIONS
+def vulnerability_report(input_file, unique_id=0):
+    completion = groq_client.chat.completions.create(
+        model="llama-3.1-70b-versatile",
+        messages=[
+            {
+                "role": "system",
+                "content": "You will be provided with a JSON file containing search results for vulnerabilities related to various software dependencies. Each dependency entry includes its name, version, a list of text results from vulnerability databases, and the source of the information.\n\nYour task is to analyze these search results and generate a vulnerability report in JSON format. For each dependency, determine if a vulnerability exists based on the provided text results.\n\nYou must be certain that the vulnerability mentioned in the results affects the specified version. If a vulnerability is identified, create a report entry with the following structure:\n\n```json\n{\n  \"vulnerability_report\": [\n    {\n      \"dependency\": \"dependency_name\",\n      \"version\": \"dependency_version\",\n      \"description\": \"Concise description of the vulnerability (under 100 words).\",\n      \"source\": \"URL of the source where the vulnerability information was found\"\n    },\n    {\n      \"dependency\": \"another_dependency\",\n      \"version\": \"another_dependency_version\",\n      \"description\": \"Concise description of this vulnerability (under 100 words).\",\n      \"source\": \"URL of the source for this vulnerability information\"\n    }\n    // ... more vulnerability entries as needed\n  ]\n}\n```\n\nIf no vulnerabilities are found, return an empty \"vulnerability_report\" array:\n\n```json\n{\n  \"vulnerability_report\": []\n}\n```\n\nKey Considerations:\n* Conciseness: Keep the vulnerability descriptions brief and informative.\n* Source Attribution: Always include the source URL for each reported vulnerability.\n* Clarity: Structure the JSON output clearly for easy parsing and use.\n\nYou must return only the JSON content and nothing else. No explanations."
+            },
+            {
+                "role": "user",
+                "content": input_file
+            }
+        ],
+        temperature=0.34,
+        max_tokens=7777,
+        top_p=1,
+        stream=False,
+        stop=None,
+    )
+
+    response = completion.choices[0].message.content
+
+    print(response)
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    reports_dir = os.path.join(script_dir, '..', 'reports')
+    # Remove both opening and closing delimiters
+    cleaned_text = re.sub(r'```json', '', response)
+    cleaned_text = re.sub(r'```', '', cleaned_text)
+    with open(os.path.join(reports_dir,f'vuln_report_{unique_id}.json'), 'w') as file:
+        file.write(cleaned_text) 
+    return response
+
 
 def code_audit_report(md_file, unique_id=0):
     generation_config = {
@@ -66,58 +100,6 @@ def code_audit_report(md_file, unique_id=0):
     with open(os.path.join(reports_dir,f'code_audit_{unique_id}.json'), 'w') as file:
         file.write(cleaned_text)
     #print(cleaned_text)
-    return response.text
-
-
-def vulnerability_report(input_file, unique_id=0):
-    generation_config = {
-    "temperature": 0.3,
-    "top_p": 0.95,
-    "top_k": 64,
-    "max_output_tokens": 8192,
-    "response_mime_type": "text/plain",
-    }
-    safety_settings = [
-    {
-        "category": "HARM_CATEGORY_HARASSMENT",
-        "threshold": "BLOCK_NONE",
-    },
-    {
-        "category": "HARM_CATEGORY_HATE_SPEECH",
-        "threshold": "BLOCK_NONE",
-    },
-    {
-        "category": "HARM_CATEGORY_SEXUALLY_EXPLICIT",
-        "threshold": "BLOCK_NONE",
-    },
-    {
-        "category": "HARM_CATEGORY_DANGEROUS_CONTENT",
-        "threshold": "BLOCK_NONE",
-    },
-    ]
-
-    model = genai.GenerativeModel(
-    model_name="gemini-1.5-pro-latest",
-    safety_settings=safety_settings,
-    generation_config=generation_config,
-    system_instruction="You will be provided with a JSON file containing search results for vulnerabilities related to various software dependencies. Each dependency entry includes its name, version, a list of text results from vulnerability databases, and the source of the information.\n\nYour task is to analyze these search results and generate a vulnerability report in JSON format. For each dependency, determine if a vulnerability exists based on the provided text results.\n\nYou must be certain that the vulnerability mentioned in the results affects the specified version. If a vulnerability is identified, create a report entry with the following structure:\n\n{\n  \"vulnerability_report\": [\n    {\n      \"dependency\": \"dependency_name\",\n      \"version\": \"dependency_version\",\n      \"description\": \"Concise description of the vulnerability (under 100 words).\",\n      \"source\": \"URL of the source where the vulnerability information was found\"\n    },\n    {\n      \"dependency\": \"another_dependency\",\n      \"version\": \"another_dependency_version\",\n      \"description\": \"Concise description of this vulnerability (under 100 words).\",\n      \"source\": \"URL of the source for this vulnerability information\"\n    }\n    // ... more vulnerability entries as needed\n  ]\n}\n\nIf no vulnerabilities are found, return an empty \"vulnerability_report\" array:\n{\n  \"vulnerability_report\": []\n}\n\nDo not return anything else, only the JSON content as described above.\n**Key Considerations:**\n\n*   **Conciseness:** Keep the vulnerability descriptions brief and informative.\n*   **Source Attribution:** Always include the source URL for each reported vulnerability.\n*   **Clarity:**  Structure the JSON output clearly for easy parsing and use.\n\nYou must return only the JSON content and nothing else. No explanations",
-    )
-
-    chat_session = model.start_chat(
-    history=[
-    ]
-    )
-
-    response = chat_session.send_message(input_file)
-
-    print(response.text)
-    script_dir = os.path.dirname(os.path.abspath(__file__))
-    reports_dir = os.path.join(script_dir, '..', 'reports')
-    # Remove both opening and closing delimiters
-    cleaned_text = re.sub(r'```json', '', response.text)
-    cleaned_text = re.sub(r'```', '', cleaned_text)
-    with open(os.path.join(reports_dir,f'vuln_report_{unique_id}.json'), 'w') as file:
-        file.write(cleaned_text) 
     return response.text
 
 
@@ -221,44 +203,62 @@ def quality_report_with_backoff(input_files, unique_id=0, max_retries=5):
     return json.dumps({"error": f"Quality Report failed after {max_retries} retries."})
 
 
+# TODO: delete old function
+def OLDvulnerability_report(input_file, unique_id=0):
+    generation_config = {
+    "temperature": 0.3,
+    "top_p": 0.95,
+    "top_k": 64,
+    "max_output_tokens": 8192,
+    "response_mime_type": "text/plain",
+    }
+    safety_settings = [
+    {
+        "category": "HARM_CATEGORY_HARASSMENT",
+        "threshold": "BLOCK_NONE",
+    },
+    {
+        "category": "HARM_CATEGORY_HATE_SPEECH",
+        "threshold": "BLOCK_NONE",
+    },
+    {
+        "category": "HARM_CATEGORY_SEXUALLY_EXPLICIT",
+        "threshold": "BLOCK_NONE",
+    },
+    {
+        "category": "HARM_CATEGORY_DANGEROUS_CONTENT",
+        "threshold": "BLOCK_NONE",
+    },
+    ]
+
+    model = genai.GenerativeModel(
+    model_name="gemini-1.5-pro-latest",
+    safety_settings=safety_settings,
+    generation_config=generation_config,
+    system_instruction="You will be provided with a JSON file containing search results for vulnerabilities related to various software dependencies. Each dependency entry includes its name, version, a list of text results from vulnerability databases, and the source of the information.\n\nYour task is to analyze these search results and generate a vulnerability report in JSON format. For each dependency, determine if a vulnerability exists based on the provided text results.\n\nYou must be certain that the vulnerability mentioned in the results affects the specified version. If a vulnerability is identified, create a report entry with the following structure:\n\n{\n  \"vulnerability_report\": [\n    {\n      \"dependency\": \"dependency_name\",\n      \"version\": \"dependency_version\",\n      \"description\": \"Concise description of the vulnerability (under 100 words).\",\n      \"source\": \"URL of the source where the vulnerability information was found\"\n    },\n    {\n      \"dependency\": \"another_dependency\",\n      \"version\": \"another_dependency_version\",\n      \"description\": \"Concise description of this vulnerability (under 100 words).\",\n      \"source\": \"URL of the source for this vulnerability information\"\n    }\n    // ... more vulnerability entries as needed\n  ]\n}\n\nIf no vulnerabilities are found, return an empty \"vulnerability_report\" array:\n{\n  \"vulnerability_report\": []\n}\n\nDo not return anything else, only the JSON content as described above.\n**Key Considerations:**\n\n*   **Conciseness:** Keep the vulnerability descriptions brief and informative.\n*   **Source Attribution:** Always include the source URL for each reported vulnerability.\n*   **Clarity:**  Structure the JSON output clearly for easy parsing and use.\n\nYou must return only the JSON content and nothing else. No explanations",
+    )
+
+    chat_session = model.start_chat(
+    history=[
+    ]
+    )
+
+    response = chat_session.send_message(input_file)
+
+    print(response.text)
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    reports_dir = os.path.join(script_dir, '..', 'reports')
+    # Remove both opening and closing delimiters
+    cleaned_text = re.sub(r'```json', '', response.text)
+    cleaned_text = re.sub(r'```', '', cleaned_text)
+    with open(os.path.join(reports_dir,f'vuln_report_{unique_id}.json'), 'w') as file:
+        file.write(cleaned_text) 
+    return response.text
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-"""
+## Example usage
+#"""
 
 # Testing TODO comment out when in prod
 script_dir = os.path.dirname(os.path.abspath(__file__))
@@ -266,35 +266,15 @@ output_dir = os.path.join(script_dir, '..', 'outputs')
 reports_dir = os.path.join(script_dir, '..', 'reports')
 
 #codebase
-markdown_file_path = Path(os.path.join(output_dir, 'final.md'))
-markdown_file = markdown_file_path.read_text()
+#markdown_file_path = Path(os.path.join(output_dir, 'final.md'))
+#markdown_file = markdown_file_path.read_text()
 
 # Vulnerability search results
-vuln_results_path = Path(os.path.join(output_dir, 'vuln_results.json'))
+vuln_results_path = Path(os.path.join(output_dir, 'vuln_search_results_0.json'))
 vulnerability_search_results = vuln_results_path.read_text()
+vulnerability_report(vulnerability_search_results)
 
 # code audit
-code_audit_path = Path(os.path.join(reports_dir ,'code_audit.json'))
-code_audit = code_audit_path.read_text()
-
-quality_input = f"""
-# # # Codebase below in markdown # # # 
-#{markdown_file}
-
-#==========================================
-# # #  Code Audit report below # # # 
-#{code_audit}
-
-"""
-
-
-# get code audit report
-#code_audit_report(markdown_file)
-
-# get vuln report
-#vulnerability_report(vulnerability_search_results)
-
-# get quality report
-#quality_report(quality_input)
-
-"""
+##code_audit_path = Path(os.path.join(reports_dir ,'code_audit.json'))
+#code_audit = code_audit_path.read_text()
+#/
