@@ -258,7 +258,7 @@ def OLDvulnerability_report(input_file, unique_id=0):
 
 
 ## Example usage
-#"""
+"""
 
 # Testing TODO comment out when in prod
 script_dir = os.path.dirname(os.path.abspath(__file__))
@@ -278,3 +278,4 @@ vulnerability_report(vulnerability_search_results)
 ##code_audit_path = Path(os.path.join(reports_dir ,'code_audit.json'))
 #code_audit = code_audit_path.read_text()
 #/
+"""

@@ -1,237 +1,77 @@
-[2024-07-24 11:58:26,827: DEBUG/MainProcess] | Worker: Preparing bootsteps.
-[2024-07-24 11:58:26,830: DEBUG/MainProcess] | Worker: Building graph...
-[2024-07-24 11:58:26,830: DEBUG/MainProcess] | Worker: New boot order: {Beat, Timer, Hub, Pool, Autoscaler, StateDB, Consumer}
-[2024-07-24 11:58:26,839: DEBUG/MainProcess] | Consumer: Preparing bootsteps.
-[2024-07-24 11:58:26,839: DEBUG/MainProcess] | Consumer: Building graph...
-[2024-07-24 11:58:26,848: DEBUG/MainProcess] | Consumer: New boot order: {Connection, Agent, Events, Mingle, Gossip, Tasks, Control, Heart, event loop}
-[2024-07-24 11:58:26,855: DEBUG/MainProcess] | Worker: Starting Hub
-[2024-07-24 11:58:26,855: DEBUG/MainProcess] ^-- substep ok
-[2024-07-24 11:58:26,855: DEBUG/MainProcess] | Worker: Starting Pool
-[2024-07-24 11:58:27,187: DEBUG/MainProcess] ^-- substep ok
-[2024-07-24 11:58:27,188: DEBUG/MainProcess] | Worker: Starting Consumer
-[2024-07-24 11:58:27,188: DEBUG/MainProcess] | Consumer: Starting Connection
-[2024-07-24 11:58:27,191: WARNING/MainProcess] /home/trainboxai/backend/rippo/venv/lib/python3.10/site-packages/celery/worker/consumer/consumer.py:508: CPendingDeprecationWarning: The broker_connection_retry configuration setting will no longer determine
+[2024-07-24 16:21:27,318: DEBUG/MainProcess] | Worker: Closing Hub...
+[2024-07-24 16:21:27,319: DEBUG/MainProcess] | Worker: Closing Pool...
+[2024-07-24 16:21:27,320: DEBUG/MainProcess] | Worker: Closing Consumer...
+[2024-07-24 16:21:27,320: DEBUG/MainProcess] | Worker: Stopping Consumer...
+[2024-07-24 16:21:27,320: DEBUG/MainProcess] | Consumer: Closing Connection...
+[2024-07-24 16:21:27,321: DEBUG/MainProcess] | Consumer: Closing Events...
+[2024-07-24 16:21:27,321: DEBUG/MainProcess] | Consumer: Closing Mingle...
+[2024-07-24 16:21:27,321: DEBUG/MainProcess] | Consumer: Closing Gossip...
+[2024-07-24 16:21:27,321: DEBUG/MainProcess] | Consumer: Closing Heart...
+[2024-07-24 16:21:27,321: DEBUG/MainProcess] | Consumer: Closing Tasks...
+[2024-07-24 16:21:27,321: DEBUG/MainProcess] | Consumer: Closing Control...
+[2024-07-24 16:21:27,321: DEBUG/MainProcess] | Consumer: Closing event loop...
+[2024-07-24 16:21:27,321: DEBUG/MainProcess] | Consumer: Stopping event loop...
+[2024-07-24 16:21:27,321: DEBUG/MainProcess] | Consumer: Stopping Control...
+[2024-07-24 16:21:27,324: DEBUG/MainProcess] | Consumer: Stopping Tasks...
+[2024-07-24 16:21:27,324: DEBUG/MainProcess] Canceling task consumer...
+[2024-07-24 16:21:27,324: DEBUG/MainProcess] | Consumer: Stopping Heart...
+[2024-07-24 16:21:27,325: DEBUG/MainProcess] | Consumer: Stopping Gossip...
+[2024-07-24 16:21:27,326: DEBUG/MainProcess] | Consumer: Stopping Mingle...
+[2024-07-24 16:21:27,327: DEBUG/MainProcess] | Consumer: Stopping Events...
+[2024-07-24 16:21:27,327: DEBUG/MainProcess] | Consumer: Stopping Connection...
+[2024-07-24 16:21:27,327: DEBUG/MainProcess] | Worker: Stopping Pool...
+[2024-07-24 16:21:28,352: DEBUG/MainProcess] | Worker: Stopping Hub...
+[2024-07-24 16:21:28,352: DEBUG/MainProcess] | Consumer: Shutdown Control...
+[2024-07-24 16:21:28,352: DEBUG/MainProcess] | Consumer: Shutdown Tasks...
+[2024-07-24 16:21:28,352: DEBUG/MainProcess] Canceling task consumer...
+[2024-07-24 16:21:28,353: DEBUG/MainProcess] Closing consumer channel...
+[2024-07-24 16:21:28,353: DEBUG/MainProcess] | Consumer: Shutdown Heart...
+[2024-07-24 16:21:28,353: DEBUG/MainProcess] | Consumer: Shutdown Gossip...
+[2024-07-24 16:21:28,353: DEBUG/MainProcess] | Consumer: Shutdown Events...
+[2024-07-24 16:21:28,353: DEBUG/MainProcess] | Consumer: Shutdown Connection...
+[2024-07-24 16:21:28,358: DEBUG/MainProcess] removing tasks from inqueue until task handler finished
+[2024-07-24 16:21:29,443: DEBUG/MainProcess] | Worker: Preparing bootsteps.
+[2024-07-24 16:21:29,444: DEBUG/MainProcess] | Worker: Building graph...
+[2024-07-24 16:21:29,445: DEBUG/MainProcess] | Worker: New boot order: {StateDB, Beat, Timer, Hub, Pool, Autoscaler, Consumer}
+[2024-07-24 16:21:29,450: DEBUG/MainProcess] | Consumer: Preparing bootsteps.
+[2024-07-24 16:21:29,450: DEBUG/MainProcess] | Consumer: Building graph...
+[2024-07-24 16:21:29,459: DEBUG/MainProcess] | Consumer: New boot order: {Connection, Events, Mingle, Tasks, Control, Gossip, Heart, Agent, event loop}
+[2024-07-24 16:21:29,469: DEBUG/MainProcess] | Worker: Starting Hub
+[2024-07-24 16:21:29,470: DEBUG/MainProcess] ^-- substep ok
+[2024-07-24 16:21:29,470: DEBUG/MainProcess] | Worker: Starting Pool
+[2024-07-24 16:21:30,111: DEBUG/MainProcess] ^-- substep ok
+[2024-07-24 16:21:30,111: DEBUG/MainProcess] | Worker: Starting Consumer
+[2024-07-24 16:21:30,112: DEBUG/MainProcess] | Consumer: Starting Connection
+[2024-07-24 16:21:30,116: WARNING/MainProcess] /home/trainboxai/backend/rippo/venv/lib/python3.10/site-packages/celery/worker/consumer/consumer.py:508: CPendingDeprecationWarning: The broker_connection_retry configuration setting will no longer determine
 whether broker connection retries are made during startup in Celery 6.0 and above.
 If you wish to retain the existing behavior for retrying connections on startup,
 you should set broker_connection_retry_on_startup to True.
   warnings.warn(
 
-[2024-07-24 11:58:27,268: INFO/MainProcess] Connected to redis://localhost:6379/0
-[2024-07-24 11:58:27,268: DEBUG/MainProcess] ^-- substep ok
-[2024-07-24 11:58:27,268: DEBUG/MainProcess] | Consumer: Starting Events
-[2024-07-24 11:58:27,268: WARNING/MainProcess] /home/trainboxai/backend/rippo/venv/lib/python3.10/site-packages/celery/worker/consumer/consumer.py:508: CPendingDeprecationWarning: The broker_connection_retry configuration setting will no longer determine
+[2024-07-24 16:21:30,125: INFO/MainProcess] Connected to redis://localhost:6379/0
+[2024-07-24 16:21:30,125: DEBUG/MainProcess] ^-- substep ok
+[2024-07-24 16:21:30,125: DEBUG/MainProcess] | Consumer: Starting Events
+[2024-07-24 16:21:30,126: WARNING/MainProcess] /home/trainboxai/backend/rippo/venv/lib/python3.10/site-packages/celery/worker/consumer/consumer.py:508: CPendingDeprecationWarning: The broker_connection_retry configuration setting will no longer determine
 whether broker connection retries are made during startup in Celery 6.0 and above.
 If you wish to retain the existing behavior for retrying connections on startup,
 you should set broker_connection_retry_on_startup to True.
   warnings.warn(
 
-[2024-07-24 11:58:27,270: DEBUG/MainProcess] ^-- substep ok
-[2024-07-24 11:58:27,270: DEBUG/MainProcess] | Consumer: Starting Mingle
-[2024-07-24 11:58:27,270: INFO/MainProcess] mingle: searching for neighbors
-[2024-07-24 11:58:28,278: INFO/MainProcess] mingle: all alone
-[2024-07-24 11:58:28,278: DEBUG/MainProcess] ^-- substep ok
-[2024-07-24 11:58:28,278: DEBUG/MainProcess] | Consumer: Starting Gossip
-[2024-07-24 11:58:28,280: DEBUG/MainProcess] ^-- substep ok
-[2024-07-24 11:58:28,281: DEBUG/MainProcess] | Consumer: Starting Tasks
-[2024-07-24 11:58:28,283: DEBUG/MainProcess] ^-- substep ok
-[2024-07-24 11:58:28,283: DEBUG/MainProcess] | Consumer: Starting Control
-[2024-07-24 11:58:28,285: DEBUG/MainProcess] ^-- substep ok
-[2024-07-24 11:58:28,286: DEBUG/MainProcess] | Consumer: Starting Heart
-[2024-07-24 11:58:28,286: DEBUG/MainProcess] ^-- substep ok
-[2024-07-24 11:58:28,287: DEBUG/MainProcess] | Consumer: Starting event loop
-[2024-07-24 11:58:28,287: DEBUG/MainProcess] | Worker: Hub.register Pool...
-[2024-07-24 11:58:28,287: INFO/MainProcess] celery@rippo-backend-vm ready.
-[2024-07-24 11:58:28,287: DEBUG/MainProcess] basic.qos: prefetch_count->16
-[2024-07-24 12:00:09,357: INFO/MainProcess] Task celery_app.generate_report[d584bee0-8b58-4613-80d9-1d93d509a8da] received
-[2024-07-24 12:00:09,357: DEBUG/MainProcess] TaskPool: Apply <function fast_trace_task at 0x7f3f768c71c0> (args:('celery_app.generate_report', 'd584bee0-8b58-4613-80d9-1d93d509a8da', {'lang': 'py', 'task': 'celery_app.generate_report', 'id': 'd584bee0-8b58-4613-80d9-1d93d509a8da', 'shadow': None, 'eta': None, 'expires': None, 'group': None, 'group_index': None, 'retries': 0, 'timelimit': [None, None], 'root_id': 'd584bee0-8b58-4613-80d9-1d93d509a8da', 'parent_id': None, 'argsrepr': "('https://github.com/jerrydav1s/shonglish.git', 'jerrydav1s:shonglish', '_Nik0b', 'qKtISirBQbftY20mLxK0hWXsD053', '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')", 'kwargsrepr': '{}', 'origin': 'gen21261@rippo-backend-vm', 'ignore_result': False, 'replaced_task_nesting': 0, 'stamped_headers': None, 'stamps': {}, 'properties': {'correlation_id': 'd584bee0-8b58-4613-80d9-1d93d509a8da', 'reply_to': '08749c3f-69dc-3a01-8a20-4d66a5d160ba', 'delivery_mode': 2, 'delivery_info': {'exchange': '', 'routing_key': 'celery'}, 'priority': 0, 'body_encoding': 'base64', 'delivery_tag': 'a99af621-8ba7-4cdb-8366-cd758e178650'}, 'reply_to':... kwargs:{})
-[2024-07-24 12:00:09,358: WARNING/ForkPoolWorker-2] [32mGet flattened file and extract contents . . .[0m
-[2024-07-24 12:00:09,358: WARNING/ForkPoolWorker-2] [35mGathering search results . . .[0m
-[2024-07-24 12:00:09,361: DEBUG/ForkPoolWorker-2] Popen(['git', 'clone', '-v', '--', 'https://*****@github.com/jerrydav1s/shonglish.git', '/tmp/tmpb1q7lt8f'], cwd=/home/trainboxai/backend/rippo/prod, stdin=None, shell=False, universal_newlines=True)
-[2024-07-24 12:00:09,938: DEBUG/ForkPoolWorker-2] Cmd(['git', 'clone', '-v', '--', 'https://*****@github.com/jerrydav1s/shonglish.git', '/tmp/tmpb1q7lt8f'])'s unused stdout: 
-[2024-07-24 12:00:09,945: WARNING/ForkPoolWorker-2] [32mAnalyse and extract list of dependancies . . . .[0m
-[2024-07-24 12:00:14,238: WARNING/ForkPoolWorker-2] {"result": "\"dependancy\",\"version\"\n\"@headlessui/vue\",\"1.7.19\"\n\"@heroicons/vue\",\"2.1.3\"\n\"@tailwindcss/forms\",\"0.5.7\"\n\"axios\",\"1.6.8\"\n\"autoprefixer\",\"^10.4.17\"\n\"nuxt\",\"^3.9.3\"\n\"postcss\",\"^8.4.33\"\n\"tailwindcss\",\"^3.4.1\"\n\"tailwindcss-text-fill-stroke\",\"1.1.2\"\n\"vue\",\"^3.4.14\"\n\"vue-router\",\"^4.2.5\""}
-[2024-07-24 12:00:14,238: WARNING/ForkPoolWorker-2] {"result": "\"dependancy\",\"version\"\n\"@headlessui/vue\",\"1.7.19\"\n\"@heroicons/vue\",\"2.1.3\"\n\"@tailwindcss/forms\",\"0.5.7\"\n\"axios\",\"1.6.8\"\n\"autoprefixer\",\"^10.4.17\"\n\"nuxt\",\"^3.9.3\"\n\"postcss\",\"^8.4.33\"\n\"tailwindcss\",\"^3.4.1\"\n\"tailwindcss-text-fill-stroke\",\"1.1.2\"\n\"vue\",\"^3.4.14\"\n\"vue-router\",\"^4.2.5\""}
-[2024-07-24 12:00:19,241: WARNING/ForkPoolWorker-2] [32mStarting searching for known Vulnerabilities . . . . .[0m
-[2024-07-24 12:00:19,241: WARNING/ForkPoolWorker-2] [32mCompleted searching for known Vulnerabilities . . . . .[0m
-[2024-07-24 12:00:24,247: WARNING/ForkPoolWorker-2] [35mGetting code audit report . . . . . .[0m
-[2024-07-24 12:00:24,247: WARNING/ForkPoolWorker-2] [91mTrying code audit, attempt 1 [0m
-[2024-07-24 12:00:35,181: WARNING/ForkPoolWorker-2] [35mGetting vulnerability report . . . . . . .[0m
-[2024-07-24 12:00:35,181: WARNING/ForkPoolWorker-2] [91mTrying Vuln Report, attempt 1 [0m
-[2024-07-24 12:00:35,184: DEBUG/ForkPoolWorker-2] Request options: {'method': 'post', 'url': '/openai/v1/chat/completions', 'files': None, 'json_data': {'messages': [{'role': 'system', 'content': 'You will be provided with a JSON file containing search results for vulnerabilities related to various software dependencies. Each dependency entry includes its name, version, a list of text results from vulnerability databases, and the source of the information.\n\nYour task is to analyze these search results and generate a vulnerability report in JSON format. For each dependency, determine if a vulnerability exists based on the provided text results.\n\nYou must be certain that the vulnerability mentioned in the results affects the specified version. If a vulnerability is identified, create a report entry with the following structure:\n\n```json\n{\n  "vulnerability_report": [\n    {\n      "dependency": "dependency_name",\n      "version": "dependency_version",\n      "description": "Concise description of the vulnerability (under 100 words).",\n      "source": "URL of the source where the vulnerability information was found"\n    },\n    {\n      "dependency": "another_dependency",\n      "version": "another_dependency_version",\n      "description": "Concise description of this vulnerability (under 100 words).",\n      "source": "URL of the source for this vulnerability information"\n    }\n    // ... more vulnerability entries as needed\n  ]\n}\n```\n\nIf no vulnerabilities are found, return an empty "vulnerability_report" array:\n\n```json\n{\n  "vulnerability_report": []\n}\n```\n\nKey Considerations:\n* Conciseness: Keep the vulnerability descriptions brief and informative.\n* Source Attribution: Always include the source URL for each reported vulnerability.\n* Clarity: Structure the JSON output clearly for easy parsing and use.\n\nYou must return only the JSON content and nothing else. No explanations.'}, {'role': 'user', 'content': '[]'}], 'model': 'llama-3.1-70b-versatile', 'max_tokens': 7777, 'stop': None, 'stream': False, 'temperature': 0.34, 'top_p': 1}}
-[2024-07-24 12:00:35,185: DEBUG/ForkPoolWorker-2] close.started
-[2024-07-24 12:00:35,186: DEBUG/ForkPoolWorker-2] close.complete
-[2024-07-24 12:00:35,186: DEBUG/ForkPoolWorker-2] connect_tcp.started host='api.groq.com' port=443 local_address=None timeout=5.0 socket_options=None
-[2024-07-24 12:00:35,201: DEBUG/ForkPoolWorker-2] connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x7f3f71a63730>
-[2024-07-24 12:00:35,201: DEBUG/ForkPoolWorker-2] start_tls.started ssl_context=<ssl.SSLContext object at 0x7f3f5a3197c0> server_hostname='api.groq.com' timeout=5.0
-[2024-07-24 12:00:35,218: DEBUG/ForkPoolWorker-2] start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x7f3f71a63430>
-[2024-07-24 12:00:35,218: DEBUG/ForkPoolWorker-2] send_request_headers.started request=<Request [b'POST']>
-[2024-07-24 12:00:35,219: DEBUG/ForkPoolWorker-2] send_request_headers.complete
-[2024-07-24 12:00:35,219: DEBUG/ForkPoolWorker-2] send_request_body.started request=<Request [b'POST']>
-[2024-07-24 12:00:35,219: DEBUG/ForkPoolWorker-2] send_request_body.complete
-[2024-07-24 12:00:35,219: DEBUG/ForkPoolWorker-2] receive_response_headers.started request=<Request [b'POST']>
-[2024-07-24 12:00:36,451: DEBUG/ForkPoolWorker-2] receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Wed, 24 Jul 2024 12:00:36 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'Cache-Control', b'private, max-age=0, no-store, no-cache, must-revalidate'), (b'vary', b'Origin'), (b'x-ratelimit-limit-requests', b'14400'), (b'x-ratelimit-limit-tokens', b'131072'), (b'x-ratelimit-remaining-requests', b'14399'), (b'x-ratelimit-remaining-tokens', b'130637'), (b'x-ratelimit-reset-requests', b'6s'), (b'x-ratelimit-reset-tokens', b'199.127197ms'), (b'x-request-id', b'req_01j3j9tnyce8mtykb4c607zn2t'), (b'via', b'1.1 google'), (b'alt-svc', b'h3=":443"; ma=86400'), (b'CF-Cache-Status', b'DYNAMIC'), (b'Server', b'cloudflare'), (b'CF-RAY', b'8a83c02c284b615f-ORD'), (b'Content-Encoding', b'gzip')])
-[2024-07-24 12:00:36,452: INFO/ForkPoolWorker-2] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
-[2024-07-24 12:00:36,452: DEBUG/ForkPoolWorker-2] receive_response_body.started request=<Request [b'POST']>
-[2024-07-24 12:00:36,452: DEBUG/ForkPoolWorker-2] receive_response_body.complete
-[2024-07-24 12:00:36,452: DEBUG/ForkPoolWorker-2] response_closed.started
-[2024-07-24 12:00:36,452: DEBUG/ForkPoolWorker-2] response_closed.complete
-[2024-07-24 12:00:36,452: DEBUG/ForkPoolWorker-2] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "200 OK"
-[2024-07-24 12:00:36,455: WARNING/ForkPoolWorker-2] ```json
-{
-  "vulnerability_report": []
-}
-```
-[2024-07-24 12:00:41,461: WARNING/ForkPoolWorker-2] [35mGetting quality report . . . . . . .[0m
-[2024-07-24 12:00:41,461: WARNING/ForkPoolWorker-2] [91mTrying Quality Report, attempt 1 [0m
-[2024-07-24 12:02:08,065: WARNING/ForkPoolWorker-2] Refactoring Plan
-- Finding: Hardcoded IP Address: The API endpoint URL uses a hardcoded IP address in both 'ai-writer.vue' and 'index.vue'. This hinders flexibility when deploying to different environments or if the API's IP changes.
-    - Issue: Hardcoded IP addresses reduce deployment flexibility and can cause breakage if the IP changes.
-    - Refactoring Approach:
-        1. Define an environment variable to store the API base URL.
-        2. Replace the hardcoded IP address with the environment variable.
-    - Example:
-        ```javascript
-        // Before:
-        const response = await $fetch('https://34.147.200.146:8888/translate', {
-          // ...
-        });
-
-        // After:
-        const apiBaseUrl = process.env.API_BASE_URL || 'https://34.147.200.146:8888'; // Provide a default if needed
-        const response = await $fetch(`${apiBaseUrl}/translate`, {
-          // ...
-        });
-        ```
-    - Relevant Files: pages/ai-writer.vue, pages/index.vue
-- Finding: Hardcoded Character Limit: The character limit (400) in 'index.vue' is hardcoded in multiple places. Consider replacing it with a constant variable for easier adjustment and better code readability.
-    - Issue: Using magic numbers for the character limit reduces code readability and maintainability.
-    - Refactoring Approach:
-        1. Define a constant variable for the character limit.
-        2. Replace the hardcoded values with the constant.
-    - Example:
-        ```javascript
-        // Before:
-        maxlength="400"
-        // ...
-        return 400 - this.sourceText.length;
-
-        // After:
-        const MAX_CHARACTERS = 400;
-        // ...
-        maxlength="MAX_CHARACTERS"
-        // ...
-        return MAX_CHARACTERS - this.sourceText.length;
-        ```
-    - Relevant Files: pages/index.vue
-[2024-07-24 12:02:08,075: WARNING/ForkPoolWorker-2]  JSON files have now been rendered to html
-[2024-07-24 12:02:13,084: DEBUG/ForkPoolWorker-2] Request options: {'method': 'post', 'url': '/v1/messages', 'timeout': 600, 'files': None, 'json_data': {'max_tokens': 4096, 'messages': [{'role': 'user', 'content': [{'type': 'text', 'text': 'Refactoring Plan\n- Finding: Hardcoded IP Address: The API endpoint URL uses a hardcoded IP address in both \'ai-writer.vue\' and \'index.vue\'. This hinders flexibility when deploying to different environments or if the API\'s IP changes.\n    - Issue: Hardcoded IP addresses reduce deployment flexibility and can cause breakage if the IP changes.\n    - Refactoring Approach:\n        1. Define an environment variable to store the API base URL.\n        2. Replace the hardcoded IP address with the environment variable.\n    - Example:\n        ```javascript\n        // Before:\n        const response = await $fetch(\'https://34.147.200.146:8888/translate\', {\n          // ...\n        });\n\n        // After:\n        const apiBaseUrl = process.env.API_BASE_URL || \'https://34.147.200.146:8888\'; // Provide a default if needed\n        const response = await $fetch(`${apiBaseUrl}/translate`, {\n          // ...\n        });\n        ```\n    - Relevant Files: pages/ai-writer.vue, pages/index.vue\n- Finding: Hardcoded Character Limit: The character limit (400) in \'index.vue\' is hardcoded in multiple places. Consider replacing it with a constant variable for easier adjustment and better code readability.\n    - Issue: Using magic numbers for the character limit reduces code readability and maintainability.\n    - Refactoring Approach:\n        1. Define a constant variable for the character limit.\n        2. Replace the hardcoded values with the constant.\n    - Example:\n        ```javascript\n        // Before:\n        maxlength="400"\n        // ...\n        return 400 - this.sourceText.length;\n\n        // After:\n        const MAX_CHARACTERS = 400;\n        // ...\n        maxlength="MAX_CHARACTERS"\n        // ...\n        return MAX_CHARACTERS - this.sourceText.length;\n        ```\n    - Relevant Files: pages/index.vue\n\n'}]}], 'model': 'claude-3-5-sonnet-20240620', 'system': 'You will be provided with text from a markdown file and your task is to convert this text into a blog/guide in HTML. However, do not add any information that is not in the original file.\n\nSTYLING RULES:\n- You must use Tailwind CSS classes and the only colours allowed are white and any shade of gray.\n- The main or highest most DIV must have the following classes: <div class="bg-white p-4 rounded-md shadow-md">\n- Only the top level header must be "text-xl" the rest of the text and sub-headers need no special font size\n- All headers and sub headers must be "text-gray-900"\n- All paragraphs must have class "<p class="text-gray-700 mb-2">"\n- All sub-headers must have class "<h3 class="font-bold text-gray-900 mb-2">"\n- All code must be wrapped around in a <code> element\n- Each topic or Finding must be separated with a top border line e.g.: <h3 class="border-t font-bold text-gray-900 mb-2">Finding:</h3>\n\nHere is a very short example:\nPROVIDED MARKDOWN TEXT:\n## Refactoring Plan\n\n**Finding:** Code duplication: The header and navigation components are duplicated in \'pages/index.vue\' and \'pages/about_me.vue\'. This could be refactored into a shared layout component for better maintainability.\n**Issue:** Increased maintenance effort and potential for inconsistencies between pages.\n**Refactoring Approach:**\n1. Create a new layout component, e.g., `layouts/default.vue`.\n2. Move the duplicated header and navigation code from `pages/index.vue` and `pages/about_me.vue` into `layouts/default.vue`.\n3. Replace the duplicated code in both pages with `<NuxtLayout>` component.\n\n\n\nHTML GENERATED:\n            <div class="bg-white p-4 rounded-md shadow-md">\n              <h2 class="text-2xl font-bold text-gray-900 mb-4">\n                Refactoring Plan\n              </h2>\n              <h3 class="border-t font-bold text-gray-900 mb-2">Finding:</h3>\n              <p class="text-gray-700 mb-8">\n                Code duplication: The header and navigation components are\n                duplicated in \'pages/index.vue\' and \'pages/about_me.vue\'. This\n                could be refactored into a shared layout component for better\n                maintainability.\n              </p>\n              <h3 class="font-bold text-gray-900 mb-2">Issue:</h3>\n              <p class="text-gray-700 mb-8">\n                Increased maintenance effort and potential for inconsistencies\n                between pages.\n              </p>\n              <h3 class="font-bold text-gray-900 mb-2">\n                Refactoring Approach:\n              </h3>\n              <ol class="list-decimal list-inside text-gray-700 mb-8">\n                <li>\n                  Create a new layout component, e.g.,\n                  <code>layouts/default.vue</code>.\n                </li>\n                <li>\n                  Move the duplicated header and navigation code from\n                  <code>pages/index.vue</code> and\n                  <code>pages/about_me.vue</code> into\n                  <code>layouts/default.vue</code>.\n                </li>\n                <li>\n                  Replace the duplicated code in both pages with\n                  <code>&lt;NuxtLayout&gt;</code> component.\n                </li>\n              </ol>\n  </div>\n\n\nYou must return only the pure html with no explanation or commentary.', 'temperature': 0.1}}
-[2024-07-24 12:02:13,088: DEBUG/ForkPoolWorker-2] Sending HTTP Request: POST https://api.anthropic.com/v1/messages
-[2024-07-24 12:02:13,088: DEBUG/ForkPoolWorker-2] connect_tcp.started host='api.anthropic.com' port=443 local_address=None timeout=600 socket_options=None
-[2024-07-24 12:02:13,131: DEBUG/ForkPoolWorker-2] connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x7f3f718c9fc0>
-[2024-07-24 12:02:13,132: DEBUG/ForkPoolWorker-2] start_tls.started ssl_context=<ssl.SSLContext object at 0x7f3f71cf65c0> server_hostname='api.anthropic.com' timeout=600
-[2024-07-24 12:02:13,148: DEBUG/ForkPoolWorker-2] start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x7f3f718c9ff0>
-[2024-07-24 12:02:13,149: DEBUG/ForkPoolWorker-2] send_request_headers.started request=<Request [b'POST']>
-[2024-07-24 12:02:13,149: DEBUG/ForkPoolWorker-2] send_request_headers.complete
-[2024-07-24 12:02:13,149: DEBUG/ForkPoolWorker-2] send_request_body.started request=<Request [b'POST']>
-[2024-07-24 12:02:13,149: DEBUG/ForkPoolWorker-2] send_request_body.complete
-[2024-07-24 12:02:13,149: DEBUG/ForkPoolWorker-2] receive_response_headers.started request=<Request [b'POST']>
-[2024-07-24 12:02:22,156: DEBUG/ForkPoolWorker-2] receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Wed, 24 Jul 2024 12:02:22 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'anthropic-ratelimit-requests-limit', b'50'), (b'anthropic-ratelimit-requests-remaining', b'49'), (b'anthropic-ratelimit-requests-reset', b'2024-07-24T12:02:46Z'), (b'anthropic-ratelimit-tokens-limit', b'40000'), (b'anthropic-ratelimit-tokens-remaining', b'40000'), (b'anthropic-ratelimit-tokens-reset', b'2024-07-24T12:02:22Z'), (b'request-id', b'req_01Fwh7dWegZMcLnKPpUvoBXC'), (b'x-cloud-trace-context', b'17aa9f17e5341e9a6ba5117ed6c60958'), (b'via', b'1.1 google'), (b'CF-Cache-Status', b'DYNAMIC'), (b'Server', b'cloudflare'), (b'CF-RAY', b'8a83c2903bb8e261-ORD'), (b'Content-Encoding', b'gzip')])
-[2024-07-24 12:02:22,156: INFO/ForkPoolWorker-2] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
-[2024-07-24 12:02:22,156: DEBUG/ForkPoolWorker-2] receive_response_body.started request=<Request [b'POST']>
-[2024-07-24 12:02:22,157: DEBUG/ForkPoolWorker-2] receive_response_body.complete
-[2024-07-24 12:02:22,157: DEBUG/ForkPoolWorker-2] response_closed.started
-[2024-07-24 12:02:22,157: DEBUG/ForkPoolWorker-2] response_closed.complete
-[2024-07-24 12:02:22,157: DEBUG/ForkPoolWorker-2] HTTP Response: POST https://api.anthropic.com/v1/messages "200 OK" Headers({'date': 'Wed, 24 Jul 2024 12:02:22 GMT', 'content-type': 'application/json', 'transfer-encoding': 'chunked', 'connection': 'keep-alive', 'anthropic-ratelimit-requests-limit': '50', 'anthropic-ratelimit-requests-remaining': '49', 'anthropic-ratelimit-requests-reset': '2024-07-24T12:02:46Z', 'anthropic-ratelimit-tokens-limit': '40000', 'anthropic-ratelimit-tokens-remaining': '40000', 'anthropic-ratelimit-tokens-reset': '2024-07-24T12:02:22Z', 'request-id': 'req_01Fwh7dWegZMcLnKPpUvoBXC', 'x-cloud-trace-context': '17aa9f17e5341e9a6ba5117ed6c60958', 'via': '1.1 google', 'cf-cache-status': 'DYNAMIC', 'server': 'cloudflare', 'cf-ray': '8a83c2903bb8e261-ORD', 'content-encoding': 'gzip'})
-[2024-07-24 12:02:22,160: WARNING/ForkPoolWorker-2] <div class="bg-white p-4 rounded-md shadow-md">
-  <h2 class="text-xl font-bold text-gray-900 mb-4">Refactoring Plan</h2>
-
-  <h3 class="border-t font-bold text-gray-900 mb-2">Finding:</h3>
-  <p class="text-gray-700 mb-2">Hardcoded IP Address: The API endpoint URL uses a hardcoded IP address in both 'ai-writer.vue' and 'index.vue'. This hinders flexibility when deploying to different environments or if the API's IP changes.</p>
-
-  <h3 class="font-bold text-gray-900 mb-2">Issue:</h3>
-  <p class="text-gray-700 mb-2">Hardcoded IP addresses reduce deployment flexibility and can cause breakage if the IP changes.</p>
-
-  <h3 class="font-bold text-gray-900 mb-2">Refactoring Approach:</h3>
-  <ol class="list-decimal list-inside text-gray-700 mb-2">
-    <li>Define an environment variable to store the API base URL.</li>
-    <li>Replace the hardcoded IP address with the environment variable.</li>
-  </ol>
-
-  <h3 class="font-bold text-gray-900 mb-2">Example:</h3>
-  <pre class="bg-gray-100 p-2 rounded-md mb-2"><code>// Before:
-const response = await $fetch('https://34.147.200.146:8888/translate', {
-  // ...
-});
-
-// After:
-const apiBaseUrl = process.env.API_BASE_URL || 'https://34.147.200.146:8888'; // Provide a default if needed
-const response = await $fetch(`${apiBaseUrl}/translate`, {
-  // ...
-});</code></pre>
-
-  <h3 class="font-bold text-gray-900 mb-2">Relevant Files:</h3>
-  <p class="text-gray-700 mb-2">pages/ai-writer.vue, pages/index.vue</p>
-
-  <h3 class="border-t font-bold text-gray-900 mb-2">Finding:</h3>
-  <p class="text-gray-700 mb-2">Hardcoded Character Limit: The character limit (400) in 'index.vue' is hardcoded in multiple places. Consider replacing it with a constant variable for easier adjustment and better code readability.</p>
-
-  <h3 class="font-bold text-gray-900 mb-2">Issue:</h3>
-  <p class="text-gray-700 mb-2">Using magic numbers for the character limit reduces code readability and maintainability.</p>
-
-  <h3 class="font-bold text-gray-900 mb-2">Refactoring Approach:</h3>
-  <ol class="list-decimal list-inside text-gray-700 mb-2">
-    <li>Define a constant variable for the character limit.</li>
-    <li>Replace the hardcoded values with the constant.</li>
-  </ol>
-
-  <h3 class="font-bold text-gray-900 mb-2">Example:</h3>
-  <pre class="bg-gray-100 p-2 rounded-md mb-2"><code>// Before:
-maxlength="400"
-// ...
-return 400 - this.sourceText.length;
-
-// After:
-const MAX_CHARACTERS = 400;
-// ...
-maxlength="MAX_CHARACTERS"
-// ...
-return MAX_CHARACTERS - this.sourceText.length;</code></pre>
-
-  <h3 class="font-bold text-gray-900 mb-2">Relevant Files:</h3>
-  <p class="text-gray-700 mb-2">pages/index.vue</p>
-</div>
-[2024-07-24 12:02:22,175: DEBUG/ForkPoolWorker-2] Making request: POST https://oauth2.googleapis.com/token
-[2024-07-24 12:02:22,177: DEBUG/ForkPoolWorker-2] Starting new HTTPS connection (1): oauth2.googleapis.com:443
-[2024-07-24 12:02:22,218: DEBUG/ForkPoolWorker-2] https://oauth2.googleapis.com:443 "POST /token HTTP/1.1" 200 None
-[2024-07-24 12:02:22,264: WARNING/ForkPoolWorker-2] Uploading HTML to:
-[2024-07-24 12:02:22,265: WARNING/ForkPoolWorker-2]  
-[2024-07-24 12:02:22,265: WARNING/ForkPoolWorker-2] projects/qKtISirBQbftY20mLxK0hWXsD053/jerrydav1s:shonglish/_Nik0b
-[2024-07-24 12:02:22,266: DEBUG/ForkPoolWorker-2] Resetting dropped connection: storage.googleapis.com
-[2024-07-24 12:02:22,342: DEBUG/ForkPoolWorker-2] https://storage.googleapis.com:443 "POST /upload/storage/v1/b/rippo-777.appspot.com/o?uploadType=resumable HTTP/1.1" 200 0
-[2024-07-24 12:02:22,498: DEBUG/ForkPoolWorker-2] https://storage.googleapis.com:443 "PUT /upload/storage/v1/b/rippo-777.appspot.com/o?uploadType=resumable&upload_id=AHxI1nMfS3ZK4lTX-VKmOA_RBlBJFgKIpMGoKf2T-oE0mIvGPSdUOYc0NBuhhPG_5Svvf-ZT6Zvd7QR-LqHepBMecZLmivQmTPiEWKQoTkZCaAOQ HTTP/1.1" 200 1050
-[2024-07-24 12:02:22,498: WARNING/ForkPoolWorker-2] Uploaded _Nik0b.html to projects/qKtISirBQbftY20mLxK0hWXsD053/jerrydav1s:shonglish/_Nik0b/_Nik0b.html
-[2024-07-24 12:02:22,498: WARNING/ForkPoolWorker-2] Updating report status
-[2024-07-24 12:02:22,667: WARNING/ForkPoolWorker-2] Project status updated to Completed for:
-[2024-07-24 12:02:22,667: WARNING/ForkPoolWorker-2]  
-[2024-07-24 12:02:22,667: WARNING/ForkPoolWorker-2] _Nik0b
-[2024-07-24 12:02:22,667: WARNING/ForkPoolWorker-2] Report status updated
-[2024-07-24 12:02:22,668: WARNING/ForkPoolWorker-2] Updating dashboard status
-[2024-07-24 12:02:22,668: WARNING/ForkPoolWorker-2] Checking Dashboard Stats
-[2024-07-24 12:02:22,668: WARNING/ForkPoolWorker-2] Document path: users/qKtISirBQbftY20mLxK0hWXsD053/projects/jerrydav1s:shonglish
-[2024-07-24 12:02:22,739: WARNING/ForkPoolWorker-2] Project jerrydav1s:shonglish found
-[2024-07-24 12:02:22,783: WARNING/ForkPoolWorker-2] Total reports executed so far: 5
-[2024-07-24 12:02:22,837: WARNING/ForkPoolWorker-2] Dashboard status updated
-[2024-07-24 12:02:22,837: WARNING/ForkPoolWorker-2] Updating credits and usage
-[2024-07-24 12:02:22,986: WARNING/ForkPoolWorker-2] Usage data added for user qKtISirBQbftY20mLxK0hWXsD053: {'projectName': 'jerrydav1s:shonglish', 'reportID': '_Nik0b', 'date': datetime.datetime(2024, 7, 24, 12, 2, 22, 870926), 'creditsUsed': 10}
-[2024-07-24 12:02:22,986: WARNING/ForkPoolWorker-2] User qKtISirBQbftY20mLxK0hWXsD053 credits updated to 1570
-[2024-07-24 12:02:22,986: WARNING/ForkPoolWorker-2] Credits and usage done
-[2024-07-24 12:02:22,986: WARNING/ForkPoolWorker-2] Deleted: /home/trainboxai/backend/rippo/reports/code_audit__Nik0b.json
-[2024-07-24 12:02:22,986: WARNING/ForkPoolWorker-2] Deleted: /home/trainboxai/backend/rippo/reports/vuln_report__Nik0b.json
-[2024-07-24 12:02:22,986: WARNING/ForkPoolWorker-2] Deleted: /home/trainboxai/backend/rippo/reports/quality_report__Nik0b.json
-[2024-07-24 12:02:22,987: WARNING/ForkPoolWorker-2] Deleted: /home/trainboxai/backend/rippo/outputs/final__Nik0b.md
-[2024-07-24 12:02:22,987: WARNING/ForkPoolWorker-2] Deleted: /home/trainboxai/backend/rippo/outputs/vuln_search_results__Nik0b.json
-[2024-07-24 12:02:22,987: WARNING/ForkPoolWorker-2] Deleted: /home/trainboxai/backend/rippo/reports/refactor__Nik0b.html
-[2024-07-24 12:02:22,987: WARNING/ForkPoolWorker-2] Deleted: /home/trainboxai/backend/rippo/reports/report__Nik0b.html
-[2024-07-24 12:02:22,987: WARNING/ForkPoolWorker-2] Deleted: /home/trainboxai/backend/rippo/reports/refactor_guide__Nik0b.md
-[2024-07-24 12:02:22,987: WARNING/ForkPoolWorker-2] Deleted: /home/trainboxai/backend/rippo/reports/_Nik0b.html
-[2024-07-24 12:02:22,987: INFO/ForkPoolWorker-2] Task celery_app.generate_report[d584bee0-8b58-4613-80d9-1d93d509a8da] succeeded in 133.62971807400027s: None
+[2024-07-24 16:21:30,128: DEBUG/MainProcess] ^-- substep ok
+[2024-07-24 16:21:30,128: DEBUG/MainProcess] | Consumer: Starting Mingle
+[2024-07-24 16:21:30,128: INFO/MainProcess] mingle: searching for neighbors
+[2024-07-24 16:21:30,135: DEBUG/MainProcess] pidbox received method hello(from_node='celery@rippo-backend-vm', revoked={}) [reply_to:{'exchange': 'reply.celery.pidbox', 'routing_key': '91407504-7c2e-3e47-8fee-ff1ce828a1ca'} ticket:815cf2a1-18f9-41fe-b243-2aab9114aae6]
+[2024-07-24 16:21:31,139: INFO/MainProcess] mingle: all alone
+[2024-07-24 16:21:31,140: DEBUG/MainProcess] ^-- substep ok
+[2024-07-24 16:21:31,140: DEBUG/MainProcess] | Consumer: Starting Tasks
+[2024-07-24 16:21:31,143: DEBUG/MainProcess] ^-- substep ok
+[2024-07-24 16:21:31,143: DEBUG/MainProcess] | Consumer: Starting Control
+[2024-07-24 16:21:31,145: DEBUG/MainProcess] ^-- substep ok
+[2024-07-24 16:21:31,145: DEBUG/MainProcess] | Consumer: Starting Gossip
+[2024-07-24 16:21:31,148: DEBUG/MainProcess] ^-- substep ok
+[2024-07-24 16:21:31,148: DEBUG/MainProcess] | Consumer: Starting Heart
+[2024-07-24 16:21:31,149: DEBUG/MainProcess] ^-- substep ok
+[2024-07-24 16:21:31,149: DEBUG/MainProcess] | Consumer: Starting event loop
+[2024-07-24 16:21:31,150: DEBUG/MainProcess] | Worker: Hub.register Pool...
+[2024-07-24 16:21:31,150: INFO/MainProcess] celery@rippo-backend-vm ready.
+[2024-07-24 16:21:31,150: DEBUG/MainProcess] basic.qos: prefetch_count->16

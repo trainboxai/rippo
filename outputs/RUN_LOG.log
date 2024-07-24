@@ -1,9 +1,0 @@
-2024-07-24 11:59:39  ·  Event ID:101  ·  Source:/initialize  ·  Details:Initialization completed for new report _Nik0b. Repos found = 16  ·  Level:INFO
-2024-07-24 12:00:09  ·  Event ID:102  ·  Source:/master  ·  Details:New docs creted for user: qKtISirBQbftY20mLxK0hWXsD053 and project:_Nik0b in master initialisation phase  ·  Level:INFO
-2024-07-24 12:00:09  ·  Event ID:103  ·  Source:flattener.py/extract_and_write_to_markdown  ·  Details:Markdown file created final__Nik0b.md.  ·  Level:INFO
-2024-07-24 12:00:14  ·  Event ID:104  ·  Source:analyser.py/get_dependancy_list  ·  Details:Analysed and extracted list of dependancies  ·  Level:INFO
-2024-07-24 12:00:19  ·  Event ID:105  ·  Source:search.py/search_vulnerabilities  ·  Details:Google searched dor known vulnerabilities  ·  Level:INFO
-2024-07-24 12:00:30  ·  Event ID:106  ·  Source:reporter.py/code_audit_report_with_backoff  ·  Details:Code audit completed  ·  Level:INFO
-2024-07-24 12:00:36  ·  Event ID:107  ·  Source:reporter.py/vulnerability_report_with_backoff  ·  Details:Vulnerability report completed  ·  Level:INFO
-2024-07-24 12:00:46  ·  Event ID:108  ·  Source:reporter.py/quality_report_with_backoff  ·  Details:Code Quality report completed  ·  Level:INFO
-2024-07-24 12:02:08  ·  Event ID:108  ·  Source:reporter.py/generate_refactor_plan_with_backoff  ·  Details:Code Refactor Plan completed  ·  Level:INFO

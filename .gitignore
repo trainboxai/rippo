@@ -13,3 +13,8 @@ commit-push.sh
 /venv
 
 /ouputs
+
+# Local env files
+.env
+.env.*
+!.env.example

@@ -96,7 +96,7 @@ async def get_current_user(token: str = Depends(oauth2_scheme)):
 
 @app.get("/")
 async def root():
-    return {"message": "Welcome to the Rippo API!"}
+    return {"message": "Welcome to the Rippo API! Sign up at Rippo AI"}
 
 @app.post("/verify-token")
 async def verify_token(request: Request):

@@ -53,3 +53,33 @@ def upload_html(user_id, report_id, repo_name):
                     print(f"Uploaded {report_id}.html to {project_path}/{report_id}.html")
                 return True
     return False
+
+def upload_failed_report_html(user_id, report_id, repo_name):
+    # fetch project path
+    user_doc = db.collection('users').document(user_id).collection('projects').document(repo_name).get()
+    if user_doc.exists:
+        project_paths = user_doc.to_dict().get('project_paths', [])
+        for project in project_paths:
+            if project.get('report_id') == report_id:
+                project_path = project.get('path')
+                print("Uploading HTML to:", project_path)
+
+                # Failed report HTML file
+                combined_html = os.path.join(reports_dir, f"{report_id}.html")
+
+                # Upload combined HTML to Firebase Storage
+                blob = bucket.blob(f"{project_path}/{report_id}.html")
+                with open(combined_html, 'rb') as file_data:
+                    blob.upload_from_file(file_data, content_type='text/html')
+                    print(f"Uploaded {report_id}.html to {project_path}/{report_id}.html")
+                return True
+    return False
+
+
+"""
+## EXAMPLE USAGE
+user_id =  "qKtISirBQbftY20mLxK0hWXsD053"
+report_id =  "SjbNd5"
+repo_name = "jerrydav1s:ml-tinkering-blog"
+upload_failed_report_html(user_id, report_id, repo_name)
+"""
