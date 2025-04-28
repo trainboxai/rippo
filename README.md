@@ -2,10 +2,6 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) 
 
-## 👤 Author
-
-*   **Jerry Davis** - *Initial work* - [jerry@upscaler.net](mailto:jerry@upscaler.net)
-
 
 
 
@@ -118,6 +114,10 @@ Contributions are welcome! If you'd like to help improve Rippo, please feel free
 
 *   Report bugs or suggest features by opening an issue.
 *   Submit pull requests with improvements.
+
+## 👤 Author
+
+*   **Jerry Davis** - *Initial work* - [jerry@upscaler.net](mailto:jerry@upscaler.net)
 
 
 
