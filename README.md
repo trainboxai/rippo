@@ -2,6 +2,11 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) 
 
+## 👤 Author
+
+*   **Jerry Davis** - *Initial work* - [jerry@upscaler.net](mailto:jerry@upscaler.net)
+
+
 Welcome to the backend repository for Rippo! This project uses AI agents to analyze GitHub repositories, providing insightful reports and data for a frontend dashboard.
 
 **Frontend Repository:** [trainboxai/rippo-frontend](https://github.com/trainboxai/rippo-frontend)
@@ -117,9 +122,6 @@ Contributions are welcome! If you'd like to help improve Rippo, please feel free
 
 This project is open source. See `LICENSE` file (MIT License) for more details.
 
-## 👤 Author
-
-*   **Jerry Davis** - *Initial work* - [jerry@upscaler.net](mailto:jerry@upscaler.net)
 
 ---
 
